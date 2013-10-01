@@ -1,6 +1,6 @@
 'use strict';
 
-var wwwApp = angular.module('wwwApp', [])
+var UrbanExplorer = angular.module('UrbanExplorer', [])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
