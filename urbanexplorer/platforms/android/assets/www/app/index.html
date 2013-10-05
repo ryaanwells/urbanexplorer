@@ -10,6 +10,7 @@
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css" />
     
   </head>
   <body ng-app="UrbanExplorer">
@@ -25,11 +26,17 @@
     
     <!-- Add your site or application content here -->
     <div class="container" ng-view></div>
-    HELLO
 
     <script type="text/javascript" src="phonegap.js"></script>
-    <script src="scripts/vendor/angular.min.js"></script>
-    
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <style>
+      .nav, .pagination, .carousel a {cursor:pointer;}
+    </style>
+
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
