@@ -29,13 +29,14 @@ UrbanExplorer.factory('geolocation', function ($rootScope) {
     }
   };
 });
+UrbanExplorer.directive('maximise', function(){
+  return function($scope, $elem, $attrs){
+    $elem.css('height', window.innerHeight + 'px');
+    $elem.css('width',  window.innerWidth  + 'px');
+  };
+});
 UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location) {
-  $scope.awesomeThings = [
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Testacular'
-  ];
-  console.log("here");
+
   geolocation.getCurrentPosition(function (position) {
     console.log(position);
     alert('Latitude: '              + position.coords.latitude          + '\n' +
@@ -52,13 +53,21 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location) {
   });
   
   $scope.swipeLeft = function(){
-    $location.path("/other/");
+    $location.path("/targets/");
+  }
+  $scope.swipeRight = function(){
+    $location.path("/achievements/");
   }
 });
- 
-UrbanExplorer.controller('OtherCtrl' , function($scope, $location){
-  alert("HERE");
+
+UrbanExplorer.controller('TargetsCtrl' , function($scope, $location){
   $scope.swipeRight = function(){
+    $location.path("/");
+  }
+});
+
+UrbanExplorer.controller('AchievementsCtrl', function($scope, $location){
+  $scope.swipeLeft = function(){
     $location.path("/");
   }
 });

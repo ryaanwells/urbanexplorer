@@ -7,9 +7,13 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch', 'ui.bo
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/other/', {
-	templateUrl: 'views/other.html',
-	controller: 'OtherCtrl'
+      .when('/targets/', {
+	templateUrl: 'views/targets.html',
+	controller: 'TargetsCtrl'
+      })
+      .when('/achievements/', {
+	templateUrl: 'views/achievements.html',
+	controller: 'AchievementsCtrl'
       })
       .otherwise({
         redirectTo: '/'
