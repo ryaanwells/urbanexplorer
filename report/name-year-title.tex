@@ -1,0 +1,49 @@
+% This example An LaTeX document showing how to use the l3proj class to
+% write your report. Use pdflatex and bibtex to process the file, creating 
+% a PDF file as output (there is no need to use dvips when using pdflatex).
+
+% Modified 
+
+\documentclass{l3proj}
+\usepackage{url}
+\usepackage{color}
+\usepackage{graphics,graphicx}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{ifthen}
+
+\begin{document}
+
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+	
+	
+	\title{An Example Project}
+\author{John Wayne Garcia}
+\date{9 January 2011}
+\maketitle
+\begin{abstract}
+
+The abstract goes here
+
+\end{abstract}
+%\educationalconsent
+\tableofcontents
+%==============================================================================
+\input{introduction}
+\input{related_work}
+\input{method}
+\input{results}
+\input{conclusion}
+
+\section{Acknowledgements}
+I would like to thank ...
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{example}
+\end{document}
