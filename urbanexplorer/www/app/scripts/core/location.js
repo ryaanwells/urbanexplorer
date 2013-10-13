@@ -1,6 +1,6 @@
 'use strict';
 
-UrbanExplorer.factory('geolocation', function ($rootScope, $q) {
+UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
   var coordinates = [];
   
   var getCurrentPosition = function () {
@@ -20,10 +20,10 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q) {
   }
   
   var pollPosition = function(){
-    getCurrentPosition.then(
+    getCurrentPosition().then(
       function(coords){
 	coordinates.push([coords.coords.latitude, coords.coords.longitude]);
-	pollPosition();
+	$timeout(pollPosition, 1000);
       },
       function(error){
 	alert(error);

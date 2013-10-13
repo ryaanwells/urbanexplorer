@@ -17,16 +17,25 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location) {
     console.log(error.message);
   });
   */
-  
+  $scope.coords = [];
+
+  geolocation.pollPosition();
   $scope.swipeLeft = function(){
     $location.path("/targets/");
   }
   $scope.swipeRight = function(){
     $location.path("/achievements/");
   }
-  $scope.coords = function(){
-    return geolocation.getCoordinatesList();
-  }
+  $scope.$watch(
+    function(){
+      return geolocation.getCoordinatesList();
+    }, 
+    function(newList, oldList){
+      console.log(newList);
+      $scope.coords = newList;
+    },
+    true
+  );
 });
 
 UrbanExplorer.controller('TargetsCtrl' , function($scope, $location){
