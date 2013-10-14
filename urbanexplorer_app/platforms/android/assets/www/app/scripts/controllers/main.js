@@ -1,42 +1,8 @@
 'use strict';
 
-UrbanExplorer.factory('geolocation', function ($rootScope) {
-  return {
-    getCurrentPosition: function (onSuccess, onError, options) {
-      navigator.geolocation.getCurrentPosition(
-	function () {
-          var that = this,
-          args = arguments;
-	  console.log("Success callback");
-          if (onSuccess) {
-	    console.log("success");
-            $rootScope.$apply(function () {
-              onSuccess.apply(that, args);
-            });
-          }
-	}, function () {
-          var that = this,
-          args = arguments;
-	  console.log("Failure callback");
-          if (onError) {
-	    console.log("fail");
-            $rootScope.$apply(function () {
-              onError.apply(that, args);
-            });
-          }
-	},
-	{enableHighAccuracy : true});
-    }
-  };
-});
 UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location) {
-  $scope.awesomeThings = [
-    'HTML5 Boilerplate',
-    'AngularJS',
-    'Testacular'
-  ];
-  console.log("here");
-  geolocation.getCurrentPosition(function (position) {
+  /*
+  geolocation.getCurrentPosition().then(function (position) {
     console.log(position);
     alert('Latitude: '              + position.coords.latitude          + '\n' +
           'Longitude: '             + position.coords.longitude         + '\n' +
@@ -50,15 +16,36 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location) {
     console.log(error.code);
     console.log(error.message);
   });
-  
+  */
+  $scope.coords = [];
+
+  geolocation.pollPosition();
   $scope.swipeLeft = function(){
-    $location.path("/other/");
+    $location.path("/targets/");
+  }
+  $scope.swipeRight = function(){
+    $location.path("/achievements/");
+  }
+  $scope.$watch(
+    function(){
+      return geolocation.getCoordinatesList();
+    }, 
+    function(newList, oldList){
+      console.log(newList);
+      $scope.coords = newList;
+    },
+    true
+  );
+});
+
+UrbanExplorer.controller('TargetsCtrl' , function($scope, $location){
+  $scope.swipeRight = function(){
+    $location.path("/");
   }
 });
- 
-UrbanExplorer.controller('OtherCtrl' , function($scope, $location){
-  alert("HERE");
-  $scope.swipeRight = function(){
+
+UrbanExplorer.controller('AchievementsCtrl', function($scope, $location){
+  $scope.swipeLeft = function(){
     $location.path("/");
   }
 });
