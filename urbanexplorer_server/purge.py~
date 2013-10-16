@@ -1,0 +1,17 @@
+import os
+import sys
+
+def purge():
+    addUser("TEST")
+
+def addUser(name):
+    user = UserProfile.objects.get_or_create(user=User.objects.create_user(name),
+                                             deviceID=name)[0]
+    return user
+
+if __name__ == '__main__':
+    print "Populating"
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'urbanexplorer_server.settings')
+    from django.contrib.auth.models import User
+    from api.models import UserProfile
+    populate()
