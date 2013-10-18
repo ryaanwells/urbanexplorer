@@ -49,8 +49,8 @@ class Mission(models.Model):
 class Route(models.Model):
     name = models.CharField(max_length=128)
     mission = models.ForeignKey('Mission')
-    startConnections = models.ForeignKey('self', related_name='+', blank=True, null=True)
-    endConnections = models.ForeignKey('self', related_name='+', blank=True, null=True)
+    startConnections = models.ManyToManyField('Route', related_name='start+', null=True, blank=True)
+    endConnections = models.ManyToManyField('Route', related_name='end+', null=True, blank=True)
     startStage = models.ForeignKey('Stage', related_name='+')
     endStage = models.ForeignKey('Stage', related_name='+')
     # Also geolocation here, implementation TBD.
@@ -61,10 +61,9 @@ class Route(models.Model):
 
 class Stage(models.Model):
     name = models.CharField(max_length=128)
-    mission = models.ForeignKey('Route', related_name='+')
     distance = models.FloatField()
-    nextStage = models.OneToOneField('self', blank=True, null=True, related_name='+')
-    previousStage = models.OneToOneField('self', blank=True, null=True, related_name='+')
+    nextStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
+    previousStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
     # Also geolocation here, implementation TBD.
     # Interesting: https://docs.djangoproject.com/en/dev/ref/contrib/gis/model-api/
 
