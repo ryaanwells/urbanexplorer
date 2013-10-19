@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import UserProfile, Achievement, UserAchievement, Mission, Route, Stage, Progress, RoutesCompleted, Session
+from api.models import UserProfile, Achievement, UserAchievement, Mission, Route, Stage, Progress, RoutesCompleted, Session, Waypoints
 
 admin.site.register(UserProfile)
 admin.site.register(Achievement)
@@ -10,3 +10,4 @@ admin.site.register(Stage)
 admin.site.register(Progress)
 admin.site.register(RoutesCompleted)
 admin.site.register(Session)
+admin.site.register(Waypoints)

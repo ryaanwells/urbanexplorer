@@ -23,7 +23,9 @@ def populate():
     
     routeB = addRoute("Route B", mission, stageC, stageE)
 
-    connectRoutes(routeA, True, routeB, True)
+    waypointA = addWaypoint("Waypoint A", mission)
+    waypointB = addWaypoint("Waypoint B", mission)
+    linkWaypoints(waypointA, waypointB, routeA)
 ########
 
 def addUser(name):
@@ -48,7 +50,7 @@ def addMission(name, description):
                                             description=description)[0]
     return mission
 
-def addRoute(name, mission, startStage, endStage, startConnections=None, endConnections=None):
+def addRoute(name, mission, startStage, endStage):
     route = Route.objects.get_or_create(name=name,
                                         mission=mission,
                                         startStage=startStage,
@@ -62,19 +64,22 @@ def addStage(name, distance, nextStage=None, previousStage=None):
                                         previousStage=previousStage)[0]
     return stage
 
+def addWaypoint(name, mission):
+    waypoint = Waypoints.objects.get_or_create(name=name,
+                                               mission=mission)[0]
+    return waypoint
+
 def linkStages(stageA, stageB):
     objA = Stage.objects.filter(pk=stageA.pk).update(nextStage=stageB)
     objB = Stage.objects.filter(pk=stageB.pk).update(previousStage=stageA)
 
-def connectRoutes(routeA, routeAHead, routeB, routeBHead):
-    if (routeAHead and routeBHead):
-        print Route.objects.filter(pk=routeA.pk)[0]
-        Route.objects.filter(pk=routeA.pk)[0].startConnections.add(routeB)
-        Route.objects.filter(pk=routeB.pk)[0].startConnections.add(routeA)
+def linkWaypoints(waypointA, waypointB, route):
+    Waypoints.objects.filter(pk=waypointA.pk)[0].outgoingConnections.add(route)
+    Waypoints.objects.filter(pk=waypointB.pk)[0].incomingConnections.add(route)
 
 if __name__ == '__main__':
     print "Populating"
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'urbanexplorer_server.settings')
     from django.contrib.auth.models import User
-    from api.models import UserProfile, Achievement, UserAchievement, Mission, Route, Stage
+    from api.models import UserProfile, Achievement, UserAchievement, Mission, Route, Stage, Waypoints
     populate()

@@ -46,11 +46,20 @@ class Mission(models.Model):
     def __unicode__(self):
         return self.name
 
+class Waypoints(models.Model):
+    name = models.CharField(max_length=128)
+    mission = models.ForeignKey('Mission')
+    outgoingConnections = models.ManyToManyField('Route', related_name='outgoing+',
+                                                 null=True, blank=True)
+    incomingConnections = models.ManyToManyField('Route', related_name='incoming+',
+                                                 null=True, blank=True)
+
+    def __unicode__(self):
+        return self.name
+
 class Route(models.Model):
     name = models.CharField(max_length=128)
     mission = models.ForeignKey('Mission')
-    startConnections = models.ManyToManyField('Route', related_name='start+', null=True, blank=True)
-    endConnections = models.ManyToManyField('Route', related_name='end+', null=True, blank=True)
     startStage = models.ForeignKey('Stage', related_name='+')
     endStage = models.ForeignKey('Stage', related_name='+')
     # Also geolocation here, implementation TBD.
