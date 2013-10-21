@@ -1,3 +1,4 @@
 local.settings
 plugins/
 urbanexplorer/platforms
+urbanexplorer_serverdatabase.db

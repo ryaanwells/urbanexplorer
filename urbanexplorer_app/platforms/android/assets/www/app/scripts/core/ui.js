@@ -1,0 +1,8 @@
+'use strict';
+
+UrbanExplorer.directive('maximise', function(){
+  return function($scope, $elem, $attrs){
+    $elem.css('height', window.innerHeight + 'px');
+    $elem.css('width',  window.innerWidth  + 'px');
+  };
+});
