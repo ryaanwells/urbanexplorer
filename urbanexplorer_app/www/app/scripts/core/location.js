@@ -3,6 +3,9 @@
 UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
   var coordinates = [];
   
+  var polling = false;
+  var pollPositionTimeout = null;
+
   var getCurrentPosition = function () {
     var deferred = $q.defer();
     navigator.geolocation.getCurrentPosition(
@@ -18,16 +21,26 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
       {enableHighAccuracy : true});
     return deferred.promise;
   }
-  
+
   var pollPosition = function(){
-    getCurrentPosition().then(
-      function(coords){
-	coordinates.push([coords.coords.latitude, coords.coords.longitude]);
-	$timeout(pollPosition, 1000);
-      },
-      function(error){
-	alert(error);
-      });
+    if (!polling){
+      polling = true;
+      getCurrentPosition().then(
+	function(coords){
+	  if (polling){
+	    coordinates.push([coords.coords.latitude, coords.coords.longitude]);
+	    pollPositionTimeout = $timeout(pollPosition, 10000);
+	  }
+	},
+	function(error){
+	  alert(error);
+	});
+    }
+  }
+
+  var cancelPolling = function(){
+    polling = false;
+    $timeout.cancel(pollPositionTimeout);
   }
 
   var getCoordinatesList = function(){
@@ -36,6 +49,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
 
   return {
     pollPosition: pollPosition,
-    getCoordinatesList: getCoordinatesList
+    getCoordinatesList: getCoordinatesList,
+    cancelPolling: cancelPolling
   };
 });
