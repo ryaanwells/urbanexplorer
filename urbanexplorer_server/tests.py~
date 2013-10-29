@@ -1,0 +1,9 @@
+import httplib, json
+
+conn = httplib.HTTPConnection("127.0.0.1", 8000)
+
+conn.request("GET", "/api/v1/userprofile/")
+response = conn.getresponse()
+print r1.status, r1.reason
+data = response.read()
+print data

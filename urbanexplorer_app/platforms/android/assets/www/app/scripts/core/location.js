@@ -23,7 +23,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
     getCurrentPosition().then(
       function(coords){
 	coordinates.push([coords.coords.latitude, coords.coords.longitude]);
-	$timeout(pollPosition, 1000);
+	$timeout(pollPosition, 10000);
       },
       function(error){
 	alert(error);

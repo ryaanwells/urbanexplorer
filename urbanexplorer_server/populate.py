@@ -2,30 +2,37 @@ import os
 import sys
 
 def populate():
-    user = addUser("TEST")
-    achievement = addAchievement("First!", "First place!", "G", "You did well")
-    addUserAchievement(user, achievement)
+    user = addUser("Ryan")
+    #achievement = addAchievement("First!", "First place!", "G", "You did well")
+    #addUserAchievement(user, achievement)
 
-    mission = addMission("Mission A", "This is the description for Mission A")
+    arranMission = addMission("Isle of Arran", "Run around the beautiful countryside of Arran!")
     
-    stageA = addStage("Stage A", 100)
-    stageB = addStage("Stage B", 150)
-    linkStages(stageA, stageB)
-
-    routeA = addRoute("Route A", mission, stageA, stageB)
-
-    stageC = addStage("Stage C", 100)
-    stageD = addStage("Stage D", 300)
-    linkStages(stageC, stageD)
-
-    stageE = addStage("Stage E", 45)
-    linkStages(stageC, stageD)
+    brodick = addPlace("Brodick", arranMission)
+    lamlash = addPlace("Lamlash", arranMission)
     
-    routeB = addRoute("Route B", mission, stageC, stageE)
+    brodickTownStage = addStage("Brodick Town", 1500)
+    strathwhillanWood = addStage("Strathwhillan Wood", 3500)
+    lamlashBay = addStage("Lamlash Bay", 1000)
+    linkStages(brodickTownStage, strathwhillanWood)
+    linkStages(strathwhillanWood, lamlashBay)
 
-    waypointA = addWaypoint("Waypoint A", mission)
-    waypointB = addWaypoint("Waypoint B", mission)
-    linkWaypoints(waypointA, waypointB, routeA)
+    addRoute("Brodick to Lamlash", arranMission,
+             brodickTownStage, lamlashBay,
+             brodick, lamlash)
+
+    whittingBay = addPlace("Whitting Bay", arranMission)
+    cuddyStage = addStage("The Cuddy", 1000)
+    whiteField = addStage("Whitefield", 2000)
+    kingscrossBurn = addStage("Kings Cross Burn", 1500)
+    linkStages(cuddyStage, whiteField)
+    linkStages(whiteField, kingscrossBurn)
+    
+    addRoute("Lamlash to Whiting Bay", arranMission,
+             cuddyStage, kingscrossBurn,
+             lamlash, whittingBay)
+
+
 ########
 
 def addUser(name):
@@ -50,11 +57,13 @@ def addMission(name, description):
                                             description=description)[0]
     return mission
 
-def addRoute(name, mission, startStage, endStage):
+def addRoute(name, mission, startStage, endStage, startPlace, endPlace):
     route = Route.objects.get_or_create(name=name,
                                         mission=mission,
                                         startStage=startStage,
-                                        endStage=endStage)[0]
+                                        endStage=endStage,
+                                        startPlace=startPlace,
+                                        endPlace=endPlace)[0]
     return route
 
 def addStage(name, distance, nextStage=None, previousStage=None):
@@ -64,22 +73,19 @@ def addStage(name, distance, nextStage=None, previousStage=None):
                                         previousStage=previousStage)[0]
     return stage
 
-def addWaypoint(name, mission):
-    waypoint = Waypoints.objects.get_or_create(name=name,
-                                               mission=mission)[0]
-    return waypoint
+def addPlace(name, mission):
+    place = Place.objects.get_or_create(name=name,
+                                        mission=mission)[0]
+    return place
 
 def linkStages(stageA, stageB):
     objA = Stage.objects.filter(pk=stageA.pk).update(nextStage=stageB)
     objB = Stage.objects.filter(pk=stageB.pk).update(previousStage=stageA)
 
-def linkWaypoints(waypointA, waypointB, route):
-    Waypoints.objects.filter(pk=waypointA.pk)[0].outgoingConnections.add(route)
-    Waypoints.objects.filter(pk=waypointB.pk)[0].incomingConnections.add(route)
 
 if __name__ == '__main__':
     print "Populating"
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'urbanexplorer_server.settings')
     from django.contrib.auth.models import User
-    from api.models import UserProfile, Achievement, UserAchievement, Mission, Route, Stage, Waypoints
+    from api.models import UserProfile, Achievement, UserAchievement, Mission, Place, Route, Stage, Progress, RoutesCompleted, Session
     populate()
