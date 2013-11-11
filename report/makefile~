@@ -1,0 +1,11 @@
+all: report
+
+report:
+	pdflatex report.tex
+	pdflatex report.tex
+
+clean:
+	rm -rf *.aux
+	rm -rf *.log
+	rm -rf *.toc
+	rm -rf *~
