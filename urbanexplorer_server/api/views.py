@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from api import UserProfileResource
 from models import UserProfile
-
+import json
 
 def getSelf(request):
     if request.method == 'GET' and request.GET.get("deviceID"):
@@ -19,8 +19,9 @@ def getSelf(request):
         else:
             print "NOT FOUND"
 
-        user = UserProfile.objects.get_or_create(deviceID=request.GET.get("id"),
-                                                 defaults={'user':User.objects.create_user(request.GET.get("id"))})[0]
-        return HttpResponse(user.deviceID)
+        user = UserProfile.objects.get_or_create(deviceID=request.GET.get("deviceID"),
+                                                 defaults={'user':User.objects.create_user(request.GET.get("deviceID"))})[0]
+        return HttpResponse(json.dumps(user.deviceID))
 
     return HttpResponse('Unauthorized method', status=401)
+
