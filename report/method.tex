@@ -1,5 +1,6 @@
 \chapter{Methodology}\label{ch_method}
 
+
 \section{Walkthrough of Wireframes}
 When the app is launched it silently registers with the server
 allowing the user to use the app immediately. The user is then shown
@@ -36,3 +37,10 @@ the middle-top screen.
     can click the ``Home'' button and be taken back to the middle top
     screen. 
 \end{enumerate}
+
+Latency of gps might mean that a user drops out of connection for
+finding their location. We should make sure that the game makes
+``reasonable'' accommodations about this - first iteration will save
+the game object after a certain period of time if it isn't formally
+closed, other iterations might try and build on this.
+
