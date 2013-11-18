@@ -1,4 +1,4 @@
-/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/gen/com/urbanexplorer/app/R.java \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/gen/com/phonegap/urbanexplorer/R.java \
  : /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/res/drawable-xhdpi/icon.png \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/res/drawable-xhdpi/ic_launcher.png \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/res/xml/config.xml \
