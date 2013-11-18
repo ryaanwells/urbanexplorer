@@ -19,9 +19,13 @@ def getSelf(request):
         else:
             print "NOT FOUND"
 
-        user = UserProfile.objects.get_or_create(deviceID=request.GET.get("deviceID"),
-                                                 defaults={'user':User.objects.create_user(request.GET.get("deviceID"))})[0]
-        return HttpResponse(json.dumps(user))
+        UserProfile.objects.get_or_create(deviceID=request.GET.get("deviceID"),
+                                          defaults={'user':User.objects.create_user(request.GET.get("deviceID"))})[0]
+        user = res.obj_get(deviceID=request.GET.get("deviceID"), bundle=request_bundle)
+        bundle = res.build_bundle(obj=user, request=request)
+        return HttpResponse(res.serialize(None, res.full_dehydrate(bundle), 
+                                          'application/json'), 
+                            mimetype="application/json")
 
     return HttpResponse('Unauthorized method', status=401)
 
