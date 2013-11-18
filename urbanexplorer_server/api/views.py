@@ -21,7 +21,7 @@ def getSelf(request):
 
         user = UserProfile.objects.get_or_create(deviceID=request.GET.get("deviceID"),
                                                  defaults={'user':User.objects.create_user(request.GET.get("deviceID"))})[0]
-        return HttpResponse(json.dumps(user.deviceID))
+        return HttpResponse(json.dumps(user))
 
     return HttpResponse('Unauthorized method', status=401)
 
