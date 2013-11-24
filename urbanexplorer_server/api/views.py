@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from api import UserProfileResource
-from models import UserProfile
+from models import UserProfile, Session, Progress, Stage
 import json
 
 def getSelf(request):
@@ -29,3 +29,16 @@ def getSelf(request):
 
     return HttpResponse('Unauthorized method', status=401)
 
+
+def startSession(request):
+    if request.method == 'GET':
+        stageID = Stage.objects.filter(pk=request.GET.get('stageID'))[0]
+        userID = UserProfile.objects.filter(pk=request.GET.get('deviceID'))[0]
+        progress = Progress.objects.get_or_create(userID=userID, stageID=stageID)[0]
+        session = Session.objects.create(userID=userID, currentProgress=progress)
+        session.save()
+        session.allProgress.add(progress)
+
+        return HttpResponse(session.pk)
+    
+    return HttpResponse("Unauthorized method", status=401)

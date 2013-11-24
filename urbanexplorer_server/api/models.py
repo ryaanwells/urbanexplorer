@@ -44,7 +44,7 @@ class UserAchievement(models.Model):
         verbose_name = "user achievement"
         verbose_name_plural = "user achievements"
 
-    userID = models.ForeignKey(User)
+    userID = models.ForeignKey(UserProfile)
     achievementID = models.ForeignKey('Achievement')
     completionDate = models.DateField(auto_now_add=True)
 
@@ -111,7 +111,7 @@ class Progress(models.Model):
         verbose_name_plural = "progressions"
 
     stageID = models.ForeignKey('Stage')
-    userID = models.ForeignKey(User)
+    userID = models.ForeignKey(UserProfile)
     completionDate = models.DateField(blank=True, null=True)
     # total time and distance so far
     totalTime = models.TimeField(blank=True, null=True)
@@ -119,7 +119,7 @@ class Progress(models.Model):
     completed = models.BooleanField()
 
     def __unicode__(self):
-        return self.userID
+        return self.userID.deviceID
 
 class RoutesCompleted(models.Model):
     class Meta:
@@ -127,7 +127,7 @@ class RoutesCompleted(models.Model):
         verbose_name_plural = "routes completed"
 
     routeID = models.ForeignKey('Route')
-    userID = models.ForeignKey(User)
+    userID = models.ForeignKey(UserProfile)
     completionDate = models.DateField(blank=True, null=True)
     totalTime = models.TimeField(blank=True, null=True)
     completed = models.BooleanField()
@@ -140,10 +140,14 @@ class Session(models.Model):
         verbose_name = "sessions"
         verbose_name_plural = "sessions"
 
-    userID = models.ForeignKey(User)
+    userID = models.ForeignKey('UserProfile')
+    currentProgress = models.ForeignKey(Progress, related_name='+')
+    allProgress = models.ManyToManyField(Progress, related_name='+')
     distance = models.PositiveIntegerField(blank=True, null=True)
     maxSpeed = models.PositiveIntegerField(blank=True, null=True)
+    lastLon = models.FloatField(blank=True, null=True)
+    lastLat = models.FloatField(blank=True, null=True)
     totalTime = models.TimeField(blank=True, null=True)
 
     def __unicode__(self):
-        return self.userID
+        return self.userID.deviceID
