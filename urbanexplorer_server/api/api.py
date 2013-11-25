@@ -24,6 +24,7 @@ class UserProfileResource(ModelResource):
         }
 
 class StageResource(ModelResource):
+    
     class Meta:
         queryset = Stage.objects.all()
         resource_name = 'stage'
@@ -33,7 +34,7 @@ class StageResource(ModelResource):
 class ProgressResource(ModelResource):
     
     userID = fields.ForeignKey(UserProfileResource, 'userID')
-    stageID = fields.ForeginKey(StageResource, 'stageID')
+    stageID = fields.ForeignKey(StageResource, 'stageID')
 
     class Meta:
         queryset = Progress.objects.all()
