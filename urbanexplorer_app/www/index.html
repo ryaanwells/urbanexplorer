@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="styles/main.css"/>
     <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css" />
   </head>
-  <body ng-app="UrbanExplorer">
+  <body>
     
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -25,6 +25,17 @@
         <![endif]-->
     
     <!-- Add your site or application content here -->
+    
+    <div class="row-fluid"
+	 style="background-color: #7F171F;
+		padding: 5px 0;
+		text-align: center;
+		color: white;">
+      <div class="span12">
+	<h2>urbanexplorer</h2>
+      </div>      
+    </div>
+
     <div class="container" ng-view></div>
 
     <script src="bower_components/angular/angular.js"></script>
@@ -41,6 +52,7 @@
     <script src="scripts/core/ui.js"></script>
     <script src="scripts/core/location.js"></script>
     <script src="scripts/core/user.js"></script>
+    <script src="scripts/core/routes.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script type="text/javascript" src="phonegap.js"></script>    
     <!-- endbuild -->
@@ -48,6 +60,7 @@
     <script type="text/javascript">
       var onReady = function(){
       console.log("READY CALLED");
+      angular.bootstrap(document, ['UrbanExplorer']);
       };
       document.addEventListener("deviceready", onReady, false);
     </script>
