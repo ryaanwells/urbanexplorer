@@ -5,4 +5,5 @@ oauth==1.0.1
 oauth2==1.5.211
 python-mimeparse==0.1.4
 simplejson==2.5.2
+haversine==0.1
 
