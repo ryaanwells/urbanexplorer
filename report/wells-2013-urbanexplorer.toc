@@ -11,8 +11,11 @@
 \contentsline {subsection}{\numberline {2.1.4}Nike}{4}
 \contentsline {subsection}{\numberline {2.1.5}Fitbit}{4}
 \contentsline {subsection}{\numberline {2.1.6}Garmin}{4}
-\contentsline {chapter}{\numberline {3}Methodology}{5}
-\contentsline {section}{\numberline {3.1}Walkthrough of Wireframes}{5}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{6}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{7}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{7}
+\contentsline {chapter}{\numberline {3}Design and Specification}{5}
+\contentsline {section}{\numberline {3.1}Aim/vision}{5}
+\contentsline {section}{\numberline {3.2}Specification}{5}
+\contentsline {subsection}{\numberline {3.2.1}Platform}{5}
+\contentsline {section}{\numberline {3.3}Walkthrough of Wireframes}{6}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{7}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{8}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{8}

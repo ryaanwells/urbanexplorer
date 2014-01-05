@@ -3,7 +3,7 @@ from django.conf.urls import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from tastypie.api import Api
-from api.views import getSelf, startSession
+from api.views import getSelf, startSession, updateSession
 from api.api import UserProfileResource, UserResource, SessionResource, ProgressResource, StageResource
 admin.autodiscover()
 
@@ -26,6 +26,7 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^getSelf/', getSelf, name='getSelf'),
                        url(r'^startSession/', startSession, name='startSession'),
+                       url(r'^updateSession/', updateSession, name='updateSession'),
                        url(r'^api/', include(v1_api.urls)),
                        
 )

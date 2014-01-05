@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from api import UserProfileResource
 from models import UserProfile, Session, Progress, Stage
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 def getSelf(request):
     if request.method == 'GET' and request.GET.get("deviceID"):
@@ -42,3 +43,18 @@ def startSession(request):
         return HttpResponse(session.pk)
     
     return HttpResponse("Unauthorized method", status=401)
+
+@csrf_exempt
+def updateSession(request):
+    print "here"
+    print request.body
+    print request.POST
+    print request.POST.get('sessionID')
+    if request.method == 'PATCH' and "sessionID" in request.POST:
+        print "found!"
+        print "Updating"
+        return HttpResponse("done", status=202)
+
+    return HttpResponse('Unauthorized method', status=401)
+
+        

@@ -1,0 +1,1 @@
+curl -v --dump-header - --header "Content-Type: application/json" -X PATCH --data "{'sessionID': 1}" http://127.0.0.1:8000/updateSession/

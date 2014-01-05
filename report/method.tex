@@ -18,9 +18,23 @@ Why do we need this application? High level vision - gist.
 
 \section{Specification}
 \subsection{Platform}
-The mobile application is developed using PhoneGap which utilises javascript, css and html to package a web app as a mobile app. The decision to use PhoneGap instead of building a native app is so we can deploy to multiple platforms easily without needing to change the code base and because I come from a web app background which is ideal for PhoneGap.
+The mobile application is developed using PhoneGap which utilises
+javascript, css and html to package a web app as a mobile app. The
+decision to use PhoneGap instead of building a native app is so we can
+deploy to multiple platforms easily without needing to change the code
+base and because I come from a web app background which is ideal for
+PhoneGap.
 
-The web application is written in Python and uses Django middleware for interfacing with the database and creation of specific workflow interactions, alongside Tastypie for managing and building a REST style API. 
+The web application is written in Python and uses Django middleware
+for interfacing with the database and creation of specific workflow
+interactions, alongside Tastypie for managing and building a REST
+style API.
+
+The server will not hold state outside the supporting database and
+will be used solely as a REST API. This is a decision to keep the
+sever implementation clean and simple. There is also no real gain to
+maintaining state as the underlying database objects all ready hold
+the required information.
 
 Implementation/Design specification
 How does the game run
