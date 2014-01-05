@@ -89,3 +89,4 @@ if __name__ == '__main__':
     from django.contrib.auth.models import User
     from api.models import UserProfile, Achievement, UserAchievement, Mission, Place, Route, Stage, Progress, RoutesCompleted, Session
     populate()
+    print "Done"
