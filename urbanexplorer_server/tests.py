@@ -16,7 +16,7 @@ data = json.dumps(json.loads(response.read()), sort_keys=True,
                   indent=4, separators=(',', ': '))
 print data
 
-body = {"sessionID": 1}
+body = {"sessionID": 1, "lon": 15, "lat": 15}
 headers = {"Content-Type": "application/json"}
 print json.dumps(body)
 

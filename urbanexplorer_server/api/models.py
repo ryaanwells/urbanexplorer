@@ -110,12 +110,12 @@ class Progress(models.Model):
         verbose_name = "progress"
         verbose_name_plural = "progressions"
 
-    stageID = models.ForeignKey('Stage')
+    stageID = models.ForeignKey(Stage)
     userID = models.ForeignKey(UserProfile)
     completionDate = models.DateField(blank=True, null=True)
-    # total time and distance so far
-    totalTime = models.TimeField(blank=True, null=True)
-    totalDistance = models.PositiveIntegerField(blank=True, null=True)
+    # total time and distance so far in ms
+    totalTime = models.PositiveIntegerField(blank=True, null=True, default=0)
+    totalDistance = models.PositiveIntegerField(blank=True, null=True, default=0)
     completed = models.BooleanField()
 
     def __unicode__(self):
@@ -143,11 +143,11 @@ class Session(models.Model):
     userID = models.ForeignKey('UserProfile')
     currentProgress = models.ForeignKey(Progress, related_name='+')
     allProgress = models.ManyToManyField(Progress, related_name='+')
-    distance = models.PositiveIntegerField(blank=True, null=True)
-    maxSpeed = models.PositiveIntegerField(blank=True, null=True)
-    lastLon = models.FloatField(blank=True, null=True)
-    lastLat = models.FloatField(blank=True, null=True)
-    totalTime = models.TimeField(blank=True, null=True)
+    distance = models.PositiveIntegerField(blank=True, null=True, default=0)
+    maxSpeed = models.PositiveIntegerField(blank=True, null=True, default=0)
+    lastLon = models.FloatField(blank=True, null=True, default=0)
+    lastLat = models.FloatField(blank=True, null=True, default=0)
+    totalTime = models.PositiveIntegerField(blank=True, null=True, default=0)
 
     def __unicode__(self):
         return self.userID.deviceID

@@ -3,8 +3,12 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from api import UserProfileResource
 from models import UserProfile, Session, Progress, Stage
-import json
 from django.views.decorators.csrf import csrf_exempt
+from django.core.exceptions import ObjectDoesNotExist
+from haversine import haversine
+
+import json
+
 
 def getSelf(request):
     if request.method == 'GET' and request.GET.get("deviceID"):
@@ -33,9 +37,10 @@ def getSelf(request):
 
 def startSession(request):
     if request.method == 'GET':
-        stageID = Stage.objects.filter(pk=request.GET.get('stageID'))[0]
+        stage = Stage.objects.filter(pk=request.GET.get('stageID'))[0]
+        print stage
         userID = UserProfile.objects.filter(pk=request.GET.get('deviceID'))[0]
-        progress = Progress.objects.get_or_create(userID=userID, stageID=stageID)[0]
+        progress = Progress.objects.get_or_create(userID=userID, stageID=stage)[0]
         session = Session.objects.create(userID=userID, currentProgress=progress)
         session.save()
         session.allProgress.add(progress)
@@ -46,15 +51,54 @@ def startSession(request):
 
 @csrf_exempt
 def updateSession(request):
-    print "here"
-    print request.body
-    print request.POST
-    print request.POST.get('sessionID')
-    if request.method == 'PATCH' and "sessionID" in request.POST:
-        print "found!"
-        print "Updating"
-        return HttpResponse("done", status=202)
+    if request.method == 'PATCH':
+        body = json.loads(request.body) 
+        if all(k in body for k in ("sessionID", "lon", "lat")):
+            try:
+                session = Session.objects.get(id=body['sessionID'])
+            except ObjectDoesNotExist:
+                return HttpResponse("Session Not Found", status=404)
+            
+            currentCoord = (float(session.lastLat), float(session.lastLon))
+            nextCoord = (float(body['lat']), float(body['lon']))
+            distance =  haversine(currentCoord, nextCoord) * 1000 # to get m not km
 
+            session.distance = session.distance + distance
+            session.lastLat = body['lat']
+            session.lastLon = body['lon']
+            session.save()
+            
+            progress = session.currentProgress
+            stage =  progress.stageID
+
+            while progress is not None and distance > 0:
+                if progress.totalDistance + distance >= stage.distance:
+                    difference = progress.totalDistance + distance - stage.distance
+                    progress.totalDistance = stage.distance
+                    progress.completed = True
+                    progress.save()
+                    
+                    if stage.nextStage is not None:
+                        progress = Progress.objects.get_or_create(userID=session.userID,
+                                                                  stageID=stage.nextStage)[0]
+                        progress.totalDistance = difference
+                        progress.save()
+                        session.currentProgress = progress
+                        session.allProgress.add(progress)
+                        session.save()
+                        stage = stage.nextStage
+                    else:
+                        # No more stages on this route, currently discard leftover distance
+                        # Need a getout of outer loop.
+                        distance = 0
+                else:
+                    progress.totalDistance = progress.totalDistance + distance
+                    distance = 0
+            
+            return HttpResponse("Accepted", status=202)
+        else:
+            return HttpResponse("Bad Request", status=400)
+        
     return HttpResponse('Unauthorized method', status=401)
 
         
