@@ -84,20 +84,21 @@ class ProgressResource(ModelResource):
         queryset = Progress.objects.all()
         resource_name = 'progress'
         authorization = Authorization()
-        allowed_methods = ['get', 'post', 'patch']
+        allowed_methods = ['get']
         filtering = {
             'deviceID': ALL,
             'userID': ALL
         }
-    
+        always_return_data = True
 
 class SessionResource(ModelResource):
     userID = fields.ForeignKey(UserProfileResource, 'userID')
     currentProgress = fields.ForeignKey(ProgressResource, 'currentProgress')
-    allProgress = fields.ManyToManyField(ProgressResource, 'allProgress')
+    allProgress = fields.ToManyField(ProgressResource, 'allProgress')
 
     class Meta:
         queryset = Session.objects.all()
         resource_name = 'session'
         authorization = Authorization()
-        allowed_methods = ['get', 'post', 'patch']
+        allowed_methods = ['get']
+        always_return_data = True
