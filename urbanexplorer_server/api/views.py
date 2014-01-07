@@ -53,11 +53,14 @@ def startSession(request):
 def updateSession(request):
     if request.method == 'PATCH':
         body = json.loads(request.body) 
-        if all(k in body for k in ("sessionID", "lon", "lat")):
+        if all(k in body for k in ("sessionID", "lon", "lat", "timestamp")):
             try:
                 session = Session.objects.get(id=body['sessionID'])
             except ObjectDoesNotExist:
                 return HttpResponse("Session Not Found", status=404)
+            
+            if session.lastTime >= body['timestamp']:
+                return HttpResponse("Timestamp of request too old", status=400)
             
             currentCoord = (float(session.lastLat), float(session.lastLon))
             nextCoord = (float(body['lat']), float(body['lon']))
@@ -66,7 +69,7 @@ def updateSession(request):
             session.distance = session.distance + distance
             session.lastLat = body['lat']
             session.lastLon = body['lon']
-            session.save()
+            session.lastTime = body['timestamp']
             
             progress = session.currentProgress
             stage =  progress.stageID
@@ -85,16 +88,17 @@ def updateSession(request):
                         progress.save()
                         session.currentProgress = progress
                         session.allProgress.add(progress)
-                        session.save()
                         stage = stage.nextStage
                     else:
                         # No more stages on this route, currently discard leftover distance
-                        # Need a getout of outer loop.
+                        session.excessDistance = distance
                         distance = 0
                 else:
                     progress.totalDistance = progress.totalDistance + distance
                     distance = 0
             
+            session.save()
+
             return HttpResponse("Accepted", status=202)
         else:
             return HttpResponse("Bad Request", status=400)

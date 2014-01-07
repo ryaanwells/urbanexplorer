@@ -144,10 +144,11 @@ class Session(models.Model):
     currentProgress = models.ForeignKey(Progress, related_name='+')
     allProgress = models.ManyToManyField(Progress, related_name='+')
     distance = models.PositiveIntegerField(blank=True, null=True, default=0)
-    maxSpeed = models.PositiveIntegerField(blank=True, null=True, default=0)
     lastLon = models.FloatField(blank=True, null=True, default=0)
     lastLat = models.FloatField(blank=True, null=True, default=0)
     totalTime = models.PositiveIntegerField(blank=True, null=True, default=0)
+    lastTime = models.PositiveIntegerField(blank=True, null=True, default=0)
+    excessDistance = models.PositiveIntegerField(blank=True, null=True, default=0)
 
     def __unicode__(self):
         return self.userID.deviceID
