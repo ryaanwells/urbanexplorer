@@ -1,8 +1,8 @@
-from tastypie.resources import ModelResource, ALL
+from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from tastypie.authorization import Authorization
 from tastypie import fields
 from django.contrib.auth.models import User
-from models import UserProfile, Session, Progress, Stage
+from models import UserProfile, Session, Progress, Stage, Mission, Place, Route
 
 class UserResource(ModelResource):
     class Meta:
@@ -30,6 +30,50 @@ class StageResource(ModelResource):
         resource_name = 'stage'
         authorization = Authorization()
         allowed_methods = ['get']
+
+class MissionResource(ModelResource):
+    class Meta:
+        queryset = Mission.objects.all()
+        resource_name= 'mission'
+        authorization = Authorization()
+        allowed_methods = ['get']
+        filtering = {
+            'name': ALL
+        }
+
+class PlaceResource(ModelResource):
+    mission = fields.ForeignKey(MissionResource, 'mission')
+    
+    class Meta:
+        queryset = Place.objects.all()
+        resource_name= 'place'
+        authorization = Authorization()
+        allowed_methods = ['get']
+        filtering = {
+            'name': ALL,
+            'mission': ALL
+        }
+
+class RouteResource(ModelResource):
+    mission = fields.ForeignKey(MissionResource, 'mission')
+    startPlace = fields.ForeignKey(PlaceResource, 'startPlace')
+    endPlace = fields.ForeignKey(PlaceResource, 'endPlace')
+    startStage = fields.ForeignKey(StageResource, 'startStage')
+    endStage = fields.ForeignKey(StageResource, 'endStage')
+    
+    class Meta:
+        queryset = Route.objects.all()
+        resource_name= 'route'
+        authorization = Authorization()
+        allowed_methods = ['get']
+        filtering = {
+            'name': ALL,
+            'mission': ALL,
+            'startPlace': ALL_WITH_RELATIONS,
+            'endPlace': ALL_WITH_RELATIONS,
+            'startStage': ALL_WITH_RELATIONS,
+            'endStage': ALL_WITH_RELATIONS
+        }
 
 class ProgressResource(ModelResource):
     
