@@ -36,7 +36,9 @@ class StageResource(ModelResource):
             "name": ALL,
             "distance": ALL,
             "nextStage": ALL_WITH_RELATIONS,
-            "previousStage": ALL_WITH_RELATIONS
+            "previousStage": ALL_WITH_RELATIONS,
+            "resource_uri": ALL,
+            "id": ALL
         }
 
 class MissionResource(ModelResource):
@@ -68,6 +70,7 @@ class RouteResource(ModelResource):
     endPlace = fields.ForeignKey(PlaceResource, 'endPlace')
     startStage = fields.ForeignKey(StageResource, 'startStage')
     endStage = fields.ForeignKey(StageResource, 'endStage')
+    stages = fields.ToManyField(StageResource, 'stages')
     
     class Meta:
         queryset = Route.objects.all()
@@ -80,7 +83,8 @@ class RouteResource(ModelResource):
             'startPlace': ALL_WITH_RELATIONS,
             'endPlace': ALL_WITH_RELATIONS,
             'startStage': ALL_WITH_RELATIONS,
-            'endStage': ALL_WITH_RELATIONS
+            'endStage': ALL_WITH_RELATIONS,
+            'stages': ALL_WITH_RELATIONS
         }
 
 class ProgressResource(ModelResource):

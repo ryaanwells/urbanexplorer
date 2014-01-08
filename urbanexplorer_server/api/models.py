@@ -69,6 +69,7 @@ class Route(models.Model):
     endPlace = models.ForeignKey('Place', related_name='+')
     startStage = models.ForeignKey('Stage', related_name='+')
     endStage = models.ForeignKey('Stage', related_name='+')
+    stages = models.ManyToManyField('Stage')
     # Also geolocation here, implementation TBD.
     # Interesting: https://docs.djangoproject.com/en/dev/ref/contrib/gis/model-api/
 

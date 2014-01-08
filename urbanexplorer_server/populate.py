@@ -17,20 +17,27 @@ def populate():
     linkStages(brodickTownStage, strathwhillanWood)
     linkStages(strathwhillanWood, lamlashBay)
 
+    stages = [brodickTownStage, strathwhillanWood, lamlashBay]
+
     addRoute("Brodick to Lamlash", arranMission,
              brodickTownStage, lamlashBay,
-             brodick, lamlash)
-
+             brodick, lamlash,
+             stages)
+    
     whittingBay = addPlace("Whitting Bay", arranMission)
     cuddyStage = addStage("The Cuddy", 1000)
     whiteField = addStage("Whitefield", 2000)
     kingscrossBurn = addStage("Kings Cross Burn", 1500)
+    
+    stages = [cuddyStage, whiteField, kingscrossBurn]
+    
     linkStages(cuddyStage, whiteField)
     linkStages(whiteField, kingscrossBurn)
     
     addRoute("Lamlash to Whiting Bay", arranMission,
              cuddyStage, kingscrossBurn,
-             lamlash, whittingBay)
+             lamlash, whittingBay,
+             stages)
 
 
 ########
@@ -57,13 +64,16 @@ def addMission(name, description):
                                             description=description)[0]
     return mission
 
-def addRoute(name, mission, startStage, endStage, startPlace, endPlace):
+def addRoute(name, mission, startStage, endStage, startPlace, endPlace, stages):
     route = Route.objects.get_or_create(name=name,
                                         mission=mission,
                                         startStage=startStage,
                                         endStage=endStage,
                                         startPlace=startPlace,
                                         endPlace=endPlace)[0]
+    for s in stages:
+        route.stages.add(s)
+        route.save()
     return route
 
 def addStage(name, distance, nextStage=None, previousStage=None):
