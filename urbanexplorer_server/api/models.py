@@ -21,35 +21,20 @@ class UserProfile(models.Model):
     def __unicode__(self):
         return self.deviceID
 
-class Achievement(models.Model):
+class Stage(models.Model):
     class Meta:
-        verbose_name = "achievement"
-        verbose_name_plural = "achievements"
+        verbose_name = "stage"
+        verbose_name_plural = "stages"
 
-    LEVEL = (
-        ('G', 'Gold'),
-        ('S', 'Silver'),
-        ('B', 'Bronze'),
-    )
     name = models.CharField(max_length=128)
-    description = models.CharField(max_length=512)
-    value = models.CharField(max_length=1, choices=LEVEL, default='B')
-    criteria = models.CharField(max_length=512)
-    
+    distance = models.FloatField()
+    nextStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
+    previousStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
+    # Also geolocation here, implementation TBD.
+    # Interesting: https://docs.djangoproject.com/en/dev/ref/contrib/gis/model-api/
+
     def __unicode__(self):
         return self.name
-
-class UserAchievement(models.Model):
-    class Meta:
-        verbose_name = "user achievement"
-        verbose_name_plural = "user achievements"
-
-    userID = models.ForeignKey(UserProfile)
-    achievementID = models.ForeignKey('Achievement')
-    completionDate = models.DateField(auto_now_add=True)
-
-    def __unicode__(self):
-        return self.userID
 
 class Mission(models.Model):
     class Meta:
@@ -90,21 +75,6 @@ class Route(models.Model):
     def __unicode__(self):
         return self.name
 
-class Stage(models.Model):
-    class Meta:
-        verbose_name = "stage"
-        verbose_name_plural = "stages"
-
-    name = models.CharField(max_length=128)
-    distance = models.FloatField()
-    nextStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
-    previousStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
-    # Also geolocation here, implementation TBD.
-    # Interesting: https://docs.djangoproject.com/en/dev/ref/contrib/gis/model-api/
-
-    def __unicode__(self):
-        return self.name
-
 class Progress(models.Model):
     class Meta:
         verbose_name = "progress"
@@ -120,20 +90,6 @@ class Progress(models.Model):
 
     def __unicode__(self):
         return self.userID.deviceID
-
-class RoutesCompleted(models.Model):
-    class Meta:
-        verbose_name = "route completed"
-        verbose_name_plural = "routes completed"
-
-    routeID = models.ForeignKey('Route')
-    userID = models.ForeignKey(UserProfile)
-    completionDate = models.DateField(blank=True, null=True)
-    totalTime = models.TimeField(blank=True, null=True)
-    completed = models.BooleanField()
-
-    def __unicode__(self):
-        return self.routeID
 
 class Session(models.Model):
     class Meta:
@@ -152,3 +108,47 @@ class Session(models.Model):
 
     def __unicode__(self):
         return self.userID.deviceID
+
+class Achievement(models.Model):
+    class Meta:
+        verbose_name = "achievement"
+        verbose_name_plural = "achievements"
+
+    LEVEL = (
+        ('G', 'Gold'),
+        ('S', 'Silver'),
+        ('B', 'Bronze'),
+    )
+    name = models.CharField(max_length=128)
+    description = models.CharField(max_length=512)
+    value = models.CharField(max_length=1, choices=LEVEL, default='B')
+    criteria = models.CharField(max_length=512)
+    
+    def __unicode__(self):
+        return self.name
+
+class UserAchievement(models.Model):
+    class Meta:
+        verbose_name = "user achievement"
+        verbose_name_plural = "user achievements"
+
+    userID = models.ForeignKey(UserProfile)
+    achievementID = models.ForeignKey('Achievement')
+    completionDate = models.DateField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.userID
+
+class RoutesCompleted(models.Model):
+    class Meta:
+        verbose_name = "route completed"
+        verbose_name_plural = "routes completed"
+
+    routeID = models.ForeignKey('Route')
+    userID = models.ForeignKey(UserProfile)
+    completionDate = models.DateField(blank=True, null=True)
+    totalTime = models.TimeField(blank=True, null=True)
+    completed = models.BooleanField()
+
+    def __unicode__(self):
+        return self.routeID

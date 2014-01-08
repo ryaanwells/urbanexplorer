@@ -23,13 +23,21 @@ class UserProfileResource(ModelResource):
             'deviceID': ALL
         }
 
-class StageResource(ModelResource):
-    
+class StageResource(ModelResource):    
+    nextStage = fields.ToOneField('api.api.StageResource', 'nextStage', null=True)
+    previousStage = fields.ToOneField('api.api.StageResource', 'previousStage', null=True)
+
     class Meta:
         queryset = Stage.objects.all()
         resource_name = 'stage'
         authorization = Authorization()
         allowed_methods = ['get']
+        filtering = {
+            "name": ALL,
+            "distance": ALL,
+            "nextStage": ALL_WITH_RELATIONS,
+            "previousStage": ALL_WITH_RELATIONS
+        }
 
 class MissionResource(ModelResource):
     class Meta:
@@ -86,8 +94,9 @@ class ProgressResource(ModelResource):
         authorization = Authorization()
         allowed_methods = ['get']
         filtering = {
-            'deviceID': ALL,
-            'userID': ALL
+            'stageID': ALL_WITH_RELATIONS,
+            'userID': ALL_WITH_RELATIONS,
+            'completed': ALL
         }
         always_return_data = True
 
