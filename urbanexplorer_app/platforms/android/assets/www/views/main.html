@@ -1,10 +1,12 @@
 <div ng-swipe-left="swipeLeft()" 
      ng-swipe-right="swipeRight()" maximise>
-  Hello :) HEY
   <ul>
     <li ng-repeat="coord in coords">
       {{coord}}
     </li>
   </ul>
-  {{self}}
+  <ul ng-hide="running">
+
+  </ul>
+  <button ng-show="running">END</button>
 </div>

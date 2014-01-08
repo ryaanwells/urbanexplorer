@@ -1,15 +1,10 @@
-'use strict';
-
-UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, self, routes, $http) {
-
-
-  console.log("DEVICE READY");
+UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, self, routes, missions, $http) {
+  'use strict';
   $scope.coords = [];
 
   //geolocation.pollPosition();
   
   $scope.self = "";
-  $scope.routes = [];
 
   $scope.running = false;
 
@@ -19,11 +14,7 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, se
     $scope.self = response;
   });
 
-  routes.getRoutes().then(function(response){
-    $scope.routes = response;
-  }, function(response){
-    $scope.routes = response;
-  });
+  routes.getRoutes();
   
   $scope.swipeLeft = function(){
     $location.path("/targets/");
@@ -101,14 +92,32 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, se
 
 });
 
-UrbanExplorer.controller('TargetsCtrl' , function($scope, $location){
+UrbanExplorer.controller('TargetsCtrl' , function($scope, $location, routePick, missions){
   $scope.swipeRight = function(){
     $location.path("/");
   }
+  
+  $scope.$watch(routePick.get, function(newRoute, oldRoute){
+    console.log("TARGET: changed");
+    console.log(newRoute.name);
+    $scope.selected = newRoute;
+  }, true);
+  
+  $scope.selected = routePick.get();
+  
+  $scope.missions = [];
+
+  missions.getMissions().then(function(response){
+    $scope.missions = response;
+  }, function(response){
+    $scope.missions = response;
+  });
+
 });
 
 UrbanExplorer.controller('AchievementsCtrl', function($scope, $location){
   $scope.swipeLeft = function(){
     $location.path("/");
   }
+
 });

@@ -1,0 +1,11 @@
+<div>
+  <div ng-click="get()">
+    {{mission.name}}
+  </div>
+  <ul>
+    <li ng-repeat="route in routes"
+	ng-click="select(route)">
+      {{route.name}}
+    </li>
+  </ul>
+</div>

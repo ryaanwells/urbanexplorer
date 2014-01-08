@@ -1,14 +1,14 @@
-'user strict';
-
 UrbanExplorer.factory('self', function($q, $timeout, $http){
-
+  'use strict';
   var self = {};
   
   var getSelf = function(){
     var deferred = $q.defer();
 
     console.log(device.uuid);
+    
     var getSelfURL = "http://ryaanwellsuni.pythonanywhere.com/getSelf/?deviceID=" + device.uuid;
+
     if (!self.hasOwnProperty("resource_uri")){
       console.log("SELF: getting");
       var config = {
@@ -30,8 +30,7 @@ UrbanExplorer.factory('self', function($q, $timeout, $http){
 	deferred.resolve(self);
       }, 0);
     }
-
-
+    
     return deferred.promise;
   }
   

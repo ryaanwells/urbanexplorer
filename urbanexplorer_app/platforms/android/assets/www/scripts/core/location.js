@@ -11,10 +11,12 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
     navigator.geolocation.getCurrentPosition(
       function (location) {
         $rootScope.$apply(function () {
+	  console.log("LOCATION: Got.");
 	  deferred.resolve(location);
         });
       }, function (error) {
         $rootScope.$apply(function () {
+	  console.log("LOCATION: Error.");
           deferred.reject(location);
         });
       },
@@ -48,6 +50,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
   }
 
   return {
+    getCurrentPosition: getCurrentPosition,
     pollPosition: pollPosition,
     getCoordinatesList: getCoordinatesList,
     cancelPolling: cancelPolling

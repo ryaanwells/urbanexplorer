@@ -1,0 +1,25 @@
+UrbanExplorer.directive("routeSelector", function(routes, routePick){
+  'use strict';
+  return {
+    replace: true,
+    restrict: 'E',
+    templateUrl: 'scripts/directives/templates/routeSelector.html',
+    scope: {
+      mission: '='
+    },
+    link: function($scope, $elem, $attrs){
+      console.log("here");
+      console.log($scope.mission);
+      $scope.routes = [];
+      
+      $scope.get = function(){
+	console.log($scope.mission.resource_uri);
+	$scope.routes = routes.getRoutesForMission($scope.mission.resource_uri);
+      };
+
+      $scope.select = function(route){
+	routePick.set(route);
+      };
+    }
+  };
+});

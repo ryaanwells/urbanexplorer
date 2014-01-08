@@ -1,0 +1,3 @@
+UrbanExplorer.factory("missions", function($q, $http, $timeout){
+
+});

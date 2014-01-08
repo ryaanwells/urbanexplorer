@@ -1,7 +1,6 @@
-'use strict';
-
 var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch', 'ui.bootstrap'])
   .config(['$routeProvider', function($routeProvider) {
+    'use strict';
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

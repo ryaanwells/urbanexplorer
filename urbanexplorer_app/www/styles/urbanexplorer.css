@@ -1,0 +1,57 @@
+.title {
+    width: 100%;
+    background-color: #7F171F;
+    padding: 5px 0;
+    text-align: center;
+    color: white;
+}
+
+.route-title{
+    background-color: #177F7F;
+    padding: 4px 0;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.route-selected{
+    background-color: #177F7F;
+    padding: 2px 0;
+    text-align: center;
+    color: white;
+    height: 24px;
+}
+
+.unstyled-list {
+    list-style: none;
+}
+
+.unstyled-a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+* {
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.scroll {
+    overflow-y: scroll;
+}
+
+.route-select {
+    height: 40px;
+    padding-top: 17px;
+    padding-left: 20px;
+    background-color: #22BF65;
+    color: white;
+}
+
+.route{
+    height: 40px;
+    padding-top: 17px;
+    padding-left: 20px;
+    margin: 0 0 3px 0;
+    background-color: #177F7F;
+    color: white;
+}

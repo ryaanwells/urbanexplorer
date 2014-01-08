@@ -1,0 +1,14 @@
+<div>
+  <div ng-click="toggle()"
+       class="route-select">
+    {{mission.name}}
+  </div>
+  <ul class="unstyled-list"
+      ng-show="show">
+    <li ng-repeat="route in routes"
+	ng-click="select(route)"
+	class="route">
+      {{route.name}}
+    </li>
+  </ul>
+</div>

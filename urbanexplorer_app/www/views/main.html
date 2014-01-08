@@ -6,10 +6,7 @@
     </li>
   </ul>
   <ul ng-hide="running">
-    <li ng-repeat="route in routes">
-      <button ng-click="startSession(route)">
-	{{route.name}}
-      </button>
+
   </ul>
   <button ng-show="running">END</button>
 </div>

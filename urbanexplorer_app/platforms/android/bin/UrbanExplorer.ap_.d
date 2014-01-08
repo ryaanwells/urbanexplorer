@@ -31,7 +31,6 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/cordova_plugins.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/res \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/css \
-/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/app \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/cordova.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/bower_components \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/spec.html \
@@ -53,12 +52,19 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/targets.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/img/logo.png \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/app.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/routeSelector.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/templates \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/templates/routeSelector.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/main.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/location.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/routes.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/routePick.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/user.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/ui.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/missions.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/res/screen \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/res/icon \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/res/screen/bada \
@@ -143,6 +149,7 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/bower_components/angular/bower.json \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/bower_components/angular/angular.min.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/styles/bootstrap \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/styles/urbanexplorer.css \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/styles/main.scss \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/styles/bootstrap/img \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/styles/bootstrap/css \
