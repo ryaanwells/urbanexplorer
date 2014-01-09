@@ -14,6 +14,10 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch', 'ui.bo
 	templateUrl: 'views/achievements.html',
 	controller: 'AchievementsCtrl'
       })
+      .when('/prerun/', {
+	templateUrl: 'views/prerun.html',
+	controller: 'PrerunCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
