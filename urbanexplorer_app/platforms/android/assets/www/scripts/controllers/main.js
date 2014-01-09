@@ -113,11 +113,15 @@ UrbanExplorer.controller('TargetsCtrl' , function($scope, $location, routePick, 
     $scope.missions = response;
   });
 
+  $scope.start = function(){
+    $location.path("/prerun/");
+  };
+
 });
 
 UrbanExplorer.controller('AchievementsCtrl', function($scope, $location){
   $scope.swipeLeft = function(){
     $location.path("/");
-  }
+  };
 
 });

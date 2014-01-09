@@ -47,6 +47,7 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/MIT.LICENSE \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine-html.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/prerun.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/achievements.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/main.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/targets.html \
@@ -59,10 +60,12 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/templates \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/templates/routeSelector.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/main.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/prerun.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/location.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/routes.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/routePick.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/user.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/stages.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/ui.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/missions.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/res/screen \
