@@ -1,0 +1,7 @@
+
+UrbanExplorer.controller('AchievementsCtrl', function($scope, $location){
+  $scope.swipeLeft = function(){
+    $location.path("/");
+  };
+
+});

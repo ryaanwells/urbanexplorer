@@ -70,7 +70,7 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, se
     }, function(failure){
       for (var a in failure){
 	if (failure.hasOwnProperty(a)){
-	  console.log(failure.a);
+	  console.log(failure[a]);
 	}
       }
       console.log(failure.error_message);
@@ -92,36 +92,3 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, se
 
 });
 
-UrbanExplorer.controller('TargetsCtrl' , function($scope, $location, routePick, missions){
-  $scope.swipeRight = function(){
-    $location.path("/");
-  }
-  
-  $scope.$watch(routePick.get, function(newRoute, oldRoute){
-    console.log("TARGET: changed");
-    console.log(newRoute.name);
-    $scope.selected = newRoute;
-  }, true);
-  
-  $scope.selected = routePick.get();
-  
-  $scope.missions = [];
-
-  missions.getMissions().then(function(response){
-    $scope.missions = response;
-  }, function(response){
-    $scope.missions = response;
-  });
-
-  $scope.start = function(){
-    $location.path("/prerun/");
-  };
-
-});
-
-UrbanExplorer.controller('AchievementsCtrl', function($scope, $location){
-  $scope.swipeLeft = function(){
-    $location.path("/");
-  };
-
-});

@@ -6,25 +6,24 @@ UrbanExplorer.factory('stages', function($q, $http, $timeout){
   function getStages(resources){
     var deferred = $q.defer();
     var waiting = [];
-    var found = [];
+    var found = {};
     var temp = "";
     var i;
     
     for (i = 0; i < resources.length; i++){
-      if (!stages.hasOwnProperty(resources[i])){
-	temp = resources[i].substr(0, resources[i].lastIndexOf('/'));
-	waiting.push([temp.substr(temp.lastIndexOf('/') + 1), i]);
-	found.push(null);
+      if (stages.hasOwnProperty(resources[i])){
+	found[resources[i]] = stages[resources[i]];
       }
       else {
-	found.push(stages[resources[i]]);
+	waiting.push(resources[i]);
       }
     }
     
     if (waiting.length > 0){
       var query = "";
       for (i = 0; i < waiting.length; i++){
-	query += waiting[i][0];
+	temp = waiting[i].substr(0, waiting[i].lastIndexOf('/'));
+	query += temp.substr(temp.lastIndexOf('/') + 1);
 	if (i + 1 < waiting.length){
 	  query += ";";
 	}
@@ -35,17 +34,19 @@ UrbanExplorer.factory('stages', function($q, $http, $timeout){
       }
       console.log(config.url);
       $http(config).success(function(result){
+	console.log("Objects Returned: " + result.objects.length);
 	for (i = 0; i < result.objects.length; i++){
+	  console.log(result.objects[i].resource_uri);
 	  stages[result.objects[i].resource_uri] = result.objects[i];
-	  found[waiting[i][1]] = result.objects[i];
+	   found[result.objects[i].resource_uri] = result.objects[i];
 	}
 	deferred.resolve(found);
       }).error(function(result){
 	console.log("STAGES: failure");
-	deferred.reject("fail");
+	deferred.reject({});
       });
     }
-    else{
+    else {
       $timeout(function(){
 	deferred.resolve(found);
       }, 0);
