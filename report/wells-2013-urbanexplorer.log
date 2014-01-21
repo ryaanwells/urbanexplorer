@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.19)  25 NOV 2013 10:23
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  21 JAN 2014 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -146,26 +146,28 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \everycr=\toks16
 \minrowclearance=\skip45
 )
-(/home/ryan/texmf/tex/latex/multirow/multirow.sty)
+(/usr/local/share/texmf/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen109
+)
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen109
-\lightrulewidth=\dimen110
-\cmidrulewidth=\dimen111
-\belowrulesep=\dimen112
-\belowbottomsep=\dimen113
-\aboverulesep=\dimen114
-\abovetopsep=\dimen115
-\cmidrulesep=\dimen116
-\cmidrulekern=\dimen117
-\defaultaddspace=\dimen118
+\heavyrulewidth=\dimen110
+\lightrulewidth=\dimen111
+\cmidrulewidth=\dimen112
+\belowrulesep=\dimen113
+\belowbottomsep=\dimen114
+\aboverulesep=\dimen115
+\abovetopsep=\dimen116
+\cmidrulesep=\dimen117
+\cmidrulekern=\dimen118
+\defaultaddspace=\dimen119
 \@cmidla=\count89
 \@cmidlb=\count90
-\@aboverulesep=\dimen119
-\@belowrulesep=\dimen120
+\@aboverulesep=\dimen120
+\@belowrulesep=\dimen121
 \@thisruleclass=\count91
 \@lastruleclass=\count92
-\@thisrulewidth=\dimen121
+\@thisrulewidth=\dimen122
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
@@ -199,13 +201,13 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count93
-\scratchdimen=\dimen122
+\scratchdimen=\dimen123
 \scratchbox=\box26
 \nofMPsegments=\count94
 \nofMParguments=\count95
 \everyMPshowfont=\toks17
 \MPscratchCnt=\count96
-\MPscratchDim=\dimen123
+\MPscratchDim=\dimen124
 \MPnumerator=\count97
 \makeMPintoPDFobject=\count98
 \everyMPtoPDFconversion=\toks18
@@ -227,86 +229,119 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 30.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
-
-
-LaTeX Warning: Citation `exercise' on page 1 undefined on input line 30.
-
-
-LaTeX Warning: Citation `govsurvey' on page 1 undefined on input line 33.
-
-
-LaTeX Warning: Citation `amsurvey' on page 1 undefined on input line 33.
-
-[1]
+ [1]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
- (./wells-2013-urbanexplorer.toc)
+ (./wells-2013-urbanexplorer.toc [1
+
+])
 \tf@toc=\write3
 \openout3 = `wells-2013-urbanexplorer.toc'.
 
- (./introduction.tex [1
-
-]
+ (./introduction.tex [2]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 18.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
-) (./related_work.tex [2
-
-]
-Chapter 2.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
 [3
 
-]) (./method.tex [4]
-Chapter 3.
+]) (./related_work.tex [4]
+Chapter 2.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
 [5
 
-]) (./results.tex [6]
+] [6]
+Overfull \hbox (27.85883pt too wide) in paragraph at lines 127--136
+[][]
+ []
+
+) (./method.tex [7]
+Chapter 3.
+[8
+
+] <images/N-tier.png, id=41, 523.9575pt x 257.96375pt>
+File: images/N-tier.png Graphic file (type png)
+
+<use images/N-tier.png>
+Package pdftex.def Info: images/N-tier.png used on input line 67.
+(pdftex.def)             Requested size: 432.26999pt x 212.82664pt.
+ <images/ER.png, id=43, 794.97pt x 756.8275pt>
+File: images/ER.png Graphic file (type png)
+
+<use images/ER.png>
+Package pdftex.def Info: images/ER.png used on input line 90.
+(pdftex.def)             Requested size: 432.26999pt x 411.54472pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./images/N-tier.png>]
+<images/Wireframes.png, id=48, 1309.89375pt x 869.2475pt>
+File: images/Wireframes.png Graphic file (type png)
+
+<use images/Wireframes.png>
+Package pdftex.def Info: images/Wireframes.png used on input line 118.
+(pdftex.def)             Requested size: 432.26999pt x 286.85255pt.
+ [10 <./images/ER.png (PNG copy)>] [11 <./images/Wireframes.png>] [12]) (./resu
+lts.tex [13]
 Chapter 4.
-) (./conclusion.tex [7
+) (./conclusion.tex [14
 
 ]
 Chapter 5.
+) (./wells-2013-urbanexplorer.bbl [15
+
+]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-No file wells-2013-urbanexplorer.bbl.
-[8
-
-] (./wells-2013-urbanexplorer.aux)
-
-LaTeX Warning: There were undefined references.
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+[]\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  $
+\OT1/pcr/m/n/10.95 https :
+ []
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\OT1/pcr/m/n/10.95 / / catalogue . ic . nhs . uk / publications / public-[]heal
+th /
+ []
 
- ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\OT1/pcr/m/n/10.95 surveys / heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]
+2006 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
+\OT1/pcr/m/n/10.95 uploads / system / uploads / attachment _ data / file / 2163
+70 / dh _ 128210 . pdf$\OT1/ptm/m/n/10.95 ,
+ []
+
+) [16
+
+] (./wells-2013-urbanexplorer.aux) ) 
 Here is how much of TeX's memory you used:
- 2085 strings out of 495059
- 29457 string characters out of 3182030
- 81741 words of memory out of 3000000
- 5203 multiletter control sequences out of 15000+200000
- 25680 words of font info for 48 fonts, out of 3000000 for 9000
+ 2126 strings out of 495059
+ 30115 string characters out of 3182030
+ 82866 words of memory out of 3000000
+ 5238 multiletter control sequences out of 15000+200000
+ 24569 words of font info for 48 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,7n,23p,727b,213s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (10 pages, 76192 bytes).
+ 42i,7n,23p,335b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on wells-2013-urbanexplorer.pdf (18 pages, 286946 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -17,10 +17,11 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
       }, function (error) {
         $rootScope.$apply(function () {
 	  console.log("LOCATION: Error.");
-          deferred.reject(location);
+          deferred.reject(error);
         });
       },
-      {enableHighAccuracy : true});
+      {enableHighAccuracy : true,
+       timeout: 50000});
     return deferred.promise;
   }
 
@@ -35,7 +36,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
 	  }
 	},
 	function(error){
-	  alert(error);
+	  alert(error.code + " " + error.message);
 	});
     }
   }

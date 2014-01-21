@@ -37,7 +37,6 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/styles \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/plugins \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/index.html.bak \
-/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/index.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/spec/helper.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/spec/index.js \
@@ -51,6 +50,7 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/achievements.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/main.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/targets.html \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/views/run.html \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/img/logo.png \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/app.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives \
@@ -59,10 +59,14 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/routeSelector.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/templates \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/directives/templates/routeSelector.html \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/run.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/targets.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/main.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/prerun.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/controllers/achivements.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/location.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/routes.js \
+/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/progress.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/routePick.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/user.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/scripts/core/stages.js \
@@ -169,5 +173,4 @@
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/plugins/org.apache.cordova.geolocation/www/geolocation.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/plugins/org.apache.cordova.geolocation/www/Coordinates.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/plugins/org.apache.cordova.geolocation/www/PositionError.js \
-/home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/assets/www/js/index.js \
 /home/ryan/src/urbanexplorer/urbanexplorer_app/platforms/android/bin/AndroidManifest.xml \

@@ -1,0 +1,65 @@
+UrbanExplorer.factory('progress', function($q, $http, $timeout){
+  "use strict";
+  
+  var progressions = {};
+
+  function getProgressions(stages, update){
+    var deferred = $q.defer();
+    var waiting = [];
+    var found = {};
+    var i;
+    var query;
+    var config;
+    if (update){ // Update all, ignore "cache"
+      waiting = stages;
+    }
+    else {
+      for (i = 0; i < stages.length; i++){
+	if (progressions.hasOwnProperty(stages[i].id)){
+	  found[stages[i].id] = progressions[stages[i].id];
+	}
+	else {
+	  waiting.push(stages[i].id);
+	}
+      }
+    }
+
+    if (waiting.length > 0){
+      query = "";
+      for (i = 0; i < waiting.length; i++){
+	query += "stageID__in=" + waiting[i];
+	if (i + 1 < waiting.length){
+	  query += "&";
+	}
+      }
+      config = {
+	method: "GET",
+	url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/progress/?" + query
+      };
+      $http(config).success(function(result){
+	for (i = 0; i < result.objects.length; i++){
+	  progressions[result.objects[i].id] = result.objects[i];
+	  found[result.objects[i].id] = result.objects[i];
+	}
+	deferred.resolve(found);
+      }).error(function(result){
+	console.log("PROGRESS: failure");
+	console.log(result);
+	deferred.reject("fail");
+      });
+    }
+    
+    else {
+      $timeout(function(){
+	deferred.resolve(found);
+      }, 0);
+    }
+    
+    return deferred.promise;
+  }
+
+  return {
+    getProgressions: getProgressions
+  };
+  
+});

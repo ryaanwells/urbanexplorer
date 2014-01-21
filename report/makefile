@@ -1,8 +1,8 @@
 all: wells-2013-urbanexplorer
 
-wells-2013-urbanexplorer: wells-2013-urbanexplorer.tex report.bib
+wells-2013-urbanexplorer: wells-2013-urbanexplorer.tex wells-2013-urbanexplorer.bib
 	pdflatex wells-2013-urbanexplorer
-	bibtex report
+	bibtex wells-2013-urbanexplorer
 	pdflatex wells-2013-urbanexplorer
 	pdflatex wells-2013-urbanexplorer
 
