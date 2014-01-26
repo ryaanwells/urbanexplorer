@@ -53,7 +53,8 @@ def startSession(request):
             return HttpResponse("Route completed", status=401)
         
         progress = Progress.objects.get_or_create(userID=userID, stageID=startStage)[0]
-        session = Session.objects.create(userID=userID, currentProgress=progress)
+        session = Session.objects.create(userID=userID, currentProgress=progress,
+                                         lastLat=float(body['lat']), lastLon=float(body['lon']))
         session.allProgress.add(progress)
         session.save()
         
