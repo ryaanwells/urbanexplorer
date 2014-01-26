@@ -45,8 +45,8 @@ def startSession(request):
         startStage = None
         for s in route.stages.all():
             print s
-            prog = Progress.objects.filter(userID=userID, stageID=s)[0]
-            if not prog or not prog.completed:
+            prog = Progress.objects.filter(userID=userID, stageID=s)
+            if not prog or not prog[0].completed:
                 startStage = s
                 break
         if not startStage:
