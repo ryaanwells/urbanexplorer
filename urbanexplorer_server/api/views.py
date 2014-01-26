@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from api import UserProfileResource
-from models import UserProfile, Session, Progress, Stage
+from models import UserProfile, Session, Progress, Stage, Route
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from haversine import haversine
@@ -34,20 +34,35 @@ def getSelf(request):
 
     return HttpResponse('Unauthorized method', status=401)
 
-
+@csrf_exempt
 def startSession(request):
-    if request.method == 'GET':
-        stage = Stage.objects.filter(pk=request.GET.get('stageID'))[0]
-        print stage
-        userID = UserProfile.objects.filter(pk=request.GET.get('deviceID'))[0]
-        progress = Progress.objects.get_or_create(userID=userID, stageID=stage)[0]
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        route = Route.objects.filter(pk=body['routeID'])[0]
+        userID = UserProfile.objects.filter(pk=body['deviceID'])[0]
+        # stage = Stage.objects.filter(pk=request.GET.get('stageID'))[0]
+        print route
+        startStage = None
+        for s in route.stages.all():
+            print s
+            prog = Progress.objects.filter(userID=userID, stageID=s)
+            if not prog or not prog.completed:
+                startStage = s
+                break
+        if not startStage:
+            return HttpResponse("Route completed", status=401)
+        
+        progress = Progress.objects.get_or_create(userID=userID, stageID=startStage)[0]
         session = Session.objects.create(userID=userID, currentProgress=progress)
-        session.save()
         session.allProgress.add(progress)
-
-        return HttpResponse(session.pk)
+        session.save()
+        
+        response = {}
+        response['id'] = session.pk
+        
+        return HttpResponse(json.dumps(response), content_type="application/json")
     
-    return HttpResponse("Unauthorized method", status=401)
+    return HttpResponse("Unauthorized method", status=405)
 
 @csrf_exempt
 def updateSession(request):

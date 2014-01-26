@@ -16,16 +16,26 @@ data = json.dumps(json.loads(response.read()), sort_keys=True,
                   indent=4, separators=(',', ': '))
 print data
 
-body = {"sessionID": 1, "lon": 15, "lat": 15, "timestamp": 1}
+body = {"routeID":1, "deviceID":"Ryan"}
 headers = {"Content-Type": "application/json"}
-print json.dumps(body)
-
-conn.request("PATCH", "/updateSession/", body=json.dumps(body), headers=headers)
+conn.request("POST", "/startSession/", body=json.dumps(body), headers=headers)
 response = conn.getresponse()
+print response.status, response.reason 
+resp = response.read()
+try:
+    print json.dumps(json.loads(resp), sort_keys=True,
+                     indent=4, separators=(',', ': '))
+except ValueError:
+    print resp
 
-data = response.read()
-print response.status, response.reason
-print data
+# body = {"sessionID": 1, "lon": 15, "lat": 15, "timestamp": 1}
+# conn.request("PATCH", "/updateSession/", body=json.dumps(body), headers=headers)
+# response = conn.getresponse()
+
+# data = response.read()
+# print response.status, response.reason
+# print data
+
 """
 data = json.dumps({'deviceID': 1})
 headers = {"Content-Type": "application/json"}
