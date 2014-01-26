@@ -1,3 +1,0 @@
-UrbanExplorer.controller("prerun", function($scope){
-
-});

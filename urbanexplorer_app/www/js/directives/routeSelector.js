@@ -3,7 +3,7 @@ UrbanExplorer.directive("routeSelector", function(routes, routePick){
   return {
     replace: true,
     restrict: 'E',
-    templateUrl: 'scripts/directives/templates/routeSelector.html',
+    templateUrl: 'html/directives/routeSelector.html',
     scope: {
       mission: '='
     },
@@ -11,10 +11,18 @@ UrbanExplorer.directive("routeSelector", function(routes, routePick){
       console.log("here");
       console.log($scope.mission);
       $scope.routes = [];
-      
-      $scope.get = function(){
-	console.log($scope.mission.resource_uri);
-	$scope.routes = routes.getRoutesForMission($scope.mission.resource_uri);
+      $scope.show = false;
+
+      $scope.toggle = function(){
+	if ($scope.routes.length === 0){
+	  $scope.routes = routes.getRoutesForMission($scope.mission.resource_uri);
+	  if ($scope.routes.length > 0){
+	    $scope.show = true;
+	  }
+	}
+	else {
+	  $scope.show = !$scope.show;
+	}
       };
 
       $scope.select = function(route){
