@@ -43,8 +43,9 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
       function(){
 	$location.path("/run/");
       },
-      function(){
+      function(failure){
 	console.log("failure");
+	console.log(failure.data);
       }
     );
   };

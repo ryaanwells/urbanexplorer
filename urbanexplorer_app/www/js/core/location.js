@@ -1,6 +1,5 @@
-'use strict';
-
 UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
+  'use strict';
   var coordinates = [];
   
   var polling = false;
@@ -45,7 +44,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
     }
   }
 
-  function watchPosition(){
+  function watchPosition(callback){
     if (polling){ return; }
     else {
       polling = true;
@@ -54,6 +53,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
 	  console.log("LOCATION WATCH: got coords.");
 	  $rootScope.$apply(function(){
 	    coordinates.push([location.coords.latitude, location.coords.longitude]);
+	    callback(location);
 	  });
 	},
 	function(error){
