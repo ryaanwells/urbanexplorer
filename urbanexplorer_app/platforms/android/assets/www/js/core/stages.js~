@@ -1,3 +1,0 @@
-UrbanExplorer.factory('stages', function($q, $http, $timeout){
-
-});
