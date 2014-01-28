@@ -1,7 +1,7 @@
 local.properties
 *.pyc
 plugins/
-urbanexplorer/platforms
+urbanexplorer_app/platforms
 urbanexplorer_serverdatabase.db
 ENV/
 env/

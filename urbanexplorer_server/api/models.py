@@ -17,6 +17,8 @@ class UserProfile(models.Model):
     deviceID = models.CharField(max_length=128, primary_key=True)
     gender = models.CharField(max_length=1, choices=GENDER, default='')
     age = models.DateField(null=True)
+    totalTime = models.PositiveIntegerField(default=0)
+    totalDistance = models.PositiveIntegerField(default=0)
 
     def __unicode__(self):
         return self.deviceID
