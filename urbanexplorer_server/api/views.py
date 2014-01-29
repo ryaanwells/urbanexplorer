@@ -81,11 +81,18 @@ def updateSession(request):
             currentCoord = (float(session.lastLat), float(session.lastLon))
             nextCoord = (float(body['lat']), float(body['lon']))
             distance =  haversine(currentCoord, nextCoord) * 1000 # to get m not km
-
+            
+            timeIncrement = body['timestamp'] - session.lastTime
+            
             session.distance = session.distance + distance
             session.lastLat = body['lat']
             session.lastLon = body['lon']
+            session.totalTime = session.totalTime + timeIncrement
             session.lastTime = body['timestamp']
+
+            session.userID.totalTime = session.userID.totalTime + timeIncrement
+            session.userID.totalDistance = session.userID.totalDistance + distance
+            session.userID.save()
             
             progress = session.currentProgress
             stage =  progress.stageID
