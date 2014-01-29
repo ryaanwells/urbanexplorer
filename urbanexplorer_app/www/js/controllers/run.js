@@ -25,8 +25,12 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session){
     duration =  current - now;
     $scope.$apply(function(){
       $scope.seconds = parseInt(duration / 1000) % 60;
-      $scope.minutes = parseInt($scope.seconds / 60) % 60;
-      $scope.hours = parseInt($scope.minutes / 60) % 24;
+      if ($scope.seconds % 60 === 0){
+	$scope.minutes++;
+      }
+      if ($scope.minutes % 60 === 0){
+	$scope.hours++;
+      }
     });
   }
 

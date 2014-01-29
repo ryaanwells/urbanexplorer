@@ -18,7 +18,8 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
 	      routeID: routePick.get().id,
 	      deviceID: device.uuid,
 	      lat: success.coords.latitude,
-	      lon: success.coords.longitude
+	      lon: success.coords.longitude,
+	      timestamp: new Date(success.timestamp).getTime()
 	    }
 	  };
 	  console.log(routePick.get().id);
