@@ -156,3 +156,5 @@ LOGGING = {
         },
     }
 }
+
+MAX_SPEED=6.0 # m/s

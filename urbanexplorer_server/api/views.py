@@ -6,6 +6,7 @@ from models import UserProfile, Session, Progress, Stage, Route
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from haversine import haversine
+from django.conf import settings
 
 import json
 
@@ -54,7 +55,8 @@ def startSession(request):
         
         progress = Progress.objects.get_or_create(userID=userID, stageID=startStage)[0]
         session = Session.objects.create(userID=userID, currentProgress=progress,
-                                         lastLat=float(body['lat']), lastLon=float(body['lon']))
+                                         lastLat=float(body['lat']), lastLon=float(body['lon']),
+                                         lastTime=body['timestamp'])
         session.allProgress.add(progress)
         session.save()
         
@@ -84,6 +86,10 @@ def updateSession(request):
             
             timeIncrement = body['timestamp'] - session.lastTime
             
+            # distance * 1000 since timeIncrement is in milliseconds
+            if (distance * 1000 / timeIncrement) > settings.MAX_SPEED:
+                distance = (settings.MAX_SPEED * timeIncrement) / 1000
+
             session.distance = session.distance + distance
             session.lastLat = body['lat']
             session.lastLon = body['lon']

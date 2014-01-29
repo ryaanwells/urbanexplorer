@@ -22,7 +22,7 @@ print data
 
 
 # Create a new session
-body = {"routeID":1, "deviceID":"Ryan", "lon": 1, "lat": 1}
+body = {"routeID":1, "deviceID":"Ryan", "lon": 1, "lat": 1, "timestamp":0}
 headers = {"Content-Type": "application/json"}
 conn.request("POST", "/startSession/", body=json.dumps(body), headers=headers)
 response = conn.getresponse()
@@ -34,7 +34,7 @@ try:
 except ValueError:
     print resp
 
-body = {"sessionID": 1, "lon": 15, "lat": 15, "timestamp": 1}
+body = {"sessionID": 1, "lon": 15, "lat": 15, "timestamp": 10000}
 conn.request("PATCH", "/updateSession/", body=json.dumps(body), headers=headers)
 response = conn.getresponse()
 
