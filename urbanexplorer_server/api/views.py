@@ -127,8 +127,14 @@ def updateSession(request):
                     distance = 0
             
             session.save()
+            
+            payload = {}
+            payload['distance'] = session.distance
+            payload['totalTime'] = session.totalTime
+            payload['excessDistance'] = session.excessDistance
 
-            return HttpResponse("Accepted", status=202)
+            return HttpResponse(json.dumps(payload), content_type="application/json",
+                                status=202)
         else:
             return HttpResponse("Bad Request", status=400)
         
