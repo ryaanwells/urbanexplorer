@@ -134,6 +134,7 @@ def updateSession(request):
                 else:
                     progress.totalDistance = progress.totalDistance + distance
                     distance = 0
+                    progress.save()
             
             session.save()
             rc.save()
