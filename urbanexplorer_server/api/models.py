@@ -100,6 +100,7 @@ class Session(models.Model):
         verbose_name_plural = "sessions"
 
     userID = models.ForeignKey('UserProfile')
+    route = models.ForeignKey('Route', null=True)
     currentProgress = models.ForeignKey(Progress, related_name='+')
     allProgress = models.ManyToManyField(Progress, related_name='+')
     distance = models.PositiveIntegerField(blank=True, null=True, default=0)
@@ -125,7 +126,7 @@ class Achievement(models.Model):
     name = models.CharField(max_length=128)
     description = models.CharField(max_length=512)
     value = models.CharField(max_length=1, choices=LEVEL, default='B')
-    criteria = models.CharField(max_length=512)
+    route = models.ForeignKey('Route', null=True)
     
     def __unicode__(self):
         return self.name
@@ -140,7 +141,7 @@ class UserAchievement(models.Model):
     completionDate = models.DateField(auto_now_add=True)
 
     def __unicode__(self):
-        return self.userID
+        return self.userID.deviceID
 
 class RoutesCompleted(models.Model):
     class Meta:
@@ -150,8 +151,8 @@ class RoutesCompleted(models.Model):
     routeID = models.ForeignKey('Route')
     userID = models.ForeignKey(UserProfile)
     completionDate = models.DateField(blank=True, null=True)
-    totalTime = models.TimeField(blank=True, null=True)
+    totalTime = models.PositiveIntegerField(default=0)
     completed = models.BooleanField()
 
     def __unicode__(self):
-        return self.routeID
+        return self.routeID.name

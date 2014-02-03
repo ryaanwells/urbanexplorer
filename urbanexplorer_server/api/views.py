@@ -2,13 +2,13 @@
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from api import UserProfileResource
-from models import UserProfile, Session, Progress, Stage, Route
+from models import UserProfile, Session, Progress, Stage, Route, RoutesCompleted
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from haversine import haversine
 from django.conf import settings
 
-import json
+import json, datetime
 
 
 def getSelf(request):
@@ -54,7 +54,7 @@ def startSession(request):
             return HttpResponse("Route completed", status=401)
         
         progress = Progress.objects.get_or_create(userID=userID, stageID=startStage)[0]
-        session = Session.objects.create(userID=userID, currentProgress=progress,
+        session = Session.objects.create(userID=userID, currentProgress=progress, route=route,
                                          lastLat=float(body['lat']), lastLon=float(body['lon']),
                                          lastTime=body['timestamp'])
         session.allProgress.add(progress)
@@ -103,6 +103,12 @@ def updateSession(request):
             progress = session.currentProgress
             stage =  progress.stageID
 
+            rc = RoutesCompleted.objects.get_or_create(routeID=session.route, userID=session.userID)[0]
+            rc.totalTime = rc.totalTime + timeIncrement
+
+            if progress is not None:
+                progress.totalTime = progress.totalTime + timeIncrement
+
             while progress is not None and distance > 0:
                 if progress.totalDistance + distance >= stage.distance:
                     difference = progress.totalDistance + distance - stage.distance
@@ -119,19 +125,28 @@ def updateSession(request):
                         session.allProgress.add(progress)
                         stage = stage.nextStage
                     else:
-                        # No more stages on this route, currently discard leftover distance
+                        stage = None
+                        progress = None
                         session.excessDistance = distance
                         distance = 0
+                        rc.completed = True
+                        rc.completionDate = datetime.datetime.now()
                 else:
                     progress.totalDistance = progress.totalDistance + distance
                     distance = 0
             
             session.save()
-            
+            rc.save()
+
             payload = {}
             payload['distance'] = session.distance
             payload['totalTime'] = session.totalTime
             payload['excessDistance'] = session.excessDistance
+            remain = 0;
+            if progress and stage:
+                remain = stage.distance - progress.totalDistance
+                
+            payload['distanceRemain'] = remain
 
             return HttpResponse(json.dumps(payload), content_type="application/json",
                                 status=202)
