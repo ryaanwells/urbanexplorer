@@ -17,7 +17,7 @@ class UserProfileResource(ModelResource):
         queryset = UserProfile.objects.all()
         resource_name = 'userprofile'
         authorization = Authorization()
-        fields = ['deviceID', 'resourceURI']
+        fields = ['deviceID', 'resourceURI', 'totalTime', 'totalDistance']
         allowed_methods = ['get']
         filtering = {
             'deviceID': ALL
