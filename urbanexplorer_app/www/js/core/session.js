@@ -2,8 +2,6 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
   "use strict";
   
   var session = null;
-  var sendingUpdate = false;
-  var pending = [];
 
   function startSession(){
     var config;
@@ -48,6 +46,12 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
   function updateSession(location){
     var config;
     var deferred = $q.defer();
+
+    if (!angular.isObject(session)){
+      deferred.reject({
+	reason: "No active session"
+      });
+    }
     
     config = {
       url: "http://ryaanwellsuni.pythonanywhere.com/updateSession/",
@@ -59,13 +63,15 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
 	timestamp: new Date(location.timestamp).getTime()
       }
     }
+    
     console.log(config.data.sessionID);
     console.log(config.data.lon);
     console.log(config.data.lat);
     console.log(config.data.timestamp);
+    
     $http(config).then(
       function(success){
-	deferred.resolve();
+	deferred.resolve(success);
       },
       function(failure){
 	console.log(failure);
@@ -73,10 +79,15 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
     return deferred.promise;
     
   };
+
+  function endSession(){
+    session = null;
+  };
   
   return {
     startSession: startSession,
-    updateSession: updateSession
+    updateSession: updateSession,
+    endSession: endSession
   }
   
 });

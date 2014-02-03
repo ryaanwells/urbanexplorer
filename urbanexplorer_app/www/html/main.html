@@ -1,12 +1,51 @@
 <div ng-swipe-left="swipeLeft()" 
      ng-swipe-right="swipeRight()" maximise>
-  <ul>
-    <li ng-repeat="coord in coords">
-      {{coord}}
-    </li>
-  </ul>
-  <ul ng-hide="running">
 
-  </ul>
-  <button ng-show="running">END</button>
+  <div class="row">
+    <div class="middle center">
+      <h2>Welcome!</h2>
+      <h3>Your All-Time Stats:</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="left center">
+      <div class="row-title">
+	Total Distance
+      </div>
+      <div class="row-emph">
+	{{self.totalDistance}}m
+      </div>
+    </div>
+    <div class="right center">
+      <div class="row-title">
+	Total Time
+      </div>
+      <div class="row-emph">
+	{{self.time.hours   | twoDigit}}:
+	{{self.time.minutes | twoDigit}}:
+	{{self.time.seconds | twoDigit}}
+      </div>
+    </div>
+  </div>
+
+  <div style="display: inline;">  
+  <div class="row">
+    <a href="#/targets/" class="unstyled-a">
+      <div class="middle center">
+	<h1>Start Running</h1>
+      </div>
+    </a>
+  </div>
+  </div>
+
+  <div class="row">
+    <a href="#/achievements/" class="unstyled-a">
+      <div class="middle center">
+	<h1>Achievements</h1>
+      </div>
+    </a>
+  </div>
+
+
 </div>

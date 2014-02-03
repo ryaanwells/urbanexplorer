@@ -18,7 +18,7 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch', 'ui.bo
 	templateUrl: 'html/prerun.html',
 	controller: 'PrerunCtrl'
       })
-      .when('/run/', {
+      .when('/run/:nextAchievement/', {
 	templateUrl: 'html/run.html',
 	controller: 'RunCtrl'
       })

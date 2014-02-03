@@ -20,11 +20,15 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
       var completedDistance = 0;
       $scope.progressions = progressions;
       while (currentStage){
+	if (hasProgressForStage){
+	  $scope.distanceUntilNextGoal = currentStage.distance;
+	}
 	if ($scope.progressions.hasOwnProperty(currentStage.id)
 	    && hasProgressForStage){
 	  completedDistance += $scope.progressions[currentStage.id].totalDistance;
+	  $scope.distanceUntilNextGoal -= $scope.progressions[currentStage.id].totalDistance;
+	  $scope.distanceRemain += $scope.distanceUntilNextGoal;
 	  if (!$scope.progressions[currentStage.id].completed){
-	    $scope.distanceUntilNextGoal = currentStage.distance - $scope.progressions[currentStage.id].totalDistance;
 	    hasProgressForStage = false;
 	  }
 	}
@@ -35,13 +39,12 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 	console.log(currentStage.distance);
 	currentStage = $scope.stages[currentStage.nextStage]; 
       }
-      $scope.distanceRemain += $scope.distanceUntilNextGoal;
     });
   
   $scope.startRun = function(){
     session.startSession().then(
       function(){
-	$location.path("/run/");
+	$location.path("/run/" + $scope.distanceUntilNextGoal +  "/");
       },
       function(failure){
 	console.log("failure");

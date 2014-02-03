@@ -1,4 +1,4 @@
-UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session){
+UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $routeParams){
   console.log("RUN");
   
   $scope.coords = [];
@@ -8,11 +8,25 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session){
   $scope.hours = 0; 
   $scope.minutes = 0;
   $scope.seconds = 0;
+
+  $scope.distanceSoFar = 0;
+
+  $scope.nextAchievement = $routeParams.nextAchievement || 0;
   
+  $scope.endConfirm = false;
+
   geolocation.watchPosition(function(location){
     console.log(location.coords.latitude, location.coords.longitude, location.timestamp);
-    $scope.coords.push(location);
-    session.updateSession(location);
+    // $scope.coords.push(location);
+    session.updateSession(location)
+      .then(function(data){
+	$scope.coords.push(data);
+	console.log(data.data.distance);
+	$scope.distanceSoFar = data.data.distance;
+	$scope.nextAchievement = data.data.distanceRemain;
+      }, function(failure){
+	console.log(failure);
+      });
   });
 
   function startTimer(){
@@ -28,7 +42,8 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session){
       if ($scope.seconds % 60 === 0){
 	$scope.minutes++;
       }
-      if ($scope.minutes % 60 === 0){
+      if ($scope.minutes + 1 % 61 === 0){
+	$scope.minutes = 0;
 	$scope.hours++;
       }
     });
@@ -36,14 +51,18 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session){
 
   startTimer();
   
-  // $scope.$watch(
-  //   function(){
-  //     return geolocation.getCoordinatesList();
-  //   }, 
-  //   function(newList, oldList){
-  //     console.log(newList);
-  //     $scope.coords = newList;
-  //   },
-  //   true
-  // );
+  function end(){
+    geolocation.cancelPolling();
+    session.endSession();
+  }
+
+  $scope.endSession = function(){
+    if ($scope.endConfirm){
+      end();
+    }
+    else {
+      $scope.endConfirm = true;
+    }
+  };
+
 });

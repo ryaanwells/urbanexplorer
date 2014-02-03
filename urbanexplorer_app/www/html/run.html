@@ -1,5 +1,34 @@
 <div>
-  Running
-  {{hours}}:{{minutes}}:{{seconds}}
+  <div class="route-title">
+    Running
+  </div>
+  <div class="row">
+    <div class="left center">
+      <div class="row-title">
+	Distance So Far:
+      </div> 
+      <div class="row-emph">
+	{{distanceSoFar | round}}m
+      </div>
+    </div>
+    <div class="right center">
+      <div class="row-title">
+	Next Achievement:
+      </div> 
+      <div class="row-emph">
+	{{nextAchievement | round}}m
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="middle center">
+      <div class="row-title">
+	Time So Far:
+      </div> 
+      <div class="row-emph">
+	{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}
+      </div>
+    </div>
+  </div>
   <pre>{{coords | json}}</pre>
 </div>

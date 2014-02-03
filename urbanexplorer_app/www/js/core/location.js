@@ -6,21 +6,27 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
   var pollPositionTimeout = null;
   var watchPositionID = null;
 
-  var getCurrentPosition = function () {
+  var options = {
+    maximumAge: 0,
+    // enableHighAccuracy: true
+  };
+
+  var getCurrentPosition = function(){
     var deferred = $q.defer();
     navigator.geolocation.getCurrentPosition(
       function (location) {
-        $rootScope.$apply(function () {
+        $rootScope.$apply(function(){
 	  console.log("LOCATION: Got.");
 	  deferred.resolve(location);
         });
       }, function (error) {
-        $rootScope.$apply(function () {
+        $rootScope.$apply(function(){
 	  console.log("LOCATION: Error.");
           deferred.reject(error);
         });
       },
-      {maximumAge: 0});
+      options
+    );
     return deferred.promise;
   }
 
@@ -40,7 +46,8 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
 	  alert(error.code + " " + error.message);
 	  console.log("retrying");
 	  pollPositionTimeout = pollPosition();
-	});
+	}
+      );
     }
   }
 
@@ -60,13 +67,11 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
 	  console.log("LOCATION WATCH: failed coords.");
 	  alert(error.code + " " + error.message);
 	},
-	{
-	  maximumAge: 0
-	}
+	options
       );
     }
   }
-
+  
   var cancelPolling = function(){
     polling = false;
     if (pollPositionTimeout){
