@@ -8,7 +8,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
 
   var options = {
     maximumAge: 0,
-    // enableHighAccuracy: true
+    enableHighAccuracy: true
   };
 
   var getCurrentPosition = function(){

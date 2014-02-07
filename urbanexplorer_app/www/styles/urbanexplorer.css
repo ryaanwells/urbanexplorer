@@ -63,6 +63,52 @@
 .row {
     margin-top: 20px;
     clear: both;
+    /* margin-left: -20px; */
+}
+
+.row.notop{
+    margin-top: 0px;
+}
+
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+
+.row .row5{
+    width: 19.25%;
+    float: left;
+    height: 60px;
+    margin: 0 0 0 1%;
+    background: #DB5F2A;
+}
+
+.row .row5:first-child{
+    width: 20%;
+    margin: 0;
+}
+
+.row .row4 {
+    width: 23.5%;
+    float: left;
+    height: 60px;
+    margin: 0 1%;
+    background: #DB5F2A;
+}
+
+.row .row4:first-child{
+    width: 24%;
+    margin: 0 1% 0 0;
+}
+
+.row .row4:last-child{
+    width: 24%;
+    margin: 0 0 0 1%;
 }
 
 .row .left{
