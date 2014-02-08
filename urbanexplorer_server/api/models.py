@@ -19,6 +19,7 @@ class UserProfile(models.Model):
     age = models.DateField(null=True)
     totalTime = models.PositiveIntegerField(default=0)
     totalDistance = models.PositiveIntegerField(default=0)
+    accepted = models.BooleanField()
 
     def __unicode__(self):
         return self.deviceID

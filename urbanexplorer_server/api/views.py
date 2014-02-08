@@ -1,7 +1,7 @@
 # Create your views here.
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from api import UserProfileResource
+from resources import UserProfileResource
 from models import UserProfile, Session, Progress, Stage, Route, RoutesCompleted
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
@@ -148,6 +148,9 @@ def updateSession(request):
                 remain = stage.distance - progress.totalDistance
                 
             payload['distanceRemain'] = remain
+            payload['id'] = session.pk
+            payload['totalTime'] = session.totalTime
+            
 
             return HttpResponse(json.dumps(payload), content_type="application/json",
                                 status=202)
