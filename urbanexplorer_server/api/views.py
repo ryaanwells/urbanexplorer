@@ -130,9 +130,11 @@ def updateSession(request):
                         session.excessDistance = distance
                         distance = 0
                         rc.completed = True
+                        rc.totalDistance = rd.routeID.length
                         rc.completionDate = datetime.datetime.now()
                 else:
                     progress.totalDistance = progress.totalDistance + distance
+                    rc.totalDistance = rc.totalDistance + distance
                     distance = 0
                     progress.save()
             

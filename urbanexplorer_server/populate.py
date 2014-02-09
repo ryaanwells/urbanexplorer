@@ -65,12 +65,16 @@ def addMission(name, description):
     return mission
 
 def addRoute(name, mission, startStage, endStage, startPlace, endPlace, stages):
+    length = 0
+    for s in stage:
+        length = length + s.distance
     route = Route.objects.get_or_create(name=name,
                                         mission=mission,
                                         startStage=startStage,
                                         endStage=endStage,
                                         startPlace=startPlace,
-                                        endPlace=endPlace)[0]
+                                        endPlace=endPlace,
+                                        length=length)[0]
     for s in stages:
         route.stages.add(s)
         route.save()

@@ -73,6 +73,7 @@ class Route(models.Model):
     startStage = models.ForeignKey('Stage', related_name='+')
     endStage = models.ForeignKey('Stage', related_name='+')
     stages = models.ManyToManyField('Stage')
+    length = models.PositiveIntegerField(default=0);
     # Also geolocation here, implementation TBD.
     # Interesting: https://docs.djangoproject.com/en/dev/ref/contrib/gis/model-api/
 
@@ -153,6 +154,7 @@ class RoutesCompleted(models.Model):
     userID = models.ForeignKey(UserProfile)
     completionDate = models.DateField(blank=True, null=True)
     totalTime = models.PositiveIntegerField(default=0)
+    totalDistance = models.PositiveIntegerField(default=0)
     completed = models.BooleanField()
 
     def __unicode__(self):
