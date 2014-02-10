@@ -64,6 +64,8 @@ def startSession(request):
         
         response = {}
         response['id'] = session.pk
+        response['distance'] = session.distance
+        response['totalTime'] = session.totalTime
         
         return HttpResponse(json.dumps(response), content_type="application/json")
     
