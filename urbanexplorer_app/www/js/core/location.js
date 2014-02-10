@@ -58,7 +58,7 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
       watchPositionID = navigator.geolocation.watchPosition(
 	function(location){
 	  console.log("LOCATION WATCH: got coords.");
-	  $rootScope.$apply(function(){
+	  $timeout(function(){
 	    coordinates.push([location.coords.latitude, location.coords.longitude]);
 	    callback(location);
 	  });

@@ -30,5 +30,53 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="left center"
+	 ng-click="endConfirm = false;"
+	 ng-show="endConfirm">
+      <div class="row-title">
+	Keep running?
+      </div> 
+      <div class="row-emph">
+	Tap here
+      </div>
+    </div>
+    <div class="right center"
+	 ng-click="endSession()">
+      <div class="row-title"
+	   ng-hide="endConfirm">
+	Finish?
+      </div> 
+      <div class="row-title"
+	   ng-show="endConfirm">
+	Are you sure?
+      </div>
+      <div class="row-emph">
+	End Session
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="center"> -->
+  <!--   <div class="run-finish" -->
+  <!-- 	 ng-hide="endConfirm" -->
+  <!-- 	 ng-click="endSession()"> -->
+  <!--     Finish! -->
+  <!--   </div> -->
+    
+  <!--   <div class="run-finish" -->
+  <!-- 	 ng-show="endConfirm" -->
+  <!-- 	 ng-click="endSession()"> -->
+  <!--     Sure? -->
+  <!--   </div> -->
+  <!--   <div class="run" -->
+  <!-- 	 ng-show="endConfirm" -->
+  <!-- 	 ng-click="endConfirm = false;"> -->
+  <!--     Ignore -->
+  <!--   </div> -->
+  <!-- </div> -->
+
+  <pre>{{session | json}}</pre>
+
   <pre>{{coords | json}}</pre>
 </div>

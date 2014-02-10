@@ -1,4 +1,11 @@
-<div ng-swipe-left="swipeLeft()" maximise>
-  Achievements
-
+<div ng-swipe-left="swipeLeft()" fill>
+  <div class="route-title">
+    Achievements
+  </div>
+  <ul>
+    <li ng-repeat="ach in achievements">
+      {{ach.name}}
+    </li>
+  </ul>
+  <pre>{{all | json}}</pre>
 </div>

@@ -22,7 +22,30 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch'])
 	templateUrl: 'html/run.html',
 	controller: 'RunCtrl'
       })
+      .when('/postRun/', {
+	templateUrl: 'html/postRun.html',
+	controller: 'PostRunCtrl',
+      })
       .otherwise({
         redirectTo: '/'
       });
+  }])
+  .run(['$rootScope', '$location', 'routePick', 'session', function($rootScope, $location, routePick, session){
+    'use strict';
+    $rootScope.$on("$locationChangeStart", function(event, next, current){
+      if (next.indexOf("/run/") >= 0 &&
+	  current.indexOf("/prerun/") < 0){
+	if (routePick.get().hasOwnProperty("resource_uri")){
+	  $location.path("/prerun/");
+	}
+	else {
+	  $location.path("/targets/");
+	}
+      }
+      else if (current.indexOf("/postRun/") >=0 &&
+	       next.indexOf("/postRun/") < 0){
+	console.log("Leaving postRun");
+	session.endSession();
+      }
+    });
   }]);

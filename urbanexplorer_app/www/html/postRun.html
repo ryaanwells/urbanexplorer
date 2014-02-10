@@ -1,0 +1,41 @@
+<div>
+  <div class="route-title">
+    This session's stats:
+  </div>
+  <div class="row">
+    <div class="left center">
+      <div class="row-title">
+	Total Distance:
+      </div> 
+      <div class="row-emph">
+	{{session.distance | round}}m
+      </div>
+    </div>
+    <div class="right center">
+      <div class="row-title">
+	Total Time:
+      </div> 
+      <div class="row-emph">
+	{{session.hours|twoDigit}}:{{session.minutes|twoDigit}}:{{session.seconds|twoDigit}}
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row"> -->
+  <!--   <div class="middle center"> -->
+  <!--     <div class="row-title"> -->
+  <!-- 	Time So Far: -->
+  <!--     </div>  -->
+  <!--     <div class="row-emph"> -->
+  <!-- 	{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}} -->
+  <!--     </div> -->
+  <!--   </div> -->
+  <!-- </div> -->
+
+  <div class="center">
+    <a class="run-finish unstyled-a"
+       href="#/">
+      Finish!
+    </a>
+  </div>
+  <pre>{{session | json}}</pre>
+</div>

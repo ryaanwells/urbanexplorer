@@ -15,6 +15,8 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
   
   $scope.endConfirm = false;
 
+  $scope.session = session.getSession();
+
   geolocation.watchPosition(function(location){
     console.log(location.coords.latitude, location.coords.longitude, location.timestamp);
     // $scope.coords.push(location);
@@ -24,6 +26,7 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
 	console.log(data.data.distance);
 	$scope.distanceSoFar = data.data.distance;
 	$scope.nextAchievement = data.data.distanceRemain;
+	$scope.session = session.getSession();
       }, function(failure){
 	console.log(failure);
       });
@@ -53,7 +56,6 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
   
   function end(){
     geolocation.cancelPolling();
-    // session.endSession();
     $location.path("/postRun/");
   }
 

@@ -76,13 +76,18 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
     
   };
 
+  function getSession(){
+    return session;
+  }
+
   function endSession(){
     session = null;
-  };
+  }
   
   return {
     startSession: startSession,
     updateSession: updateSession,
+    getSession: getSession,
     endSession: endSession
   }
   
