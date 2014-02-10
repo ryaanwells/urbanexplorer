@@ -2,7 +2,7 @@ from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from tastypie.authorization import Authorization
 from tastypie import fields
 from django.contrib.auth.models import User
-from models import UserProfile, Session, Progress, Stage, Mission, Place, Route
+from models import UserProfile, Session, Progress, Stage, Mission, Place, Route, RoutesCompleted
 
 class UserResource(ModelResource):
     class Meta:
@@ -115,3 +115,17 @@ class SessionResource(ModelResource):
         authorization = Authorization()
         allowed_methods = ['get']
         always_return_data = True
+
+class RoutesCompletedResource(ModelResource):
+    routeID = fields.ForeignKey(RouteResource, 'routeID')
+    userID = fields.ForeignKey(UserProfileResource, 'userID')
+    
+    class Meta:
+        queryset = RoutesCompleted.objects.all()
+        resource_name = 'routesCompleted'
+        authorization = Authorization()
+        always_return_data = True
+        filtering = {
+            'routeID': ALL_WITH_RELATIONS,
+            'userID': ALL_WITH_RELATIONS
+        }

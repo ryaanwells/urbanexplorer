@@ -18,6 +18,8 @@ def getSelf(request):
         queryset = res.obj_get_list(request_bundle)
         if queryset.count() > 0:
             user = res.obj_get(deviceID=request.GET.get("deviceID"), bundle=request_bundle)
+            print user.pk
+            user.id = user.pk
             bundle = res.build_bundle(obj=user, request=request)
             return HttpResponse(res.serialize(None, res.full_dehydrate(bundle), 
                                               'application/json'), 
