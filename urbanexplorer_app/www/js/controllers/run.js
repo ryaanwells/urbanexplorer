@@ -1,4 +1,4 @@
-UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $routeParams){
+UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $routeParams, $location){
   console.log("RUN");
   
   $scope.coords = [];
@@ -53,7 +53,8 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
   
   function end(){
     geolocation.cancelPolling();
-    session.endSession();
+    // session.endSession();
+    $location.path("/postRun/");
   }
 
   $scope.endSession = function(){

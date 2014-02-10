@@ -18,8 +18,8 @@ UrbanExplorer.factory('self', function($q, $timeout, $http){
       $http(config).success(function(response){
 	console.log("SELF: succeeded");
 	self = response;
-	var seconds = Math.round(self.totalTime / 1000);
-	var minutes = Math.round(self.totalTime / (1000 * 60));
+	var seconds = Math.round(self.totalTime / 1000) % 60;
+	var minutes = Math.round(self.totalTime / (1000 * 60)) % 60;
 	var hours = Math.round(self.totalTime / (1000 * 60 * 60));
 	self.time = {
 	  seconds: seconds,

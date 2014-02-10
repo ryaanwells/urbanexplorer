@@ -13,5 +13,7 @@ UrbanExplorer.directive('fill', function(){
     var pos = $elem[0].getBoundingClientRect();
     $elem.css('height', window.innerHeight - pos.top + 'px');
     $elem.css('width', window.innerWidth + 'px');
+    $elem.css('overflow-x', 'hidden');
+    $elem.css('overflow-y', 'scroll');
   };
 });

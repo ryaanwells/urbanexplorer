@@ -64,14 +64,10 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
       }
     }
     
-    console.log(config.data.sessionID);
-    console.log(config.data.lon);
-    console.log(config.data.lat);
-    console.log(config.data.timestamp);
-    
     $http(config).then(
       function(success){
 	deferred.resolve(success);
+	session = success.data;
       },
       function(failure){
 	console.log(failure);

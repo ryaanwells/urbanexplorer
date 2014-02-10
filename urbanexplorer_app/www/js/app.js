@@ -1,4 +1,4 @@
-var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch', 'ui.bootstrap'])
+var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch'])
   .config(['$routeProvider', function($routeProvider) {
     'use strict';
     $routeProvider

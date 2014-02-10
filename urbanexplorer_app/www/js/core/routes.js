@@ -4,11 +4,22 @@ UrbanExplorer.factory('routes', function($q, $http, $timeout){
   var routes = [];
 
   var routesByMission = {};
+  
+  var getting = false;
+  var pendingRequests = [];
 
   function getRoutes(){
     var deferred = $q.defer();
 
-    if (routes.length === 0){
+    if (getting){
+      pendingRequests.push(deferred);
+      return deferred.promise;
+    }
+    else if (routes.length > 0){
+      deferred.resolve(routes);
+    }
+    else{
+      getting = true;
       var config = {
 	method: "GET",
 	url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/route/?limit=0"
@@ -25,24 +36,19 @@ UrbanExplorer.factory('routes', function($q, $http, $timeout){
 	  }
 	}
 	deferred.resolve(routes);
+	getting = false;
       }).error(function(response){
 	console.log("ROUTES: failure");
 	console.log(response);
 	deferred.resolve([]);
+	getting = false;
       });
     }
-    else {
-      $timeout(function(){
-	deferred.resolve(routes);
-      }, 0);
-    }
+
     return deferred.promise;
   };
 
   function getRoutesForMission(mission){
-    for (var key in routesByMission){
-      console.log(key);
-    }
     if (routesByMission.hasOwnProperty(mission)){
       return routesByMission[mission];
     }

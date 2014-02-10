@@ -1,4 +1,4 @@
-UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, self, routes, missions, $http) {
+UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, self, routes, missions, $http, routesCompleted) {
   'use strict';
   $scope.coords = [];
 
@@ -15,6 +15,7 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, se
   });
 
   routes.getRoutes();
+  routesCompleted.getCompleted();
   
   $scope.swipeLeft = function(){
     $location.path("/targets/");

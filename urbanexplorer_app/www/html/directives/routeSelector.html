@@ -9,6 +9,12 @@
 	ng-click="select(route)"
 	class="route">
       {{route.name}}
+      <div class="progress"
+	   ng-class="{'progress-striped': route.completed,
+		      'active': route.completed}"
+	   style="margin-right: 10px;">
+	<div class="bar bar-success" style="width: {{route.percent}}%"></div>
+      </div>
     </li>
   </ul>
 </div>
