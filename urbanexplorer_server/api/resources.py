@@ -2,7 +2,7 @@ from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from tastypie.authorization import Authorization
 from tastypie import fields
 from django.contrib.auth.models import User
-from models import UserProfile, Session, Progress, Stage, Mission, Place, Route, RoutesCompleted
+from models import UserProfile, Session, Progress, Stage, Mission, Place, Route, RoutesCompleted, Achievement, UserAchievement
 
 class UserResource(ModelResource):
     class Meta:
@@ -128,4 +128,32 @@ class RoutesCompletedResource(ModelResource):
         filtering = {
             'routeID': ALL_WITH_RELATIONS,
             'userID': ALL_WITH_RELATIONS
+        }
+
+class AchievementResource(ModelResource):
+    route = fields.ForeignKey(RouteResource, 'route')
+
+    class Meta:
+        queryset = Achievement.objects.all()
+        resource_name = 'achievement'
+        Authorization = Authorization()
+        always_return_data = True
+        allowed_methods = ['get']
+        filtering = {
+            'route': ALL_WITH_RELATIONS
+        }
+
+class UserAchievementResource(ModelResource):
+    userID = fields.ForeignKey(UserProfileResource, 'userID')
+    achievementID = fields.ForeignKey(AchievementResource, 'achievementID')
+
+    class Meta:
+        queryset = UserAchievement.objects.all()
+        resource_name = 'userAchievement'
+        Authorization = Authorization()
+        always_return_data = True
+        allowed_methods = ['get']
+        filtering = {
+            'userID': ALL_WITH_RELATIONS,
+            'achievementID': ALL_WITH_RELATIONS
         }
