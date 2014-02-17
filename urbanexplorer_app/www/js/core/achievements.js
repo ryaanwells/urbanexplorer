@@ -11,18 +11,21 @@ UrbanExplorer.factory("achievements", function($q, $http, self){
 
   function get(){
     var deferred = $q.defer();
+    if (allAchievements.length > 0){
+      deferred.resolve([allAchievements, userAchievements]);
+    }
     var config = {
       url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/achievement/?limit=0",
       method: "GET"
     };
     var user_achievements = {
       url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/userAchievement/?limit=0",
-      methid: "GET"
+      method: "GET"
     };
     self.getSelf()
       .then(
-	function(self){
-	  user_achievements.url += "&userID=" + self.deviceID;
+	function(s){
+	  user_achievements.url += "&userID=" + s.deviceID;
 	  return $q.all([$http(config), $http(user_achievements)])
 	})
       .then(
@@ -32,5 +35,9 @@ UrbanExplorer.factory("achievements", function($q, $http, self){
 	  deferred.resolve([allAchievements, userAchievements]);
 	});
     return deferred.promise;
+  }
+
+  return {
+    get: get
   }
 });

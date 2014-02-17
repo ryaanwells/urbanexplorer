@@ -3,12 +3,12 @@ UrbanExplorer.controller('AchievementsCtrl', function($scope, $location, achieve
   $scope.swipeLeft = function(){
     $location.path("/");
   };
-
+  
   $scope.all = [];
-
+  
   achievements.get().then(
     function(all){
       $scope.all = all;
     });
-
+  
 });

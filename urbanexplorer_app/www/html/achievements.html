@@ -1,11 +1,10 @@
-<div ng-swipe-left="swipeLeft()" fill>
+<div fill>
   <div class="route-title">
     Achievements
   </div>
-  <ul>
+  <ul class="unstyled-list">
     <li ng-repeat="ach in achievements">
-      {{ach.name}}
+      <achievement-view ach="ach"></achievement-view>
     </li>
   </ul>
-  <pre>{{all | json}}</pre>
 </div>

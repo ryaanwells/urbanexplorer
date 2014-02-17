@@ -1,4 +1,4 @@
-UrbanExplorer.factory('progress', function($q, $http, $timeout){
+UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
   "use strict";
   
   var progressions = {};
@@ -37,17 +37,21 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout){
 	method: "GET",
 	url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/progress/?" + query
       };
-      $http(config).success(function(result){
-	for (i = 0; i < result.objects.length; i++){
-	  progressions[result.objects[i].id] = result.objects[i];
-	  found[result.objects[i].id] = result.objects[i];
-	}
-	deferred.resolve(found);
-      }).error(function(result){
-	console.log("PROGRESS: failure");
-	console.log(result);
-	deferred.reject("fail");
-      });
+      self.getSelf()
+	.then(function(s){
+	  config.url += "&userID=" + s.deviceID;
+	  $http(config).success(function(result){
+	    for (i = 0; i < result.objects.length; i++){
+	      progressions[result.objects[i].id] = result.objects[i];
+	      found[result.objects[i].id] = result.objects[i];
+	    }
+	    deferred.resolve(found);
+	  }).error(function(result){
+	    console.log("PROGRESS: failure");
+	    console.log(result);
+	    deferred.reject("fail");
+	  });
+	});
     }
     
     else {
