@@ -26,6 +26,9 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch'])
 	templateUrl: 'html/postRun.html',
 	controller: 'PostRunCtrl',
       })
+      .when('/help/', {
+	templateUrl: 'html/help.html'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,4 +1,4 @@
-UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $routeParams, $location){
+UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $routeParams, $location, $timeout){
   console.log("RUN");
   
   $scope.coords = [];
@@ -13,7 +13,10 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
 
   $scope.nextAchievement = $routeParams.nextAchievement || 0;
   
-  $scope.endConfirm = false;
+  $scope.endConfirm = true;
+  $timeout(function(){
+    $scope.endConfirm = false;
+  }, 20);
 
   $scope.session = session.getSession();
 

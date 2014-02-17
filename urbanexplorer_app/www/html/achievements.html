@@ -1,10 +1,16 @@
-<div fill>
-  <div class="route-title">
-    Achievements
+<div>
+  <div class="heading center">
+    <h2 style="margin: 0px;">Achievements</h2>
   </div>
-  <ul class="unstyled-list">
-    <li ng-repeat="ach in achievements">
-      <achievement-view ach="ach"></achievement-view>
-    </li>
-  </ul>
+  <div fill>
+    <div ng-show="achievements.length == 0"
+	 class="progress progress-striped active">
+      <div class="bar bar-success" style="width: 100%"></div>
+    </div>
+    <ul class="unstyled-list">
+      <li ng-repeat="ach in achievements">
+	<achievement-view ach="ach"></achievement-view>
+      </li>
+    </ul>
+  </div>
 </div>

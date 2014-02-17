@@ -58,8 +58,10 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 	$location.path("/run/" + $scope.distanceUntilNextGoal +  "/");
       },
       function(failure){
+	$scope.starting = false;
 	console.log("failure");
 	console.log(failure.data);
+	alert("Please turn on your GPS and try again.");
       }
     );
   };

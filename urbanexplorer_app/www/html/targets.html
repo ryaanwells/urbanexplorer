@@ -9,6 +9,10 @@
   <div class="route-selected">
     {{selected.name}}
   </div>
+  <div ng-show="missions.length == 0"
+       class="progress progress-striped active">
+    <div class="bar bar-success" style="width: 100%"></div>
+  </div>
   <div class="scroll" fill>
     <ul class="unstyled-list">
       <li ng-repeat="mission in missions">
