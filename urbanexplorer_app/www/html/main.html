@@ -1,5 +1,4 @@
-<div ng-swipe-left="swipeLeft()" 
-     ng-swipe-right="swipeRight()">
+<div>
   <div class="heading center">
     <h2 style="margin: 0px;">Welcome!</h2>
   </div>
@@ -19,9 +18,7 @@
 	  Total Time
 	</div>
 	<div class="row-emph">
-	  {{self.time.hours   | twoDigit}}:
-	  {{self.time.minutes | twoDigit}}:
-	  {{self.time.seconds | twoDigit}}
+	  {{self.time.hours | twoDigit}}:{{self.time.minutes | twoDigit}}:{{self.time.seconds | twoDigit}}
 	</div>
       </div>
     </div>
