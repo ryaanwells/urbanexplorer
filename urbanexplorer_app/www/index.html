@@ -24,14 +24,20 @@
       }
     </style>
 
-    <div class="title"> 
+    <div class="title"
+	 style="position: fixed;
+		top: 0;
+		width: 100%;"> 
       <a href="#/" class="unstyled-a"> 
     	<h2>urbanexplorer</h2> 
       </a> 
     </div> 
 
     <div class="row notop nobottom center"
-	 ng-controller="navbar">
+	 ng-controller="navbar"
+	 style="position: fixed;
+		top: 76px;
+		width: 100%;">
       <a href="#/" class="row5 unstyled-a"
 	   ng-class="{'selected': isActive('/')}">
 	<i class="icon-home icon-white"></i>
@@ -53,7 +59,8 @@
 	<i class="icon-question-sign icon-white"></i>
       </a>
     </div>
-    
+    <div style="height: 131px;
+		width: 100%;"></div>
     <div style="overflow-x: hidden;
 		overflow-y: scroll;" ng-view></div>
 

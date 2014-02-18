@@ -1,23 +1,29 @@
-<div ng-swipe-Right="swipeRight()">
-  <div class="route-title" ng-hide="selected.name">
-    Select a route!
+<div>
+  <div style="position: fixed;
+	      top: 131px;
+	      width: 100%;">
+    <div class="route-title" ng-hide="selected.name">
+      Select a route!
+    </div>
+    <div class="route-title" ng-show="selected.name"
+	 ng-click="start()">
+      Tap to travel:
+    </div>
+    <div class="route-selected">
+      {{selected.name}}
+    </div>
   </div>
-  <div class="route-title" ng-show="selected.name"
-       ng-click="start()">
-    Tap to travel:
-  </div>
-  <div class="route-selected">
-    {{selected.name}}
-  </div>
-  <div ng-show="missions.length == 0"
-       class="progress progress-striped active">
-    <div class="bar bar-success" style="width: 100%"></div>
-  </div>
-  <div class="scroll" fill>
-    <ul class="unstyled-list">
-      <li ng-repeat="mission in missions">
-	<route-selector mission="mission"></route-selector>
-      </li>
-    </ul>
+  <div style="margin-top: 64px;">
+    <div ng-show="missions.length == 0"
+	 class="progress progress-striped active">
+      <div class="bar bar-success" style="width: 100%"></div>
+    </div>
+    <div class="scroll" fill>
+      <ul class="unstyled-list">
+	<li ng-repeat="mission in missions">
+	  <route-selector mission="mission"></route-selector>
+	</li>
+      </ul>
+    </div>
   </div>
 </div>
