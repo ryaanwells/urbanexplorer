@@ -1,0 +1,56 @@
+<div>
+  <div style="position: fixed;
+	      top: 131px;
+	      width: 100%">
+    <div class="route-title">
+      <h2 style="margin: 0px;">This session's stats:</h2>
+    </div>
+  </div>
+  <div style="margin-top: 64px;">
+    <div class="row">
+      <div class="left center">
+	<div class="row-title">
+	  Total Distance:
+	</div> 
+	<div class="row-emph">
+	  {{session.distance | round}}m
+	</div>
+      </div>
+      <div class="right center">
+	<div class="row-title">
+	  Total Time:
+	</div> 
+	<div class="row-emph">
+	  {{session.hours|twoDigit}}:{{session.minutes|twoDigit}}:{{session.seconds|twoDigit}}
+	</div>
+      </div>
+    </div>
+    <!-- <div class="row"> -->
+    <!--   <div class="middle center"> -->
+    <!--     <div class="row-title"> -->
+    <!-- 	Time So Far: -->
+    <!--     </div>  -->
+    <!--     <div class="row-emph"> -->
+    <!-- 	{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}} -->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <div class="center stages-complete"
+	 style="margin-top: 20px;">
+      <div class="row-title">
+	Stages Completed
+      </div>
+      <div class="row-emph">
+	{{session.stagesCompleted}}
+      </div>
+    </div>
+    
+    <div class="center"
+	 style="color: white;">
+      <a class="run-finish unstyled-a"
+	 href="#/">
+	Finish!
+      </a>
+    </div>
+  </div>
+</div>

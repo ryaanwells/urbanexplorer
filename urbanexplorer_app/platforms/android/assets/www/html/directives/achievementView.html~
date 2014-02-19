@@ -1,0 +1,11 @@
+<div> 
+  <div class="medal"
+       ng-click="open = !open"
+       ng-class="{'gold': ach.value == 'G',
+		 'silver': ach.value == 'S',
+		 'bronze': ach.value == 'B',
+		 'blank': ach.complete == false}"></div>
+  <div ng-show="open"
+       class-"route"></div>
+  <div class="route">{{ach.name}}</div>
+</div>

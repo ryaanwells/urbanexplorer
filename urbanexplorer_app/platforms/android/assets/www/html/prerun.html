@@ -1,0 +1,67 @@
+<div>
+  <div style="position: fixed;
+	      top: 131px;
+	      width: 100%;">
+    <div class="heading center">
+      <h2 style="margin: 0px;">{{selected.name}}</h2>
+    </div>
+  </div>
+  <div style="margin-top: 64px;">
+    <div class="row">
+      <div class="left center"
+	   style="height: 100px;">
+	<div class="row-title">
+	  Total Remaining:
+	</div> 
+	<div class="row-emph">
+	  {{distanceRemain}}m
+	</div>
+      </div>
+      <div class="right center"
+	   style="height: 100px;">
+	<div class="row-title">
+	  Next Achievement:
+	</div> 
+	<div class="row-emph">
+	  {{distanceUntilNextGoal}}m
+	</div>
+      </div>
+    </div>
+    <div style="clear: both;"></div>
+    
+    <div class="center"
+	 ng-show="routeCompleted.completed">
+      <h2>You have completed this route!</h2>
+      <h2>Well done!</h2>
+      <h3>You can currently only run each route once, so select another
+	route for this session!</h3>
+      <a class="unstyled-a"
+	 href="#/targets/">
+	<div class="run">
+	  Back!
+	</div>
+      </a>
+    </div>
+    <div class="center"
+	 ng-hide="routeCompleted.completed">
+      <div ng-hide="starting">
+	<h2>Ready to start running on this route?</h2>
+	<h3>Tap the button to begin!</h3>
+	<div class="run"
+	     ng-click="startRun()">
+	  GO!
+	</div>
+      </div>
+      <div ng-show="starting">
+	<h2>Starting up...</h2>
+	<h3>Finding your GPS location...</h3>
+	<div class="progress progress-striped active"
+	     style="margin: 0 20px;">
+	  <div class="bar bar-success" style="width: 100%;"></div>
+	</div>
+	<h3>You can start running, we'll catch up!</h3>
+      </div>
+    </div>
+    <div class="padder"></div>
+  </div>
+</div>

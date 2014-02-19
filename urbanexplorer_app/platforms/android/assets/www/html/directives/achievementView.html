@@ -1,0 +1,16 @@
+<div> 
+  <div ng-click="toggle()">
+    <div class="medal"
+	 ng-class="{'gold': ach.value == 'G',
+		   'silver': ach.value == 'S',
+		   'bronze': ach.value == 'B',
+		   'blank': ach.complete == false}"></div>
+    <div class="route"
+	 ng-class="{'nobottom': open}">{{ach.name}}</div>
+  </div>
+  <div ng-show="open"
+       class="ach-info">
+    <div>{{ach.description}}</div>
+    <div ng-show="ach.complete">Completed: {{ach.date}}</div>
+  </div>
+</div>

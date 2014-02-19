@@ -1,0 +1,65 @@
+<div>
+  <div style="position: fixed;
+	      top: 131px;
+	      width: 100%">
+    <div class="route-title">
+      <h2 style="margin: 0px;">Running</h2>
+    </div>
+  </div>
+  <div style="margin-top: 64px;">
+    <div class="row">
+      <div class="left center bigger">
+	<div class="row-title">
+	  Distance So Far:
+	</div> 
+	<div class="row-emph">
+	  {{distanceSoFar | round}}m
+	</div>
+      </div>
+      <div class="right center bigger">
+	<div class="row-title">
+	  Next Achievement:
+	</div> 
+	<div class="row-emph">
+	  {{nextAchievement | round}}m
+	</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="middle center no-shadow">
+	<div class="row-title">
+	  Time So Far:
+	</div> 
+	<div class="row-emph">
+	  {{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}
+	</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="left center shadow"
+    	   ng-click="endConfirm = false;"
+    	   ng-show="endConfirm">
+	<div class="row-title">
+    	  Keep running?
+	</div>
+	<div class="row-emph">
+    	  Tap here
+	</div>
+      </div>
+      <div class="right center shadow"
+	   ng-click="endSession()">
+	<div class="row-title"
+	     ng-hide="endConfirm">
+	  Finish?
+	</div> 
+	<div class="row-title"
+	     ng-show="endConfirm">
+	  Are you sure?
+	</div>
+	<div class="row-emph">
+	  End Session
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

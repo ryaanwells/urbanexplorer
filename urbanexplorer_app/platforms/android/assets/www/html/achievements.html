@@ -1,0 +1,20 @@
+<div>
+  <div style="position: fixed;
+	      top: 131px;
+	      width: 100%;">
+    <div class="heading center">
+      <h2 style="margin: 0px;">Achievements</h2>
+    </div>
+  </div>
+  <div style="margin-top: 64px;">
+    <div ng-show="achievements.length == 0"
+	 class="progress progress-striped active">
+      <div class="bar bar-success" style="width: 100%"></div>
+    </div>
+    <ul class="unstyled-list">
+      <li ng-repeat="ach in achievements">
+	<achievement-view ach="ach"></achievement-view>
+      </li>
+    </ul>
+  </div>
+</div>
