@@ -55,7 +55,7 @@ def startSession(request):
         if not startStage:
             return HttpResponse("Route completed", status=401)
         
-        progress = Progress.objects.get_or_create(userID=userID, stageID=startStage)[0]
+        progress = Progress.objects.get_or_create(userID=userID, stageID=startStage, completed=False)[0]
         session = Session.objects.create(userID=userID, currentProgress=progress, route=route,
                                          lastLat=float(body['lat']), lastLon=float(body['lon']),
                                          lastTime=body['timestamp'])
@@ -107,7 +107,9 @@ def updateSession(request):
             progress = session.currentProgress
             stage =  progress.stageID
 
-            rc = RoutesCompleted.objects.get_or_create(routeID=session.route, userID=session.userID)[0]
+            rc = RoutesCompleted.objects.get_or_create(routeID=session.route, 
+                                                       userID=session.userID,
+                                                       completed=False)[0]
             rc.totalTime = rc.totalTime + timeIncrement
 
             if progress is not None:
@@ -122,7 +124,8 @@ def updateSession(request):
                     
                     if stage.nextStage is not None:
                         progress = Progress.objects.get_or_create(userID=session.userID,
-                                                                  stageID=stage.nextStage)[0]
+                                                                  stageID=stage.nextStage,
+                                                                  completed=False)[0]
                         progress.totalDistance = difference
                         progress.save()
                         session.currentProgress = progress
@@ -156,7 +159,11 @@ def updateSession(request):
             payload['distanceRemain'] = remain
             payload['id'] = session.pk
             payload['totalTime'] = session.totalTime
-            
+            count = 0
+            for p in session.allProgress.all():
+                if p.completed:
+                    count = count + 1
+            payload['stagesCompleted'] = count
 
             return HttpResponse(json.dumps(payload), content_type="application/json",
                                 status=202)

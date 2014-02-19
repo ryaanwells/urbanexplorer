@@ -34,7 +34,7 @@ try:
 except ValueError:
     print resp
 
-body = {"sessionID": 1, "lon": 15, "lat": 15, "timestamp": 10000}
+body = {"sessionID": 5, "lon": 15, "lat": 15, "timestamp": 10001}
 conn.request("PATCH", "/updateSession/", body=json.dumps(body), headers=headers)
 response = conn.getresponse()
 
