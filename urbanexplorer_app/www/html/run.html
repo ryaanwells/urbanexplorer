@@ -1,65 +1,100 @@
 <div>
   <div style="position: fixed;
-	      top: 131px;
-	      width: 100%">
-    <div class="route-title">
-      <h2 style="margin: 0px;">Running</h2>
+	      top: 123px;
+	      z-index: 1000;
+	      width: 100%"
+       class="bg-primary">
+    <div class="center">
+      <h2>Running</h2>
     </div>
   </div>
-  <div style="margin-top: 64px;">
-    <div class="row">
-      <div class="left center bigger">
-	<div class="row-title">
-	  Distance So Far:
-	</div> 
-	<div class="row-emph">
-	  {{distanceSoFar | round}}m
+  
+  <div style="margin-top: 44px;">
+    <div class="container-fluid center">
+      <div class="row">
+	<div class="col-xs-6 bg-success"
+	     style="padding: 0;">
+	  <h3 style="margin-bottom: 0;">Total Remain:</h3>
+	  <h2>{{distanceRemain}}m</h2>
+	</div>
+	<div class="col-xs-6 bg-info">
+	  <h3 style="margin-bottom: 0;">Next Unlock:</h3>
+	  <h2>{{distanceUntilNextGoal}}m</h2>
 	</div>
       </div>
-      <div class="right center bigger">
-	<div class="row-title">
-	  Next Achievement:
-	</div> 
-	<div class="row-emph">
-	  {{nextAchievement | round}}m
-	</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="middle center no-shadow">
-	<div class="row-title">
-	  Time So Far:
-	</div> 
-	<div class="row-emph">
-	  {{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}
+      <div class="row">
+	<div class="col-xs-8 col-xs-offset-2 bg-warning">
+	  <h3 style="margin-bottom: 0;">Time So Far:</h3>
+	  <h2>{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}</h2>
 	</div>
       </div>
     </div>
+    <!-- <div class="row"> -->
+    <!--   <div class="left center bigger"> -->
+    <!-- 	<div class="row-title"> -->
+    <!-- 	  Distance So Far: -->
+    <!-- 	</div>  -->
+    <!-- 	<div class="row-emph"> -->
+    <!-- 	  {{distanceSoFar | round}}m -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!--   <div class="right center bigger"> -->
+    <!-- 	<div class="row-title"> -->
+    <!-- 	  Next Achievement: -->
+    <!-- 	</div>  -->
+    <!-- 	<div class="row-emph"> -->
+    <!-- 	  {{nextAchievement | round}}m -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!-- <div class="row"> -->
+    <!--   <div class="middle center no-shadow"> -->
+    <!-- 	<div class="row-title"> -->
+    <!-- 	  Time So Far: -->
+    <!-- 	</div>  -->
+    <!-- 	<div class="row-emph"> -->
+    <!-- 	  {{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}} -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!-- </div> -->
     <div class="row">
-      <div class="left center shadow"
-    	   ng-click="endConfirm = false;"
-    	   ng-show="endConfirm">
-	<div class="row-title">
-    	  Keep running?
-	</div>
-	<div class="row-emph">
-    	  Tap here
-	</div>
+      <div class="col-xs-4 col-xs-offset-1">
+	<button class="btn btn-warning btn-lg"
+		ng-show="endConfirm"
+		ng-click="endConfirm = false;">
+	  Keep Running?
+	</button>
       </div>
-      <div class="right center shadow"
-	   ng-click="endSession()">
-	<div class="row-title"
-	     ng-hide="endConfirm">
-	  Finish?
-	</div> 
-	<div class="row-title"
-	     ng-show="endConfirm">
-	  Are you sure?
-	</div>
-	<div class="row-emph">
-	  End Session
-	</div>
+      <div class="col-xs-4 col-xs-offset-1">
+	<button class="btn btn-danger btn-lg"
+		ng-click="endSession()">
+	  End Session?
+	</button>
       </div>
+      <!-- <div class="left center shadow" -->
+      <!-- 	   ng-click="endConfirm = false;" -->
+      <!-- 	   ng-show="endConfirm"> -->
+      <!-- 	<div class="row-title"> -->
+      <!-- 	  Keep running? -->
+      <!-- 	</div> -->
+      <!-- 	<div class="row-emph"> -->
+      <!-- 	  Tap here -->
+      <!-- 	</div> -->
+      <!-- </div> -->
+      <!-- <div class="right center shadow" -->
+      <!-- 	   ng-click="endSession()"> -->
+      <!-- 	<div class="row-title" -->
+      <!-- 	     ng-hide="endConfirm"> -->
+      <!-- 	  Finish? -->
+      <!-- 	</div>  -->
+      <!-- 	<div class="row-title" -->
+      <!-- 	     ng-show="endConfirm"> -->
+      <!-- 	  Are you sure? -->
+      <!-- 	</div> -->
+      <!-- 	<div class="row-emph"> -->
+      <!-- 	  End Session -->
+      <!-- 	</div> -->
+      <!-- </div> -->
     </div>
   </div>
 </div>

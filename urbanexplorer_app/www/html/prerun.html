@@ -25,7 +25,6 @@
       </div>
     </div>
 
-    <pre>{{progressions | json}}</pre>
     <!-- <div class="row"> -->
     <!--   <div class="left center" -->
     <!-- 	   style="height: 100px;"> -->
@@ -48,17 +47,20 @@
     <!-- </div> -->
     <div style="clear: both;"></div>
     
+    <div class="progress progress-striped active"
+	 ng-show="loading"
+	 style="margin: 0 20px;">
+      <div class="progress-bar progress-bar-success" style="width: 100%;"></div>
+    </div>
     <div class="center"
 	 ng-show="routeCompleted.completed">
       <h2>You have completed this route!</h2>
       <h2>Well done!</h2>
       <h3>You can currently only run each route once, so select another
 	route for this session!</h3>
-      <a class="unstyled-a"
+      <a class="btn btn-primary btn-lg"
 	 href="#/targets/">
-	<div class="run">
 	  Back!
-	</div>
       </a>
     </div>
     <div class="center"
@@ -66,17 +68,17 @@
       <div ng-hide="starting">
 	<h2>Ready to start running on this route?</h2>
 	<h3>Tap the button to begin!</h3>
-	<div class="run"
+	<button class="btn btn-success btn-lg"
 	     ng-click="startRun()">
 	  GO!
-	</div>
+	</button>
       </div>
       <div ng-show="starting">
 	<h2>Starting up...</h2>
 	<h3>Finding your GPS location...</h3>
 	<div class="progress progress-striped active"
 	     style="margin: 0 20px;">
-	  <div class="bar bar-success" style="width: 100%;"></div>
+	  <div class="progress-bar progress-bar-success" style="width: 100%;"></div>
 	</div>
 	<h3>You can start running, we'll catch up!</h3>
       </div>

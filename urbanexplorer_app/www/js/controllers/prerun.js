@@ -10,6 +10,8 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 
   $scope.starting = false;
 
+  $scope.loading = true;
+
   var routeCompleted = routesCompleted.getRC($scope.selected.resource_uri);
   $scope.routeCompleted = routeCompleted;
 
@@ -61,6 +63,7 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 	  console.log(currentStage.distance);
 	  currentStage = $scope.stages[currentStage.nextStage]; 
 	}
+	$scope.loading = false;
       });    
   }
 

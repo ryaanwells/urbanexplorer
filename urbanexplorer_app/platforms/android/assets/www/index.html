@@ -35,7 +35,6 @@
     	<h2>urbanexplorer</h2> 
       </a> 
     </div> 
-
     <ul class="nav nav-pills"
 	ng-controller="navbar"
 	style="position: fixed;
@@ -61,11 +60,11 @@
 	  </h3>
 	</a>
       </li>
-      <li ng-class="{'active': isActive('/run/')}">
-	<a href="#/run/" class="unstyled-a">
+      <li ng-class="{'active': isActive('/run/') || isActive('/postRun/')}">
+	<a href="#/postRun/" class="unstyled-a">
 	  <h3 style="margin: 0;">
 	    <span class="glyphicon glyphicon-road"
-		  ng-class="{'white': isActive('/run/')}">
+		  ng-class="{'white': isActive('/run/') || isActive('/postRun/')}">
 	    </span>
 	  </h3>
 	</a>
@@ -89,12 +88,10 @@
 	</a>
       </li>
     </ul>
-    <!-- <div style="height: 131px; -->
-    <!-- 		width: 100%;"></div> -->
     <div  style="overflow-x: hidden;
-		padding-top: 131px;
-		overflow-y: scroll;" ng-view></div>
-
+		 padding-top: 131px;
+		 overflow-y: scroll;" ng-view></div>
+    
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
