@@ -42,14 +42,14 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 	  if (hasProgressForStage){
 	    $scope.distanceUntilNextGoal = currentStage.distance;
 	  }
-	  console.log(currentStage.id);
-	  if ($scope.progressions.hasOwnProperty(currentStage.id)
+	  console.log(currentStage.resource_uri);
+	  if ($scope.progressions.hasOwnProperty(currentStage.resource_uri)
 	      && hasProgressForStage){
 	    console.log("Has progress");
-	    completedDistance += $scope.progressions[currentStage.id].totalDistance;
-	    $scope.distanceUntilNextGoal -= $scope.progressions[currentStage.id].totalDistance;
+	    completedDistance += $scope.progressions[currentStage.resource_uri].totalDistance;
+	    $scope.distanceUntilNextGoal -= $scope.progressions[currentStage.resource_uri].totalDistance;
 	    $scope.distanceRemain += $scope.distanceUntilNextGoal;
-	    if (!$scope.progressions[currentStage.id].completed){
+	    if (!$scope.progressions[currentStage.resource_uri].completed){
 	      hasProgressForStage = false;
 	    }
 	  }

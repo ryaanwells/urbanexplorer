@@ -16,8 +16,9 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
     else {
       for (i in stages){
 	if (stages.hasOwnProperty(i) && stages[i] &&
-	    progressions.hasOwnProperty(stages[i].id)){
-	  found[stages[i].id] = progressions[stages[i].id];
+	    progressions.hasOwnProperty(stages[i].resource_uri)){
+	  console.log("FOUND");
+	  found[stages[i].resource_uri] = progressions[stages[i].resource_uri];
 	}
 	else {
 	  waiting.push(stages[i].id);
@@ -35,6 +36,7 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
       }
       config = {
 	method: "GET",
+
 	url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/progress/?" + query
       };
       self.getSelf()
@@ -42,8 +44,8 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
 	  config.url += "&userID=" + s.deviceID;
 	  $http(config).success(function(result){
 	    for (i = 0; i < result.objects.length; i++){
-	      progressions[result.objects[i].id] = result.objects[i];
-	      found[result.objects[i].id] = result.objects[i];
+	      progressions[result.objects[i].stageID] = result.objects[i];
+	      found[result.objects[i].stageID] = result.objects[i];
 	    }
 	    deferred.resolve(found);
 	  }).error(function(result){
