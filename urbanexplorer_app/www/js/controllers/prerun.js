@@ -1,4 +1,4 @@
-UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, stages, progress, session, $location, routesCompleted){
+UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, stages, progress, session, $location, routesCompleted, missions){
   "use strict";
   $scope.selected = routePick.get();
   
@@ -12,6 +12,16 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 
   var routeCompleted = routesCompleted.getRC($scope.selected.resource_uri);
   $scope.routeCompleted = routeCompleted;
+
+  missions.getMissions().then(
+    function(missions){
+      angular.forEach(missions, function(mission){
+	if (mission.resource_uri === $scope.selected.mission){
+	  $scope.selected.mission = mission;
+	  return;
+	}
+      });
+    });
 
   if (routeCompleted && routeCompleted.completed){
     console.log("completed");
@@ -32,8 +42,10 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 	  if (hasProgressForStage){
 	    $scope.distanceUntilNextGoal = currentStage.distance;
 	  }
+	  console.log(currentStage.id);
 	  if ($scope.progressions.hasOwnProperty(currentStage.id)
 	      && hasProgressForStage){
+	    console.log("Has progress");
 	    completedDistance += $scope.progressions[currentStage.id].totalDistance;
 	    $scope.distanceUntilNextGoal -= $scope.progressions[currentStage.id].totalDistance;
 	    $scope.distanceRemain += $scope.distanceUntilNextGoal;
@@ -42,6 +54,7 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
 	    }
 	  }
 	  else {
+	    console.log("No progress");
 	    hasProgressForStage = false;
 	    $scope.distanceRemain += currentStage.distance;
 	  }

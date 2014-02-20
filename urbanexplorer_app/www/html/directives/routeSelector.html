@@ -1,7 +1,7 @@
 <div style="margin-bottom: 5px;">
   <div ng-click="toggle()"
        class="route-select">
-    {{mission.name}}
+    <h4 style="margin: 0;">{{mission.name}}</h4>
   </div>
   <ul class="unstyled-list"
       ng-show="show">
@@ -13,7 +13,8 @@
 	   ng-class="{'progress-striped': route.completed,
 		      'active': route.completed}"
 	   style="margin-right: 10px;">
-	<div class="bar bar-success" style="width: {{route.percent}}%"></div>
+	<div class="progress-bar progress-bar-success" 
+	     style="width: {{route.percent}}%"></div>
       </div>
     </li>
   </ul>

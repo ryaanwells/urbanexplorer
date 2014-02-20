@@ -1,32 +1,49 @@
 <div>
   <div style="position: fixed;
-	      top: 131px;
-	      width: 100%;">
-    <div class="heading center">
-      <h2 style="margin: 0px;">{{selected.name}}</h2>
+	      top: 123px;
+	      z-index: 1000;
+	      width: 100%;"
+       class="bg-primary">
+    <div class="center">
+      <h3 style="margin: 0px; padding-top:
+		 8px;">{{selected.mission.name}}</h3>
+      <h3 style="margin: 0; padding: 4px 0;">{{selected.name}}</h3>
     </div>
   </div>
   <div style="margin-top: 64px;">
-    <div class="row">
-      <div class="left center"
-	   style="height: 100px;">
-	<div class="row-title">
-	  Total Remaining:
-	</div> 
-	<div class="row-emph">
-	  {{distanceRemain}}m
+    <div class="container-fluid center">
+      <div class="row">
+	<div class="col-xs-6 bg-success"
+	     style="padding: 0;">
+	  <h3 style="margin-bottom: 0;">Total Remain:</h3>
+	  <h2>{{distanceRemain}}m</h2>
 	</div>
-      </div>
-      <div class="right center"
-	   style="height: 100px;">
-	<div class="row-title">
-	  Next Achievement:
-	</div> 
-	<div class="row-emph">
-	  {{distanceUntilNextGoal}}m
+	<div class="col-xs-6 bg-info">
+	  <h3 style="margin-bottom: 0;">Next Unlock:</h3>
+	  <h2>{{distanceUntilNextGoal}}m</h2>
 	</div>
       </div>
     </div>
+    <!-- <div class="row"> -->
+    <!--   <div class="left center" -->
+    <!-- 	   style="height: 100px;"> -->
+    <!-- 	<div class="row-title"> -->
+    <!-- 	  Total Remaining: -->
+    <!-- 	</div>  -->
+    <!-- 	<div class="row-emph"> -->
+    <!-- 	  {{distanceRemain}}m -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!--   <div class="right center" -->
+    <!-- 	   style="height: 100px;"> -->
+    <!-- 	<div class="row-title"> -->
+    <!-- 	  Next Achievement: -->
+    <!-- 	</div>  -->
+    <!-- 	<div class="row-emph"> -->
+    <!-- 	  {{distanceUntilNextGoal}}m -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!-- </div> -->
     <div style="clear: both;"></div>
     
     <div class="center"

@@ -1,28 +1,44 @@
 <div>
   <div style="position: fixed;
-	      top: 131px;
-	      width: 100%;">
-    <div class="heading center">
-      <h2 style="margin: 0px;">Welcome!</h2>
+       	      top: 123px;
+	      z-index: 1000;
+       	      width: 100%;"
+       class="bg-primary">
+    <div class="center">
+      <h2>Welcome!</h2>
     </div>
   </div>
-  
-  <div style="margin-top: 64px;">
-    <div class="row">
-      <div class="left center">
-	<div class="row-title">
-	  Total Distance
+
+  <div style="margin-top: 44px;">
+    <!-- <div class="row"> -->
+    <!--   <div class="left center"> -->
+    <!-- 	<div class="row-title"> -->
+    <!-- 	  Total Distance -->
+    <!-- 	</div> -->
+    <!-- 	<div class="row-emph"> -->
+    <!-- 	  {{self.totalDistance}}m -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!--   <div class="right center"> -->
+    <!-- 	<div class="row-title"> -->
+    <!-- 	  Total Time -->
+    <!-- 	</div> -->
+    <!-- 	<div class="row-emph"> -->
+    <!-- 	  {{self.time.hours | twoDigit}}:{{self.time.minutes | twoDigit}}:{{self.time.seconds | twoDigit}} -->
+    <!-- 	</div> -->
+    <!--   </div> -->
+    <!-- </div> -->
+
+    <div class="container-fluid center">
+      <div class="row">
+	<div class="col-xs-6 bg-success"
+	     style="padding: 0; z-index: 0;">
+	  <h3 style="margin-bottom: 0;">Total Distance</h3>
+	  <h2>{{self.totalDistance}}m</h2>
 	</div>
-	<div class="row-emph">
-	  {{self.totalDistance}}m
-	</div>
-      </div>
-      <div class="right center">
-	<div class="row-title">
-	  Total Time
-	</div>
-	<div class="row-emph">
-	  {{self.time.hours | twoDigit}}:{{self.time.minutes | twoDigit}}:{{self.time.seconds | twoDigit}}
+	<div class="col-xs-6 bg-info">
+	  <h3 style="margin-bottom: 0;">Total Time</h3>
+	  <h2>{{self.time.hours | twoDigit}}:{{self.time.minutes | twoDigit}}:{{self.time.seconds | twoDigit}}</h2>
 	</div>
       </div>
     </div>
@@ -34,7 +50,7 @@
 
     <div style="margin: 10px;"
 	 class="center">
-      <p>Thank you for installing urbanexplorer!</p>
+      <h3>Thank you for installing urbanexplorer!</h3>
       <p>Are you ready to run around the world? Use this app while you
 	exercise outdoors to begin your journey - as you run in real
 	life you will also be "running" down a route somewhere else in

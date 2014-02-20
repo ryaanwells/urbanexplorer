@@ -1,8 +1,17 @@
 .title {
     width: 100%;
-    background-color: #7F171F;
+    /* background-color: #7F171F; */
+    background-color: #177F7F;
     padding: 5px 0;
     text-align: center;
+    color: white;
+    border: 10px solid white;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+}
+
+.white{
     color: white;
 }
 
@@ -45,7 +54,8 @@
 
 .route-select {
     height: 40px;
-    padding-top: 17px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
     background-color: #22BF65;
     border-radius: 10px 0 0 10px;
@@ -53,8 +63,8 @@
 }
 
 .route{
-    height: 40px;
-    padding-top: 17px;
+    height: 50px;
+    padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
     margin: 0 0 3px 0;

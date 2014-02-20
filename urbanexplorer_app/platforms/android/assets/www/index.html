@@ -9,8 +9,10 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0,
 				   width=device-width,
 				   maximum-scale=1, minimum-scale=1"/>
-    <link rel="stylesheet" media="screen"
-    	  href="styles/urbanexplorer_bootstrap/css/bootstrap.css" />
+    <!-- <link rel="stylesheet" media="screen" -->
+    <!-- 	  href="styles/urbanexplorer_bootstrap/css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="styles/b3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="styles/b3/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="styles/urbanexplorer.css" />
   </head>
   <body>
@@ -27,41 +29,70 @@
     <div class="title"
 	 style="position: fixed;
 		top: 0;
+		z-index: 1000;
 		width: 100%;"> 
       <a href="#/" class="unstyled-a"> 
     	<h2>urbanexplorer</h2> 
       </a> 
     </div> 
 
-    <div class="row notop nobottom center"
-	 ng-controller="navbar"
-	 style="position: fixed;
-		top: 76px;
-		width: 100%;">
-      <a href="#/" class="row5 unstyled-a"
-	   ng-class="{'selected': isActive('/')}">
-	<i class="icon-home icon-white"></i>
-      </a>
-      <a href="#/targets/" class="row5 unstyled-a"
-	 ng-class="{'selected': isActive('/targets/') || isActive('/prerun') }">
-	<i class="icon-tasks icon-white"></i>
-      </a>
-      <a href="#/run/" class="row5 unstyled-a"
-	 ng-class="{'selected': isActive('/run/')}">
-	<i class="icon-globe icon-white"></i>
-      </a>
-      <a href="#/achievements/" class="row5 unstyled-a"
-	 ng-class="{'selected': isActive('/achievements/')}">
-	<i class="icon-star icon-white"></i>
-      </a>
-      <a href="#/help/" class="row5 unstyled-a"
-	 ng-class="{'selected': isActive('/help/')}">
-	<i class="icon-question-sign icon-white"></i>
-      </a>
-    </div>
-    <div style="height: 131px;
-		width: 100%;"></div>
-    <div style="overflow-x: hidden;
+    <ul class="nav nav-pills"
+	ng-controller="navbar"
+	style="position: fixed;
+	       background-color: white;
+	       top: 80px;
+	       z-index: 1000;
+	       width: 100%;">
+      <li ng-class="{'active': isActive('/')}">
+	<a href="#/" class="unstyled-a">
+	  <h3 style="margin: 0;">
+	    <span class="glyphicon glyphicon-home"
+		  ng-class="{'white': isActive('/')}">
+	    </span>
+	  </h3>
+	</a>
+      </li>
+      <li ng-class="{'active': isActive('/targets/') || isActive('/prerun') }">
+	<a href="#/targets/" class="unstyled-a">
+	  <h3 style="margin: 0;">
+	    <span class="glyphicon glyphicon-map-marker"
+		  ng-class="{'white': isActive('/targets/') || isActive('/prerun') }">
+	    </span>
+	  </h3>
+	</a>
+      </li>
+      <li ng-class="{'active': isActive('/run/')}">
+	<a href="#/run/" class="unstyled-a">
+	  <h3 style="margin: 0;">
+	    <span class="glyphicon glyphicon-road"
+		  ng-class="{'white': isActive('/run/')}">
+	    </span>
+	  </h3>
+	</a>
+      </li>
+      <li ng-class="{'active': isActive('/achievements/')}">
+	<a href="#/achievements/" class="unstyled-a">
+	  <h3 style="margin: 0;">
+	    <span class="glyphicon glyphicon-star"
+		  ng-class="{'white': isActive('/achievements/')}">
+	    </span>
+	  </h3>
+	</a>
+      </li>
+      <li ng-class="{'active': isActive('/help/')}"> 
+	<a href="#/help/" class="unstyled-a">
+	  <h3 style="margin: 0;">
+	    <span class="glyphicon glyphicon-question-sign"
+		  ng-class="{'white': isActive('/help/')}">
+	    </span>
+	  </h3>
+	</a>
+      </li>
+    </ul>
+    <!-- <div style="height: 131px; -->
+    <!-- 		width: 100%;"></div> -->
+    <div  style="overflow-x: hidden;
+		padding-top: 131px;
 		overflow-y: scroll;" ng-view></div>
 
     <script src="bower_components/jquery/jquery.js"></script>
@@ -70,6 +101,7 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script> -->
     <!-- <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script> -->
+    <script src="styles/b3/js/bootstrap.js"></script>
     <script src="bower_components/momentjs/min/moment.min.js"></script>
     <style>
       .nav, .pagination, .carousel a {cursor:pointer;}

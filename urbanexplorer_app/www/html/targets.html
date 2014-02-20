@@ -1,22 +1,26 @@
 <div>
   <div style="position: fixed;
-	      top: 131px;
-	      width: 100%;">
-    <div class="route-title" ng-hide="selected.name">
-      Select a route!
+	      top: 123px;
+	      z-index: 1000;
+	      width: 100%;"
+       class="center">
+    <div class="bg-primary" ng-hide="selected.name">
+      <h3 style="margin: 0; padding-top: 8px;">Select a route!</h3>
     </div>
-    <div class="route-title" ng-show="selected.name"
+    <div class="bg-primary" ng-show="selected.name"
 	 ng-click="start()">
-      Tap to travel:
+      <h3 style="margin: 0; padding-top: 8px;">Tap to travel:</h3>
     </div>
-    <div class="route-selected">
-      {{selected.name}}
+    <div class="bg-primary"
+	 style="height: 34px;
+		padding-top: 4px;">
+      <h4 style="margin: 0;">{{selected.name}}</h4>
     </div>
   </div>
-  <div style="margin-top: 64px;">
+  <div style="margin-top: 70px;">
     <div ng-show="missions.length == 0"
 	 class="progress progress-striped active">
-      <div class="bar bar-success" style="width: 100%"></div>
+      <div class="progress-bar progress-bar-success" style="width: 100%"></div>
     </div>
     <div class="scroll" fill>
       <ul class="unstyled-list">
