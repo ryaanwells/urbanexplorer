@@ -142,6 +142,7 @@ def updateSession(request):
                 
                 if (progress.stageID.nextStage is None):
                     rp.completed = True
+                    rp.save()
                     if rc.bestTime == 0 or rc.bestTime > rp.time:
                         rc.bestTime = rp.time
                         # Add Award

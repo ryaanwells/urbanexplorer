@@ -2,7 +2,7 @@ from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from tastypie.authorization import Authorization
 from tastypie import fields
 from django.contrib.auth.models import User
-from models import UserProfile, Session, Progress, Stage, Mission, Place, Route, RoutesCompleted, Achievement, UserAchievement
+from models import UserProfile, Session, Progress, Stage, Mission, Place, Route, RoutesCompleted, Achievement, UserAchievement, RouteProgress
 
 class UserResource(ModelResource):
     class Meta:
@@ -104,21 +104,26 @@ class ProgressResource(ModelResource):
         }
         always_return_data = True
 
-class SessionResource(ModelResource):
-    userID = fields.ForeignKey(UserProfileResource, 'userID')
-    currentProgress = fields.ForeignKey(ProgressResource, 'currentProgress')
-    allProgress = fields.ToManyField(ProgressResource, 'allProgress')
-
+class RouteProgressResource(ModelResource):
+    progress = fields.ForeignKey(ProgressResource, 'progress')
+    allProgress = fields.ManyToManyField(ProgressResource, 'allProgress')
+    
     class Meta:
-        queryset = Session.objects.all()
-        resource_name = 'session'
-        authorization = Authorization()
-        allowed_methods = ['get']
+        queryset = RouteProgress.objects.all()
+        resource_name = 'routeProgress'
+        Authorization = Authorization()
         always_return_data = True
+        allowed_methods = ['get']
+        filtering = {
+            'progress': ALL_WITH_RELATIONS,
+            'allProgress': ALL_WITH_RELATIONS
+        }
 
 class RoutesCompletedResource(ModelResource):
     routeID = fields.ForeignKey(RouteResource, 'routeID')
     userID = fields.ForeignKey(UserProfileResource, 'userID')
+    currentJourney = fields.ForeignKey(RouteProgressResource, 'currentJourney')
+    allJourneys = fields.ManyToManyField(RouteProgressResource, 'allJourneys')
     
     class Meta:
         queryset = RoutesCompleted.objects.all()
@@ -127,8 +132,21 @@ class RoutesCompletedResource(ModelResource):
         always_return_data = True
         filtering = {
             'routeID': ALL_WITH_RELATIONS,
-            'userID': ALL_WITH_RELATIONS
+            'userID': ALL_WITH_RELATIONS,
+            'currentJourney': ALL_WITH_RELATIONS,
+            'allJourneys': ALL_WITH_RELATIONS
         }
+
+class SessionResource(ModelResource):
+    userID = fields.ForeignKey(UserProfileResource, 'userID')
+    routesCompleted = fields.ForeignKey(RoutesCompletedResource, 'routesCompleted')
+
+    class Meta:
+        queryset = Session.objects.all()
+        resource_name = 'session'
+        authorization = Authorization()
+        allowed_methods = ['get']
+        always_return_data = True
 
 class AchievementResource(ModelResource):
     route = fields.ForeignKey(RouteResource, 'route')
@@ -157,3 +175,4 @@ class UserAchievementResource(ModelResource):
             'userID': ALL_WITH_RELATIONS,
             'achievementID': ALL_WITH_RELATIONS
         }
+
