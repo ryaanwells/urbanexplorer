@@ -108,8 +108,7 @@ def updateSession(request):
             stage =  progress.stageID
 
             rc = RoutesCompleted.objects.get_or_create(routeID=session.route, 
-                                                       userID=session.userID,
-                                                       completed=False)[0]
+                                                       userID=session.userID)[0]
             rc.totalTime = rc.totalTime + timeIncrement
 
             if progress is not None:

@@ -103,8 +103,8 @@ class Session(models.Model):
 
     userID = models.ForeignKey('UserProfile')
     route = models.ForeignKey('Route', null=True)
-    currentProgress = models.ForeignKey(Progress, related_name='+')
-    allProgress = models.ManyToManyField(Progress, related_name='+')
+    currentProgress = models.ForeignKey(Progress, related_name='+', blank=True, null=True)
+    allProgress = models.ManyToManyField(Progress, related_name='+', blank=True, null=True)
     distance = models.PositiveIntegerField(blank=True, null=True, default=0)
     lastLon = models.FloatField(blank=True, null=True, default=0)
     lastLat = models.FloatField(blank=True, null=True, default=0)
@@ -155,6 +155,8 @@ class RoutesCompleted(models.Model):
     completionDate = models.DateField(blank=True, null=True)
     totalTime = models.PositiveIntegerField(default=0)
     totalDistance = models.PositiveIntegerField(default=0)
+    bestTime = models.PositiveIntegerField(default=0)
+    distanceRemain = models.PositiveIntegerField(default=0)
     completed = models.BooleanField()
 
     def __unicode__(self):
