@@ -96,24 +96,6 @@ class Progress(models.Model):
     def __unicode__(self):
         return self.userID.deviceID
 
-class Session(models.Model):
-    class Meta:
-        verbose_name = "sessions"
-        verbose_name_plural = "sessions"
-
-    userID = models.ForeignKey('UserProfile')
-    route = models.ForeignKey('Route', null=True)
-    currentProgress = models.ForeignKey(Progress, related_name='+', blank=True, null=True)
-    allProgress = models.ManyToManyField(Progress, related_name='+', blank=True, null=True)
-    distance = models.PositiveIntegerField(blank=True, null=True, default=0)
-    lastLon = models.FloatField(blank=True, null=True, default=0)
-    lastLat = models.FloatField(blank=True, null=True, default=0)
-    totalTime = models.PositiveIntegerField(blank=True, null=True, default=0)
-    lastTime = models.PositiveIntegerField(blank=True, null=True, default=0)
-    excessDistance = models.PositiveIntegerField(blank=True, null=True, default=0)
-
-    def __unicode__(self):
-        return self.userID.deviceID
 
 class Achievement(models.Model):
     class Meta:
@@ -145,19 +127,50 @@ class UserAchievement(models.Model):
     def __unicode__(self):
         return self.userID.deviceID
 
+class RouteProgress(models.Model):
+    class Meta: 
+        verbose_name = "route progress"
+        verbose_name_plural = "route progressions"
+
+    progress = models.ForeignKey(Progress, related_name='progress+', null=True, blank=True)
+    allProgress = models.ManyToManyField(Progress, related_name='allProgress+', null=True, blank=True)
+    time = models.PositiveIntegerField(default=0)
+    distance = models.PositiveIntegerField(default=0)
+    completed = models.BooleanField()
+    
+    def __unicode__(self):
+        return "{} - {}".format(self.progress.userID, self.progress.stageID)
+
 class RoutesCompleted(models.Model):
     class Meta:
         verbose_name = "route completed"
         verbose_name_plural = "routes completed"
 
-    routeID = models.ForeignKey('Route')
+    routeID = models.ForeignKey(Route)
     userID = models.ForeignKey(UserProfile)
+    allJourneys = models.ManyToManyField(RouteProgress, null=True, blank=True, related_name='allJourneys+')
+    currentJourney = models.ForeignKey(RouteProgress, null=True, blank=True)
     completionDate = models.DateField(blank=True, null=True)
-    totalTime = models.PositiveIntegerField(default=0)
-    totalDistance = models.PositiveIntegerField(default=0)
     bestTime = models.PositiveIntegerField(default=0)
-    distanceRemain = models.PositiveIntegerField(default=0)
     completed = models.BooleanField()
 
     def __unicode__(self):
         return self.routeID.name
+
+class Session(models.Model):
+    class Meta:
+        verbose_name = "sessions"
+        verbose_name_plural = "sessions"
+
+    userID = models.ForeignKey(UserProfile)
+    routesCompleted = models.ForeignKey(RoutesCompleted, null=True)
+    distance = models.PositiveIntegerField(blank=True, null=True, default=0)
+    lastLon = models.FloatField(blank=True, null=True, default=0)
+    lastLat = models.FloatField(blank=True, null=True, default=0)
+    totalTime = models.PositiveIntegerField(blank=True, null=True, default=0)
+    lastTime = models.PositiveIntegerField(blank=True, null=True, default=0)
+    routesDone = models.PositiveIntegerField(blank=True, null=True, default=0)
+    stagesCompleted = models.PositiveIntegerField(blank=True, null=True, default=0)
+
+    def __unicode__(self):
+        return self.userID.deviceID

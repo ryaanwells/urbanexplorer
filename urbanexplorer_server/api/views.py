@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from resources import UserProfileResource
-from models import UserProfile, Session, Progress, Stage, Route, RoutesCompleted
+from models import UserProfile, Session, Progress, Stage, Route, RoutesCompleted, RouteProgress
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from haversine import haversine
@@ -46,25 +46,31 @@ def startSession(request):
         # stage = Stage.objects.filter(pk=request.GET.get('stageID'))[0]
         print route
         startStage = None
-        for s in route.stages.all():
-            print s
-            prog = Progress.objects.filter(userID=userID, stageID=s)
-            if not prog or not prog[0].completed:
-                startStage = s
-                break
-        if not startStage:
-            return HttpResponse("Route completed", status=401)
-        
-        progress = Progress.objects.get_or_create(userID=userID, stageID=startStage, completed=False)[0]
-        session = Session.objects.create(userID=userID, currentProgress=progress, route=route,
-                                         lastLat=float(body['lat']), lastLon=float(body['lon']),
-                                         lastTime=body['timestamp'])
-        session.allProgress.add(progress)
+        routeCompleted = RoutesCompleted.objects.get_or_create(routeID=route,
+                                                               userID=userID)[0]
+        if routeCompleted.currentJourney is None:
+            progress = Progress(stageID=route.startStage,
+                                userID=userID)
+            progress.save()
+            routeProgress = RouteProgress(progress=progress)
+            routeProgress.save()
+            routeProgress.allProgress.add(progress)
+            routeProgress.save()
+            routeCompleted.allJourneys.add(routeProgress)
+            routeCompleted.currentJourney = routeProgress
+            routeCompleted.save()
+            
+        session = Session(userID=userID, routesCompleted=routeCompleted,
+                          lastLat=float(body['lat']), lastLon=float(body['lon']),
+                          lastTime=body['timestamp'])
         session.save()
         
+        distance = routeCompleted.currentJourney.progress.totalDistance
+        
+                
         response = {}
         response['id'] = session.pk
-        response['distance'] = session.distance
+        response['distance'] = distance
         response['totalTime'] = session.totalTime
         
         return HttpResponse(json.dumps(response), content_type="application/json")
@@ -93,6 +99,8 @@ def updateSession(request):
             # distance * 1000 since timeIncrement is in milliseconds
             if (distance * 1000 / timeIncrement) > settings.MAX_SPEED:
                 distance = (settings.MAX_SPEED * timeIncrement) / 1000
+                
+            speed = distance * 1000 / timeIncrement
 
             session.distance = session.distance + distance
             session.lastLat = body['lat']
@@ -104,65 +112,76 @@ def updateSession(request):
             session.userID.totalDistance = session.userID.totalDistance + distance
             session.userID.save()
             
-            progress = session.currentProgress
-            stage =  progress.stageID
-
-            rc = RoutesCompleted.objects.get_or_create(routeID=session.route, 
-                                                       userID=session.userID)[0]
-            rc.totalTime = rc.totalTime + timeIncrement
-
-            if progress is not None:
-                progress.totalTime = progress.totalTime + timeIncrement
-
-            while progress is not None and distance > 0:
-                if progress.totalDistance + distance >= stage.distance:
-                    difference = progress.totalDistance + distance - stage.distance
-                    progress.totalDistance = stage.distance
-                    progress.completed = True
-                    progress.save()
-                    
-                    if stage.nextStage is not None:
-                        progress = Progress.objects.get_or_create(userID=session.userID,
-                                                                  stageID=stage.nextStage,
-                                                                  completed=False)[0]
-                        progress.totalDistance = difference
-                        progress.save()
-                        session.currentProgress = progress
-                        session.allProgress.add(progress)
-                        stage = stage.nextStage
-                    else:
-                        stage = None
-                        progress = None
-                        session.excessDistance = distance
-                        distance = 0
-                        rc.completed = True
-                        rc.totalDistance = rd.routeID.length
-                        rc.completionDate = datetime.datetime.now()
-                else:
-                    progress.totalDistance = progress.totalDistance + distance
-                    rc.totalDistance = rc.totalDistance + distance
-                    distance = 0
-                    progress.save()
+            rc = session.routesCompleted
+            rp = rc.currentJourney
             
-            session.save()
-            rc.save()
+            rp.time = rp.time + timeIncrement
+            rp.save()
+            
+            progress = rp.progress
+            
+            while (progress.totalDistance + distance >= progress.stageID.distance):
+                difference = progress.stageID.distance - progress.totalDistance
+                distance = distance - difference
+                timeDifference = difference / speed
+                timeIncrement = timeIncrement - timeDifference
+                
+                if not (timeIncrement > 0):
+                    timeIncrement = 0
+                    timeDifference = 0
 
+                rp.distance = rp.distance + difference
+                rp.time = rp.time + timeDifference
+                session.stagesCompleted = session.stagesCompleted + 1
+    
+                progress.totalTime = progress.totalTime + timeDifference
+                progress.completionDate = datetime.datetime.now()
+                progress.totalDistance = progress.stageID.distance
+                progress.completed = True
+                progress.save()
+                
+                if (progress.stageID.nextStage is None):
+                    rp.completed = True
+                    if rc.bestTime == 0 or rc.bestTime > rp.time:
+                        rc.bestTime = rp.time
+                        # Add Award
+                    rc.completed = True
+                    progress = Progress(stageID=rc.routeID.startStage,
+                                        userID=rc.userID)
+                    progress.save()
+                    rp = RouteProgress(progress=progress)
+                    rp.save()
+                    rp.allProgress.add(progress)
+                    rc.allJourneys.add(rp)
+                    rc.currentJourney = rp
+                    rc.save()                    
+                else:
+                    progress = Progress(userID=progress.userID,
+                                        stageID=progress.stageID.nextStage)
+                    progress.save()
+                
+                    rp.allProgress.add(progress)
+                    rp.progress = progress
+
+            rp.distance = rp.distance + distance
+            rp.time = rp.time + timeIncrement
+            rp.save()
+            rc.save()
+            progress.totalDistance = progress.totalDistance + distance
+            progress.totalTime = progress.totalTime + timeIncrement
+            progress.save()
+            
             payload = {}
             payload['distance'] = session.distance
             payload['totalTime'] = session.totalTime
-            payload['excessDistance'] = session.excessDistance
-            remain = 0;
-            if progress and stage:
-                remain = stage.distance - progress.totalDistance
-                
-            payload['distanceRemain'] = remain
+            print rc.routeID.length
+            print rp.distance
+            payload['distanceRemain'] = progress.stageID.distance - progress.totalDistance
+            payload['routeDistanceRemain'] = rc.routeID.length - rp.distance
+            payload['currentStage'] = rp.progress.stageID.id
             payload['id'] = session.pk
             payload['totalTime'] = session.totalTime
-            count = 0
-            for p in session.allProgress.all():
-                if p.completed:
-                    count = count + 1
-            payload['stagesCompleted'] = count
+            payload['stagesCompleted'] = session.stagesCompleted
 
             return HttpResponse(json.dumps(payload), content_type="application/json",
                                 status=202)
