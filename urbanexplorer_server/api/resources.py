@@ -24,8 +24,8 @@ class UserProfileResource(ModelResource):
         }
 
 class StageResource(ModelResource):    
-    nextStage = fields.ToOneField('api.api.StageResource', 'nextStage', null=True)
-    previousStage = fields.ToOneField('api.api.StageResource', 'previousStage', null=True)
+    nextStage = fields.ToOneField('api.resources.StageResource', 'nextStage', null=True)
+    previousStage = fields.ToOneField('api.resources.StageResource', 'previousStage', null=True)
 
     class Meta:
         queryset = Stage.objects.all()
@@ -90,7 +90,7 @@ class RouteResource(ModelResource):
 class ProgressResource(ModelResource):
     
     userID = fields.ForeignKey(UserProfileResource, 'userID')
-    stageID = fields.ForeignKey(StageResource, 'stageID')
+    stageID = fields.ForeignKey(StageResource, 'stageID', full=True)
 
     class Meta:
         queryset = Progress.objects.all()
@@ -100,13 +100,13 @@ class ProgressResource(ModelResource):
         filtering = {
             'stageID': ALL_WITH_RELATIONS,
             'userID': ALL_WITH_RELATIONS,
-            'completed': ALL
+
         }
         always_return_data = True
 
 class RouteProgressResource(ModelResource):
-    progress = fields.ForeignKey(ProgressResource, 'progress')
-    allProgress = fields.ManyToManyField(ProgressResource, 'allProgress')
+    progress = fields.ForeignKey(ProgressResource, 'progress', full=True)
+    allProgress = fields.ManyToManyField(ProgressResource, 'allProgress', full=True)
     
     class Meta:
         queryset = RouteProgress.objects.all()
@@ -122,7 +122,7 @@ class RouteProgressResource(ModelResource):
 class RoutesCompletedResource(ModelResource):
     routeID = fields.ForeignKey(RouteResource, 'routeID')
     userID = fields.ForeignKey(UserProfileResource, 'userID')
-    currentJourney = fields.ForeignKey(RouteProgressResource, 'currentJourney')
+    currentJourney = fields.ForeignKey(RouteProgressResource, 'currentJourney', full=True)
     allJourneys = fields.ManyToManyField(RouteProgressResource, 'allJourneys')
     
     class Meta:

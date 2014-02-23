@@ -107,9 +107,17 @@ class Achievement(models.Model):
         ('S', 'Silver'),
         ('B', 'Bronze'),
     )
+    
+    TYPE = (
+        ('C', 'Completion'),
+        ('U', 'User')
+    )
+    
     name = models.CharField(max_length=128)
     description = models.CharField(max_length=512)
+    type = models.CharField(max_length=1, choices=TYPE, default='C')
     value = models.CharField(max_length=1, choices=LEVEL, default='B')
+    metric = models.FloatField(default=0)
     route = models.ForeignKey('Route', null=True)
     
     def __unicode__(self):

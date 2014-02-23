@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from resources import UserProfileResource
-from models import UserProfile, Session, Progress, Stage, Route, RoutesCompleted, RouteProgress
+from models import UserProfile, Session, Progress, Stage, Route, RoutesCompleted, RouteProgress, Achievement, UserAchievement
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ObjectDoesNotExist
 from haversine import haversine
@@ -119,13 +119,15 @@ def updateSession(request):
             rp.save()
             
             progress = rp.progress
+            payload = {}
             
             while (progress.totalDistance + distance >= progress.stageID.distance):
                 difference = progress.stageID.distance - progress.totalDistance
                 distance = distance - difference
-                timeDifference = difference / speed
+                timeDifference = difference / (speed / 1000) # Time is in ms, speed is m/second
                 timeIncrement = timeIncrement - timeDifference
-                
+                # print "Time Difference: {}".format(timeDifference)
+                # print "Time Increment: {}".format(timeIncrement)
                 if not (timeIncrement > 0):
                     timeIncrement = 0
                     timeDifference = 0
@@ -145,6 +147,18 @@ def updateSession(request):
                     rp.save()
                     if rc.bestTime == 0 or rc.bestTime > rp.time:
                         rc.bestTime = rp.time
+                        achievements = Achievement.objects.filter(route=rc.routeID)
+                        payload['achievements'] = []
+                        for a in achievements:
+                            if a.metric >= rc.bestTime:
+                                obj, created = UserAchievement.objects.get_or_create(userID=rc.userID,
+                                                                                     achievementID=a)
+                                print "Created: {}".format(created)
+                                if created:
+                                    ach = {}
+                                    ach['name'] = a.name
+                                    ach['value'] = a.value
+                                    payload['achievements'].append(ach)
                         # Add Award
                     rc.completed = True
                     progress = Progress(stageID=rc.routeID.startStage,
@@ -165,18 +179,15 @@ def updateSession(request):
                     rp.progress = progress
 
             rp.distance = rp.distance + distance
-            rp.time = rp.time + timeIncrement
             rp.save()
             rc.save()
             progress.totalDistance = progress.totalDistance + distance
             progress.totalTime = progress.totalTime + timeIncrement
             progress.save()
             
-            payload = {}
+
             payload['distance'] = session.distance
             payload['totalTime'] = session.totalTime
-            print rc.routeID.length
-            print rp.distance
             payload['distanceRemain'] = progress.stageID.distance - progress.totalDistance
             payload['routeDistanceRemain'] = rc.routeID.length - rp.distance
             payload['currentStage'] = rp.progress.stageID.id
