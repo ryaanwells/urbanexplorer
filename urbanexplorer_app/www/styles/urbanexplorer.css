@@ -63,7 +63,7 @@
 }
 
 .route{
-    height: 50px;
+    height: 130px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
@@ -75,32 +75,6 @@
 
 .route.nobottom{
     margin: 0;
-}
-
-.row {
-    margin-top: 20px;
-    clear: both;
-    display: block;
-    background-color: white;
-    /* margin-left: -20px; */
-}
-
-.row.notop{
-    margin-top: 0px;
-}
-
-.row.nobottom{
-    margin-bottom: 0px !important;
-}
-
-.row:before,
-.row:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.row:after {
-  clear: both;
 }
 
 .nav-item{
@@ -299,3 +273,31 @@
 .centered-pills ul.nav-pills { display:inline-block; }
 .centered-pills li { display:inline; }
 .centered-pills a { float:left; }
+
+.route-done{
+
+}
+
+.route-done-incomplete{
+    color: red;
+}
+
+.route-done-complete{
+    color: #22BF65;    
+}
+
+.route-done-not-awarded{
+    color: #0B3838;
+}
+
+.route-done-gold{
+    color: gold;
+}
+
+.route-done-silver{
+    color: silver;
+}
+
+.route-done-bronze{
+    color: darkgoldenrod;
+}
