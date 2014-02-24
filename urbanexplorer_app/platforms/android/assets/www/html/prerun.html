@@ -23,50 +23,51 @@
 	  <h2>{{distanceUntilNextGoal}}m</h2>
 	</div>
       </div>
+      <h3>Medal Winning Times:</h3>
+      <div class="row awards-bg">
+	<div class="col-xs-4">
+	  <div style="color: white;">
+	    <h4>Gold</h4>
+	    <h4>{{times.gold | time}}</h4>
+	  </div>
+	  <span class="glyphicon glyphicon-certificate
+		       route-done-gold"
+		ng-show="route.G"></span>
+	  <span class="glyphicon glyphicon-remove route-done-incomplete"
+		ng-hide="route.G"></span>
+	</div>
+	<div class="col-xs-4">
+	  <div style="color: white;">
+	    <h4>Silver</h4>
+	    <h4>{{times.silver | time}}</h4>
+	  </div>
+	  <span class="glyphicon glyphicon-certificate
+		       route-done-silver"
+		ng-show="route.S"></span>
+	  <span class="glyphicon glyphicon-remove route-done-incomplete"
+		ng-hide="route.S"></span>
+	</div>
+	<div class="col-xs-4">
+	  <div style="color: white;">
+	    <h4>Bronze</h4>
+	    <h4>{{times.bronze | time}}</h4>
+	  </div>
+	  <span class="glyphicon glyphicon-certificate
+		       route-done-bronze"
+		ng-show="route.B"></span>
+	  <span class="glyphicon glyphicon-remove route-done-incomplete"
+		ng-hide="route.B"></span>
+	</div>
+      </div>
     </div>
-
-    <!-- <div class="row"> -->
-    <!--   <div class="left center" -->
-    <!-- 	   style="height: 100px;"> -->
-    <!-- 	<div class="row-title"> -->
-    <!-- 	  Total Remaining: -->
-    <!-- 	</div>  -->
-    <!-- 	<div class="row-emph"> -->
-    <!-- 	  {{distanceRemain}}m -->
-    <!-- 	</div> -->
-    <!--   </div> -->
-    <!--   <div class="right center" -->
-    <!-- 	   style="height: 100px;"> -->
-    <!-- 	<div class="row-title"> -->
-    <!-- 	  Next Achievement: -->
-    <!-- 	</div>  -->
-    <!-- 	<div class="row-emph"> -->
-    <!-- 	  {{distanceUntilNextGoal}}m -->
-    <!-- 	</div> -->
-    <!--   </div> -->
-    <!-- </div> -->
-    <div style="clear: both;"></div>
-    
     <div class="progress progress-striped active"
 	 ng-show="loading"
 	 style="margin: 0 20px;">
       <div class="progress-bar progress-bar-success" style="width: 100%;"></div>
     </div>
     <div class="center"
-	 ng-show="routeCompleted.completed">
-      <h2>You have completed this route!</h2>
-      <h2>Well done!</h2>
-      <h3>You can currently only run each route once, so select another
-	route for this session!</h3>
-      <a class="btn btn-primary btn-lg"
-	 href="#/targets/">
-	  Back!
-      </a>
-    </div>
-    <div class="center"
 	 ng-hide="routeCompleted.completed">
       <div ng-hide="starting">
-	<h2>Ready to start running on this route?</h2>
 	<h3>Tap the button to begin!</h3>
 	<button class="btn btn-success btn-lg"
 	     ng-click="startRun()">

@@ -23,12 +23,16 @@ UrbanExplorer.directive("routeSelector", function(routes, routePick, routesCompl
 	    }
 	  });
 	  if (routeCompleted){
-	    $scope.routes[i].progress = routeCompleted.totalDistance;
+	    var accDistance = 0;
+	    angular.forEach(routeCompleted.currentJourney.allProgress, function(progress){
+	      accDistance += progress.totalDistance;
+	    });
+	    // $scope.routes[i].progress = routeCompleted.totalDistance;
 	    $scope.routes[i].completed = routeCompleted.completed;
-	    $scope.routes[i].percent = routeCompleted.totalDistance / $scope.routes[i].length * 100;
+	    $scope.routes[i].percent = accDistance / $scope.routes[i].length * 100;
 	  }
 	  else {
-	    $scope.routes[i].progress = 0;
+	    // $scope.routes[i].progress = 0;
 	    $scope.routes[i].completed = false;
 	    $scope.routes[i].percent = 0;
 	  }

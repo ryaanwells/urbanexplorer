@@ -15,11 +15,17 @@
 	<div class="col-xs-6 bg-success"
 	     style="padding: 0;">
 	  <h3 style="margin-bottom: 0;">Total Remain:</h3>
-	  <h2>{{distanceRemain}}m</h2>
+	  <h2>{{routeRemain | round}}m</h2>
 	</div>
 	<div class="col-xs-6 bg-info">
 	  <h3 style="margin-bottom: 0;">Next Unlock:</h3>
-	  <h2>{{distanceUntilNextGoal}}m</h2>
+	  <h2>{{nextAchievement | round}}m</h2>
+	</div>
+      </div>
+      <div class="row">
+	<div class="col-xs-8 col-xs-offset-2 bg-primary">
+	  <h3 style="margin-bottom: 0;">Distance So Far:</h3>
+	  <h2>{{distanceSoFar | round}}</h2>
 	</div>
       </div>
       <div class="row">

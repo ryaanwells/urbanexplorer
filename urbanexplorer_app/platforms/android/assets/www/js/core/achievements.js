@@ -32,6 +32,14 @@ UrbanExplorer.factory("achievements", function($q, $http, self){
 	function(done){
 	  allAchievements = done[0].data.objects;
 	  userAchievements = done[1].data.objects;
+	  angular.forEach(userAchievements, function(ua){
+	    angular.forEach(allAchievements, function(aa){
+	      if (aa.resource_uri == ua.achievementID){
+		aa.completed=true;
+		return;
+	      }
+	    });
+	  });
 	  deferred.resolve([allAchievements, userAchievements]);
 	});
     return deferred.promise;

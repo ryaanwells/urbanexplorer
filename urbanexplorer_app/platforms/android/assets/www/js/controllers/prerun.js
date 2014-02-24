@@ -1,4 +1,4 @@
-UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, stages, progress, session, $location, routesCompleted, missions){
+UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, stages, progress, session, $location, routesCompleted, missions, achievements){
   "use strict";
   $scope.selected = routePick.get();
   
@@ -25,8 +25,46 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
       });
     });
 
-  if (routeCompleted && routeCompleted.completed){
+  $scope.times = {
+    gold: 0,
+    silver: 0,
+    bronze: 0
+  }
+
+  $scope.done = {
+    gold: false,
+    silver: false,
+    bronze: false
+  }
+
+  achievements.get().then(function(achievements){
+    angular.forEach(achievements[0], function(ach){
+      if (ach.route = $scope.selected.resource_uri){
+	if (ach.value === "B"){
+	  $scope.times.bronze = ach.metric;
+	  $scope.done.bronze = ach.completed;
+	}
+	else if (ach.value === "S"){
+	  $scope.times.silver = ach.metric;
+	  $scope.done.silver = ach.completed;
+	}
+	else if (ach.value === "G"){
+	  $scope.times.gold = ach.metric;
+	  $scope.done.gold = ach.completed;
+	}
+      }
+    });
+  });
+  
+  if (routeCompleted){
+    $scope.distanceUntilNextGoal = routeCompleted.currentJourney.progress.stageID.distance - routeCompleted.currentJourney.progress.totalDistance;
+    var accDistance = 0;
+    angular.forEach(routeCompleted.currentJourney.allProgress, function(progress){
+      accDistance += progress.totalDistance;
+    });
+    $scope.distanceRemain = $scope.selected.length - accDistance;
     console.log("completed");
+    $scope.loading = false;
   }
   else {
     stages.getStages($scope.selected.stages)

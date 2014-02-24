@@ -10,7 +10,8 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
   $scope.seconds = 0;
 
   $scope.distanceSoFar = 0;
-
+  $scope.routeRemain = 0;
+  
   $scope.nextAchievement = $routeParams.nextAchievement || 0;
   
   $scope.endConfirm = true;
@@ -27,7 +28,9 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
       .then(function(data){
 	$scope.coords.push(data);
 	console.log(data.data.distance);
+	console.log(data.data.distanceRemain);
 	$scope.distanceSoFar = data.data.distance;
+	$scope.routeRemain = data.data.routeDistanceRemain;
 	$scope.nextAchievement = data.data.distanceRemain;
 	$scope.session = session.getSession();
       }, function(failure){
