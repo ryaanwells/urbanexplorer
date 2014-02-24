@@ -20,11 +20,11 @@ def handler(sender, instance, **kwargs):
                                       route=instance)
     Achievement.objects.get_or_create(name="{} - Silver".format(instance.name),
                                       description="{} - Bronze".format(instance.name),
-                                      value="B",
+                                      value="S",
                                       metric=(instance.length/settings.SILVER_SPEED)*1000,
                                       route=instance)
     Achievement.objects.get_or_create(name="{} - Gold".format(instance.name),
                                       description="{} - Gold".format(instance.name),
-                                      value="B",
+                                      value="G",
                                       metric=(instance.length/settings.GOLD_SPEED)*1000,
                                       route=instance)
