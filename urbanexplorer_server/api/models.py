@@ -94,7 +94,7 @@ class Progress(models.Model):
     completed = models.BooleanField()
 
     def __unicode__(self):
-        return self.userID.deviceID
+        return "{} - {}".format(self.userID.deviceID, self.stageID.name)
 
 
 class Achievement(models.Model):
