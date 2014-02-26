@@ -188,7 +188,7 @@ def updateSession(request):
             
 
             payload['distance'] = session.distance
-            payload['totalTime'] = session.totalTime
+            payload['sessionTime'] = session.totalTime
             payload['distanceRemain'] = progress.stageID.distance - progress.totalDistance
             payload['stageLength'] = progress.stageID.distance
             payload['routeDistanceRemain'] = rc.routeID.length - rp.distance
@@ -196,7 +196,7 @@ def updateSession(request):
             payload['currentStage'] = rp.progress.stageID.id
             payload['stageImage'] = rp.progress.stageID.image
             payload['id'] = session.pk
-            payload['totalTime'] = session.totalTime
+            payload['totalTime'] = rc.currentJourney.time
             payload['stagesCompleted'] = session.stagesCompleted
 
             return HttpResponse(json.dumps(payload), content_type="application/json",
