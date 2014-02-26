@@ -172,7 +172,7 @@ class Session(models.Model):
         verbose_name_plural = "sessions"
 
     userID = models.ForeignKey(UserProfile)
-    routesCompleted = models.ForeignKey(RoutesCompleted, null=True)
+    routesCompleted = models.ForeignKey(RoutesCompleted, null=True, blank=True)
     distance = models.PositiveIntegerField(blank=True, null=True, default=0)
     lastLon = models.FloatField(blank=True, null=True, default=0)
     lastLat = models.FloatField(blank=True, null=True, default=0)
