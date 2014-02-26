@@ -4,8 +4,10 @@ from tastypie import fields
 from django.contrib.auth.models import User
 from models import UserProfile, Session, Progress, Stage, Mission, Place, Route, RoutesCompleted, Achievement, UserAchievement, RouteProgress
 
+from base import uMeta
+
 class UserResource(ModelResource):
-    class Meta:
+    class Meta(uMeta):
         queryset = User.objects.all()
         resource_name = 'user'
         authorization = Authorization()
@@ -13,7 +15,7 @@ class UserResource(ModelResource):
 
 class UserProfileResource(ModelResource):
     user = fields.ForeignKey(UserResource, 'user')
-    class Meta:
+    class Meta(uMeta):
         queryset = UserProfile.objects.all()
         resource_name = 'userprofile'
         authorization = Authorization()
@@ -27,7 +29,7 @@ class StageResource(ModelResource):
     nextStage = fields.ToOneField('api.resources.StageResource', 'nextStage', null=True)
     previousStage = fields.ToOneField('api.resources.StageResource', 'previousStage', null=True)
 
-    class Meta:
+    class Meta(uMeta):
         queryset = Stage.objects.all()
         resource_name = 'stage'
         authorization = Authorization()
@@ -42,7 +44,7 @@ class StageResource(ModelResource):
         }
 
 class MissionResource(ModelResource):
-    class Meta:
+    class Meta(uMeta):
         queryset = Mission.objects.all()
         resource_name= 'mission'
         authorization = Authorization()
@@ -54,7 +56,7 @@ class MissionResource(ModelResource):
 class PlaceResource(ModelResource):
     mission = fields.ForeignKey(MissionResource, 'mission')
     
-    class Meta:
+    class Meta(uMeta):
         queryset = Place.objects.all()
         resource_name= 'place'
         authorization = Authorization()
@@ -72,7 +74,7 @@ class RouteResource(ModelResource):
     endStage = fields.ForeignKey(StageResource, 'endStage')
     stages = fields.ToManyField(StageResource, 'stages')
     
-    class Meta:
+    class Meta(uMeta):
         queryset = Route.objects.all()
         resource_name= 'route'
         authorization = Authorization()
@@ -92,7 +94,7 @@ class ProgressResource(ModelResource):
     userID = fields.ForeignKey(UserProfileResource, 'userID')
     stageID = fields.ForeignKey(StageResource, 'stageID', full=True)
 
-    class Meta:
+    class Meta(uMeta):
         queryset = Progress.objects.all()
         resource_name = 'progress'
         authorization = Authorization()
@@ -108,7 +110,7 @@ class RouteProgressResource(ModelResource):
     progress = fields.ForeignKey(ProgressResource, 'progress', full=True)
     allProgress = fields.ManyToManyField(ProgressResource, 'allProgress', full=True)
     
-    class Meta:
+    class Meta(uMeta):
         queryset = RouteProgress.objects.all()
         resource_name = 'routeProgress'
         Authorization = Authorization()
@@ -125,7 +127,7 @@ class RoutesCompletedResource(ModelResource):
     currentJourney = fields.ForeignKey(RouteProgressResource, 'currentJourney', full=True)
     allJourneys = fields.ManyToManyField(RouteProgressResource, 'allJourneys')
     
-    class Meta:
+    class Meta(uMeta):
         queryset = RoutesCompleted.objects.all()
         resource_name = 'routesCompleted'
         authorization = Authorization()
@@ -141,7 +143,7 @@ class SessionResource(ModelResource):
     userID = fields.ForeignKey(UserProfileResource, 'userID')
     routesCompleted = fields.ForeignKey(RoutesCompletedResource, 'routesCompleted')
 
-    class Meta:
+    class Meta(uMeta):
         queryset = Session.objects.all()
         resource_name = 'session'
         authorization = Authorization()
@@ -151,7 +153,7 @@ class SessionResource(ModelResource):
 class AchievementResource(ModelResource):
     route = fields.ForeignKey(RouteResource, 'route')
 
-    class Meta:
+    class Meta(uMeta):
         queryset = Achievement.objects.all()
         resource_name = 'achievement'
         Authorization = Authorization()
@@ -165,7 +167,7 @@ class UserAchievementResource(ModelResource):
     userID = fields.ForeignKey(UserProfileResource, 'userID')
     achievementID = fields.ForeignKey(AchievementResource, 'achievementID')
 
-    class Meta:
+    class Meta(uMeta):
         queryset = UserAchievement.objects.all()
         resource_name = 'userAchievement'
         Authorization = Authorization()
