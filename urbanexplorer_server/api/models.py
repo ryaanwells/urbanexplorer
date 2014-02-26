@@ -31,6 +31,7 @@ class Stage(models.Model):
 
     name = models.CharField(max_length=128)
     distance = models.FloatField()
+    image = models.URLField(blank=True, null=True)
     nextStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
     previousStage = models.OneToOneField('Stage', blank=True, null=True, related_name='+')
     # Also geolocation here, implementation TBD.
