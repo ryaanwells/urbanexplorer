@@ -190,9 +190,10 @@ def updateSession(request):
             payload['distance'] = session.distance
             payload['totalTime'] = session.totalTime
             payload['distanceRemain'] = progress.stageID.distance - progress.totalDistance
+            payload['stageLength'] = progress.stageID.distance
             payload['routeDistanceRemain'] = rc.routeID.length - rp.distance
+            payload['routeLength'] = rc.routeID.length
             payload['currentStage'] = rp.progress.stageID.id
-            print rp.progress.stageID
             payload['stageImage'] = rp.progress.stageID.image
             payload['id'] = session.pk
             payload['totalTime'] = session.totalTime
