@@ -186,6 +186,7 @@ def updateSession(request):
             progress.totalTime = progress.totalTime + timeIncrement
             progress.save()
             
+            session.save()
 
             payload['distance'] = session.distance
             payload['sessionTime'] = session.totalTime
