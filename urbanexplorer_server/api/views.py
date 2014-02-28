@@ -134,7 +134,7 @@ def updateSession(request):
                     timeDifference = 0
 
                 rp.distance = rp.distance + difference
-                rp.time = rp.time + timeDifference
+                # rp.time = rp.time + timeDifference
                 session.stagesCompleted = session.stagesCompleted + 1
     
                 progress.totalTime = progress.totalTime + timeDifference
