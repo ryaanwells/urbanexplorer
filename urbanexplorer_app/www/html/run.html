@@ -5,64 +5,80 @@
 	      width: 100%"
        class="bg-primary">
     <div class="center">
-      <h2>Running</h2>
+      <h2 style="margin: 0;
+		 padding: 3px 0;">{{route.name}}</h2>
     </div>
   </div>
-  
-  <div style="margin-top: 44px;">
+  <div style="margin-top: 30px;">
+    <div style="width: 100%;
+		height: 150px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-image: url({{session.stageImage}});"></div>
     <div class="container-fluid center">
-      <div class="row">
-	<div class="col-xs-6 bg-success"
-	     style="padding: 0;">
-	  <h3 style="margin-bottom: 0;">Total Remain:</h3>
-	  <h2>{{routeRemain | round}}m</h2>
+      <div class="row bg-primary">
+	<div class="col-xs-6">
+	  <h3 style="margin-bottom: 0;
+		     margin-top: 3px;">Distance:</h3>
+	  <h2 style="margin-top: 0;
+		     margin-bottom: 3px;">{{distanceSoFar | round}}</h2>
 	</div>
-	<div class="col-xs-6 bg-info">
-	  <h3 style="margin-bottom: 0;">Next Unlock:</h3>
-	  <h2>{{nextAchievement | round}}m</h2>
-	</div>
-      </div>
-      <div class="row">
-	<div class="col-xs-8 col-xs-offset-2 bg-primary">
-	  <h3 style="margin-bottom: 0;">Distance So Far:</h3>
-	  <h2>{{distanceSoFar | round}}</h2>
-	</div>
-      </div>
-      <div class="row">
-	<div class="col-xs-8 col-xs-offset-2 bg-warning">
-	  <h3 style="margin-bottom: 0;">Time So Far:</h3>
-	  <h2>{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}</h2>
+	<div class="col-xs-6">
+	  <h3 style="margin-bottom: 0;
+		     margin-top: 3px;">Time So Far:</h3>
+	  <h2 style="margin-top: 0;
+		     margin-bottom: 3px;">{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}</h2>
 	</div>
       </div>
     </div>
-    <!-- <div class="row"> -->
-    <!--   <div class="left center bigger"> -->
-    <!-- 	<div class="row-title"> -->
-    <!-- 	  Distance So Far: -->
-    <!-- 	</div>  -->
-    <!-- 	<div class="row-emph"> -->
-    <!-- 	  {{distanceSoFar | round}}m -->
-    <!-- 	</div> -->
-    <!--   </div> -->
-    <!--   <div class="right center bigger"> -->
-    <!-- 	<div class="row-title"> -->
-    <!-- 	  Next Achievement: -->
-    <!-- 	</div>  -->
-    <!-- 	<div class="row-emph"> -->
-    <!-- 	  {{nextAchievement | round}}m -->
-    <!-- 	</div> -->
-    <!--   </div> -->
-    <!-- </div> -->
-    <!-- <div class="row"> -->
-    <!--   <div class="middle center no-shadow"> -->
-    <!-- 	<div class="row-title"> -->
-    <!-- 	  Time So Far: -->
-    <!-- 	</div>  -->
-    <!-- 	<div class="row-emph"> -->
-    <!-- 	  {{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}} -->
-    <!-- 	</div> -->
-    <!--   </div> -->
-    <!-- </div> -->
+    
+    <div class="bg-success center"
+	 style="padding-top: 10px;
+		padding-bottom: 20px;">
+      <h4 style="margin: 0 20px;">Route Completion</h4>
+      <div class="progress"
+	   style="margin: 0 20px 10px 20px;">
+	<div class="progress-bar progress-bar-success" 
+	     style="width:{{percentRoute}}%;">
+	  <span>
+	    {{routeLength - routeDistanceRemain | round}} / {{routeLength}} m
+	  </span>
+	</div>
+      </div>
+      <h4 style="margin: 0 20px;">Next Unlock</h4>
+      <div class="progress"
+	   style="margin: 0 20px;">
+	<div class="progress-bar" 
+	     style="width: {{percentStage}}%;">
+	  <span>
+	    {{stageLength - distanceRemain | round}} / {{stageLength | round}} m
+	  </span>
+	</div>
+      </div>
+    </div>
+    
+    <div class="row bg-primary center">
+      <div class="col-xs-6">
+	<h3 style="margin-bottom: 0;
+		   margin-top: 3px;">Total Time:</h3>
+	<h2 style="margin-top: 0;
+		   margin-bottom: 3px;">{{totalTime | time}}</h2>
+      </div>
+      <div class="col-xs-6"
+	   ng-show="nextMedal">
+	<h3 style="margin-bottom: 0;
+		   margin-top: 3px;">Heading For</h3>
+	<h2 style="margin-top: 0;
+		   margin-bottom: 3px;">
+	    <span class="glyphicon glyphicon-certificate"
+		  ng-class="{'route-done-gold': nextMedal.value == 'G',
+			    'route-done-silver': nextMedal.value == 'S',
+			    'route-done-bronze': nextMedal.value == 'B'}"></span>
+	</h2>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-xs-4 col-xs-offset-1">
 	<button class="btn btn-warning btn-lg"

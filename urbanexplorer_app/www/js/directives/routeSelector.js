@@ -1,4 +1,4 @@
-UrbanExplorer.directive("routeSelector", function(routes, routePick, routesCompleted, achievements){
+UrbanExplorer.directive("routeSelector", function(routes, routePick, routesCompleted, achievements, $location){
   'use strict';
   return {
     replace: true,
@@ -53,6 +53,7 @@ UrbanExplorer.directive("routeSelector", function(routes, routePick, routesCompl
 
       $scope.select = function(route){
 	routePick.set(route);
+	$location.path("/prerun/");
       };
     }
   };

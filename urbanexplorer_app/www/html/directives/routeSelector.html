@@ -9,45 +9,30 @@
 	ng-click="select(route)"
 	class="route center"
 	style="padding-right: 10px;">
-      <h4 style="margin-left:0; margin-right:0;">{{route.name}}</h4>
-      <div class="progress"
-	   ng-class="{'progress-striped': route.completed,
-		     'active': route.completed}"
-	   style="margin-bottom: 10px;">
-	<div class="progress-bar progress-bar-success" 
-	     style="width: {{route.percent}}%"></div>
-      </div>
-      <div class="row center">
-	<div class="col-xs-3">
-	  <span>Done</span>
-	  <span class="glyphicon glyphicon-ok route-done-complete"
-		ng-show="route.completed"></span>
-	  <span class="glyphicon glyphicon-remove route-done-incomplete"
-		ng-hide="route.completed"></span>
+      <div class="row">
+	<div class="col-xs-2">
+	  <h2 ng-show="!(route.G || route.S || route.B)"
+	      style="margin: 12px 0 0 0;">
+	    <span class="glyphicon glyphicon-ok route-done-complete"
+		  ng-show="route.completed"></span>
+	  </h2>
+	  <h2 ng-show="(route.G || route.S || route.B)"
+	      style="margin: 12px 0 0 0;">
+	    <span class="glyphicon glyphicon-certificate"
+		  ng-class="{'route-done-gold': route.G,
+			    'route-done-silver': route.S,
+			    'route-done-bronze': route.B}"></span>
+	  </h2>
 	</div>
-	<div class="col-xs-3">
-	  <span>Gold</span>
-	  <span class="glyphicon glyphicon-certificate
-		       route-done-gold"
-		ng-show="route.G"></span>
-	  <span class="glyphicon glyphicon-remove route-done-incomplete"
-		ng-hide="route.G"></span>
-	</div>
-	<div class="col-xs-3">
-	  <span>Silver</span>
-	  <span class="glyphicon glyphicon-certificate
-		       route-done-silver"
-		ng-show="route.S"></span>
-	  <span class="glyphicon glyphicon-remove route-done-incomplete"
-		ng-hide="route.S"></span>
-	</div>
-	<div class="col-xs-3">
-	  <span>Bronze</span>
-	  <span class="glyphicon glyphicon-certificate
-		       route-done-bronze"
-		ng-show="route.B"></span>
-	  <span class="glyphicon glyphicon-remove route-done-incomplete"
-		ng-hide="route.B"></span>
+	<div class="col-xs-10">
+	  <h4 style="margin-left:0; margin-right:0;">{{route.name}}</h4>
+	  <div class="progress"
+	       ng-class="{'progress-striped': route.completed,
+			 'active': route.completed}"
+	       style="margin-bottom: 10px;">
+	    <div class="progress-bar progress-bar-success" 
+		 style="width: {{route.percent}}%"></div>
+	  </div>
 	</div>
       </div>
     </li>

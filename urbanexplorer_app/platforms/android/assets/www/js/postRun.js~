@@ -1,3 +1,0 @@
-UrbanExplorer.controller("PostRunCtrl", function($scope){
-
-});

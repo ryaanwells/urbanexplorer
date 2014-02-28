@@ -63,7 +63,7 @@
 }
 
 .route{
-    height: 130px;
+    height: 70px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
@@ -290,18 +290,29 @@
     color: #0B3838;
 }
 
-.route-done-gold{
-    color: gold;
+.route-done-bronze{
+    color: darkgoldenrod;
 }
 
 .route-done-silver{
     color: silver;
 }
 
-.route-done-bronze{
-    color: darkgoldenrod;
+.route-done-gold{
+    color: gold;
 }
 
 .awards-bg{
     background-color: #177F7F;
+}
+
+.progress{
+    position: relative;
+}
+
+.progress span{
+    position: absolute;
+    display: block;
+    width: 100%;
+    color: black;
 }

@@ -1,6 +1,6 @@
 local.properties
 *.pyc
-
+urbanexplorer_app/platforms
 
 urbanexplorer_serverdatabase.db
 ENV/

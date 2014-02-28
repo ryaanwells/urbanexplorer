@@ -5,58 +5,89 @@
 	      width: 100%;"
        class="bg-primary">
     <div class="center">
-      <h3 style="margin: 0px; padding-top:
-		 8px;">{{selected.mission.name}}</h3>
-      <h3 style="margin: 0; padding: 4px 0;">{{selected.name}}</h3>
+      <div class="row">
+	<div class="col-xs-2"
+	     style="border-right: 1px solid white;
+		    height: 68px;"
+	     ng-click="back()">
+	  <span class="glyphicon glyphicon-chevron-left"
+		style="color: white;
+		       margin-left: auto;
+		       margin-right: auto;
+		       margin-top: 25px;"></span>
+	</div>
+	<div class="col-xs-10"
+	     style="border-left: 1px solid white;
+		    height: 68px;">
+	  <h3 style="margin: 0px; padding-top:
+		     8px;">{{selected.mission.name}}</h3>
+	  <h3 style="margin: 0; 
+		     padding: 4px 0;">{{selected.name}}</h3>
+	</div>
+      </div>
     </div>
   </div>
   <div style="margin-top: 64px;">
-    <div class="container-fluid center">
-      <div class="row">
-	<div class="col-xs-6 bg-success"
-	     style="padding: 0;">
-	  <h3 style="margin-bottom: 0;">Total Remain:</h3>
-	  <h2>{{distanceRemain}}m</h2>
-	</div>
-	<div class="col-xs-6 bg-info">
-	  <h3 style="margin-bottom: 0;">Next Unlock:</h3>
-	  <h2>{{distanceUntilNextGoal}}m</h2>
+    <div class="bg-success center"
+	 style="padding-top: 10px;
+		padding-bottom: 20px;">
+      <h4 style="margin: 0 20px;">Route Completion</h4>
+      <div class="progress"
+	   style="margin: 0 20px 10px 20px;">
+	<div class="progress-bar progress-bar-success" 
+	     style="width:{{percentRoute}}%;">
+	  <span>
+	    {{selected.length - distanceRemain | round}} / {{selected.length | round}} m
+	  </span>
 	</div>
       </div>
-      <h3>Medal Winning Times:</h3>
-      <div class="row awards-bg">
-	<div class="col-xs-4">
-	  <div style="color: white;">
-	    <h4>Gold</h4>
-	    <h4>{{times.gold | time}}</h4>
-	  </div>
-	  <span class="glyphicon glyphicon-certificate
-		       route-done-gold"
-		ng-show="route.G"></span>
-	  <span class="glyphicon glyphicon-remove route-done-incomplete"
-		ng-hide="route.G"></span>
+      <h4 style="margin: 0 20px;">Next Unlock</h4>
+      <div class="progress"
+	   style="margin: 0 20px;">
+	<div class="progress-bar" 
+	     style="width: {{percentStage}}%;">
+	  <span>
+	    {{distanceOnStage - distanceUntilNextGoal | round}} /
+	    {{distanceOnStage}} m
+	  </span>
 	</div>
-	<div class="col-xs-4">
-	  <div style="color: white;">
-	    <h4>Silver</h4>
-	    <h4>{{times.silver | time}}</h4>
-	  </div>
-	  <span class="glyphicon glyphicon-certificate
-		       route-done-silver"
-		ng-show="route.S"></span>
-	  <span class="glyphicon glyphicon-remove route-done-incomplete"
-		ng-hide="route.S"></span>
+      </div>
+    </div>
+    <div class="container-fluid center">
+      <!-- <div class="row"> -->
+      <!-- 	<div class="col-xs-6 bg-success" -->
+      <!-- 	     style="padding: 0;"> -->
+      <!-- 	  <h3 style="margin-bottom: 0; -->
+      <!-- 		     margin-top: 5px;">Total Remain:</h3> -->
+      <!-- 	  <h2 style="margin-top: 5px;">{{distanceRemain}}m</h2> -->
+      <!-- 	</div> -->
+      <!-- 	<div class="col-xs-6 bg-info"> -->
+      <!-- 	  <h3 style="margin-bottom: 0; -->
+      <!-- 		     margin-top: 5px;">Next Unlock:</h3> -->
+      <!-- 	  <h2 style="margin-top: 5px;">{{distanceUntilNextGoal}}m</h2> -->
+      <!-- 	</div> -->
+      <!-- </div> -->
+      <div class="row awards-bg"
+	   style="color: white;">
+	<div class="col-xs-5">
+	  <h4 style="margin-bottom: 0;
+		     margin-top: 35px;">Time So Far:</h4>
+	  <h2 style="margin-top: 5px;">{{timeSoFar | time}}</h2>
 	</div>
-	<div class="col-xs-4">
-	  <div style="color: white;">
-	    <h4>Bronze</h4>
-	    <h4>{{times.bronze | time}}</h4>
-	  </div>
-	  <span class="glyphicon glyphicon-certificate
-		       route-done-bronze"
-		ng-show="route.B"></span>
-	  <span class="glyphicon glyphicon-remove route-done-incomplete"
-		ng-hide="route.B"></span>
+	<div class="col-xs-7">
+	  <h4>Medal Winning Times</h4>
+	  <h4>
+	    <span class="glyphicon glyphicon-certificate
+			 route-done-gold"></span> - {{times.gold | time}}
+	  </h4>
+	  <h4>
+	    <span class="glyphicon glyphicon-certificate
+			 route-done-silver"></span> - {{times.silver | time}}
+	  </h4>
+	  <h4>
+	    <span class="glyphicon glyphicon-certificate
+			 route-done-bronze"></span> - {{times.bronze | time}}
+	  </h4>
 	</div>
       </div>
     </div>
@@ -65,8 +96,7 @@
 	 style="margin: 0 20px;">
       <div class="progress-bar progress-bar-success" style="width: 100%;"></div>
     </div>
-    <div class="center"
-	 ng-hide="routeCompleted.completed">
+    <div class="center">
       <div ng-hide="starting">
 	<h3>Tap the button to begin!</h3>
 	<button class="btn btn-success btn-lg"
