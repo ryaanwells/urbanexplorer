@@ -27,7 +27,7 @@ class Migration(SchemaMigration):
         # Changing field 'Session.routesCompleted'
         db.alter_column(u'api_session', 'routesCompleted', self.gf('django.db.models.fields.PositiveIntegerField')(null=True))
         # Removing index on 'Session', fields ['routesCompleted']
-        db.delete_index(u'api_session', ['routesCompleted_id'])
+        # db.delete_index(u'api_session', ['routesCompleted_id'])
 
 
     def backwards(self, orm):
