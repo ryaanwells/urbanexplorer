@@ -72,7 +72,7 @@ class RouteResource(ModelResource):
     endPlace = fields.ForeignKey(PlaceResource, 'endPlace')
     startStage = fields.ForeignKey(StageResource, 'startStage')
     endStage = fields.ForeignKey(StageResource, 'endStage')
-    stages = fields.ToManyField(StageResource, 'stages')
+    stages = fields.ToManyField(StageResource, 'stages', full=True)
     
     class Meta(uMeta):
         queryset = Route.objects.all()
