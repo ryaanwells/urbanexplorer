@@ -2,14 +2,14 @@ UrbanExplorer.factory('self', function($q, $timeout, $http){
   'use strict';
   var self = {};
   
-  var getSelf = function(){
+  var getSelf = function(clean){
     var deferred = $q.defer();
 
     console.log(device.uuid);
     
     var getSelfURL = "http://ryaanwellsuni.pythonanywhere.com/getSelf/?deviceID=" + device.uuid;
 
-    if (!self.hasOwnProperty("resource_uri")){
+    if (!self.hasOwnProperty("resource_uri") || clean){
       console.log("SELF: getting");
       var config = {
 	method: "GET",

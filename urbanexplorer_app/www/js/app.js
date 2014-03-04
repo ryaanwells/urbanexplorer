@@ -33,7 +33,7 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch'])
         redirectTo: '/'
       });
   }])
-  .run(['$rootScope', '$location', 'routePick', 'session', function($rootScope, $location, routePick, session){
+  .run(['$rootScope', '$location', 'routePick', 'session', 'self', function($rootScope, $location, routePick, session, self){
     'use strict';
     $rootScope.$on("$locationChangeStart", function(event, next, current){
       if (next.indexOf("/run/") >= 0 &&
@@ -49,6 +49,7 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch'])
 	       next.indexOf("/postRun/") < 0){
 	console.log("Leaving postRun");
 	session.endSession();
+	user.setSelf(true);
       }
     });
   }]);

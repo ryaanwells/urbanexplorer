@@ -53,9 +53,26 @@ UrbanExplorer.factory('stages', function($q, $http, $timeout){
     }
     return deferred.promise;
   }
+
+  function getAll(){
+    var deferred = $q.defer();
+    var config = {
+      url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/stage/?limit=0",
+      method: "GET"
+    };
+    $http(config).success(function(result){
+      stages = result.objects;
+      deferred.resolve(stages);
+    }).error(function(result){
+      console.log("STAGES: failure all");
+      deferred.reject({});
+    });
+    return deferred.promise;
+  }
   
   return {
-    getStages: getStages
+    getStages: getStages,
+    getAll: getAll
   };
 
 });

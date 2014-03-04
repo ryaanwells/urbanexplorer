@@ -11,7 +11,9 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
     var query;
     var config;
     if (update){ // Update all, ignore "cache"
-      waiting = stages;
+      angular.forEach(stages, function(stage){
+	waiting.push(stage.id);
+      });
     }
     else {
       for (i in stages){
@@ -25,7 +27,7 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
 	}
       }
     }
-
+    console.log(waiting.length);
     if (waiting.length > 0){
       query = "";
       for (i = 0; i < waiting.length; i++){
@@ -39,6 +41,7 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
 
 	url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/progress/?" + query
       };
+      console.log(config.url);
       self.getSelf()
 	.then(function(s){
 	  config.url += "&userID=" + s.deviceID;
@@ -50,6 +53,7 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
 	    deferred.resolve(found);
 	  }).error(function(result){
 	    console.log("PROGRESS: failure");
+	    console.log(config.url);
 	    console.log(result);
 	    deferred.reject("fail");
 	  });
@@ -65,8 +69,25 @@ UrbanExplorer.factory('progress', function($q, $http, $timeout, self){
     return deferred.promise;
   }
 
+  function getAll(){
+    var deferred = $q.defer();
+    var config = {
+      url: "http://ryaanwellsuni.pythonanywhere.com/api/v1/progress/?limit=0",
+      method: "GET"
+    };
+    $http(config).success(function(all){
+      progressions = all.objects;
+      deferred.resolve(all.objects);
+    }).error(function(error){
+      console.log(error);
+      deferred.resolve({});
+    });
+    return deferred.promise;
+  }
+
   return {
-    getProgressions: getProgressions
+    getProgressions: getProgressions,
+    getAll: getAll
   };
   
 });

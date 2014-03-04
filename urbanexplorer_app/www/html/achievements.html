@@ -13,10 +13,14 @@
 	 class="progress progress-striped active">
       <div class="progress-bar progress-bar-success" style="width: 100%"></div>
     </div>
-    <ul class="unstyled-list">
-      <li ng-repeat="ach in achievements">
-	<achievement-view ach="ach"></achievement-view>
-      </li>
-    </ul>
+    <!-- <pre>{{prog | json}}</pre> -->
+    <div ng-repeat="mission in missions">
+      <achievement-view mission="mission"></achievement-view>
+    </div>
+    <!-- <ul class="unstyled-list"> -->
+    <!--   <li ng-repeat="ach in achievements"> -->
+    <!-- 	<achievement-view ach="ach"></achievement-view> -->
+    <!--   </li> -->
+    <!-- </ul> -->
   </div>
 </div>
