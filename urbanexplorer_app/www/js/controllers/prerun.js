@@ -86,43 +86,17 @@ UrbanExplorer.controller('PrerunCtrl', function($scope, routePick, $http, $q, st
     $scope.loading = false;
   }
   else {
-    stages.getStages($scope.selected.stages)
-      .then(function(stages){
-	console.log("resolved")
-	$scope.stages = stages;
-	return progress.getProgressions($scope.stages);
-      }).then(function(progressions){
-	var hasProgressForStage = true;
-	var currentStage = $scope.stages[$scope.selected.startStage];
-	var i;
-	var completedDistance = 0;
-	$scope.progressions = progressions;
-	while (currentStage){
-	  if (hasProgressForStage){
-	    $scope.distanceOnStage = currentStage.distance;
-	    $scope.distanceUntilNextGoal = currentStage.distance;
-	  }
-	  console.log(currentStage.resource_uri);
-	  if ($scope.progressions.hasOwnProperty(currentStage.resource_uri)
-	      && hasProgressForStage){
-	    console.log("Has progress");
-	    completedDistance += $scope.progressions[currentStage.resource_uri].totalDistance;
-	    $scope.distanceUntilNextGoal -= $scope.progressions[currentStage.resource_uri].totalDistance;
-	    $scope.distanceRemain += $scope.distanceUntilNextGoal;
-	    if (!$scope.progressions[currentStage.resource_uri].completed){
-	      hasProgressForStage = false;
-	    }
-	  }
-	  else {
-	    console.log("No progress");
-	    hasProgressForStage = false;
-	    $scope.distanceRemain += currentStage.distance;
-	  }
-	  console.log(currentStage.distance);
-	  currentStage = $scope.stages[currentStage.nextStage]; 
-	}
-	$scope.loading = false;
-      });    
+    angular.forEach($scope.selected.stages, function(stage){
+      if (stage.resource_uri == $scope.selected.startStage){
+	$scope.distanceUntilNextGoal = stage.distance;
+	$scope.distanceOnStage = stage.distance;
+      }
+      $scope.distanceRemain += stage.distance;
+    });
+    $scope.timeSoFar = 0;
+    $scope.percentRoute = 0;
+    $scope.percentStage = 0;
+    $scope.loading = false;
   }
 
   $scope.startRun = function(){

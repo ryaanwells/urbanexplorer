@@ -22,6 +22,7 @@ UrbanExplorer.factory('stages', function($q, $http, $timeout){
     if (waiting.length > 0){
       var query = "";
       for (i = 0; i < waiting.length; i++){
+	console.log(waiting[i]);
 	temp = waiting[i].substr(0, waiting[i].lastIndexOf('/'));
 	query += temp.substr(temp.lastIndexOf('/') + 1);
 	if (i + 1 < waiting.length){
