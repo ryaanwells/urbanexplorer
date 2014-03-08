@@ -1,4 +1,4 @@
-UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, self, routes, missions, $http, routesCompleted) {
+UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, self, routes, missions, $http, routesCompleted, routePick) {
   'use strict';
   $scope.coords = [];
 
@@ -19,7 +19,9 @@ UrbanExplorer.controller('MainCtrl', function($scope, geolocation, $location, se
     $scope.self = response;
   });
 
-  routes.getRoutes();
+  routes.getRoutes().then(function(routes){
+    routePick.set(routes[0]);
+  });
   routesCompleted.getCompleted();
   
 

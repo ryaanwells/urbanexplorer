@@ -15,12 +15,12 @@ UrbanExplorer.factory('geolocation', function ($rootScope, $q, $timeout) {
     var deferred = $q.defer();
     navigator.geolocation.getCurrentPosition(
       function (location) {
-        $rootScope.$apply(function(){
+        $timeout(function(){
 	  console.log("LOCATION: Got.");
 	  deferred.resolve(location);
         });
       }, function (error) {
-        $rootScope.$apply(function(){
+        $timeout(function(){
 	  console.log("LOCATION: Error.");
           deferred.reject(error);
         });

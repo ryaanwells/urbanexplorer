@@ -38,12 +38,12 @@ var UrbanExplorer = angular.module('UrbanExplorer', ['ngRoute','ngTouch'])
     $rootScope.$on("$locationChangeStart", function(event, next, current){
       if (next.indexOf("/run/") >= 0 &&
 	  current.indexOf("/prerun/") < 0){
-	if (routePick.get().hasOwnProperty("resource_uri")){
-	  $location.path("/prerun/");
-	}
-	else {
-	  $location.path("/targets/");
-	}
+	// if (routePick.get().hasOwnProperty("resource_uri")){
+	//   $location.path("/prerun/");
+	// }
+	// else {
+	//   $location.path("/targets/");
+	// }
       }
       else if (current.indexOf("/postRun/") >=0 &&
 	       next.indexOf("/postRun/") < 0){

@@ -18,17 +18,31 @@
 		background-image: url({{session.stageImage}});"></div>
     <div class="container-fluid center">
       <div class="row bg-primary">
-	<div class="col-xs-6">
+	<div class="col-xs-4">
 	  <h3 style="margin-bottom: 0;
 		     margin-top: 3px;">Distance:</h3>
 	  <h2 style="margin-top: 0;
-		     margin-bottom: 3px;">{{distanceSoFar | round}}</h2>
+		     margin-bottom: 3px;">{{distanceSoFar | round}}m</h2>
 	</div>
-	<div class="col-xs-6">
+	<div class="col-xs-4">
 	  <h3 style="margin-bottom: 0;
-		     margin-top: 3px;">Time So Far:</h3>
+		     margin-top: 3px;">Time:</h3>
 	  <h2 style="margin-top: 0;
-		     margin-bottom: 3px;">{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}</h2>
+	  	     margin-left: 0;
+	  	     margin-right: 0;
+	  	     margin-bottom: 3px;">{{hours|twoDigit}}:{{minutes|twoDigit}}:{{seconds|twoDigit}}</h2>
+	</div>
+	<div class="col-xs-4"
+	     ng-show="nextMedal">
+	  <h4 style="margin-bottom: 0;
+		     margin-top: 3px;">Going For</h4>
+	  <h2 style="margin-top: 0;
+		     margin-bottom: 3px;">
+	    <span class="glyphicon glyphicon-certificate"
+		  ng-class="{'route-done-gold': nextMedal.value == 'G',
+			    'route-done-silver': nextMedal.value == 'S',
+			    'route-done-bronze': nextMedal.value == 'B'}"></span>
+	  </h2>
 	</div>
       </div>
     </div>
@@ -59,64 +73,52 @@
     </div>
     
     <div class="row bg-primary center">
-      <div class="col-xs-6">
-	<h3 style="margin-bottom: 0;
-		   margin-top: 3px;">Total Time:</h3>
-	<h2 style="margin-top: 0;
-		   margin-bottom: 3px;">{{totalTime | time}}</h2>
+      <div class="col-xs-6"
+	   ng-click="endConfirm = false;">
+	<h3 style="margin-top: 5px;">
+	  <span class="glyphicon glyphicon-play"></span>
+	</h3>
+	<!-- <h3 style="margin-bottom: 0; -->
+	<!-- 	   margin-top: 3px;">Total Time:</h3> -->
+	<!-- <h2 style="margin-top: 0; -->
+	<!-- 	   margin-bottom: 3px;">{{totalTime | time}}</h2> -->
       </div>
       <div class="col-xs-6"
-	   ng-show="nextMedal">
-	<h3 style="margin-bottom: 0;
-		   margin-top: 3px;">Heading For</h3>
-	<h2 style="margin-top: 0;
-		   margin-bottom: 3px;">
-	    <span class="glyphicon glyphicon-certificate"
-		  ng-class="{'route-done-gold': nextMedal.value == 'G',
-			    'route-done-silver': nextMedal.value == 'S',
-			    'route-done-bronze': nextMedal.value == 'B'}"></span>
-	</h2>
+	   ng-click="endSession()">
+	<h3 style="margin: 5px;">
+	  <span class="glyphicon"
+		ng-class="{'glyphicon-pause': !endConfirm,
+			  'glyphicon-stop': endConfirm}"></span>
+	</h3>
+	<p ng-show="endConfirm">
+	  Click again to stop
+	</p>
+	<!-- <h3 style="margin-bottom: 0; -->
+	<!-- 	   margin-top: 3px;">Heading For</h3> -->
+	<!-- <h2 style="margin-top: 0; -->
+	<!-- 	   margin-bottom: 3px;"> -->
+	<!--     <span class="glyphicon glyphicon-certificate" -->
+	<!-- 	  ng-class="{'route-done-gold': nextMedal.value == 'G', -->
+	<!-- 		    'route-done-silver': nextMedal.value == 'S', -->
+	<!-- 		    'route-done-bronze': nextMedal.value == 'B'}"></span> -->
+	<!-- </h2> -->
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-1">
-	<button class="btn btn-warning btn-lg"
-		ng-show="endConfirm"
-		ng-click="endConfirm = false;">
-	  Keep Running?
-	</button>
-      </div>
-      <div class="col-xs-4 col-xs-offset-1">
-	<button class="btn btn-danger btn-lg"
-		ng-click="endSession()">
-	  End Session?
-	</button>
-      </div>
-      <!-- <div class="left center shadow" -->
-      <!-- 	   ng-click="endConfirm = false;" -->
-      <!-- 	   ng-show="endConfirm"> -->
-      <!-- 	<div class="row-title"> -->
-      <!-- 	  Keep running? -->
-      <!-- 	</div> -->
-      <!-- 	<div class="row-emph"> -->
-      <!-- 	  Tap here -->
-      <!-- 	</div> -->
-      <!-- </div> -->
-      <!-- <div class="right center shadow" -->
-      <!-- 	   ng-click="endSession()"> -->
-      <!-- 	<div class="row-title" -->
-      <!-- 	     ng-hide="endConfirm"> -->
-      <!-- 	  Finish? -->
-      <!-- 	</div>  -->
-      <!-- 	<div class="row-title" -->
-      <!-- 	     ng-show="endConfirm"> -->
-      <!-- 	  Are you sure? -->
-      <!-- 	</div> -->
-      <!-- 	<div class="row-emph"> -->
-      <!-- 	  End Session -->
-      <!-- 	</div> -->
-      <!-- </div> -->
-    </div>
+    <!-- <div class="row"> -->
+    <!--   <div class="col-xs-4 col-xs-offset-1"> -->
+    <!-- 	<button class="btn btn-warning btn-lg" -->
+    <!-- 		ng-show="endConfirm" -->
+    <!-- 		ng-click="endConfirm = false;"> -->
+    <!-- 	  Keep Running? -->
+    <!-- 	</button> -->
+    <!--   </div> -->
+    <!--   <div class="col-xs-4 col-xs-offset-1"> -->
+    <!-- 	<button class="btn btn-danger btn-lg" -->
+    <!-- 		ng-click="endSession()"> -->
+    <!-- 	  End Session? -->
+    <!-- 	</button> -->
+    <!--   </div> -->
+    <!-- </div> -->
   </div>
 </div>
