@@ -1,13 +1,11 @@
 UrbanExplorer.controller('AchievementsCtrl', function($scope, $location, achievements, progress, stages, routes, missions){
   "use strict";
   
-  $scope.achievements = [];
-
-  $scope.ach = {};
-
   $scope.missions = [];
+  $scope.getting = true;
 
   missions.getMissions().then(function(missions){
+    $scope.getting = false;
     $scope.missions = missions;
   });
 
