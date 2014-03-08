@@ -60,6 +60,9 @@ def startSession(request):
             routeCompleted.currentJourney = routeProgress
             routeCompleted.save()
             
+        routeProgress = routeCompleted.currentJourney
+        progress = routeProgress.progress
+
         session = Session(userID=userID, routesCompleted=routeCompleted,
                           lastLat=float(body['lat']), lastLon=float(body['lon']),
                           lastTime=body['timestamp'])
@@ -71,6 +74,11 @@ def startSession(request):
         response = {}
         response['id'] = session.pk
         response['distance'] = distance
+        response['distanceRemain'] = progress.stageID.distance - progress.totalDistance
+        response['stageLength'] = progress.stageID.distance
+        response['routeDistanceRemain'] = routeCompleted.routeID.length - routeProgress.distance
+        response['routeLength'] = routeCompleted.routeID.length
+        response['currentStage'] = routeProgress.progress.stageID.id
         response['totalTime'] = session.totalTime
         response['stageImage'] = session.routesCompleted.currentJourney.progress.stageID.image
         
