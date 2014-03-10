@@ -51,17 +51,6 @@ class Mission(models.Model):
     def __unicode__(self):
         return self.name
 
-class Place(models.Model):
-    class Meta:
-        verbose_name = "place"
-        verbose_name_plural = "places"
-
-    name = models.CharField(max_length=128)
-    mission = models.ForeignKey('Mission')
-
-    def __unicode__(self):
-        return self.name
-
 class Route(models.Model):
     class Meta:
         verbose_name = "route"
@@ -69,12 +58,12 @@ class Route(models.Model):
 
     name = models.CharField(max_length=128)
     mission = models.ForeignKey('Mission')
-    startPlace = models.ForeignKey('Place', related_name='+')
-    endPlace = models.ForeignKey('Place', related_name='+')
     startStage = models.ForeignKey('Stage', related_name='+')
     endStage = models.ForeignKey('Stage', related_name='+')
     stages = models.ManyToManyField('Stage')
-    length = models.PositiveIntegerField(default=0);
+    length = models.PositiveIntegerField(default=0)
+    nextRoute = models.ForeignKey('Route', blank=True, null=True, related_name='+')
+    lockedBy = models.ForeignKey('Route', blank=True, null=True, related_name='+')
     # Also geolocation here, implementation TBD.
     # Interesting: https://docs.djangoproject.com/en/dev/ref/contrib/gis/model-api/
 

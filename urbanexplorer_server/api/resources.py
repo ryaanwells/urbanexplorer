@@ -2,7 +2,7 @@ from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from tastypie.authorization import Authorization
 from tastypie import fields
 from django.contrib.auth.models import User
-from models import UserProfile, Session, Progress, Stage, Mission, Place, Route, RoutesCompleted, Achievement, UserAchievement, RouteProgress
+from models import UserProfile, Session, Progress, Stage, Mission, Route, RoutesCompleted, Achievement, UserAchievement, RouteProgress
 
 from base import uMeta
 
@@ -53,23 +53,8 @@ class MissionResource(ModelResource):
             'name': ALL
         }
 
-class PlaceResource(ModelResource):
-    mission = fields.ForeignKey(MissionResource, 'mission')
-    
-    class Meta(uMeta):
-        queryset = Place.objects.all()
-        resource_name= 'place'
-        authorization = Authorization()
-        allowed_methods = ['get']
-        filtering = {
-            'name': ALL,
-            'mission': ALL
-        }
-
 class RouteResource(ModelResource):
     mission = fields.ForeignKey(MissionResource, 'mission')
-    startPlace = fields.ForeignKey(PlaceResource, 'startPlace')
-    endPlace = fields.ForeignKey(PlaceResource, 'endPlace')
     startStage = fields.ForeignKey(StageResource, 'startStage')
     endStage = fields.ForeignKey(StageResource, 'endStage')
     stages = fields.ToManyField(StageResource, 'stages', full=True)
@@ -82,8 +67,6 @@ class RouteResource(ModelResource):
         filtering = {
             'name': ALL,
             'mission': ALL,
-            'startPlace': ALL_WITH_RELATIONS,
-            'endPlace': ALL_WITH_RELATIONS,
             'startStage': ALL_WITH_RELATIONS,
             'endStage': ALL_WITH_RELATIONS,
             'stages': ALL_WITH_RELATIONS
