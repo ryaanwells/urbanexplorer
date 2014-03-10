@@ -1,16 +1,18 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  21 JAN 2014 21:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  9 MAR 2014 21:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**wells-2013-urbanexplorer
+**wells-2013-urbanexplorer.tex
 (./wells-2013-urbanexplorer.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
 aded.
-(./l3proj.cls
-Document Class: l3proj 2009/01/09 Colin Perkins <csp@dcs.gla.ac.uk>.2009/09/16 
-Modified by Tim Storer <tws@dcs.gla.ac.uk> to support non pdf modes.2010/03/20 
-Hacked by Carly O'Neil for Level 4 Project 
+(./l4proj.cls
+Document Class: l4proj 2009/01/09 Colin Perkins <csp@dcs.gla.ac.uk>.2009/09/16 
+Modified by Tim Storer <tws@dcs.gla.ac.uk> to support non pdf modes.2011/02/15 
+Modified by Gregg Hamilton <hamiltgr@dcs.gla.ac.uk> for use in final year proje
+cts.2012/10/18 Modified by Patrick Prosser, use geometry to control margins, si
+mplified.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
@@ -65,8 +67,37 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count89
+\c@@ppsavesec=\count90
+\c@@ppsaveapp=\count91
+)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count92
+\Gm@cntv=\count93
+\c@Gm@tempcnt=\count94
+\Gm@bindingoffset=\dimen105
+\Gm@wd@mp=\dimen106
+\Gm@odd@mp=\dimen107
+\Gm@even@mp=\dimen108
+\Gm@layoutwidth=\dimen109
+\Gm@layoutheight=\dimen110
+\Gm@layouthoffset=\dimen111
+\Gm@layoutvoffset=\dimen112
+\Gm@dimlist=\toks15
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
@@ -82,8 +113,8 @@ Package color Info: Driver file: pdftex.def on input line 130.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
-\epsfxsize=\dimen105
-\epsfysize=\dimen106
+\epsfxsize=\dimen113
+\epsfysize=\dimen114
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
@@ -137,37 +168,37 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen107
-\extrarowheight=\dimen108
-\NC@list=\toks15
+\col@sep=\dimen115
+\extrarowheight=\dimen116
+\NC@list=\toks16
 \extratabsurround=\skip43
 \backup@length=\skip44
 )
-\everycr=\toks16
+\everycr=\toks17
 \minrowclearance=\skip45
 )
 (/usr/local/share/texmf/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen109
+\bigstrutjot=\dimen117
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen110
-\lightrulewidth=\dimen111
-\cmidrulewidth=\dimen112
-\belowrulesep=\dimen113
-\belowbottomsep=\dimen114
-\aboverulesep=\dimen115
-\abovetopsep=\dimen116
-\cmidrulesep=\dimen117
-\cmidrulekern=\dimen118
-\defaultaddspace=\dimen119
-\@cmidla=\count89
-\@cmidlb=\count90
-\@aboverulesep=\dimen120
-\@belowrulesep=\dimen121
-\@thisruleclass=\count91
-\@lastruleclass=\count92
-\@thisrulewidth=\dimen122
+\heavyrulewidth=\dimen118
+\lightrulewidth=\dimen119
+\cmidrulewidth=\dimen120
+\belowrulesep=\dimen121
+\belowbottomsep=\dimen122
+\aboverulesep=\dimen123
+\abovetopsep=\dimen124
+\cmidrulesep=\dimen125
+\cmidrulekern=\dimen126
+\defaultaddspace=\dimen127
+\@cmidla=\count95
+\@cmidlb=\count96
+\@aboverulesep=\dimen128
+\@belowrulesep=\dimen129
+\@thisruleclass=\count97
+\@lastruleclass=\count98
+\@thisrulewidth=\dimen130
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
@@ -200,148 +231,201 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
-\scratchdimen=\dimen123
+\scratchcounter=\count99
+\scratchdimen=\dimen131
 \scratchbox=\box26
-\nofMPsegments=\count94
-\nofMParguments=\count95
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count96
-\MPscratchDim=\dimen124
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
-\everyMPtoPDFconversion=\toks18
-) <images/SchCompSci_colour.pdf, id=1, 340.27126pt x 49.18375pt>
-File: images/SchCompSci_colour.pdf Graphic file (type pdf)
+\nofMPsegments=\count100
+\nofMParguments=\count101
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count102
+\MPscratchDim=\dimen132
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
+\everyMPtoPDFconversion=\toks19
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(99.58464pt, 631.65118pt, 113.81102pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=490.52367pt
+* \textheight=703.92117pt
+* \oddsidemargin=-18.7779pt
+* \evensidemargin=17.3571pt
+* \topmargin=-45.82034pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<use images/SchCompSci_colour.pdf>
-Package pdftex.def Info: images/SchCompSci_colour.pdf used on input line 27.
-(pdftex.def)             Requested size: 300.43684pt x 9.35004pt.
+<images/CompSci_colour.pdf, id=1, 413.545pt x 93.34875pt>
+File: images/CompSci_colour.pdf Graphic file (type pdf)
+
+<use images/CompSci_colour.pdf>
+Package pdftex.def Info: images/CompSci_colour.pdf used on input line 27.
+(pdftex.def)             Requested size: 356.63864pt x 36.44318pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 27.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/SchCompSci_colour
-.pdf>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/CompSci_colour.pd
+f>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 30.
  [1]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
- (./wells-2013-urbanexplorer.toc [1
+ (./wells-2013-urbanexplorer.toc
+[1
 
 ])
 \tf@toc=\write3
 \openout3 = `wells-2013-urbanexplorer.toc'.
 
- (./introduction.tex [2]
+ [2] (./introduction.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
-[3
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+[1
 
-]) (./related_work.tex [4]
+]) (./related_work.tex [2]
 Chapter 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
-[5
-
-] [6]
-Overfull \hbox (27.85883pt too wide) in paragraph at lines 127--136
-[][]
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 20.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (11.42741pt too wide) in paragraph at lines 20--21
+[][]\OT1/ptm/m/n/10.95 This may also be rel-e-vant, need to get when in uni $\O
+T1/pcr/m/n/10.95 http : / / dl . acm . org / citation . cfm ? id = 1125805$[] 
  []
 
-) (./method.tex [7]
-Chapter 3.
-[8
+[3
 
-] <images/N-tier.png, id=41, 523.9575pt x 257.96375pt>
+] [4]) (./method.tex [5]
+Chapter 3.
+[6
+
+] <images/N-tier.png, id=46, 523.9575pt x 257.96375pt>
 File: images/N-tier.png Graphic file (type png)
 
 <use images/N-tier.png>
 Package pdftex.def Info: images/N-tier.png used on input line 67.
-(pdftex.def)             Requested size: 432.26999pt x 212.82664pt.
- <images/ER.png, id=43, 794.97pt x 756.8275pt>
+(pdftex.def)             Requested size: 490.52367pt x 241.50977pt.
+ <images/ER.png, id=48, 794.97pt x 756.8275pt>
 File: images/ER.png Graphic file (type png)
 
 <use images/ER.png>
 Package pdftex.def Info: images/ER.png used on input line 90.
-(pdftex.def)             Requested size: 432.26999pt x 411.54472pt.
+(pdftex.def)             Requested size: 490.52367pt x 466.99939pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9 <./images/N-tier.png>]
-<images/Wireframes.png, id=48, 1309.89375pt x 869.2475pt>
+[7 <./images/N-tier.png>]
+<images/Wireframes.png, id=53, 1309.89375pt x 869.2475pt>
 File: images/Wireframes.png Graphic file (type png)
 
 <use images/Wireframes.png>
 Package pdftex.def Info: images/Wireframes.png used on input line 118.
-(pdftex.def)             Requested size: 432.26999pt x 286.85255pt.
- [10 <./images/ER.png (PNG copy)>] [11 <./images/Wireframes.png>] [12]) (./resu
-lts.tex [13]
+(pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8]
+Overfull \hbox (0.84587pt too wide) in paragraph at lines 189--193
+[]\OT1/ptm/m/n/10.95 These caching ser-vices are used as singleton-like fa-cil-
+i-ties in the ap-pli-ca-tion to en-sure con-sis-tent data through-
+ []
+
+) (./results.tex [9] [10] [11 <./images/ER.png (PNG copy)>] [12 <./images/Wiref
+rames.png>]
 Chapter 4.
-) (./conclusion.tex [14
+) (./conclusion.tex [13
 
 ]
 Chapter 5.
-) (./wells-2013-urbanexplorer.bbl [15
+) (./wells-2013-urbanexplorer.bbl [14
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 7.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 []\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  $
-\OT1/pcr/m/n/10.95 https :
+\OT1/pcr/m/n/10.95 https : / /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
-\OT1/pcr/m/n/10.95 / / catalogue . ic . nhs . uk / publications / public-[]heal
-th /
+\OT1/pcr/m/n/10.95 catalogue . ic . nhs . uk / publications / public-[]health /
+ surveys /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-\OT1/pcr/m/n/10.95 surveys / heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]
-2006 /
+Overfull \hbox (87.2507pt too wide) in paragraph at lines 4--9
+\OT1/pcr/m/n/10.95 heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006 / hea
+l-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006-[]rep-[]v3 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
-\OT1/pcr/m/n/10.95 uploads / system / uploads / attachment _ data / file / 2163
-70 / dh _ 128210 . pdf$\OT1/ptm/m/n/10.95 ,
+Underfull \hbox (badness 2229) in paragraph at lines 18--23
+[]\OT1/ptm/m/n/10.95 US De-part-ment of Health.  Web-store for gps ex-er-cise d
+e-vices.  $\OT1/pcr/m/n/10.95 http : / / www . health . gov /
  []
 
-) [16
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--57
+[]\OT1/ptm/m/n/10.95 Daniel Lind-s-ley.  django-tastypie li-brary.  $\OT1/pcr/m
+/n/10.95 https : / / github . com / toastdriven /
+ []
+
+) [15
 
 ] (./wells-2013-urbanexplorer.aux) ) 
 Here is how much of TeX's memory you used:
- 2126 strings out of 495059
- 30115 string characters out of 3182030
- 82866 words of memory out of 3000000
- 5238 multiletter control sequences out of 15000+200000
- 24569 words of font info for 48 fonts, out of 3000000 for 9000
+ 2714 strings out of 495059
+ 38684 string characters out of 3182030
+ 100815 words of memory out of 3000000
+ 5809 multiletter control sequences out of 15000+200000
+ 26560 words of font info for 52 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,7n,23p,335b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,10n,23p,339b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dv
 ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (18 pages, 286946 bytes).
+Output written on wells-2013-urbanexplorer.pdf (19 pages, 295316 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

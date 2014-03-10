@@ -1,4 +1,5 @@
 \chapter{Introduction}\label{ch_intro}
+
 \section{Motivation / Context}
 The number of smartphones being sold per year is
 increasing\cite{phones_gartner, phones_guardian} and nearly
@@ -61,11 +62,52 @@ the scope of the project:
 \end{enumerate}
 
 \section{Summary of the Contributions}
-\todo{Applications or Systems developed as part of the work}
-\todo{Particular Novel findings from the results}
-\todo{Creation of datasets, code, etc}
-\todo{Methodologically: suggesting a new process or way to do things}
-\todo{?}
 
+This project required producing a mobile app to provide the
+gamification and a webserver to manage data provision and result
+gathering. 
+
+The mobile app takes the form of an Android App which is hosted on the
+Google Play Store \cite{app_store_link}. It is recommended for
+convenience to download the app directly from here, however you can
+install from source or the generated apk if desired. The version that
+is hosted on the app store will not change between the time of
+submission and results being published.
+
+The webserver was developed in a RESTful style using the django
+middleware framework\cite{django} and tastypie, a django module for
+generating a REST style API\cite{tastypie}. Some business logic does
+not fit with the REST methodology, such as registration and exercise
+session management, so specific views have been implemented to cater
+for this. These are constructed using solely the django framework.
+
+When in use, the mobile app requires an internet connection to obtain
+data from the webserver and to communicate location information to the
+webserver. Since this is an application intended for use when the user
+is not on a home network, care has been taken to minimise the network
+traffic required. Content is managed in the app by utilising explicit
+caching: this retains local copies of data objects that will not
+change during the runtime of the app. 
+
+Care was also taken when designing the interaction for managing an
+exercise session, with the overall goal of further reducing the
+network cost. Inspiration was taken from some of the REST principles,
+but this work flow does not adhere to all of these principles. 
+
+These are explained in full in Section \ref{sec_notable}.
 
 \section{The Structure or Outline of the Report}
+
+We will start by examining the current state of the market by
+discussing other implementations of gamification in mobile
+apps. Through this examination, we will discover the benefits and
+pitfalls of each implementation and use this to form the basis of our
+implementation. 
+
+We will then define the overall goals of the project: how we will use
+gamification to deliver our implementation and what we hope to
+achieve in the scope of this project. 
+
+An analysis of our implementation will then be presented. This is
+based on user testing and evaluation of the overall suitability of
+the platform and experience.

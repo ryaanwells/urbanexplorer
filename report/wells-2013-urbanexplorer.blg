@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: wells-2013-urbanexplorer.aux
 The style file: unsrt.bst
 Database file #1: wells-2013-urbanexplorer.bib
-You've used 7 entries,
+You've used 11 entries,
             1791 wiz_defined-function locations,
-            478 strings with 4661 characters,
-and the built_in function-call counts, 916 in all, are:
-= -- 75
-> -- 28
+            495 strings with 5151 characters,
+and the built_in function-call counts, 1422 in all, are:
+= -- 116
+> -- 44
 < -- 0
-+ -- 14
-- -- 7
-* -- 5
-:= -- 147
-add.period$ -- 22
-call.type$ -- 7
-change.case$ -- 7
++ -- 22
+- -- 11
+* -- 8
+:= -- 230
+add.period$ -- 34
+call.type$ -- 11
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 35
-empty$ -- 127
-format.name$ -- 7
-if$ -- 216
+cite$ -- 11
+duplicate$ -- 58
+empty$ -- 195
+format.name$ -- 11
+if$ -- 334
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 0
-newline$ -- 39
-num.names$ -- 7
-pop$ -- 40
+int.to.str$ -- 11
+missing$ -- 1
+newline$ -- 59
+num.names$ -- 11
+pop$ -- 58
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 26
+skip$ -- 43
 stack$ -- 0
 substring$ -- 0
-swap$ -- 7
+swap$ -- 11
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 7
-width$ -- 8
-write$ -- 70
+while$ -- 11
+width$ -- 13
+write$ -- 107

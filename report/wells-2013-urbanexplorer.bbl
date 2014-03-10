@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{exercise}
 National~Health Service.
@@ -37,6 +37,28 @@ The Guardian.
 Life Fitness.
 \newblock 2012 fitness and technology survey.
 \newblock \url{http://www.lifefitness.co.uk/Survey}.
+
+\bibitem{app_store_link}
+Ryan Wells.
+\newblock Google play store entry for "urban explorer", the app created for
+  this project.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.phonegap.urbanexplorer}.
+
+\bibitem{django}
+Django~Software Foundation.
+\newblock django web framework.
+\newblock \url{https://www.djangoproject.com/}.
+
+\bibitem{tastypie}
+Daniel Lindsley.
+\newblock django-tastypie library.
+\newblock \url{https://github.com/toastdriven/django-tastypie}.
+
+\bibitem{academic_gamification}
+Lena Sunali~Raj Mithun~Sridharan, Aditya~Hrishikesh.
+\newblock An academic analysis of gamification.
+\newblock {\em UX magazine}, 2008.
 
 \bibitem{charitymiles_terms}
 Charity Miles.
