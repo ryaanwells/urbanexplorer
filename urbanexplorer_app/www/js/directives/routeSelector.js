@@ -37,6 +37,20 @@ UrbanExplorer.directive("routeSelector", function(routes, routePick, routesCompl
 	    $scope.routes[i].percent = 0;
 	  }
 	}
+
+	angular.forEach($scope.routes, function(routeA){
+	  if (routeA.lockedBy){
+	    angular.forEach($scope.routes, function(routeB){
+	      if (routeA.resource_uri === routeB.resource_uri){
+		return;
+	      }
+	      if (routeA.lockedBy === routeB.resource_uri){
+		routeA.locked = !routeB.completed;
+		routeA.lockedBy = routeB;
+	      }
+	    });
+	  }
+	});		      
       });
 
       $scope.toggle = function(){
@@ -52,6 +66,9 @@ UrbanExplorer.directive("routeSelector", function(routes, routePick, routesCompl
       };
 
       $scope.select = function(route){
+	if (route.locked){
+	  return;
+	}
 	routePick.set(route);
 	$location.path("/prerun/");
       };
