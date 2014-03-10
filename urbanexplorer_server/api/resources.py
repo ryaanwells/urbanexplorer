@@ -58,8 +58,8 @@ class RouteResource(ModelResource):
     startStage = fields.ForeignKey(StageResource, 'startStage')
     endStage = fields.ForeignKey(StageResource, 'endStage')
     stages = fields.ToManyField(StageResource, 'stages', full=True)
-    nextRoute = fields.ForeignKey('api.resources.RouteResource', 'nextRoute', full=True)
-    lockedBy = fields.ForeignKey('api.resources.RouteResource', 'lockedBy', full=True)
+    nextRoute = fields.ForeignKey('api.resources.RouteResource', 'nextRoute', full=True, null=True)
+    lockedBy = fields.ForeignKey('api.resources.RouteResource', 'lockedBy', full=True, null=True)
     
     class Meta(uMeta):
         queryset = Route.objects.all()
