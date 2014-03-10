@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from tastypie.api import Api
 from api.views import getSelf, startSession, updateSession
-from api.resources import UserProfileResource, UserResource, SessionResource, ProgressResource, StageResource, MissionResource, PlaceResource, RouteResource, RoutesCompletedResource, AchievementResource, UserAchievementResource, RouteProgressResource
+from api.resources import UserProfileResource, UserResource, SessionResource, ProgressResource, StageResource, MissionResource, RouteResource, RoutesCompletedResource, AchievementResource, UserAchievementResource, RouteProgressResource
 admin.autodiscover()
 
 v1_api = Api(api_name='v1')
@@ -14,7 +14,6 @@ v1_api.register(SessionResource())
 v1_api.register(ProgressResource())
 v1_api.register(StageResource())
 v1_api.register(MissionResource())
-v1_api.register(PlaceResource())
 v1_api.register(RouteResource())
 v1_api.register(RoutesCompletedResource())
 v1_api.register(AchievementResource())
