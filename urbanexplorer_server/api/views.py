@@ -111,6 +111,8 @@ def updateSession(request):
                 
             speed = distance * 1000 / timeIncrement
 
+            # print distance
+
             session.distance = session.distance + distance
             session.lastLat = body['lat']
             session.lastLon = body['lon']
@@ -129,10 +131,19 @@ def updateSession(request):
             
             progress = rp.progress
             payload = {}
+
+            multiple = False
             
             while (progress.totalDistance + distance >= progress.stageID.distance):
+                multiple = True
+                # print "---"
+                # print progress.totalDistance
+                # print progress.stageID.distance
+                # print "here"
                 difference = progress.stageID.distance - progress.totalDistance
+                # print difference
                 distance = distance - difference
+                # print distance
                 timeDifference = difference / (speed / 1000) # Time is in ms, speed is m/second
                 timeIncrement = timeIncrement - timeDifference
                 # print "Time Difference: {}".format(timeDifference)
@@ -142,6 +153,7 @@ def updateSession(request):
                     timeDifference = 0
 
                 rp.distance = rp.distance + difference
+                rp.save()
                 # rp.time = rp.time + timeDifference
                 session.stagesCompleted = session.stagesCompleted + 1
     
@@ -170,15 +182,38 @@ def updateSession(request):
                                     payload['achievements'].append(ach)
                         # Add Award
                     rc.completed = True
-                    progress = Progress(stageID=rc.routeID.startStage,
-                                        userID=rc.userID)
-                    progress.save()
-                    rp = RouteProgress(progress=progress)
-                    rp.save()
-                    rp.allProgress.add(progress)
-                    rc.allJourneys.add(rp)
-                    rc.currentJourney = rp
-                    rc.save()                    
+                    rc.save()
+                    
+                    nextRoute = rc.routeID.nextRoute
+                    rc = RoutesCompleted.objects.get_or_create(routeID=nextRoute,
+                                                               userID=rc.userID)[0]
+                    
+                    if rc.currentJourney is None:
+                        progress = Progress(stageID=nextRoute.startStage,
+                                            userID=rc.userID)
+                        progress.save()
+                        rp = RouteProgress(progress=progress)
+                        rp.save()
+                        rp.allProgress.add(progress)
+                        rp.save()
+                        rc.allJourneys.add(rp)
+                        rc.currentJourney = rp
+                        rc.save()
+
+                    else:
+                        rp = rc.currentJourney
+                        if rp.completed:
+                            progress = Progress(stageID=rc.routeID.startStage,
+                                                userID=rc.userID)
+                            progress.save()
+                            rp = RouteProgress(progress=progress)
+                            rp.save()
+                            rc.allJourneys.add(rp)
+                            rc.currentJourney = rp
+                            rc.save()
+                            
+                        progress = rp.progress
+                    
                 else:
                     progress = Progress(userID=progress.userID,
                                         stageID=progress.stageID.nextStage)
@@ -186,8 +221,15 @@ def updateSession(request):
                 
                     rp.allProgress.add(progress)
                     rp.progress = progress
-
-            rp.distance = rp.distance + distance
+                # print "==="
+                # print progress.totalDistance 
+                # print progress.stageID.distance
+                # print distance 
+                # print "==="
+            
+            if not multiple:
+                rp.distance = rp.distance + distance
+            # print "Distance: {}".format(rp.distance)
             rp.save()
             rc.save()
             progress.totalDistance = progress.totalDistance + distance
