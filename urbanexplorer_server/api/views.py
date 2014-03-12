@@ -135,7 +135,7 @@ def updateSession(request):
             multiple = False
             
             while (progress.totalDistance + distance >= progress.stageID.distance):
-                session.userID.routesCompleted = session.userID.routesCompleted + 1
+                session.userID.stagesCompleted = session.userID.stagesCompleted + 1
                 session.userID.save()
                 multiple = True
                 # print "---"
