@@ -86,4 +86,20 @@ Google.
 \newblock Angularjs.
 \newblock \url{http://angularjs.com}.
 
+\bibitem{phonegap_currentpos}
+Adobe~Systems Inc.
+\newblock Phonegap ``getcurrentposition'' definition.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#geolocation.getCurrentPosition}.
+
+\bibitem{callback_hell}
+Max Ogden.
+\newblock Callback hell.
+\newblock \url{http://callbackhell.com/}.
+
+\bibitem{angularjs_apply}
+Google.
+\newblock Angularjs \$scope.\$apply function definition.
+\newblock \url{http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply}.
+
 \end{thebibliography}

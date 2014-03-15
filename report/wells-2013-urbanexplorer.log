@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  15 MAR 2014 17:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  15 MAR 2014 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -323,7 +323,11 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 [1
 
-]) (./related_work.tex [2]
+]
+
+LaTeX Warning: Reference `sec_notable' on page 2 undefined on input line 97.
+
+) (./related_work.tex [2]
 Chapter 2.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
@@ -346,32 +350,28 @@ Chapter 3.
 File: images/N-tier.png Graphic file (type png)
 
 <use images/N-tier.png>
-Package pdftex.def Info: images/N-tier.png used on input line 127.
+Package pdftex.def Info: images/N-tier.png used on input line 148.
 (pdftex.def)             Requested size: 490.52367pt x 241.50977pt.
  <images/ER.png, id=54, 794.97pt x 756.8275pt>
 File: images/ER.png Graphic file (type png)
 
 <use images/ER.png>
-Package pdftex.def Info: images/ER.png used on input line 151.
+Package pdftex.def Info: images/ER.png used on input line 172.
 (pdftex.def)             Requested size: 490.52367pt x 466.99939pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9 <./images/N-tier.png>]
-<images/Wireframes.png, id=60, 1309.89375pt x 869.2475pt>
+ [9 <./images/N-tier.png>] [10 <./images/ER.png (PNG copy)>] <images/Wireframes
+.png, id=63, 1309.89375pt x 869.2475pt>
 File: images/Wireframes.png Graphic file (type png)
 
 <use images/Wireframes.png>
-Package pdftex.def Info: images/Wireframes.png used on input line 200.
+Package pdftex.def Info: images/Wireframes.png used on input line 221.
 (pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
- [10 <./images/Wireframes.png>]
-Overfull \hbox (0.84587pt too wide) in paragraph at lines 236--240
+ [11 <./images/Wireframes.png>]
+Overfull \hbox (0.84587pt too wide) in paragraph at lines 257--261
 []\OT1/ptm/m/n/10.95 These caching ser-vices are used as singleton-like fa-cil-
 i-ties in the ap-pli-ca-tion to en-sure con-sis-tent data through-
  []
 
-[11]) (./results.tex [12] [13 <./images/ER.png (PNG copy)>]
+[12]) (./results.tex [13]
 Chapter 4.
 ) (./conclusion.tex [14
 
@@ -409,26 +409,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--57
 /n/10.95 https : / / github . com / toastdriven /
  []
 
+
+Underfull \hbox (badness 5217) in paragraph at lines 90--94
+[]\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap ``getcur-rent-po-si-tion'' 
+def-i-ni-tion.  $\OT1/pcr/m/n/10.95 http : / / docs . phonegap .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--94
+\OT1/pcr/m/n/10.95 com / en / 3 . 0 . 0 / cordova _ geolocation _ geolocation .
+ md . html # geolocation .
+ []
+
 ) [16
 
-] (./wells-2013-urbanexplorer.aux) ) 
+] [17] (./wells-2013-urbanexplorer.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2785 strings out of 495059
- 39638 string characters out of 3182030
- 103281 words of memory out of 3000000
- 5876 multiletter control sequences out of 15000+200000
+ 2790 strings out of 495059
+ 39723 string characters out of 3182030
+ 104303 words of memory out of 3000000
+ 5881 multiletter control sequences out of 15000+200000
  26560 words of font info for 52 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,9n,23p,339b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dv
-ips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (20 pages, 299943 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on wells-2013-urbanexplorer.pdf (21 pages, 303997 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

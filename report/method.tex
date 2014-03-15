@@ -44,8 +44,27 @@ The aims of the project are then as follows:
 
 
 \section{Specification}
+\label{sec:specification}
 The implementation specifics of this project are defined herein with
 the overall development of the project shown in the following sections.
+
+An overarching goal for this implementation is to minimise the end cost
+for the user. This cost takes two forms: response time for data
+loading and network costs incurred through data loading.
+
+Initial response time for loading data cannot be avoided without
+prepackaging content inside the app. We do not want the user to be
+forced to update the app every time we want to add another route to
+run down so prepackaging will not work. We can however cache the data
+we know does not change and reference that instead - which is much
+faster than a network response time.
+
+Caching also reduces the overall network cost: by caching the data
+received we remove the need to make the request again. This inherently
+reduces the network cost by reducing the number of network requests.
+
+These are discussed in more detail in Section \ref{sec:notable} and
+will be referenced in the following subsections.
 
 \subsection{Platform and Frameworks}
 The mobile application is developed using PhoneGap \cite{phonegap}, 
@@ -120,11 +139,13 @@ specification) which in turn uses Django's Object Relation Model (ORM)
 to persist these to a database.
 
 The mobile application communicates with the devices GPS location
-management system to get accurate location information for the
-user.
-\begin{figure}[h]
+management system to obtain location information for the
+user. We request that the users devices provides us with the most
+accurate GPS location it can provide, so it will try satellite
+positioning first and then try network provided information.
+\begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{images/N-tier.png}
+  \includegraphics[width=\textwidth]{images/N-tier.png}
   \caption{N-Tier diagram}
   \label{NTier}
 \end{figure}
@@ -146,9 +167,9 @@ app may incur to the end user (Section \ref{sec:consideration}), we can
 sacrifice having a non-redundant database in order to optimise the
 data transfer for the end user.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{images/ER.png}
+  \includegraphics[width=\textwidth]{images/ER.png}
   \caption{ER diagram, final theoretical model}
   \label{ER_1}
 \end{figure}
@@ -202,11 +223,11 @@ the middle-top screen.
   \label{wireframes_1}
 \end{figure}
 
-\section{Notable design decisions}\label{sec_notable}
+\section{Notable design decisions}\label{sec:notable}
 \subsection{Explicit caching}
 \label{sec:explicit_caching}
-As was mentioned in Section \ref{sec:ER}, the minimisation of network
-traffic is of great consideration when dealing with mobile devices. I
+As was mentioned in Section \ref{sec:specification}, the minimisation of network
+traffic is of great consideration when dealing with mobile devices. We
 did not want the mobile device to make repeated API calls for
 resources that will not change in the short term - resources such as
 what missions are available, what routes belong to what missions and
@@ -227,11 +248,11 @@ have to hit the API each time we want to see something we have seen
 before, we can load selection menus faster. 
 
 Note that I only intend to cache data endpoints that are unlikely to
-change in the short term or those that cannot feasibly change in a
-situation like this. The ``progress'' endpoint which provides the data
-about a users progress along given stages will not change if the user
-does not initiate an exercise session as there is no data provided to
-show otherwise. 
+change in the short term or those that cannot feasibly change under
+certain circumstances. The ``progress'' endpoint which provides the
+data about a users progress along given stages will not change if the
+user does not initiate an exercise session - the user has not made any
+more progress so it could not have changed. 
 
 These caching services are used as singleton-like facilities in the
 application to ensure consistent data throughout the application, an
@@ -243,9 +264,41 @@ Each module that has been created for managing either a specific set
 of objects(routes, missions or the user object) has been defined
 with a common interface. This common interface brings a regular
 and well defined way of interacting with these modules, especially if
-they utilise explicit caching (section \ref{sec:explicit_caching}).
+they utilise explicit caching (section \ref{sec:explicit_caching}) or
+execute asynchronous methods.
 
-AngularJS\cite{angularjs}, 
+There are two ways that this consistent interface could be
+implemented: a function callback explicitly provided as an argument to
+the module function call; or by using promises.
+
+Function callbacks passed as parameters are a common JavaScript
+paradigm. They are used in the PhoneGap framework to interface with
+the device\cite{phonegap_currentpos}. A frequent problem with function
+callbacks is what is colloquially known as ``callback hell''
+\cite{callback_hell} where nested anonymous functions are used to
+bring an order of execution to asynchronous tasks. This can become
+unmanageable and hard to maintain in larger projects but can be
+overcome with good software development procedures.
+
+The biggest problem for us is the framework we are using - AngularJS
+only knows about events that happen in its own scope. This means that
+when we invoke the callback function with the data from a module, the
+data will be updated in the controller but AngularJS does not know to
+update any reflections of this data in the DOM or elsewhere. There are
+ways to notify the framework that it should run an update (known as a
+digest cycle)\cite{angularjs_apply} but if we invoke this when a
+digest cycle is currently in progress then the framework throws an
+error and drops the request.
+
+Another option is to use the AngularJS wrapping for the standard
+``setTimeout'' function with a delay of zero. While this may seem
+frivolous, a subtlety of this wrapping avoids the digest cycle clash
+of the above problem. The AngularJS wrapper ``\$timeout'' will invoke
+the function passed to it after the delay expires, but importantly
+will cause a natural digest cycle to occur. 
+
+
+AngularJS\cite{angularjs}, the frontend JavaScript framework, has a 
 
 \subsection{Exercise Session Management}
 \label{sec:session_mgmt}
