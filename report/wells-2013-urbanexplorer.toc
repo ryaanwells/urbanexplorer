@@ -6,23 +6,25 @@
 \contentsline {chapter}{\numberline {2}Related Work and Background}{3}
 \contentsline {section}{\numberline {2.1}Gamification and technology in exercise}{3}
 \contentsline {subsection}{\numberline {2.1.1}Defining gamification in our context}{3}
+\contentsline {subsection}{\numberline {2.1.2}Key Demographic and targeted users}{3}
 \contentsline {section}{\numberline {2.2}Comparison of related applications}{3}
-\contentsline {subsection}{\numberline {2.2.1}Charity Miles}{3}
+\contentsline {subsection}{\numberline {2.2.1}Charity Miles}{4}
 \contentsline {subsection}{\numberline {2.2.2}Zombies, Run!}{4}
 \contentsline {subsection}{\numberline {2.2.3}WalkJogRun}{4}
-\contentsline {subsection}{\numberline {2.2.4}Fitbit}{4}
-\contentsline {subsection}{\numberline {2.2.5}General Comments}{5}
-\contentsline {chapter}{\numberline {3}Design and Specification}{6}
-\contentsline {section}{\numberline {3.1}Aim/vision}{6}
+\contentsline {subsection}{\numberline {2.2.4}Fitbit}{5}
+\contentsline {section}{\numberline {2.3}Consideration of competitors concepts in this project implementation}{5}
+\contentsline {chapter}{\numberline {3}Design and Specification}{7}
+\contentsline {section}{\numberline {3.1}Aim/vision}{7}
 \contentsline {section}{\numberline {3.2}Specification}{7}
-\contentsline {subsection}{\numberline {3.2.1}N-Tier Diagram}{7}
-\contentsline {subsection}{\numberline {3.2.2}Entity Relation Diagram}{7}
-\contentsline {subsection}{\numberline {3.2.3}Platform}{8}
-\contentsline {subsection}{\numberline {3.2.4}Walkthrough of Wireframes}{8}
-\contentsline {section}{\numberline {3.3}Notable design decisions}{8}
-\contentsline {subsection}{\numberline {3.3.1}Explicit caching}{8}
-\contentsline {subsection}{\numberline {3.3.2}Exercise Session Management}{9}
-\contentsline {subsection}{\numberline {3.3.3}Distance Verification}{10}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{13}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{14}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{14}
+\contentsline {subsection}{\numberline {3.2.1}Platform and Frameworks}{8}
+\contentsline {subsection}{\numberline {3.2.2}N-Tier Diagram}{8}
+\contentsline {subsection}{\numberline {3.2.3}Entity Relation Diagram}{9}
+\contentsline {subsection}{\numberline {3.2.4}Walkthrough of Wireframes}{9}
+\contentsline {section}{\numberline {3.3}Notable design decisions}{11}
+\contentsline {subsection}{\numberline {3.3.1}Explicit caching}{11}
+\contentsline {subsection}{\numberline {3.3.2}Promise Based Module Interfaces}{11}
+\contentsline {subsection}{\numberline {3.3.3}Exercise Session Management}{11}
+\contentsline {subsection}{\numberline {3.3.4}Distance Verification}{12}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{14}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{15}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{15}

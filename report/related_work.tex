@@ -19,14 +19,32 @@ Sridharan, Hrishikesh, \& Raj\cite{academic_gamification}
 \todo{This may also be relevant, need to get when in uni
   \url{http://dl.acm.org/citation.cfm?id=1125805}}
 
-
+\subsection{Key Demographic and targeted users}
 
 \section{Comparison of related applications}\label{sec_comparison}
 Incentivising exercise is not a new concept in the mobile market. From
 simple applications that mimic a pedometer to immersive alternate
 realities, there has been a varied approach to encouraging
 exercise. These approaches can be shown through the following
-applications.
+applications. 
+
+Table \ref{table:competitor_comparison} gives a brief
+overview of requrements and user statistics for the compared products
+gained from the Google Play Store.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{ | c | c | c | c |} \hline
+    Name & Interface & Requirements & User base  \\ \hline
+    Charity Miles & Mobile App & App and GPS & 10K - 50K\\ \hline
+    Zombies, Run! & Mobile App & App and GPS, headphones & 1M - 5M\\ \hline
+    WalkJogRun & Mobile App & App and GPS  & unknown \\ \hline
+    Fitbit & Dedicated hardware and Mobile App & Dedicated Hardware & 1M - 5M\\ \hline
+  \end{tabular}
+  \caption{Comparison of exercise gamification implementations from
+    the Google Play store}
+  \label{table:competitor_comparison}
+\end{table}
 
 \subsection{Charity Miles}
 Charity Miles encourages you to exercise by facilitating you to raise
@@ -58,6 +76,7 @@ this entirely changes the user experience and explicitly requires
 effort on the users side to gather this sponsorship. 
 
 \subsection{Zombies, Run!}
+\label{sec:zombies}
 Zombies, Run! is a companion app that encourages you to exercise through
 audio cues, rich story and a base-building game. As you run you are
 being ``chased'' by a hoard of zombies that get closer and further
@@ -82,6 +101,7 @@ be reluctant to adopt this.
 
 
 \subsection{WalkJogRun}
+\label{sec:walkjogrun}
 WalkJogRun helps you discover new routes that are geographically
 close to where you are and record your favourite routes to share with
 your friends. From your current location it finds and
@@ -100,9 +120,11 @@ terrain type, for example.
 
 There is no clear gamified experience in this application, so the
 incentive is self-provided. The user can only use this to improve
-their exercise experience and there is not much in the way of encouragement.
+their exercise experience as there is not much in the way of
+encouragement. 
 
 \subsection{Fitbit}
+\label{sec:fitbit}
 I have included a comparison with Fitbit products to display other
 mediums in which this application can be used. Although it is not
 mainly based around a mobile phone use it is an interesting comparison.
@@ -146,21 +168,36 @@ user want everyone to know they are using a fitness tracker? The other
 applications are more discreet by design, since they are a mobile app
 they can be hidden easier. 
 
-\subsection{General Comments}
+\section{Consideration of competitors concepts in this project
+  implementation}
+\label{sec:consideration}
 Each of the above products utilise gamification in an effective way
-and each implementation differs in how they utilise game elements. 
-\begin{table}[h]
-  \centering
-  \begin{tabular}{ | c | c | c | c |} \hline
-    Name & Interface & Requirements & User base  \\ \hline
-    Charity Miles & Mobile App & App and GPS & 10K - 50K\\ \hline
-    Zombies, Run! & Mobile App & App and GPS, headphones & 1M - 5M\\ \hline
-    WalkJogRun & Mobile App & App and GPS  & unknown \\ \hline
-    Fitbit & Dedicated hardware and Mobile App & Dedicated Hardware & 1M - 5M\\ \hline
-  \end{tabular}
-  \caption{Comparison of exercise gamification implementations from
-    the Google Play store}
-\end{table}
+and each implementation differs in how they utilise game
+elements. This project builds upon some of the design decisions these
+competitors have used, aiming to remove some of issues that make the
+competitors products either unsustainable or flawed.
+
+First and foremost, this project should not require any form of
+additional hardware for the end user or monetary investment. A key
+demographic that we are targeting are those users who do not exercise
+outside often, so we do not want to create a barrier between those
+users and them achieving their exercise goal. This is in reference to
+the Fitbit product discussed in Section \ref{sec:fitbit} which
+requires a dedicated hardware wristband, and the ``Zombies, Run!'' product
+(Section \ref{sec:zombies}) which requires the user to purchase the
+mobile app. Both of these could be reasons for an under encouraged
+user to not take the first step to starting the exercise process.
+
+This project should also not require a social aspect to achieve the
+core goals for this application, unlike WalkJogRun (Section
+\ref{sec:walkjogrun}) which has a heavy reliance on social
+contributions from users in your area. Although WalkJogRun does not
+provide a gamified experience, it does enhance your exercise
+experience by showing you new running routes. These routes are user
+provided and reliance on crowdsourcing for content, gamified or
+otherwise, is too risky for the short period of this project. 
+
+
 
 %\todo{Summarising a paper: (1) Context, (2) Problem, (3) Solution, (4) Evaluation, (5) Impact.}
 

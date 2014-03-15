@@ -12,15 +12,13 @@ and users are awarded badges based on stages/routes completed and
 overall distance and time. Therefore the user can gain short-term
 success while working towards the satisfaction of larger goals. 
 
-This approach is to test whether or not this type of encouragement
+This approach is to examine whether or not this type of encouragement
 could potentially work with outdoor exercise. Metrics will be tracked
 for individual users to monitor their exercise duration and frequency
 and will be used to encourage that user to exercise. These metics will
 then be used to form the basis of our conclusion.
 
-
-
-The physical aims of the project are then as follows:
+The aims of the project are then as follows:
 
 \begin{enumerate}
   \item To provide incentives that become intrinsically
@@ -29,35 +27,97 @@ The physical aims of the project are then as follows:
     mission - every achievement brings the user closer to a larger
     success. 
   \item To provide long and short term goals to fulfil the sense of
-    achievement. The long term goals are Missions which are achieved
-    through the medium term goals of Routes and easily achievable
-    short term goals of Stages - for example
-    the Scotland Mission has a Glasgow to Edinburgh Route which has a
-    Falkirk to Linlithgow Stage.
+    achievement. The long term goals are Route completion and these are
+    fulfilled by the easily achievable short term goals of Stages -
+    for example the Central Park Route contains four stages, one for
+    each edge of the park and these stages are easily achievable in an
+    exercise session.
     \begin{enumerate}
       \item Stage completion - unlock a photograph of the stage or of
         a key landmark near the stage. This is achieved by completing
         a specific stage.
-      \item Route Completion - stamp in the travel book for that
-        mission relating to route completed. This is achieved by
-        completing all the stages in the route.
-      \item Mission Completion - travel book for mission is
-        ``framed'', certifying that the user has completed all routes
-        in the mission.
+      \item Route Completion - a gold, silver or bronze medal is
+        awarded for completing a route in a given time period. A route
+        is completed when all the stages in a route are completed.
     \end{enumerate}
 \end{enumerate}
 
 
 \section{Specification}
+The implementation specifics of this project are defined herein with
+the overall development of the project shown in the following sections.
+
+\subsection{Platform and Frameworks}
+The mobile application is developed using PhoneGap \cite{phonegap}, 
+a tool which allows you to develop a mobile app as if it were
+a web app, and then package it as a mobile app. The decision to use
+PhoneGap instead of building a native app is primarily because I come
+from a web development background but also so we can deploy to
+multiple platforms easily without needing to change the code base. 
+
+Because of this, our application is written using HTML, JavaScript,
+and CSS3. The twitter Bootstrap CSS framework \cite{bootstrap} was
+used because of the excellent support for small screen devices and
+layout management. 
+
+Titanium, developed by appcelerator\cite{titanium}, is an alternative
+platform to PhoneGap that was also considered. This required a greater
+knowledge of android than PhoneGap does but the biggest drawback was
+the state of development when the project started. After discussion
+with members of the startup community who were using Titanium, it was
+apparent that Titanium was still a work in progress and probably a
+risk to go with. The platform is now flourishing and would probably
+have been the better choice to go with in retrospect, but at the
+begining of the project the safer choice was to develop for PhoneGap.
+
+AngularJS\cite{angularjs} is the framework used for the
+application. This framework has a major benefit of explicit data linking
+between the DOM(Document-Object Model) and the javascript controlling
+that section of the DOM. In AngularJS, a controller is defined to
+manage the behaviour of a specific section of a page. By defining
+these controllers, we can utilise this explicit data linking to manage
+how information is displayed in the DOM - if a variable changes in a
+controller then it also updates in the DOM. This linking is
+bi-directional, so the reverse is also true. 
+
+The AngularJS framework also facilitates many other control
+mechanisms: DOM tree manipulations, CSS class manipulations, frontend
+routing (a process where a section of the DOM tree and an associated
+JavaScript controller are swapped out based on the current URL) and
+wrappers around the browsers native AJAX implementation. All of this
+functionality make AngularJS the ideal framework for the project. 
+
+The web application is written in Python and uses Django\cite{django}
+and Django-Tastypie\cite{tastypie}. Django is used as a middleware
+platform for interfacing with the database and creation of specific
+workflow interactions; while Django-Tastypie is used for managing and
+building a REST style API for well-defined database object access.
+
+Django exposes an Object-Relation Mapping (ORM) inside the framework
+for manipulating and creating database objects. This is utilised by
+Django-Tastpie for creation of the REST API. We use a REST style API
+so that the mobile app is able to uniquely identify an object in the
+database in a consistent and reliable manner. This is used in 
+session management in Section \ref{sec:session_mgmt}.
+
+Moreover, there is a large number of database objects that we require
+knowledge about in the app. A tool which creates a well defined way of
+accessing these objects and managing their access permissions is
+invaluable for consistency and reliability.
+
+No session-like state is required in this application as the database
+object relations are defined in such a way that they hold all
+information required. 
+
 \subsection{N-Tier Diagram}
 The high level components of this system are reasonably simple (figure
 \ref{NTier}). The
-user requires a mobile phone with GPS enabled and the mobile
-application installed. This communicates with a Django Webserver with a
-REST-style API (with a small number of bespoke views since some
-behaviour does not fit well with the REST specification) which in turn
-uses Django's Object Relation Model (ORM) to persist these to a
-database.
+user requires a mobile phone with GPS enabled, an active internet
+connection and the mobile application installed. This communicates
+with a Django Webserver with a REST-style API (with a small number of
+bespoke views since some behaviour does not fit well with the REST
+specification) which in turn uses Django's Object Relation Model (ORM)
+to persist these to a database.
 
 The mobile application communicates with the devices GPS location
 management system to get accurate location information for the
@@ -72,18 +132,19 @@ user.
 \subsection{Entity Relation Diagram}
 \label{sec:ER}
 There have been two significant iterations of the Entity Relation (ER)
-diagram in this project - the first is the final theoretical ER model
-and the second is the real world implementation with modifications and
-extra linking for data transfer optimisation. 
+diagram in this project - the first (figure \ref{ER_1}) is the final
+theoretical ER model and the second is the real world implementation
+with modifications and extra linking for data transfer optimisation
+and changing requirements.
 
 The main reason for the implementation modifications is to keep data
 transfer low between the mobile device and the API. Since the mobile
 device will be using non-wifi based communication methods the number
-of bytes transferred will be logged by their network provided and will
-cost the end user. The application requires many data objects of the
-same type (when picking a route to travel down from a list of all
-routes for example) so it makes sense to bundle all all the requests
-into one and reduce the data transfer overhead. 
+of bytes transferred will be logged by their network provider and will
+cost the end user. Since we care for the monetary cost that using the
+app may incur to the end user (Section \ref{sec:consideration}), we can
+sacrifice having a non-redundant database in order to optimise the
+data transfer for the end user.
 
 \begin{figure}[h]
   \centering
@@ -94,31 +155,10 @@ into one and reduce the data transfer overhead.
 
 \todo{Do implementation ER diagram}
 
-\subsection{Platform}
-The mobile application is developed using PhoneGap which packages a
-web app into mobile app. The decision to use PhoneGap instead of
-building a native app is primarily because I come from a web
-development background but also so we can deploy to multiple platforms easily
-without needing to change the code base.
 
-The web application is written in Python and uses Django middleware
-for interfacing with the database and creation of specific workflow
-interactions, alongside Tastypie for managing and building a REST
-style API.
-
-The server will not hold state outside the supporting database and
-will be used solely as a REST API. This is a decision to keep the
-sever implementation clean and simple. There is also no real gain to
-maintaining state as the underlying database objects all ready hold
-the required information.
 
 \subsection{Walkthrough of Wireframes}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=\linewidth]{images/Wireframes.png}
-  \caption{Wireframes, initial design}
-  \label{wireframes_1}
-\end{figure}
+\todo{THIS NEEDS REDONE WITH NEW WIREFRAMES}
 
 When the app is launched it silently registers with the server
 allowing the user to use the app immediately. The user is then shown
@@ -155,9 +195,16 @@ the middle-top screen.
   can click the ``Home'' button and be taken back to the middle top
   screen. 
 \end{enumerate}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/Wireframes.png}
+  \caption{Wireframes, initial design}
+  \label{wireframes_1}
+\end{figure}
 
 \section{Notable design decisions}\label{sec_notable}
 \subsection{Explicit caching}
+\label{sec:explicit_caching}
 As was mentioned in Section \ref{sec:ER}, the minimisation of network
 traffic is of great consideration when dealing with mobile devices. I
 did not want the mobile device to make repeated API calls for
@@ -187,11 +234,21 @@ does not initiate an exercise session as there is no data provided to
 show otherwise. 
 
 These caching services are used as singleton-like facilities in the
-application to ensure consistent data throughout the application, and
-also to allow the addition of new data from any point in the
-application and use that new data in a different part at a later time.
+application to ensure consistent data throughout the application, an
+update to this data will be reflected throughout the entire
+application. 
+
+\subsection{Promise Based Module Interfaces}
+Each module that has been created for managing either a specific set
+of objects(routes, missions or the user object) has been defined
+with a common interface. This common interface brings a regular
+and well defined way of interacting with these modules, especially if
+they utilise explicit caching (section \ref{sec:explicit_caching}).
+
+AngularJS\cite{angularjs}, 
 
 \subsection{Exercise Session Management}
+\label{sec:session_mgmt}
 Due to the environmental implications brought on by GPS, a user may
 drop out of connection for finding their location. The user should not
 be penalised for this as it is outwith their control and is not a

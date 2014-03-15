@@ -66,4 +66,24 @@ Charity Miles.
 \newblock \url{http://www.charitymiles.org/terms.html}.
 \newblock Section 1 "How it works".
 
+\bibitem{phonegap}
+Adobe~Systems Inc.
+\newblock Phonegap.
+\newblock \url{http://phonegap.com}.
+
+\bibitem{bootstrap}
+Twitter.
+\newblock Twitter bootstrap css3 framework.
+\newblock \url{http://getbootstrap.com}.
+
+\bibitem{titanium}
+appcelerator.
+\newblock apcelerator homepage for titanium alloy.
+\newblock \url{http://www.appcelerator.com}.
+
+\bibitem{angularjs}
+Google.
+\newblock Angularjs.
+\newblock \url{http://angularjs.com}.
+
 \end{thebibliography}
