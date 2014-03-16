@@ -23,8 +23,8 @@
 \contentsline {section}{\numberline {3.3}Notable design decisions}{12}
 \contentsline {subsection}{\numberline {3.3.1}Explicit caching}{12}
 \contentsline {subsection}{\numberline {3.3.2}Promise Based Module Interfaces}{12}
-\contentsline {subsection}{\numberline {3.3.3}Exercise Session Management}{13}
-\contentsline {subsection}{\numberline {3.3.4}Distance Verification}{13}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{14}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{15}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{15}
+\contentsline {subsection}{\numberline {3.3.3}Exercise Session Management}{15}
+\contentsline {subsection}{\numberline {3.3.4}Distance Verification}{15}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{16}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{17}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{17}

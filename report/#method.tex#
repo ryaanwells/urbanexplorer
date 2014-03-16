@@ -459,6 +459,8 @@ session sucessfully when we have a GPS location and are ready to
 update, while indirectly ``ending'' the session when we delete the
 unique ID.
 
+
+
 The method for updating handles completion of many stages. This
 implies that if you update a session and the stage you are currently
 exercising on completes you will be immediately moved onto the next

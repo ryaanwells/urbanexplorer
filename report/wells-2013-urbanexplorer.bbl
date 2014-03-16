@@ -102,4 +102,21 @@ Google.
 \newblock Angularjs \$scope.\$apply function definition.
 \newblock \url{http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply}.
 
+\bibitem{setTimeout}
+Mozilla Foundation.
+\newblock Documentation for window.settimeout javascript function.
+\newblock
+  \url{https://developer.mozilla.org/en/docs/Web/API/window.setTimeout}.
+
+\bibitem{wrappingPhonegap}
+Ryan Wells.
+\newblock Wrapping phonegap functions for the angularjs framework.
+\newblock
+  \url{https://github.com/ryaanwells/urbanexplorer/blob/master/urbanexplorer_app/www/js/core/location.js}.
+
+\bibitem{kriskowalq}
+Kris Kowal.
+\newblock Javascript promise library: q.
+\newblock \url{https://github.com/kriskowal/q}.
+
 \end{thebibliography}
