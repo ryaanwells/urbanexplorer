@@ -119,4 +119,14 @@ Kris Kowal.
 \newblock Javascript promise library: q.
 \newblock \url{https://github.com/kriskowal/q}.
 
+\bibitem{haversine}
+Wikipedia.
+\newblock Haversine function.
+\newblock \url{http://en.wikipedia.org/wiki/Haversine_formula}.
+
+\bibitem{python_haversine}
+Balthazar Rouberol.
+\newblock Pypi entry for the haversine module.
+\newblock \url{https://pypi.python.org/pypi/haversine}.
+
 \end{thebibliography}
