@@ -6,13 +6,13 @@
 \contentsline {chapter}{\numberline {2}Related Work and Background}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Gamification and technology in exercise}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Defining gamification in our context}{3}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Key Demographic and targeted users}{3}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Comparison of related applications}{3}{section.2.2}
+\contentsline {subsection}{\numberline {2.1.2}Targeted users}{3}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Comparison of related applications}{4}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Charity Miles}{4}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Zombies, Run!}{4}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}WalkJogRun}{4}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}WalkJogRun}{5}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Fitbit}{5}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Consideration of competitors concepts in this project implementation}{5}{section.2.3}
+\contentsline {section}{\numberline {2.3}Consideration of competitors concepts in this project implementation}{6}{section.2.3}
 \contentsline {chapter}{\numberline {3}Design and Specification}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Aim/vision}{7}{section.3.1}
 \contentsline {section}{\numberline {3.2}Specification}{7}{section.3.2}
@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {3.3.1}Explicit caching}{12}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Promise Based Module Interfaces}{12}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Exercise Session Management}{15}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Distance Verification}{15}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.4}Distance Verification}{16}{subsection.3.3.4}
 \contentsline {chapter}{\numberline {4}Results and Analysis}{17}{chapter.4}
 \contentsline {chapter}{\numberline {5}Discussion and Conclusion}{18}{chapter.5}
 \contentsline {section}{\numberline {5.1}Acknowledgements}{18}{section.5.1}

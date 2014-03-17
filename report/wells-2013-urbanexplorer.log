@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  16 MAR 2014 22:22
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  17 MAR 2014 21:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -215,7 +215,6 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
-LaTeX Info: Redefining \cite on input line 464.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/05/13 v6.82q Hypertext links for LaTeX
@@ -265,6 +264,9 @@ File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `breaklinks' set `true' on input line 3941.
+Package hyperref Info: Option `colorlinks' set `true' on input line 3941.
+Package hyperref Info: Option `pdfpagelabels' set `false' on input line 3941.
 Package hyperref Info: Hyper figures OFF on input line 4062.
 Package hyperref Info: Link nesting OFF on input line 4067.
 Package hyperref Info: Hyper index ON on input line 4070.
@@ -281,22 +283,21 @@ Package hyperref Info: Hyper figures OFF on input line 5773.
 Package hyperref Info: Link nesting OFF on input line 5778.
 Package hyperref Info: Hyper index ON on input line 5781.
 Package hyperref Info: backreferencing OFF on input line 5788.
-Package hyperref Info: Link coloring OFF on input line 5793.
+Package hyperref Info: Link coloring ON on input line 5791.
 Package hyperref Info: Link coloring with OCG OFF on input line 5798.
 Package hyperref Info: PDF/A mode OFF on input line 5803.
 LaTeX Info: Redefining \ref on input line 5843.
 LaTeX Info: Redefining \pageref on input line 5847.
-\Hy@abspage=\count105
-\c@Item=\count106
-\c@Hfootnote=\count107
+\c@Item=\count105
+\c@Hfootnote=\count106
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
-\Fld@listcount=\count108
-\c@bookmark@seq@number=\count109
+\Fld@listcount=\count107
+\c@bookmark@seq@number=\count108
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -310,15 +311,15 @@ Package: mathtools 2012/04/24 v1.12 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count110
-\calc@Bcount=\count111
+\calc@Acount=\count109
+\calc@Bcount=\count110
 \calc@Adimen=\dimen134
 \calc@Bdimen=\dimen135
 \calc@Askip=\skip47
 \calc@Bskip=\skip48
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count112
+\calc@Ccount=\count111
 \calc@Cskip=\skip49
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
@@ -344,13 +345,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count113
+\inf@bad=\count112
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count114
-\leftroot@=\count115
+\uproot@=\count113
+\leftroot@=\count114
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count116
-\DOTSCASE@=\count117
+\classnum@=\count115
+\DOTSCASE@=\count116
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
@@ -359,15 +360,15 @@ LaTeX Info: Redefining \cdots on input line 467.
 \big@size=\dimen138
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count118
-\c@MaxMatrixCols=\count119
+\macc@depth=\count117
+\c@MaxMatrixCols=\count118
 \dotsspace@=\muskip11
-\c@parentequation=\count120
-\dspbrk@lvl=\count121
+\c@parentequation=\count119
+\dspbrk@lvl=\count120
 \tag@help=\toks21
-\row@=\count122
-\column@=\count123
-\maxfields@=\count124
+\row@=\count121
+\column@=\count122
+\maxfields@=\count123
 \andhelp@=\toks22
 \eqnshift@=\dimen139
 \alignsep@=\dimen140
@@ -382,7 +383,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-\g_MT_multlinerow_int=\count125
+\g_MT_multlinerow_int=\count124
 \l_MT_multwidth_dim=\dimen145
 \origjot=\skip53
 \l_MT_shortvdotswithinadjustabove_dim=\dimen146
@@ -416,16 +417,16 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
+\scratchcounter=\count125
 \scratchdimen=\dimen152
 \scratchbox=\box30
-\nofMPsegments=\count127
-\nofMParguments=\count128
+\nofMPsegments=\count126
+\nofMParguments=\count127
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count129
+\MPscratchCnt=\count128
 \MPscratchDim=\dimen153
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
 \everyMPtoPDFconversion=\toks26
 )
 *geometry* driver: auto-detecting
@@ -463,14 +464,14 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring ON on input line 22.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count132
+\c@section@level=\count131
 )
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
@@ -533,9 +534,9 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 20.
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Overfull \hbox (11.42741pt too wide) in paragraph at lines 20--21
-[][]\OT1/ptm/m/n/10.95 This may also be rel-e-vant, need to get when in uni []$
-\OT1/pcr/m/n/10.95 http : / / dl . acm . org / citation . cfm ? id = 1125805$[]
-[] 
+[][]\OT1/ptm/m/n/10.95 This may also be rel-e-vant, need to get when in uni [][
+]$\OT1/pcr/m/n/10.95 http : / / dl . acm . org / citation . cfm ? id = 1125805$
+[][][] 
  []
 
 [3
@@ -590,7 +591,7 @@ Chapter 5.
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
 []\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  [
-]$\OT1/pcr/m/n/10.95 https : / /
+][]$\OT1/pcr/m/n/10.95 https : / /
  []
 
 
@@ -608,19 +609,19 @@ l-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006-[]rep-[]v3 .
 
 Underfull \hbox (badness 2229) in paragraph at lines 18--23
 []\OT1/ptm/m/n/10.95 US De-part-ment of Health.  Web-store for gps ex-er-cise d
-e-vices.  []$\OT1/pcr/m/n/10.95 http : / / www . health . gov /
+e-vices.  [][]$\OT1/pcr/m/n/10.95 http : / / www . health . gov /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 54--57
-[]\OT1/ptm/m/n/10.95 Daniel Lind-s-ley.  django-tastypie li-brary.  []$\OT1/pcr
-/m/n/10.95 https : / / github . com / toastdriven /
+[]\OT1/ptm/m/n/10.95 Daniel Lind-s-ley.  django-tastypie li-brary.  [][]$\OT1/p
+cr/m/n/10.95 https : / / github . com / toastdriven /
  []
 
 
 Underfull \hbox (badness 5217) in paragraph at lines 90--94
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap ``getcur-rent-po-si-tion'' 
-def-i-ni-tion.  []$\OT1/pcr/m/n/10.95 http : / / docs . phonegap .
+def-i-ni-tion.  [][]$\OT1/pcr/m/n/10.95 http : / / docs . phonegap .
  []
 
 
@@ -634,7 +635,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--94
 ]
 Underfull \hbox (badness 2073) in paragraph at lines 112--116
 []\OT1/ptm/m/n/10.95 Ryan Wells.  Wrap-ping phone-gap func-tions for the an-gu-
-larjs frame-work.  []$\OT1/pcr/m/n/10.95 https : / / github .
+larjs frame-work.  [][]$\OT1/pcr/m/n/10.95 https : / / github .
  []
 
 
@@ -648,11 +649,11 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
  [20]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
  (./wells-2013-urbanexplorer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 97.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `wells-2013-urbanexplorer.out' has not change
 d.
-(rerunfilecheck)             Checksum: 002EDD37CFBD58C4998E0F5D0D306A08;2152.
+(rerunfilecheck)             Checksum: ADA647B5A115B37E7F2DA24E68D3228D;2132.
 
 
 LaTeX Warning: There were undefined references.
@@ -660,10 +661,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 7374 strings out of 495059
- 108238 string characters out of 3182030
- 208610 words of memory out of 3000000
- 10305 multiletter control sequences out of 15000+200000
+ 7347 strings out of 495059
+ 107873 string characters out of 3182030
+ 208157 words of memory out of 3000000
+ 10278 multiletter control sequences out of 15000+200000
  28192 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,15n,28p,339b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -676,7 +677,7 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (24 pages, 367147 bytes).
+Output written on wells-2013-urbanexplorer.pdf (24 pages, 368015 bytes).
 PDF statistics:
  463 PDF objects out of 1000 (max. 8388607)
  416 compressed objects within 5 object streams
