@@ -441,7 +441,7 @@ be penalised for this as it is outwith their control and is not a
 direct error on their part. Something as simple as running through a
 tunnel could initiate the loss of signal. 
 
-To counter this, I have designed the exercise session in such a way to
+To counter this, the exercise session is designed in such a way as to
 not penalise or disadvantage the user if they should not be able to
 obtain location information. 
 
@@ -463,7 +463,7 @@ unique ID.
 If the user cannot obtain location information then the device will
 retain the unique ID for the session and will update as soon as it can
 obtain location information. This is explored further in section
-\ref{sec:distance_ver}.
+\ref{sec:location_mgmt}.
 
 This does guarantee that the user will gain all distance they should
 be awared. If the user starts an exercise session but cannot then
@@ -494,7 +494,58 @@ The latter option was chosen for this implementation as it is the most
 immersive option of the two. From a game perspective, the first option
 does not allow the user to fully engage in the game at the time they
 are playing as no further rewards are accumulated when distance is not
-being incremented. 
+being incremented while the second allows the user to continue
+progressing seamlessly. 
+
+\subsection{Location Management}
+\label{sec:location_mgmt}
+Phonegap exposes two main ways to obtain location information, either
+by requesting where the device is at this exact moment in
+time\cite{phonegap_currentpos} or by requesting to be updated at a
+discreet time interval when the device position
+updates\cite{phonegap_watchpos}. 
+
+The original intention was to use the first method to manually control
+the time between requesting new location information so that if a
+request fails we can immediately send a request again. This method was
+dropped after closer inspection of the plugin that provides these
+services and research into how the Android Location Manager handles
+location data.
+
+The plugin that provides the location data links directly to the
+Android Location Manager as expected. This location manager handles
+all requests for location data from all applications running on the
+device. The second method of obtaining location information registers
+a watcher with this Location Manager and allows the Location Manager
+to handle the polling for coordinates. If location information cannot
+be obtained then we rely on the Location Manager to deal with
+retrying. 
+
+As much as we may wish to immediately retry searching for coordinates
+with the intention of keeping accurate distance information for a
+user, this may have negative repercussions. Obtaining accurate
+location information is a costly operation requiring 50mA for each set
+of coordinates, more when there is no recent location
+information\cite{android_power}. It is the fourth most power intensive
+operation an app developer can invoke, as shown in figure
+\ref{fig:power} \cite{android_efficiencySlides}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{images/power.png}
+  \caption{Power Consumption of sensors on Android Devices}
+  \label{fig:power}
+\end{figure}
+
+In the situation where we will not be able to obtain location
+information, when a user enters a tunnel for example, it would be
+unnecessary to repeatedly ask for location information. The only
+outcome in this scenario is a faster drain on the users battery which
+could lead users to have a negative experience with the app. So even
+though we are leading with the best of intentions it is not the right
+decision to make.
+
+\todo{cul-de-sac problem}
 
 
 \subsection{Distance Verification}
@@ -551,9 +602,11 @@ in Figure \ref{fig:distance_limit}.
 \end{figure}
 
 This action to limit the distance travelled based on the time period
-will help to defend against cheating. A user could still upload bogus
-coordinates to the server but this limiting will help to reduce the
-effectiveness of their cheating.
+will help to defend against cheating but will not negatively impact
+users who cannot obtain location information for an arbitrary time
+period. A user could still upload bogus coordinates to the server but
+this limiting will help to reduce the effectiveness of their
+cheating.
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  17 MAR 2014 21:51
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  19 MAR 2014 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,7 +482,7 @@ LaTeX Info: Redefining \nameref on input line 22.
 \openout3 = `wells-2013-urbanexplorer.out'.
 
 
-<images/CompSci_colour.pdf, id=124, 413.545pt x 93.34875pt>
+<images/CompSci_colour.pdf, id=148, 413.545pt x 93.34875pt>
 File: images/CompSci_colour.pdf Graphic file (type pdf)
 
 <use images/CompSci_colour.pdf>
@@ -545,20 +545,20 @@ Overfull \hbox (11.42741pt too wide) in paragraph at lines 20--21
 Chapter 3.
 [7
 
-] [8] <images/N-tier.png, id=265, 523.9575pt x 257.96375pt>
+] [8] <images/N-tier.png, id=296, 523.9575pt x 257.96375pt>
 File: images/N-tier.png Graphic file (type png)
 
 <use images/N-tier.png>
 Package pdftex.def Info: images/N-tier.png used on input line 148.
 (pdftex.def)             Requested size: 490.52367pt x 241.50977pt.
- <images/ER.png, id=269, 794.97pt x 756.8275pt>
+ <images/ER.png, id=300, 794.97pt x 756.8275pt>
 File: images/ER.png Graphic file (type png)
 
 <use images/ER.png>
 Package pdftex.def Info: images/ER.png used on input line 172.
 (pdftex.def)             Requested size: 490.52367pt x 466.99939pt.
  [9 <./images/N-tier.png>] [10 <./images/ER.png (PNG copy)>] <images/Wireframes
-.png, id=282, 1309.89375pt x 869.2475pt>
+.png, id=313, 1309.89375pt x 869.2475pt>
 File: images/Wireframes.png Graphic file (type png)
 
 <use images/Wireframes.png>
@@ -580,13 +580,19 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [14] [15]) (./results.tex [16]
-Chapter 4.
-) (./conclusion.tex [17
+ [14] [15] <images/power.png, id=369, 921.4425pt x 549.55313pt>
+File: images/power.png Graphic file (type png)
 
-]
+<use images/power.png>
+Package pdftex.def Info: images/power.png used on input line 535.
+(pdftex.def)             Requested size: 490.52367pt x 292.54475pt.
+ [16 <./images/power.png>]) (./results.tex [17]
+Chapter 4.
+[18
+
+]) (./conclusion.tex [19]
 Chapter 5.
-) (./wells-2013-urbanexplorer.bbl [18
+) (./wells-2013-urbanexplorer.bbl [20
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 4--9
@@ -630,7 +636,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--94
  md . html # geolocation .
  []
 
-[19
+[21
 
 ]
 Underfull \hbox (badness 2073) in paragraph at lines 112--116
@@ -644,16 +650,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--116
 orer _ app / www / js / core /
  []
 
+
+Underfull \hbox (badness 2495) in paragraph at lines 155--159
+[]\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for us-in
+g the com-mand line in-ter-face.  [][]$\OT1/pcr/m/n/10.95 http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--159
+\OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / guide _ cli _ i
+ndex . md . html # The % 20Command-[]line %
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 161--165
+[]\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for in-st
+alling ge-olo-ca-tion plu-gin.  [][]$\OT1/pcr/m/n/10.95 http :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--165
+\OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / cordova _ geolo
+cation _ geolocation . md . html #
+ []
+
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
- [20]
+ [22]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
  (./wells-2013-urbanexplorer.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 97.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `wells-2013-urbanexplorer.out' has not change
 d.
-(rerunfilecheck)             Checksum: ADA647B5A115B37E7F2DA24E68D3228D;2132.
+(rerunfilecheck)             Checksum: 7142D495E81F1D7D84BA3FA1C15B32DB;2564.
 
 
 LaTeX Warning: There were undefined references.
@@ -661,10 +691,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 7347 strings out of 495059
- 107873 string characters out of 3182030
- 208157 words of memory out of 3000000
- 10278 multiletter control sequences out of 15000+200000
+ 7383 strings out of 495059
+ 108496 string characters out of 3182030
+ 208575 words of memory out of 3000000
+ 10297 multiletter control sequences out of 15000+200000
  28192 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,15n,28p,339b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -677,10 +707,10 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (24 pages, 368015 bytes).
+Output written on wells-2013-urbanexplorer.pdf (26 pages, 494441 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 416 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 539 PDF objects out of 1000 (max. 8388607)
+ 489 compressed objects within 5 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 314 words of extra memory for PDF output out of 10000 (max. 10000000)
 

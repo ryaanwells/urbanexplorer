@@ -1,2 +1,71 @@
 \chapter{Results and Analysis}\label{ch_results}
-Here are some results
+
+\section{Evaluation of Interface and Workflow}
+\subsection{Initial Design}
+
+\subsection{Final Design}
+
+\section{Evaluation of Gamification}
+
+\section{Evaluation of Platform}
+Phonegap has its merits as a mobile platform: you can achieve rapid
+development cycles by taking advantage of strong JavaScript and CSS
+frameworks, a ``write once, deploy anywhere'' strategy for multiple
+platform development, and good integration with the phones native
+functionality. However it is the details of the integration with the
+native functionality that can leave wanting, especially for
+geolocation information.
+
+As is discussed in Section \ref{sec:location_mgmt}, we use the PhoneGap
+provided location watch service to receive location information. It
+was discovered during development that if the PhoneGap provided
+location watch service could not obtain location information for any
+reason then the request would fail silently. Geolocation information
+cannot always be obtained due to factors outwith our control and so
+failing silently does not allow the developer to enforce any form of
+persistence when searching for location information. In the case that
+we could not obtain location information it may be desirable to
+immediately restart searching for location information to provide the
+user with better quality of service, however other factors such as
+power consumption then come in to effect which may be more detrimental
+than a few missed waypoints. This would need to be further analysed in
+future work to properly justify what the correct course of behaviour
+is in this situation.
+
+The biggest challenge with the PhoneGap platform was the inconsistency
+within the documentation of the platform and also the instability of
+the upgrade process. 
+
+The PhoneGap platform is built of two main modules: the PhoneGap
+module which is concerned with the developers interface to the phone,
+and the Cordova module which is concerned with the device management.
+There is disparity between platform installation documentation and the
+plugin documentation (for the geolocation module
+etc)\cite{phonegap_install, phonegap_cli,
+  phonegap_geolocationAccessingFeature}. This inconsistency does not
+fill the developer with confidence when the official recommendations
+cannot agree on correct procedures. 
+
+Considerable time was also lost during the first round of user
+evaluation due to an undocumented step required during platform
+updating. When an Android project is created a JAR is installed that
+is responsible for interfacing with the device and updating the
+PhoneGap project did not update this JAR. Since the JAR was not
+updated it did not have new functionality that the project was
+attempting to access and so was crashing the app. A solution was
+eventually discovered on an unrelated thread\cite{pluginFix} and user
+evaluation was able to continue. Time was unnecessarily lost over bad
+documentation and wrong assumptions by the platform developers.
+
+Other small issues like a provided build script to build a ``release''
+version of the app for the Android Play Store builds a ``debug''
+version instead, each time you build the app the version number and
+release number are reset to their default values, an XML configuration
+file for the app is ignored when searching for the main ``index.html''
+file (root of the application), amongst others.
+
+It is for these reasons that I could not recommend PhoneGap as a
+platform that is viable for a production quality app. Until the
+documentation and platform become more reliable and consistent the
+benefits of cross platform development do not outweight the loss of
+fidelity incurred by non native implementation.

@@ -119,6 +119,23 @@ Kris Kowal.
 \newblock Javascript promise library: q.
 \newblock \url{https://github.com/kriskowal/q}.
 
+\bibitem{phonegap_watchpos}
+Adobe~Systems Inc.
+\newblock Phonegap ``watchposition'' definition.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#geolocation.watchPosition}.
+
+\bibitem{android_power}
+Android~Developers Documentation.
+\newblock Power profiles for android.
+\newblock \url{http://source.android.com/devices/tech/power.html}.
+
+\bibitem{android_efficiencySlides}
+Jeff Sharkey.
+\newblock Coding for life--battery life, that is.
+\newblock
+  \url{http://dl.google.com/io/2009/pres/W_0300_CodingforLife-BatteryLifeThatIs.pdf}.
+
 \bibitem{haversine}
 Wikipedia.
 \newblock Haversine function.
@@ -128,5 +145,27 @@ Wikipedia.
 Balthazar Rouberol.
 \newblock Pypi entry for the haversine module.
 \newblock \url{https://pypi.python.org/pypi/haversine}.
+
+\bibitem{phonegap_install}
+Adobe~Systems Inc.
+\newblock Phonegap installation instructions.
+\newblock \url{http://phonegap.com/install/}.
+
+\bibitem{phonegap_cli}
+Adobe~Systems Inc.
+\newblock Phonegap documentation for using the command line interface.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html#The%20Command-line%20Interface_add_features}.
+
+\bibitem{phonegap_geolocationAccessingFeature}
+Adobe~Systems Inc.
+\newblock Phonegap documentation for installing geolocation plugin.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#Geolocation_accessing_the_feature}.
+
+\bibitem{pluginFix}
+David Rabinowitz.
+\newblock Plugin fix for upgrade between phonegap versions.
+\newblock \url{https://github.com/phonegap-build/PushPlugin/issues/92}.
 
 \end{thebibliography}

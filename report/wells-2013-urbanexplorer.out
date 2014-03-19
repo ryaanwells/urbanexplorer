@@ -24,7 +24,13 @@
 \BOOKMARK [2][-]{subsection.3.3.1}{Explicit caching}{section.3.3}% 24
 \BOOKMARK [2][-]{subsection.3.3.2}{Promise Based Module Interfaces}{section.3.3}% 25
 \BOOKMARK [2][-]{subsection.3.3.3}{Exercise Session Management}{section.3.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.4}{Distance Verification}{section.3.3}% 27
-\BOOKMARK [0][-]{chapter.4}{Results and Analysis}{}% 28
-\BOOKMARK [0][-]{chapter.5}{Discussion and Conclusion}{}% 29
-\BOOKMARK [1][-]{section.5.1}{Acknowledgements}{chapter.5}% 30
+\BOOKMARK [2][-]{subsection.3.3.4}{Location Management}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.5}{Distance Verification}{section.3.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Results and Analysis}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Evaluation of Interface and Workflow}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.1.1}{Initial Design}{section.4.1}% 31
+\BOOKMARK [2][-]{subsection.4.1.2}{Final Design}{section.4.1}% 32
+\BOOKMARK [1][-]{section.4.2}{Evaluation of Gamification}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Evaluation of Platform}{chapter.4}% 34
+\BOOKMARK [0][-]{chapter.5}{Discussion and Conclusion}{}% 35
+\BOOKMARK [1][-]{section.5.1}{Acknowledgements}{chapter.5}% 36
