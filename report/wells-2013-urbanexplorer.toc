@@ -25,12 +25,12 @@
 \contentsline {subsection}{\numberline {3.3.2}Promise Based Module Interfaces}{12}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Exercise Session Management}{15}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Location Management}{16}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Distance Verification}{17}{subsection.3.3.5}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{18}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Initial Design}{18}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Final Design}{18}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}Evaluation of Platform}{18}{section.4.3}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{20}{chapter.5}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{20}{section.5.1}
+\contentsline {subsection}{\numberline {3.3.5}Distance Verification}{18}{subsection.3.3.5}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{19}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Initial Design}{19}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Final Design}{19}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation of Platform}{19}{section.4.3}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{21}{section.5.1}

@@ -533,7 +533,7 @@ operation an app developer can invoke, as shown in figure
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{images/power.png}
-  \caption{Power Consumption of sensors on Android Devices}
+  \caption{Power Consumption of sensors on Android Devices \cite{android_efficiencySlides}}
   \label{fig:power}
 \end{figure}
 
@@ -543,9 +543,47 @@ unnecessary to repeatedly ask for location information. The only
 outcome in this scenario is a faster drain on the users battery which
 could lead users to have a negative experience with the app. So even
 though we are leading with the best of intentions it is not the right
-decision to make.
+decision to make. Due to the round trip time required to notify the
+server of new location information and the relatively short distances
+users can travel, it was decided that the provided interval of one
+update a minute was sufficient to ensure a balance between power and
+accuracy. 
 
-\todo{cul-de-sac problem}
+Polling for location information once a minute does suffer from one
+drawback we will define as the ``Cul-de-sac Effect''. The Cul-de-sac
+Effect arises between two location updates where the user travels a
+significant distance between these two updates but these location
+updates occur close to one another, resulting in a much smaller
+perceived distance. This effect arises when we reduce update
+frequency to increase power conservation and can be shown in figure 
+\ref{fig:cul-de-sac} where we assume all location updates (noted as
+``GPS Location'') occur consistently at a discreet time interval. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/cul-de-sac.jpg}
+  \caption{Example of the ``Cul-de-sac Effect''}
+  \label{fig:cul-de-sac}
+\end{figure}
+
+In the contrived example shown in figure \ref{fig:cul-de-sac} we have
+no evidence that the user has travelled into the cul-de-sac, as we
+base our distance calculations solely from the location information,
+and so we cannot award them the distance they have actually
+travelled. Therefore the user is unnecessarily penalised through the
+unfortunate circumstances of timing and their route choice. 
+
+As is noted in Section \ref{sec:distance_ver}, the maximum speed we
+allow users to travel at is $\text{6}m/s$. In the worst case of this
+effect the users device will return location information that informs
+us the user has moved no distance (the coordinates are exactly the
+same). If we assume that we receive the location updates exactly once
+a minute then the worst case distance that the user could lose due to
+this effect is $\text{360}m$ . This is a considerable distance and the
+unacknowledged effort could have a large negative effect on the
+user. Futher work is required to analyse this effect to find the best
+update frequency interval with respect to this effect and power
+consumption. 
 
 
 \subsection{Distance Verification}
@@ -600,6 +638,10 @@ in Figure \ref{fig:distance_limit}.
 \caption{Limiting the distance a user can travel based on a maximum speed.}
 \label{fig:distance_limit}
 \end{figure}
+
+The maximum speed we allow users to travel at is $\text{6}m/s$ as this
+accommodates for sprinting and will facilitate cyclists, should they
+wish to use this app.
 
 This action to limit the distance travelled based on the time period
 will help to defend against cheating but will not negatively impact
