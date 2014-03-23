@@ -1,171 +1,216 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{36}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem{exercise}
-National~Health Service.
-\newblock Health survey for england.
+\bibitem[appcelerator()]{titanium}
+appcelerator.
+\newblock apcelerator homepage for titanium alloy.
+\newblock \url{http://www.appcelerator.com}.
+
+\bibitem[{Cancer Research UK}()]{genesInSpace}
+{Cancer Research UK}.
+\newblock ``genes in space'' - gamification of gene flaw identification.
 \newblock
-  \url{https://catalogue.ic.nhs.uk/publications/public-health/surveys/heal-surv-cvd-risk-obes-ad-ch-eng-2006/heal-surv-cvd-risk-obes-ad-ch-eng-2006-rep-v3.pdf},
-  2006.
+  \url{http://scienceblog.cancerresearchuk.org/2014/02/04/download-our-revolutionary-mobile-game-to-help-speed-up-cancer-research/}.
 
-\bibitem{govsurvey}
+\bibitem[{Center for Game Science at University of Washington}()]{foldit}
+{Center for Game Science at University of Washington}.
+\newblock Foldit, solve puzzles for science.
+\newblock \url{https://fold.it/portal/}.
+
+\bibitem[Documentation({\natexlab{a}})]{android_tabs}
+Android Documentation.
+\newblock Tabs, android building blocks.
+\newblock \url{http://developer.android.com/design/building-blocks/tabs.html},
+  {\natexlab{a}}.
+
+\bibitem[Documentation({\natexlab{b}})]{android_power}
+Android~Developers Documentation.
+\newblock Power profiles for android.
+\newblock \url{http://source.android.com/devices/tech/power.html},
+  {\natexlab{b}}.
+
+\bibitem[Fitness()]{lifefitness}
+Life Fitness.
+\newblock 2012 fitness and technology survey.
+\newblock \url{http://www.lifefitness.co.uk/Survey}.
+
+\bibitem[Foundation({\natexlab{a}})]{django}
+Django~Software Foundation.
+\newblock django web framework.
+\newblock \url{https://www.djangoproject.com/}, {\natexlab{a}}.
+
+\bibitem[Foundation({\natexlab{b}})]{setTimeout}
+Mozilla Foundation.
+\newblock Documentation for window.settimeout javascript function.
+\newblock
+  \url{https://developer.mozilla.org/en/docs/Web/API/window.setTimeout},
+  {\natexlab{b}}.
+
+\bibitem[Gartner()]{phones_gartner}
+Gartner.
+\newblock Gartner says smartphone sales grew 46.5 percent in second quarter of
+  2013 and exceeded feature phone sales for first time.
+\newblock \url{http://www.gartner.com/newsroom/id/2573415}.
+
+\bibitem[Google({\natexlab{a}})]{angularjs}
+Google.
+\newblock Angularjs.
+\newblock \url{http://angularjs.com}, {\natexlab{a}}.
+
+\bibitem[Google({\natexlab{b}})]{angularjs_apply}
+Google.
+\newblock Angularjs \$scope.\$apply function definition.
+\newblock \url{http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply},
+  {\natexlab{b}}.
+
+\bibitem[Guardian()]{phones_guardian}
+The Guardian.
+\newblock Smartphone sales to hit 1bn a year for first time in 2013.
+\newblock
+  \url{http://www.theguardian.com/business/2013/jan/06/smartphone-sales-1bn-2013}.
+
+\bibitem[Inc.({\natexlab{a}})]{phonegap}
+Adobe~Systems Inc.
+\newblock Phonegap.
+\newblock \url{http://phonegap.com}, {\natexlab{a}}.
+
+\bibitem[Inc.({\natexlab{b}})]{phonegap_cli}
+Adobe~Systems Inc.
+\newblock Phonegap documentation for using the command line interface.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html#The%20Command-line%20Interface_add_features},
+  {\natexlab{b}}.
+
+\bibitem[Inc.({\natexlab{c}})]{phonegap_currentpos}
+Adobe~Systems Inc.
+\newblock Phonegap ``getcurrentposition'' definition.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#geolocation.getCurrentPosition},
+  {\natexlab{c}}.
+
+\bibitem[Inc.({\natexlab{d}})]{phonegap_geolocationAccessingFeature}
+Adobe~Systems Inc.
+\newblock Phonegap documentation for installing geolocation plugin.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#Geolocation_accessing_the_feature},
+  {\natexlab{d}}.
+
+\bibitem[Inc.({\natexlab{e}})]{phonegap_install}
+Adobe~Systems Inc.
+\newblock Phonegap installation instructions.
+\newblock \url{http://phonegap.com/install/}, {\natexlab{e}}.
+
+\bibitem[Inc.({\natexlab{f}})]{phonegap_watchpos}
+Adobe~Systems Inc.
+\newblock Phonegap ``watchposition'' definition.
+\newblock
+  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#geolocation.watchPosition},
+  {\natexlab{f}}.
+
+\bibitem[Kowal()]{kriskowalq}
+Kris Kowal.
+\newblock Javascript promise library: q.
+\newblock \url{https://github.com/kriskowal/q}.
+
+\bibitem[Lindsley()]{tastypie}
+Daniel Lindsley.
+\newblock django-tastypie library.
+\newblock \url{https://github.com/toastdriven/django-tastypie}.
+
+\bibitem[McGonigal(2011)]{reality_broken}
+Jane McGonigal.
+\newblock \emph{Reality Is Broken}.
+\newblock Penguin Books, 2011.
+
+\bibitem[Miles()]{charitymiles_terms}
+Charity Miles.
+\newblock Charity miles terms and conditions.
+\newblock \url{http://www.charitymiles.org/terms.html}.
+\newblock Section 1 "How it works".
+
+\bibitem[of~Health(2011)]{govsurvey}
 UK~Department of~Health.
 \newblock Start active, stay active.
 \newblock
   \url{https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/216370/dh_128210.pdf},
   2011.
 
-\bibitem{amsurvey}
+\bibitem[of~Health(2012)]{amsurvey}
 US~Department of~Health.
 \newblock Webstore for gps exercise devices.
 \newblock
   \url{http://www.health.gov/paguidelines/midcourse/pag-mid-course-report-final.pdf},
   2012.
 
-\bibitem{phones_gartner}
-Gartner.
-\newblock Gartner says smartphone sales grew 46.5 percent in second quarter of
-  2013 and exceeded feature phone sales for first time.
-\newblock \url{http://www.gartner.com/newsroom/id/2573415}.
-
-\bibitem{phones_guardian}
-The Guardian.
-\newblock Smartphone sales to hit 1bn a year for first time in 2013.
-\newblock
-  \url{http://www.theguardian.com/business/2013/jan/06/smartphone-sales-1bn-2013}.
-
-\bibitem{lifefitness}
-Life Fitness.
-\newblock 2012 fitness and technology survey.
-\newblock \url{http://www.lifefitness.co.uk/Survey}.
-
-\bibitem{app_store_link}
-Ryan Wells.
-\newblock Google play store entry for "urban explorer", the app created for
-  this project.
-\newblock
-  \url{https://play.google.com/store/apps/details?id=com.phonegap.urbanexplorer}.
-
-\bibitem{django}
-Django~Software Foundation.
-\newblock django web framework.
-\newblock \url{https://www.djangoproject.com/}.
-
-\bibitem{tastypie}
-Daniel Lindsley.
-\newblock django-tastypie library.
-\newblock \url{https://github.com/toastdriven/django-tastypie}.
-
-\bibitem{academic_gamification}
-Lena Sunali~Raj Mithun~Sridharan, Aditya~Hrishikesh.
-\newblock An academic analysis of gamification.
-\newblock {\em UX magazine}, 2008.
-
-\bibitem{charitymiles_terms}
-Charity Miles.
-\newblock Charity miles terms and conditions.
-\newblock \url{http://www.charitymiles.org/terms.html}.
-\newblock Section 1 "How it works".
-
-\bibitem{phonegap}
-Adobe~Systems Inc.
-\newblock Phonegap.
-\newblock \url{http://phonegap.com}.
-
-\bibitem{bootstrap}
-Twitter.
-\newblock Twitter bootstrap css3 framework.
-\newblock \url{http://getbootstrap.com}.
-
-\bibitem{titanium}
-appcelerator.
-\newblock apcelerator homepage for titanium alloy.
-\newblock \url{http://www.appcelerator.com}.
-
-\bibitem{angularjs}
-Google.
-\newblock Angularjs.
-\newblock \url{http://angularjs.com}.
-
-\bibitem{phonegap_currentpos}
-Adobe~Systems Inc.
-\newblock Phonegap ``getcurrentposition'' definition.
-\newblock
-  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#geolocation.getCurrentPosition}.
-
-\bibitem{callback_hell}
+\bibitem[Ogden()]{callback_hell}
 Max Ogden.
 \newblock Callback hell.
 \newblock \url{http://callbackhell.com/}.
 
-\bibitem{angularjs_apply}
-Google.
-\newblock Angularjs \$scope.\$apply function definition.
-\newblock \url{http://docs.angularjs.org/api/ng/type/$rootScope.Scope#$apply}.
+\bibitem[Rabinowitz()]{pluginFix}
+David Rabinowitz.
+\newblock Plugin fix for upgrade between phonegap versions.
+\newblock \url{https://github.com/phonegap-build/PushPlugin/issues/92}.
 
-\bibitem{setTimeout}
-Mozilla Foundation.
-\newblock Documentation for window.settimeout javascript function.
+\bibitem[Rouberol()]{python_haversine}
+Balthazar Rouberol.
+\newblock Pypi entry for the haversine module.
+\newblock \url{https://pypi.python.org/pypi/haversine}.
+
+\bibitem[Schell()]{artOfGameDesign}
+Jesse Schell.
+\newblock \emph{The art of Game Design. A Book of Lenses}.
+
+\bibitem[Service(2006)]{exercise}
+National~Health Service.
+\newblock Health survey for england.
 \newblock
-  \url{https://developer.mozilla.org/en/docs/Web/API/window.setTimeout}.
+  \url{https://catalogue.ic.nhs.uk/publications/public-health/surveys/heal-surv-cvd-risk-obes-ad-ch-eng-2006/heal-surv-cvd-risk-obes-ad-ch-eng-2006-rep-v3.pdf},
+  2006.
 
-\bibitem{wrappingPhonegap}
-Ryan Wells.
-\newblock Wrapping phonegap functions for the angularjs framework.
-\newblock
-  \url{https://github.com/ryaanwells/urbanexplorer/blob/master/urbanexplorer_app/www/js/core/location.js}.
-
-\bibitem{kriskowalq}
-Kris Kowal.
-\newblock Javascript promise library: q.
-\newblock \url{https://github.com/kriskowal/q}.
-
-\bibitem{phonegap_watchpos}
-Adobe~Systems Inc.
-\newblock Phonegap ``watchposition'' definition.
-\newblock
-  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#geolocation.watchPosition}.
-
-\bibitem{android_power}
-Android~Developers Documentation.
-\newblock Power profiles for android.
-\newblock \url{http://source.android.com/devices/tech/power.html}.
-
-\bibitem{android_efficiencySlides}
+\bibitem[Sharkey()]{android_efficiencySlides}
 Jeff Sharkey.
 \newblock Coding for life--battery life, that is.
 \newblock
   \url{http://dl.google.com/io/2009/pres/W_0300_CodingforLife-BatteryLifeThatIs.pdf}.
 
-\bibitem{haversine}
+\bibitem[Toscos et~al.(2006)Toscos, Faber, An, and Gandhi]{chick}
+Tammy Toscos, Anne Faber, Shunying An, and Mona~Praful Gandhi.
+\newblock Chick clique: Persuasive technology to motivate teenage girls to
+  exercise, 2006.
+
+\bibitem[Twitter()]{bootstrap}
+Twitter.
+\newblock Twitter bootstrap css3 framework.
+\newblock \url{http://getbootstrap.com}.
+
+\bibitem[Wells({\natexlab{a}})]{app_store_link}
+Ryan Wells.
+\newblock Google play store entry for "urban explorer", the app created for
+  this project.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.phonegap.urbanexplorer},
+  {\natexlab{a}}.
+
+\bibitem[Wells({\natexlab{b}})]{wrappingPhonegap}
+Ryan Wells.
+\newblock Wrapping phonegap functions for the angularjs framework.
+\newblock
+  \url{https://github.com/ryaanwells/urbanexplorer/blob/master/urbanexplorer_app/www/js/core/location.js},
+  {\natexlab{b}}.
+
+\bibitem[Wikipedia()]{haversine}
 Wikipedia.
 \newblock Haversine function.
 \newblock \url{http://en.wikipedia.org/wiki/Haversine_formula}.
 
-\bibitem{python_haversine}
-Balthazar Rouberol.
-\newblock Pypi entry for the haversine module.
-\newblock \url{https://pypi.python.org/pypi/haversine}.
-
-\bibitem{phonegap_install}
-Adobe~Systems Inc.
-\newblock Phonegap installation instructions.
-\newblock \url{http://phonegap.com/install/}.
-
-\bibitem{phonegap_cli}
-Adobe~Systems Inc.
-\newblock Phonegap documentation for using the command line interface.
-\newblock
-  \url{http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html#The%20Command-line%20Interface_add_features}.
-
-\bibitem{phonegap_geolocationAccessingFeature}
-Adobe~Systems Inc.
-\newblock Phonegap documentation for installing geolocation plugin.
-\newblock
-  \url{http://docs.phonegap.com/en/3.0.0/cordova_geolocation_geolocation.md.html#Geolocation_accessing_the_feature}.
-
-\bibitem{pluginFix}
-David Rabinowitz.
-\newblock Plugin fix for upgrade between phonegap versions.
-\newblock \url{https://github.com/phonegap-build/PushPlugin/issues/92}.
+\bibitem[Zichermann and Cunningham(2011)]{gamification_book}
+Gabe Zichermann and Christopher Cunningham.
+\newblock \emph{Gamification by Design}.
+\newblock O'Reilly, 2011.
 
 \end{thebibliography}

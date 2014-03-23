@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  20 MAR 2014 22:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  23 MAR 2014 20:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -216,7 +216,19 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+
+
+Package natbib Warning: The `cite' package should not be used
+(natbib)                with natbib. Use option `sort' instead.
+
+\bibhang=\skip46
+\bibsep=\skip47
+LaTeX Info: Redefining \cite on input line 694.
+LaTeX Info: Redefining \citenum on input line 708.
+\c@NAT@ctr=\count100
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/05/13 v6.82q Hypertext links for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -253,13 +265,13 @@ Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
 \@linkdim=\dimen131
-\Hy@linkcounter=\count100
-\Hy@pagecounter=\count101
+\Hy@linkcounter=\count101
+\Hy@pagecounter=\count102
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count102
+\Hy@SavedSpaceFactor=\count103
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -274,9 +286,9 @@ Package hyperref Info: Plain pages OFF on input line 4077.
 Package hyperref Info: Backreferencing OFF on input line 4082.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4300.
-\c@Hy@tempcnt=\count103
+\c@Hy@tempcnt=\count104
 LaTeX Info: Redefining \url on input line 4653.
-\Fld@menulength=\count104
+\Fld@menulength=\count105
 \Field@Width=\dimen132
 \Fld@charsize=\dimen133
 Package hyperref Info: Hyper figures OFF on input line 5773.
@@ -288,46 +300,46 @@ Package hyperref Info: Link coloring with OCG OFF on input line 5798.
 Package hyperref Info: PDF/A mode OFF on input line 5803.
 LaTeX Info: Redefining \ref on input line 5843.
 LaTeX Info: Redefining \pageref on input line 5847.
-\c@Item=\count105
-\c@Hfootnote=\count106
+\c@Item=\count106
+\c@Hfootnote=\count107
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
-\Fld@listcount=\count107
-\c@bookmark@seq@number=\count108
+\Fld@listcount=\count108
+\c@bookmark@seq@number=\count109
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip46
+\Hy@SectionHShift=\skip48
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
 Package: mathtools 2012/04/24 v1.12 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count109
-\calc@Bcount=\count110
+\calc@Acount=\count110
+\calc@Bcount=\count111
 \calc@Adimen=\dimen134
 \calc@Bdimen=\dimen135
-\calc@Askip=\skip47
-\calc@Bskip=\skip48
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count111
-\calc@Cskip=\skip49
+\calc@Ccount=\count112
+\calc@Cskip=\skip51
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip50
+\@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -345,13 +357,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count112
+\inf@bad=\count113
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count113
-\leftroot@=\count114
+\uproot@=\count114
+\leftroot@=\count115
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count115
-\DOTSCASE@=\count116
+\classnum@=\count116
+\DOTSCASE@=\count117
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
@@ -360,15 +372,15 @@ LaTeX Info: Redefining \cdots on input line 467.
 \big@size=\dimen138
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count117
-\c@MaxMatrixCols=\count118
+\macc@depth=\count118
+\c@MaxMatrixCols=\count119
 \dotsspace@=\muskip11
-\c@parentequation=\count119
-\dspbrk@lvl=\count120
+\c@parentequation=\count120
+\dspbrk@lvl=\count121
 \tag@help=\toks21
-\row@=\count121
-\column@=\count122
-\maxfields@=\count123
+\row@=\count122
+\column@=\count123
+\maxfields@=\count124
 \andhelp@=\toks22
 \eqnshift@=\dimen139
 \alignsep@=\dimen140
@@ -377,15 +389,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \totwidth@=\dimen143
 \lineht@=\dimen144
 \@envbody=\toks23
-\multlinegap=\skip51
-\multlinetaggap=\skip52
+\multlinegap=\skip53
+\multlinetaggap=\skip54
 \mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-\g_MT_multlinerow_int=\count124
+\g_MT_multlinerow_int=\count125
 \l_MT_multwidth_dim=\dimen145
-\origjot=\skip53
+\origjot=\skip55
 \l_MT_shortvdotswithinadjustabove_dim=\dimen146
 \l_MT_shortvdotswithinadjustbelow_dim=\dimen147
 \l_MT_above_intertext_dim=\dimen148
@@ -393,41 +405,79 @@ LaTeX Info: Redefining \] on input line 2667.
 \l_MT_above_shortintertext_dim=\dimen150
 \l_MT_below_shortintertext_dim=\dimen151
 )
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen152
+\WF@size=\dimen153
+\c@WF@wrappedlines=\count126
+\WF@box=\box30
+\WF@everypar=\toks25
+Package: wrapfig 2003/01/31  v 3.6
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+\captionmargin=\dimen154
+\captionmargin@=\dimen155
+\captionwidth=\dimen156
+\caption@indent=\dimen157
+\caption@parindent=\dimen158
+\caption@hangindent=\dimen159
+)
+\c@ContinuedFloat=\count127
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
+\c@subfigure=\count128
+\c@subtable=\count129
+)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip56
+\enit@outerparindent=\dimen160
+\enit@toks=\toks26
+\enit@inbox=\box31
+\enitdp@description=\count130
+)
 (./wells-2013-urbanexplorer.aux)
 \openout1 = `wells-2013-urbanexplorer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count125
-\scratchdimen=\dimen152
-\scratchbox=\box30
-\nofMPsegments=\count126
-\nofMParguments=\count127
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count128
-\MPscratchDim=\dimen153
-\MPnumerator=\count129
-\makeMPintoPDFobject=\count130
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count131
+\scratchdimen=\dimen161
+\scratchbox=\box32
+\nofMPsegments=\count132
+\nofMParguments=\count133
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count134
+\MPscratchDim=\dimen162
+\MPnumerator=\count135
+\makeMPintoPDFobject=\count136
+\everyMPtoPDFconversion=\toks28
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -463,50 +513,52 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring ON on input line 22.
+\AtBeginShipoutBox=\box33
+Package hyperref Info: Link coloring ON on input line 27.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count137
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 27.
+LaTeX Info: Redefining \pageref on input line 27.
+LaTeX Info: Redefining \nameref on input line 27.
 
 (./wells-2013-urbanexplorer.out) (./wells-2013-urbanexplorer.out)
 \@outlinefile=\write3
 \openout3 = `wells-2013-urbanexplorer.out'.
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
-<images/CompSci_colour.pdf, id=148, 413.545pt x 93.34875pt>
+<images/CompSci_colour.pdf, id=156, 413.545pt x 93.34875pt>
 File: images/CompSci_colour.pdf Graphic file (type pdf)
 
 <use images/CompSci_colour.pdf>
-Package pdftex.def Info: images/CompSci_colour.pdf used on input line 31.
+Package pdftex.def Info: images/CompSci_colour.pdf used on input line 36.
 (pdftex.def)             Requested size: 356.63864pt x 36.44318pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/CompSci_colour.pd
 f>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.77 \end{abstract}
+l.82 \end{abstract}
                     [1]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 84.
  (./wells-2013-urbanexplorer.tocpdfTeX warning (ext4): destination with the sam
 e identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.23 ...Notable design decisions}{12}{section.3.3}
+l.24 ...through of Workflow}{13}{subsection.3.3.5}
                                                    [1
 
 ])
@@ -521,51 +573,62 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 [1
 
-]
-
-LaTeX Warning: Reference `sec_notable' on page 2 undefined on input line 97.
-
-) (./related_work.tex [2]
+] [2]) (./related_work.tex [3]
 Chapter 2.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 20.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 19.
+[4
+
+]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 70.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (11.42741pt too wide) in paragraph at lines 20--21
-[][]\OT1/ptm/m/n/10.95 This may also be rel-e-vant, need to get when in uni [][
-]$\OT1/pcr/m/n/10.95 http : / / dl . acm . org / citation . cfm ? id = 1125805$
-[][][] 
- []
 
-[3
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-] [4] [5]) (./method.tex [6]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 133.
+[5] [6] [7]) (./method.tex [8]
 Chapter 3.
-[7
+[9
 
-] [8] <images/N-tier.png, id=296, 523.9575pt x 257.96375pt>
+]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 96.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+ [10] [11]
+<images/N-tier.png, id=341, 523.9575pt x 257.96375pt>
 File: images/N-tier.png Graphic file (type png)
-
-<use images/N-tier.png>
-Package pdftex.def Info: images/N-tier.png used on input line 148.
+ <use images/N-tier.png>
+Package pdftex.def Info: images/N-tier.png used on input line 190.
 (pdftex.def)             Requested size: 490.52367pt x 241.50977pt.
- <images/ER.png, id=300, 794.97pt x 756.8275pt>
-File: images/ER.png Graphic file (type png)
 
-<use images/ER.png>
-Package pdftex.def Info: images/ER.png used on input line 172.
-(pdftex.def)             Requested size: 490.52367pt x 466.99939pt.
- [9 <./images/N-tier.png>] [10 <./images/ER.png (PNG copy)>] <images/Wireframes
-.png, id=313, 1309.89375pt x 869.2475pt>
-File: images/Wireframes.png Graphic file (type png)
+[12 <./images/N-tier.png>] <images/ER.jpg, id=354, 794.97pt x 679.53876pt>
+File: images/ER.jpg Graphic file (type jpg)
 
-<use images/Wireframes.png>
-Package pdftex.def Info: images/Wireframes.png used on input line 221.
-(pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
- [11 <./images/Wireframes.png>]
-Overfull \hbox (0.84587pt too wide) in paragraph at lines 257--261
+<use images/ER.jpg>
+Package pdftex.def Info: images/ER.jpg used on input line 272.
+(pdftex.def)             Requested size: 490.52367pt x 419.30849pt.
+ <images/ER_prod.jpg, id=355, 708.6475pt x 839.135pt>
+File: images/ER_prod.jpg Graphic file (type jpg)
+
+<use images/ER_prod.jpg>
+Package pdftex.def Info: images/ER_prod.jpg used on input line 279.
+(pdftex.def)             Requested size: 490.52367pt x 580.86037pt.
+
+<images/screens/home.png, id=356, 1084.05pt x 1927.2pt>
+File: images/screens/home.png Graphic file (type png)
+
+<use images/screens/home.png>
+Package pdftex.def Info: images/screens/home.png used on input line 289.
+(pdftex.def)             Requested size: 142.24857pt x 252.86792pt.
+ [13 <./images/screens/home.png (PNG copy)>]
+[14 <./images/ER.jpg>] [15 <./images/ER_prod.jpg>]
+Overfull \hbox (0.84587pt too wide) in paragraph at lines 356--360
 []\OT1/ptm/m/n/10.95 These caching ser-vices are used as singleton-like fa-cil-
 i-ties in the ap-pli-ca-tion to en-sure con-sis-tent data through-
  []
@@ -573,139 +636,188 @@ i-ties in the ap-pli-ca-tion to en-sure con-sis-tent data through-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] [13]
+[16] [17]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [14] [15] <images/power.png, id=369, 921.4425pt x 549.55313pt>
+ [18] [19] <images/power.png, id=421, 921.4425pt x 549.55313pt>
 File: images/power.png Graphic file (type png)
 
 <use images/power.png>
-Package pdftex.def Info: images/power.png used on input line 535.
+Package pdftex.def Info: images/power.png used on input line 634.
 (pdftex.def)             Requested size: 490.52367pt x 292.54475pt.
- [16 <./images/power.png>]
-<images/cul-de-sac.jpg, id=380, 537.00626pt x 570.13pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/cul-de-sac.jpg, id=425, 537.00626pt x 570.13pt>
 File: images/cul-de-sac.jpg Graphic file (type jpg)
 
 <use images/cul-de-sac.jpg>
-Package pdftex.def Info: images/cul-de-sac.jpg used on input line 564.
+Package pdftex.def Info: images/cul-de-sac.jpg used on input line 663.
 (pdftex.def)             Requested size: 343.36507pt x 364.54268pt.
- [17 <./images/cul-de-sac.jpg>]) (./results.tex
-[18]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[21 <./images/power.png>]) (./results.tex [22 <./images/cul-de-sac.jpg>]
+[23]
 Chapter 4.
-[19
+[24
 
-]) (./conclusion.tex [20]
+]) (./conclusion.tex [25]
 Chapter 5.
-) (./wells-2013-urbanexplorer.bbl [21
+) (./appendix.tex [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-[]\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  [
-][]$\OT1/pcr/m/n/10.95 https : / /
+Appendix A.
+<images/Wireframes.png, id=486, 1309.89375pt x 869.2475pt>
+File: images/Wireframes.png Graphic file (type png)
+
+<use images/Wireframes.png>
+Package pdftex.def Info: images/Wireframes.png used on input line 40.
+(pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
+
+<images/wireframe_sketch.jpg, id=487, 5267.68pt x 3950.76pt>
+File: images/wireframe_sketch.jpg Graphic file (type jpg)
+
+<use images/wireframe_sketch.jpg>
+Package pdftex.def Info: images/wireframe_sketch.jpg used on input line 46.
+(pdftex.def)             Requested size: 490.52367pt x 367.85094pt.
+ [27
+
+]) [28 <./images/Wireframes.png>]
+(./wells-2013-urbanexplorer.bbl [29 <./images/wireframe_sketch.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 14--18
+[]\OT1/ptm/m/n/10.95 Cancer Re-search UK.  ``genes in space'' - gam-i-fi-ca-tio
+n of gene flaw iden-ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--9
-\OT1/pcr/m/n/10.95 catalogue . ic . nhs . uk / publications / public-[]health /
- surveys /
+Underfull \hbox (badness 10000) in paragraph at lines 14--18
+\OT1/ptm/m/n/10.95 fi-ca-tion.  [][]$\OT1/pcr/m/n/10.95 http : / / scienceblog 
+. cancerresearchuk . org / 2014 / 02 / 04 /
  []
 
 
-Overfull \hbox (87.25104pt too wide) in paragraph at lines 4--9
-\OT1/pcr/m/n/10.95 heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006 / hea
-l-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006-[]rep-[]v3 .
+Overfull \hbox (0.57863pt too wide) in paragraph at lines 14--18
+\OT1/pcr/m/n/10.95 download-[]our-[]revolutionary-[]mobile-[]game-[]to-[]help-[
+]speed-[]up-[]cancer-[]research/$[][]\OT1/ptm/m/n/10.95 . 
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 18--23
-[]\OT1/ptm/m/n/10.95 US De-part-ment of Health.  Web-store for gps ex-er-cise d
-e-vices.  [][]$\OT1/pcr/m/n/10.95 http : / / www . health . gov /
+Underfull \hbox (badness 1178) in paragraph at lines 25--29
+[]\OT1/ptm/m/n/10.95 Android Doc-u-men-ta-tion.  Tabs, an-droid build-ing block
+s.  [][]$\OT1/pcr/m/n/10.95 http : / / developer . android . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--57
-[]\OT1/ptm/m/n/10.95 Daniel Lind-s-ley.  django-tastypie li-brary.  [][]$\OT1/p
-cr/m/n/10.95 https : / / github . com / toastdriven /
- []
-
-
-Underfull \hbox (badness 5217) in paragraph at lines 90--94
-[]\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap ``getcur-rent-po-si-tion'' 
-def-i-ni-tion.  [][]$\OT1/pcr/m/n/10.95 http : / / docs . phonegap .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--94
-\OT1/pcr/m/n/10.95 com / en / 3 . 0 . 0 / cordova _ geolocation _ geolocation .
- md . html # geolocation .
- []
-
-[22
-
-]
-Underfull \hbox (badness 2073) in paragraph at lines 112--116
-[]\OT1/ptm/m/n/10.95 Ryan Wells.  Wrap-ping phone-gap func-tions for the an-gu-
-larjs frame-work.  [][]$\OT1/pcr/m/n/10.95 https : / / github .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--116
-\OT1/pcr/m/n/10.95 com / ryaanwells / urbanexplorer / blob / master / urbanexpl
-orer _ app / www / js / core /
- []
-
-
-Underfull \hbox (badness 2495) in paragraph at lines 155--159
+Underfull \hbox (badness 2495) in paragraph at lines 82--87
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for us-in
 g the com-mand line in-ter-face.  [][]$\OT1/pcr/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--159
+Underfull \hbox (badness 10000) in paragraph at lines 82--87
 \OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / guide _ cli _ i
 ndex . md . html # The % 20Command-[]line %
  []
 
 
-Underfull \hbox (badness 7888) in paragraph at lines 161--165
+Underfull \hbox (badness 5217) in paragraph at lines 89--94
+[]\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap ``getcur-rent-po-si-tion'' 
+def-i-ni-tion.  [][]$\OT1/pcr/m/n/10.95 http : / / docs . phonegap .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--94
+\OT1/pcr/m/n/10.95 com / en / 3 . 0 . 0 / cordova _ geolocation _ geolocation .
+ md . html # geolocation .
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 96--101
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for in-st
 alling ge-olo-ca-tion plu-gin.  [][]$\OT1/pcr/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--165
+Underfull \hbox (badness 10000) in paragraph at lines 96--101
 \OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / cordova _ geolo
 cation _ geolocation . md . html #
  []
 
+[30
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
+[]\OT1/ptm/m/n/10.95 Daniel Lind-s-ley.  django-tastypie li-brary.  [][]$\OT1/p
+cr/m/n/10.95 https : / / github . com / toastdriven /
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 143--148
+[]\OT1/ptm/m/n/10.95 US De-part-ment of Health.  Web-store for gps ex-er-cise d
+e-vices.  [][]$\OT1/pcr/m/n/10.95 http : / / www . health . gov /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--174
+[]\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  [
+][]$\OT1/pcr/m/n/10.95 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--174
+\OT1/pcr/m/n/10.95 catalogue . ic . nhs . uk / publications / public-[]health /
+ surveys /
+ []
+
+
+Overfull \hbox (87.25104pt too wide) in paragraph at lines 169--174
+\OT1/pcr/m/n/10.95 heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006 / hea
+l-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006-[]rep-[]v3 .
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 200--205
+[]\OT1/ptm/m/n/10.95 Ryan Wells.  Wrap-ping phone-gap func-tions for the an-gu-
+larjs frame-work.  [][]$\OT1/pcr/m/n/10.95 https : / / github .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--205
+\OT1/pcr/m/n/10.95 com / ryaanwells / urbanexplorer / blob / master / urbanexpl
+orer _ app / www / js / core /
+ []
+
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
- [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
+ [31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
  (./wells-2013-urbanexplorer.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 97.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 104.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
 Package rerunfilecheck Info: File `wells-2013-urbanexplorer.out' has not change
 d.
-(rerunfilecheck)             Checksum: 7142D495E81F1D7D84BA3FA1C15B32DB;2564.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
+(rerunfilecheck)             Checksum: 8856334BE52C9CB968D96B3C2E37339F;2653.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
  ) 
 Here is how much of TeX's memory you used:
- 7392 strings out of 495059
- 108650 string characters out of 3182030
- 208667 words of memory out of 3000000
- 10302 multiletter control sequences out of 15000+200000
- 28192 words of font info for 58 fonts, out of 3000000 for 9000
+ 9216 strings out of 495059
+ 139478 string characters out of 3182030
+ 244875 words of memory out of 3000000
+ 12066 multiletter control sequences out of 15000+200000
+ 34136 words of font info for 69 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,15n,28p,339b,429s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,15n,41p,339b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -713,12 +825,13 @@ f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/cou
 rier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (27 pages, 528313 bytes).
+></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on wells-2013-urbanexplorer.pdf (35 pages, 6554761 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 497 compressed objects within 5 object streams
- 119 named destinations out of 1000 (max. 500000)
- 319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 577 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

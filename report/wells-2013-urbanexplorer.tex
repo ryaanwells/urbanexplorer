@@ -16,8 +16,13 @@
 \usepackage{ifthen}
 \usepackage{float}
 \usepackage[biblabel]{cite}
+\usepackage[numbers]{natbib}
 \usepackage[breaklinks,colorlinks,citecolor=black,urlcolor=black,linkcolor=black,pdfpagelabels=false]{hyperref}
 \usepackage{mathtools}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
 
 \begin{document}
 
@@ -91,7 +96,9 @@ I would like to thank ...
 
 
 
+\appendix
+\input{appendix}
 
-\bibliographystyle{unsrt}
+\bibliographystyle{plainnat}
 \bibliography{wells-2013-urbanexplorer}
 \end{document}

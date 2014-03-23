@@ -19,7 +19,6 @@ and will be used to encourage that user to exercise. These metics will
 then be used to form the basis of our conclusion.
 
 The aims of the project are then as follows:
-
 \begin{enumerate}
   \item To provide incentives that become intrinsically
     rewarding. Rewards are primarily linked to stage and route 
@@ -42,6 +41,27 @@ The aims of the project are then as follows:
     \end{enumerate}
 \end{enumerate}
 
+\section{Defining Gamification in this Application}
+
+\citet{gamification_book} define gamification as ``The process of
+game-thinking and game mechanics to engage users and solve
+problems.''. Therefore to fulfil this definition we must now define
+what we mean by:  
+
+\begin{description}[style=multiline, leftmargin=3cm]
+\item[\emph{game-thinking}] What the users thoughts should be when
+  they are interacting with this game and how the user should perceive
+  their interaction.
+\item[\emph{game mechanics}] How we provide this game-like
+  experience. What metrics do we use 
+\item[\emph{users}] What user group this gamification is aimed at.
+\item[\emph{problems}] What are we trying to fix or improve through
+  this application of gamification.
+\end{description}
+
+In our context the \emph{problem} is that the majority of the
+population are not achieving the exercise guidelines set by the Chief
+Medical Officer of England\cite{exercise}. 
 
 \section{Specification}
 \label{sec:specification}
@@ -65,6 +85,28 @@ reduces the network cost by reducing the number of network requests.
 
 These are discussed in more detail in Section \ref{sec:notable} and
 will be referenced in the following subsections.
+
+\subsection{User Requirements}
+From discussions in project meetings and within the authors peer
+group, the following requirements were elicited. The initial
+requirements were a subset of the following requirements but these
+were expanded upon to the following set as the project progressed.
+\paragraph{Must Have Requirements}
+\begin{itemize}
+\item Silent device registration on the first launch of the app.
+\item Obtain Geolocation data from the device and transmit this data
+  to the server.
+\item Reliably obtain the distance between two geolocation
+  coordinates. 
+\item Display all routes to the user and allow them to pick a route to
+  exercise along.
+\item Display progress along a route to a user both when they are
+  browsing Routes and when they are exercising along a given route.
+\item Display distance until next unlock (stage completion) when a
+  user is exercising along a route.
+\end{itemize} 
+\todo{FINISH THIS}
+
 
 \subsection{Platform and Frameworks}
 The mobile application is developed using PhoneGap \cite{phonegap}, 
@@ -156,72 +198,129 @@ There have been two significant iterations of the Entity Relation (ER)
 diagram in this project - the first (figure \ref{ER_1}) is the final
 theoretical ER model and the second is the real world implementation
 with modifications and extra linking for data transfer optimisation
-and changing requirements.
+and changing requirements (figure \ref{ER_2}).
 
-The main reason for the implementation modifications is to keep data
-transfer low between the mobile device and the API. Since the mobile
-device will be using non-wifi based communication methods the number
-of bytes transferred will be logged by their network provider and will
-cost the end user. Since we care for the monetary cost that using the
-app may incur to the end user (Section \ref{sec:consideration}), we can
-sacrifice having a non-redundant database in order to optimise the
-data transfer for the end user.
+The first ER model collects the real-world objects in a hierarchical
+structure: each Mission has a number of Routes that start and end at a
+given Place and each Route is constructed through a number of
+Stages. It was originally intended that a user would start at a
+specific Place, Glasgow for example, and then travel along a Route to
+another Place, Falkirk or Stirling, which would unlock Routes to other
+Places, such as Edinburgh. Representing this game progression of
+unlocking new Routes as you arrive at new Places would be hard without
+using some form of map to signify where the user can currently reach
+based on the Places they have visited. We were unable to obtain an
+interactive map or discover a suitable representation that was not
+ambiguous with respect to what the user was required to do to unlock a
+Route, and so the concept of travelling to Places to unlock Routes was
+not included in this project. However this representation would
+certainly be recommended in future work as it will provide a platform
+of exploration inside the game which could encourage users.
 
-\begin{figure}[H]
+The ``Routes Completed'' and ``Progress'' objects in the first ER
+model represent a Many to Many linking between users and the Routes
+and Stages they have completed, respectively. We note useful
+information here about the time taken and completion dates which we
+can use to display to the user. Similarly, the ``User Achievements''
+table is a Many to Many linking between the User and the Achievements
+table where we store useful information relevant to when a user was
+awarded an Achievement.  
+
+With the first theoretical ER model, managing routes and their
+associated progress along a stage became unwieldy from the session
+point of view. There was no explicit linking between these objects in
+a meaningful way, or indeed an efficient way to access the relevant
+objects for a given session - each update to a session required a lot
+of data transferred between the device and the server just to know
+which Stage we should update the Progress object of for a given user.
+
+Restructuring action was undertaken to introduce a manager-like object
+for holding knowledge about all progress a user has achieved along a
+given route and also to add a direct link between the Session object
+and the current progress information of the current Route that the
+user is travelling along. This restructuring is show in figure
+\ref{ER_2}. The manager-like object is now the ``Routes Completed''
+object in the production ER diagram where we can immediately access
+the current progress down a Route (the ``Current Journey'' link to the
+``Route Progress'' table) and from there we can access the progress
+along the current Stage. 
+
+With careful management we can also update these when we complete
+either a Stage or a Route to allow the user to seamlessly move onto
+the next Stage or Route without losing any information or incurring a
+large number of database accesses by simply updating the ``Current
+Journey'' and ``Current Progress'' links to the appropriate next
+objects. 
+
+At the time of creating the first ER diagram, we did not know exactly
+how we wanted achievements to work or what they would be awarded
+for. After discussion it was decided that an achievement should be
+awarded for completing a route in a given time. Therefore we could
+create a link between an Achievement and the Route that it is related
+to so we can access Route information (specifically the length of the
+route) in an efficient manner. 
+
+The criteria field of an Achievement signifies the time that the route
+should be created in order to be awarded this achievement. This field
+was not renamed to be a specific ``Completion Time'' field so we could
+keep open the scope of what criteria an achievement
+required. Achievements could then be added for overall distance/time
+travelled on a Route, but this was not explored in this project.
+
+\begin{figure}[p]
   \centering
-  \includegraphics[width=\textwidth]{images/ER.png}
+  \includegraphics[width=\textwidth]{images/ER.jpg}
   \caption{ER diagram, final theoretical model}
   \label{ER_1}
 \end{figure}
 
-\todo{Do implementation ER diagram}
-
-
-
-\subsection{Walkthrough of Wireframes}
-\todo{THIS NEEDS REDONE WITH NEW WIREFRAMES}
-
-When the app is launched it silently registers with the server
-allowing the user to use the app immediately. The user is then shown
-the middle-top screen.
-\begin{enumerate}
-\item From the middle top screen, the user can follow arrow 1 by
-  clicking on the middle button ``Pick Mission'' to pick a Mission
-  (Run around Arran or Egg for example) and then pick a start and
-  end location. After confirming these choices, the user is taken
-  back to the middle top screen, or at any time can click the
-  ``Home'' button to return. 
-\item The user can also view their current acheivements by clicking
-  the ``Achievements'' button on the middle top screen, following
-  arrow 2. These achievements will be grouped by tabs by category -
-  Distance, Time, Stage and Mission based achievements.
-\item The user can follow arrow 3 from the middle top screen to
-  notify the app that they are starting an exercise period, telling
-  the app to track their distance. If a Mission and start and end
-  location are not picked (as in point 1) then they will instead be
-  redirected to this screen and are unable to start exercising until
-  this choice has been made. Once they have successfully advanced to
-  this screen, it will display their current progress as they move
-  showing the user how close to completion of their current stage
-  and overall route they are. 
-\item When the user has finished exercising, they will click the
-  ``End Session'' button and be taken to the first summary screen -
-  following arrow 4. Here statistics from their exercise will be
-  shown and the option to share this on several social media
-  outlets.
-\item The user can then move to the second and final summary screen,
-  following arrow 5, where they will be shown any achievements they
-  were awarded during that session. The user will also have the
-  option to share these on social media outlets. From here, the user
-  can click the ``Home'' button and be taken back to the middle top
-  screen. 
-\end{enumerate}
-\begin{figure}[H]
+\begin{figure}[p]
   \centering
-  \includegraphics[width=\linewidth]{images/Wireframes.png}
-  \caption{Wireframes, initial design}
-  \label{wireframes_1}
+  \includegraphics[width=\textwidth]{images/ER_prod.jpg}
+  \caption{ER diagram, production model}
+  \label{ER_2}
 \end{figure}
+
+
+\subsection{Walkthrough of Workflow}
+\begin{wrapfigure}{R}{0.29\textwidth}
+  \vspace{-20pt}
+  \centering
+  \includegraphics[width=0.29\textwidth]{images/screens/home.png}
+  \vspace{-20pt}
+  \caption{Home Screen}
+  \vspace{-110pt}
+  \label{fig:home_screen}
+\end{wrapfigure}
+At the beginning of the design process a workflow and set of
+wireframes was drawn up to model a possible interaction scenario for 
+this app\footnote{The original wireframes and walk through are listed
+  in Appendix \ref{ch:original_wireframes}}. As the project evolved so
+too did the workflow design. 
+
+A tabular approach to top-level navigation, a standard Android building
+block\cite{android_tabs}, was introduced to organise the different user
+tasks required in the app. This can be shown in figure
+\ref{fig:home_screen} where, from left to right, the tabs represent:
+home screen, route selection, run/exercise session, view achievements,
+and the help screen. All tabs are accessible at any time with the
+exception of the center tab which can only be accessed when an
+exercise session is started. Figure \ref{fig:home_screen} is the first
+screen that a user will see when the app launches so we use this space
+to immediately show the user statistics relating to their previous
+exercise efforts.
+
+We intend to direct the user towards starting an exercise session so
+use a large button below the statistics as a call-to-action to begin
+this process. This button takes the user to the screen indicated by
+the second tab: the route selection screen, shown in figure
+
+%% \begin{figure}[h]
+%%   \centering
+%%   \begin{subfigure}
+
+%%   \end{subfigure}
+%% \end{figure}
 
 \section{Notable design decisions}\label{sec:notable}
 \subsection{Explicit caching}

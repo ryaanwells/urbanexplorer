@@ -1,0 +1,43 @@
+\chapter{Original Wireframes}
+\label{ch:original_wireframes}
+When the app is launched it silently registers with the server
+allowing the user to use the app immediately. The user is then shown
+the middle-top screen.
+\begin{enumerate}
+\item From the middle top screen, the user can follow arrow 1 by
+  clicking on the middle button ``Pick Mission'' to pick a Mission
+  (Run around Arran or Egg for example) and then pick a start and
+  end location. After confirming these choices, the user is taken
+  back to the middle top screen, or at any time can click the
+  ``Home'' button to return. 
+\item The user can also view their current acheivements by clicking
+  the ``Achievements'' button on the middle top screen, following
+  arrow 2. These achievements will be grouped by tabs by category -
+  Distance, Time, Stage and Mission based achievements.
+\item The user can follow arrow 3 from the middle top screen to
+  notify the app that they are starting an exercise period, telling
+  the app to track their distance. If a Mission and start and end
+  location are not picked (as in point 1) then they will instead be
+  redirected to this screen and are unable to start exercising until
+  this choice has been made. Once they have successfully advanced to
+  this screen, it will display their current progress as they move
+  showing the user how close to completion of their current stage
+  and overall route they are. 
+\item When the user has finished exercising, they will click the
+  ``End Session'' button and be taken to the first summary screen -
+  following arrow 4. Here statistics from their exercise will be
+  shown and the option to share this on several social media
+  outlets.
+\item The user can then move to the second and final summary screen,
+  following arrow 5, where they will be shown any achievements they
+  were awarded during that session. The user will also have the
+  option to share these on social media outlets. From here, the user
+  can click the ``Home'' button and be taken back to the middle top
+  screen. 
+\end{enumerate}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{images/Wireframes.png}
+  \caption{Wireframes, initial design}
+  \label{wireframes_1}
+\end{figure}

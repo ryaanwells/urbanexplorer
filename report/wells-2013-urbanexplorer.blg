@@ -1,46 +1,83 @@
 This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: wells-2013-urbanexplorer.aux
-The style file: unsrt.bst
+The style file: plainnat.bst
 Database file #1: wells-2013-urbanexplorer.bib
-You've used 30 entries,
-            1791 wiz_defined-function locations,
-            569 strings with 7540 characters,
-and the built_in function-call counts, 3797 in all, are:
-= -- 306
-> -- 120
-< -- 0
-+ -- 60
-- -- 30
-* -- 8
-:= -- 591
-add.period$ -- 91
-call.type$ -- 30
-change.case$ -- 30
-chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 153
-empty$ -- 537
-format.name$ -- 30
-if$ -- 904
-int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 1
-newline$ -- 154
-num.names$ -- 30
-pop$ -- 153
+I was expecting a `,' or a `}'---line 193 of file wells-2013-urbanexplorer.bib
+ : title={The art of Game Design. A Book of Lenses}
+ :                                                 <
+I'm skipping whatever remains of this entry
+Warning--empty year in titanium
+Warning--empty year in genesInSpace
+Warning--empty year in foldit
+Warning--empty year in android_tabs
+Warning--empty year in android_power
+Warning--empty year in lifefitness
+Warning--empty year in django
+Warning--empty year in setTimeout
+Warning--empty year in phones_gartner
+Warning--empty year in angularjs
+Warning--empty year in angularjs_apply
+Warning--empty year in phones_guardian
+Warning--empty year in phonegap
+Warning--empty year in phonegap_cli
+Warning--empty year in phonegap_currentpos
+Warning--empty year in phonegap_geolocationAccessingFeature
+Warning--empty year in phonegap_install
+Warning--empty year in phonegap_watchpos
+Warning--empty year in kriskowalq
+Warning--empty year in tastypie
+Warning--empty year in charitymiles_terms
+Warning--empty year in callback_hell
+Warning--empty year in pluginFix
+Warning--empty year in python_haversine
+Warning--empty publisher in artOfGameDesign
+Warning--empty year in artOfGameDesign
+Warning--empty year in artOfGameDesign
+Warning--empty year in android_efficiencySlides
+Warning--empty year in bootstrap
+Warning--empty year in app_store_link
+Warning--empty year in wrappingPhonegap
+Warning--empty year in haversine
+You've used 36 entries,
+            2773 wiz_defined-function locations,
+            740 strings with 9617 characters,
+and the built_in function-call counts, 10894 in all, are:
+= -- 922
+> -- 400
+< -- 35
++ -- 165
+- -- 120
+* -- 557
+:= -- 1652
+add.period$ -- 107
+call.type$ -- 36
+change.case$ -- 145
+chr.to.int$ -- 27
+cite$ -- 104
+duplicate$ -- 556
+empty$ -- 1154
+format.name$ -- 158
+if$ -- 2322
+int.to.chr$ -- 10
+int.to.str$ -- 1
+missing$ -- 6
+newline$ -- 187
+num.names$ -- 144
+pop$ -- 490
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 112
 quote$ -- 0
-skip$ -- 138
+skip$ -- 419
 stack$ -- 0
-substring$ -- 0
-swap$ -- 30
+substring$ -- 72
+swap$ -- 50
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 30
-width$ -- 32
-write$ -- 278
+type$ -- 381
+warning$ -- 32
+while$ -- 108
+width$ -- 0
+write$ -- 421
+(There was 1 error message)
