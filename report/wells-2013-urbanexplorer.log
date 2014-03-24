@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  23 MAR 2014 20:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  24 MAR 2014 11:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,26 +601,26 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
  [10] [11]
-<images/N-tier.png, id=341, 523.9575pt x 257.96375pt>
+<images/N-tier.png, id=348, 523.9575pt x 257.96375pt>
 File: images/N-tier.png Graphic file (type png)
  <use images/N-tier.png>
 Package pdftex.def Info: images/N-tier.png used on input line 190.
 (pdftex.def)             Requested size: 490.52367pt x 241.50977pt.
 
-[12 <./images/N-tier.png>] <images/ER.jpg, id=354, 794.97pt x 679.53876pt>
+[12 <./images/N-tier.png>] <images/ER.jpg, id=361, 794.97pt x 679.53876pt>
 File: images/ER.jpg Graphic file (type jpg)
 
 <use images/ER.jpg>
 Package pdftex.def Info: images/ER.jpg used on input line 272.
 (pdftex.def)             Requested size: 490.52367pt x 419.30849pt.
- <images/ER_prod.jpg, id=355, 708.6475pt x 839.135pt>
+ <images/ER_prod.jpg, id=362, 708.6475pt x 839.135pt>
 File: images/ER_prod.jpg Graphic file (type jpg)
 
 <use images/ER_prod.jpg>
 Package pdftex.def Info: images/ER_prod.jpg used on input line 279.
 (pdftex.def)             Requested size: 490.52367pt x 580.86037pt.
 
-<images/screens/home.png, id=356, 1084.05pt x 1927.2pt>
+<images/screens/home.png, id=363, 1084.05pt x 1927.2pt>
 File: images/screens/home.png Graphic file (type png)
 
 <use images/screens/home.png>
@@ -643,7 +643,7 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [18] [19] <images/power.png, id=421, 921.4425pt x 549.55313pt>
+ [18] [19] <images/power.png, id=428, 921.4425pt x 549.55313pt>
 File: images/power.png Graphic file (type png)
 
 <use images/power.png>
@@ -653,7 +653,7 @@ Package pdftex.def Info: images/power.png used on input line 634.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/cul-de-sac.jpg, id=425, 537.00626pt x 570.13pt>
+<images/cul-de-sac.jpg, id=432, 537.00626pt x 570.13pt>
 File: images/cul-de-sac.jpg Graphic file (type jpg)
 
 <use images/cul-de-sac.jpg>
@@ -678,14 +678,14 @@ Chapter 5.
 
 ]
 Appendix A.
-<images/Wireframes.png, id=486, 1309.89375pt x 869.2475pt>
+<images/Wireframes.png, id=493, 1309.89375pt x 869.2475pt>
 File: images/Wireframes.png Graphic file (type png)
 
 <use images/Wireframes.png>
 Package pdftex.def Info: images/Wireframes.png used on input line 40.
 (pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
 
-<images/wireframe_sketch.jpg, id=487, 5267.68pt x 3950.76pt>
+<images/wireframe_sketch.jpg, id=494, 5267.68pt x 3950.76pt>
 File: images/wireframe_sketch.jpg Graphic file (type jpg)
 
 <use images/wireframe_sketch.jpg>
@@ -719,37 +719,37 @@ s.  [][]$\OT1/pcr/m/n/10.95 http : / / developer . android . com /
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 82--87
+Underfull \hbox (badness 2495) in paragraph at lines 88--93
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for us-in
 g the com-mand line in-ter-face.  [][]$\OT1/pcr/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--87
+Underfull \hbox (badness 10000) in paragraph at lines 88--93
 \OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / guide _ cli _ i
 ndex . md . html # The % 20Command-[]line %
  []
 
 
-Underfull \hbox (badness 5217) in paragraph at lines 89--94
+Underfull \hbox (badness 5217) in paragraph at lines 95--100
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap ``getcur-rent-po-si-tion'' 
 def-i-ni-tion.  [][]$\OT1/pcr/m/n/10.95 http : / / docs . phonegap .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--94
+Underfull \hbox (badness 10000) in paragraph at lines 95--100
 \OT1/pcr/m/n/10.95 com / en / 3 . 0 . 0 / cordova _ geolocation _ geolocation .
  md . html # geolocation .
  []
 
 
-Underfull \hbox (badness 7888) in paragraph at lines 96--101
+Underfull \hbox (badness 7888) in paragraph at lines 102--107
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for in-st
 alling ge-olo-ca-tion plu-gin.  [][]$\OT1/pcr/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--101
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
 \OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / cordova _ geolo
 cation _ geolocation . md . html #
  []
@@ -757,50 +757,56 @@ cation _ geolocation . md . html #
 [30
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 []\OT1/ptm/m/n/10.95 Daniel Lind-s-ley.  django-tastypie li-brary.  [][]$\OT1/p
 cr/m/n/10.95 https : / / github . com / toastdriven /
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 143--148
+Underfull \hbox (badness 1072) in paragraph at lines 136--141
+[]\OT1/ptm/m/n/10.95 Charity Miles.  Char-ity miles play store list-ing.  [][]$
+\OT1/pcr/m/n/10.95 https : / / play . google . com / store / apps /
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 156--161
 []\OT1/ptm/m/n/10.95 US De-part-ment of Health.  Web-store for gps ex-er-cise d
 e-vices.  [][]$\OT1/pcr/m/n/10.95 http : / / www . health . gov /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--174
+Underfull \hbox (badness 10000) in paragraph at lines 182--187
 []\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  [
 ][]$\OT1/pcr/m/n/10.95 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--174
+Underfull \hbox (badness 10000) in paragraph at lines 182--187
 \OT1/pcr/m/n/10.95 catalogue . ic . nhs . uk / publications / public-[]health /
  surveys /
  []
 
 
-Overfull \hbox (87.25104pt too wide) in paragraph at lines 169--174
+Overfull \hbox (87.25104pt too wide) in paragraph at lines 182--187
 \OT1/pcr/m/n/10.95 heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006 / hea
 l-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006-[]rep-[]v3 .
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 200--205
+Underfull \hbox (badness 2073) in paragraph at lines 219--224
 []\OT1/ptm/m/n/10.95 Ryan Wells.  Wrap-ping phone-gap func-tions for the an-gu-
 larjs frame-work.  [][]$\OT1/pcr/m/n/10.95 https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--205
+Underfull \hbox (badness 10000) in paragraph at lines 219--224
 \OT1/pcr/m/n/10.95 com / ryaanwells / urbanexplorer / blob / master / urbanexpl
 orer _ app / www / js / core /
  []
 
-)
+[31])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
- [31]
+ [32]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
  (./wells-2013-urbanexplorer.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 104.
@@ -811,13 +817,13 @@ d.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
  ) 
 Here is how much of TeX's memory you used:
- 9216 strings out of 495059
- 139478 string characters out of 3182030
- 244875 words of memory out of 3000000
- 12066 multiletter control sequences out of 15000+200000
+ 9230 strings out of 495059
+ 139775 string characters out of 3182030
+ 246990 words of memory out of 3000000
+ 12076 multiletter control sequences out of 15000+200000
  34136 words of font info for 69 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,15n,41p,339b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,15n,41p,339b,501s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -828,10 +834,10 @@ rier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (35 pages, 6554761 bytes).
+Output written on wells-2013-urbanexplorer.pdf (36 pages, 6557653 bytes).
 PDF statistics:
- 643 PDF objects out of 1000 (max. 8388607)
- 577 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 595 compressed objects within 6 object streams
+ 145 named destinations out of 1000 (max. 500000)
  350 words of extra memory for PDF output out of 10000 (max. 10000000)
 

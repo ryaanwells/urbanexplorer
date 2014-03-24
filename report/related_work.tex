@@ -2,7 +2,7 @@
 
 Life Fitness in 2012 released a survey concerning technology in the
 exercise environment\cite{lifefitness} where it was found that over
-half of gym users used a smartphone or tablet when exercising. This
+half of gym users used a smart phone or tablet when exercising. This
 study focused solely on gym users which is not our target market for
 this product (we are targeting users who exercise outdoors), however
 it is not unreasonable to assume similar statistics for our target
@@ -113,17 +113,17 @@ exercise. These approaches can be shown through the following
 applications. 
 
 Table \ref{table:competitor_comparison} gives a brief
-overview of requrements and user statistics for the compared products
+overview of requirements and user statistics for the compared products
 gained from the Google Play Store.
 
 \begin{table}[h]
   \centering
   \begin{tabular}{ | c | c | c | c |} \hline
     Name & Interface & Requirements & User base  \\ \hline
-    Charity Miles & Mobile App & App and GPS & 10K - 50K\\ \hline
-    Zombies, Run! & Mobile App & App and GPS, headphones & 1M - 5M\\ \hline
+    Charity Miles & Mobile App & App and GPS & 10K - 50K\cite{charitymiles_store}\\ \hline
+    Zombies, Run! & Mobile App & App and GPS, headphones & 100K - 500K\cite{zombiesrun_store}\\ \hline
     WalkJogRun & Mobile App & App and GPS  & unknown \\ \hline
-    Fitbit & Dedicated hardware and Mobile App & Dedicated Hardware & 1M - 5M\\ \hline
+    Fitbit & Dedicated hardware and Mobile App & Dedicated Hardware & 1M - 5M\cite{fitbit_store}\\ \hline
   \end{tabular}
   \caption{Comparison of exercise gamification implementations from
     the Google Play store}
@@ -131,6 +131,7 @@ gained from the Google Play Store.
 \end{table}
 
 \subsection{Charity Miles}
+\label{sec:charity_miles}
 Charity Miles encourages you to exercise by facilitating you to raise
 awareness of charities and help
 others as you exercise. For every mile that you run or walk \$0.25 is
@@ -139,9 +140,9 @@ is donated. The money currently comes from a pool of \$1,000,000
 gathered by the parent company - so you as an end user don't have to pay
 anything. 
 
-The money you accrue during an exersize session is called your
+The money you accrue during an exercise session is called your
 ``sponsorship'' and is only passed onto your charity when you share
-your success to a social network (facebook or
+your success to a social network (Facebook or
 twitter)\cite{charitymiles_terms}. Charity Miles say this is to
 increase awareness of the charity, but it is also a good advertising
 tool for them.
@@ -169,7 +170,7 @@ the louder they become.
 
 In the app you have a base from where you defend yourself from the
 zombie hoard and are required to leave the base to gather
-supplies. The story narritive tells you what you need to gather and
+supplies. The story narrative tells you what you need to gather and
 you find these supplies based on the distance you travel and the route
 you take. Your success is measured by the fortifications of your base,
 which you can improve by running faster/further than before.
@@ -225,9 +226,9 @@ weight and stride length.
 Each device can show you the progress toward your daily goal (either
 steps taken or predicted calorie burn) with various visualisation
 techniques - the simplest of which is a row of five LED lights that
-fill up as you near your goal. Synchronization with compatible phones,
+fill up as you near your goal. Synchronisation with compatible phones,
 or through a computer if your device is not compatible, allows a more
-in depth visualization of your progress.
+in depth visualisation of your progress.
 
 The gamification aspect is inherent in the design of these products -
 you set your own goal and you can easily view your progress at a
@@ -237,12 +238,12 @@ as walking 10,000 steps a day and lifetime completion goals such as
 travelling 100 miles in total.
 
 There is a clear downside to this - you are required to purchase a
-bespoke device to fully utilize the experience provided by
+bespoke device to fully utilise the experience provided by
 Fitbit. When compared to an app that may be \$1.99 or thereabouts it is
-a much larger startup cost than the previous examples. However this
-larger startup cost may be an encouragement unto itself: the user may
+a much larger start up cost than the previous examples. However this
+larger start up cost may be an encouragement unto itself: the user may
 feel obligated to commit to using the device since they are more
-financially invested, which may help with the onboarding required to
+financially invested, which may help with the on boarding required to
 fully benefit from these systems.
 
 Most of these devices are reasonably discreet, the more advanced the
@@ -277,41 +278,39 @@ core goals for this application, unlike WalkJogRun (Section
 \ref{sec:walkjogrun}) which has a heavy reliance on social
 contributions from users in your area. Although WalkJogRun does not
 provide a gamified experience, it does enhance your exercise
-experience by showing you new running routes. These routes are user
-provided and reliance on crowdsourcing for content, gamified or
-otherwise, is too risky for the short period of this project. 
+experience by showing you new running routes. The routes that are
+shown as suggestions are entered into the system by other users as
+they run. An analysis of crowdsourcing gamified content for exercise
+encouragement is outwith the scope of this project due to the number
+of players and the length of time required to complete a worthwhile
+analysis. It would be interesting future work in the context of this
+application, however. 
+
+Charity Miles (Section \ref{sec:charity_miles}) also has a social
+restriction where the user is required to share to a social networking
+site information about the exercise session they have completed before
+their charity of choice can receive the money the user has raised. It
+can be argued either way as to whether or not this will be an extra
+encouragement to the user, but this extra step is an obstacle
+between the user and their complete success metric. This project
+should endeavour to remove these obstacles that are not related to
+their own personal ability: that is to say the user should only be
+restricted access to their success metric because of the users effort
+did not merit access (a user was not awarded a gold medal because the
+user did not deserve a gold medal, not because they did not share
+their running time to Facebook).
+
+There should be no limitation to the app because of a reliance on an
+outside party. In \emph{Charity Miles} there is a central reserve of
+money which you can allocate to your charity of choice by exercising
+but there is no defined behaviour for when this money runs out. This
+central reserve of money is raised through the parent company securing
+sponsorship and so there is a reliance on an outside party to maintain
+the game experience. Reliance on outside parties is an inevitability
+for small starting businesses but we should not allow this reliance to
+affect the game experience for the user.
 
 
-
-%\todo{Summarising a paper: (1) Context, (2) Problem, (3) Solution, (4) Evaluation, (5) Impact.}
-
-
-%\todo{Places to go: ACM Portal, Google Scholar, Citeseer}
-
-%\todo{Journals: IPM, JIR, ACM TOIS}
-%\todo{Conferences: ACM SIGIR, ACM CHI, ACM CIKM, European Conference in IR (ECIR), Information Interaction in Context (IIiX), etc.}
-
-
-%\todo{Types or Styles of Papers: Theoretical, Empirical, Conceptual, Applications Based.}
-
-
-%\todo{It is your job to add value and show how the background work relates to your project}
-
-%\begin{itemize}
-%	\item What is it about?
-%	\item Why would i read it? What is of value in it?
-%	\item What are the main contributions in the paper?
-%	\item What are the main issues in the paper?
-%	\item What are the advantages and disadvantages of the approach/solution proposed?
-%	\item What are the limitations of the work?
-%	\item What does the paper claims does the paper make? And are they supported?
-%	\item What do other people think of the paper? Who has caned it?
-%	\item Consider whether the paper is seminal or delta?
-%	\item What did you learn from this paper?
-%	\item Who else has done work in this area?
-%	\item How does this work stand out?
-%	\item How does it relate to the research questions?
-%\end{itemize}
 
 
 

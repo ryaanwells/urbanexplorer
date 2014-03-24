@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -32,6 +32,12 @@ Android~Developers Documentation.
 \newblock Power profiles for android.
 \newblock \url{http://source.android.com/devices/tech/power.html},
   {\natexlab{b}}.
+
+\bibitem[Fitbit()]{fitbit_store}
+Fitbit.
+\newblock Fitbit play store listing.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.fitbit.FitbitMobile}.
 
 \bibitem[Fitness()]{lifefitness}
 Life Fitness.
@@ -126,10 +132,17 @@ Jane McGonigal.
 \newblock \emph{Reality Is Broken}.
 \newblock Penguin Books, 2011.
 
-\bibitem[Miles()]{charitymiles_terms}
+\bibitem[Miles({\natexlab{a}})]{charitymiles_store}
+Charity Miles.
+\newblock Charity miles play store listing.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.charitymilescm.android},
+  {\natexlab{a}}.
+
+\bibitem[Miles({\natexlab{b}})]{charitymiles_terms}
 Charity Miles.
 \newblock Charity miles terms and conditions.
-\newblock \url{http://www.charitymiles.org/terms.html}.
+\newblock \url{http://www.charitymiles.org/terms.html}, {\natexlab{b}}.
 \newblock Section 1 "How it works".
 
 \bibitem[of~Health(2011)]{govsurvey}
@@ -177,6 +190,12 @@ Jeff Sharkey.
 \newblock Coding for life--battery life, that is.
 \newblock
   \url{http://dl.google.com/io/2009/pres/W_0300_CodingforLife-BatteryLifeThatIs.pdf}.
+
+\bibitem[to~Start()]{zombiesrun_store}
+Six to~Start.
+\newblock Zombies, run! play store listing.
+\newblock
+  \url{https://play.google.com/store/apps/details?id=com.sixtostart.zombiesrun}.
 
 \bibitem[Toscos et~al.(2006)Toscos, Faber, An, and Gandhi]{chick}
 Tammy Toscos, Anne Faber, Shunying An, and Mona~Praful Gandhi.

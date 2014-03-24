@@ -12,6 +12,7 @@ Warning--empty year in genesInSpace
 Warning--empty year in foldit
 Warning--empty year in android_tabs
 Warning--empty year in android_power
+Warning--empty year in fitbit_store
 Warning--empty year in lifefitness
 Warning--empty year in django
 Warning--empty year in setTimeout
@@ -27,6 +28,7 @@ Warning--empty year in phonegap_install
 Warning--empty year in phonegap_watchpos
 Warning--empty year in kriskowalq
 Warning--empty year in tastypie
+Warning--empty year in charitymiles_store
 Warning--empty year in charitymiles_terms
 Warning--empty year in callback_hell
 Warning--empty year in pluginFix
@@ -35,49 +37,50 @@ Warning--empty publisher in artOfGameDesign
 Warning--empty year in artOfGameDesign
 Warning--empty year in artOfGameDesign
 Warning--empty year in android_efficiencySlides
+Warning--empty year in zombiesrun_store
 Warning--empty year in bootstrap
 Warning--empty year in app_store_link
 Warning--empty year in wrappingPhonegap
 Warning--empty year in haversine
-You've used 36 entries,
+You've used 39 entries,
             2773 wiz_defined-function locations,
-            740 strings with 9617 characters,
-and the built_in function-call counts, 10894 in all, are:
-= -- 922
-> -- 400
-< -- 35
-+ -- 165
-- -- 120
-* -- 557
-:= -- 1652
-add.period$ -- 107
-call.type$ -- 36
-change.case$ -- 145
-chr.to.int$ -- 27
-cite$ -- 104
-duplicate$ -- 556
-empty$ -- 1154
-format.name$ -- 158
-if$ -- 2322
-int.to.chr$ -- 10
+            751 strings with 10000 characters,
+and the built_in function-call counts, 11785 in all, are:
+= -- 999
+> -- 430
+< -- 38
++ -- 178
+- -- 129
+* -- 602
+:= -- 1786
+add.period$ -- 116
+call.type$ -- 39
+change.case$ -- 157
+chr.to.int$ -- 29
+cite$ -- 113
+duplicate$ -- 601
+empty$ -- 1250
+format.name$ -- 170
+if$ -- 2513
+int.to.chr$ -- 11
 int.to.str$ -- 1
 missing$ -- 6
-newline$ -- 187
-num.names$ -- 144
-pop$ -- 490
+newline$ -- 202
+num.names$ -- 156
+pop$ -- 530
 preamble$ -- 1
-purify$ -- 112
+purify$ -- 121
 quote$ -- 0
-skip$ -- 419
+skip$ -- 452
 stack$ -- 0
-substring$ -- 72
-swap$ -- 50
+substring$ -- 78
+swap$ -- 55
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 381
-warning$ -- 32
-while$ -- 108
+type$ -- 414
+warning$ -- 35
+while$ -- 117
 width$ -- 0
-write$ -- 421
+write$ -- 456
 (There was 1 error message)
