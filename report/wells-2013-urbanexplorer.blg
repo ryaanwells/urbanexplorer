@@ -3,7 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: wells-2013-urbanexplorer.aux
 The style file: plainnat.bst
 Database file #1: wells-2013-urbanexplorer.bib
-I was expecting a `,' or a `}'---line 193 of file wells-2013-urbanexplorer.bib
+I was expecting a `,' or a `}'---line 199 of file wells-2013-urbanexplorer.bib
  : title={The art of Game Design. A Book of Lenses}
  :                                                 <
 I'm skipping whatever remains of this entry
@@ -42,45 +42,45 @@ Warning--empty year in bootstrap
 Warning--empty year in app_store_link
 Warning--empty year in wrappingPhonegap
 Warning--empty year in haversine
-You've used 39 entries,
+You've used 40 entries,
             2773 wiz_defined-function locations,
-            751 strings with 10000 characters,
-and the built_in function-call counts, 11785 in all, are:
-= -- 999
-> -- 430
-< -- 38
-+ -- 178
-- -- 129
-* -- 602
-:= -- 1786
-add.period$ -- 116
-call.type$ -- 39
-change.case$ -- 157
-chr.to.int$ -- 29
-cite$ -- 113
-duplicate$ -- 601
-empty$ -- 1250
-format.name$ -- 170
-if$ -- 2513
+            754 strings with 10126 characters,
+and the built_in function-call counts, 12079 in all, are:
+= -- 1025
+> -- 440
+< -- 39
++ -- 182
+- -- 132
+* -- 615
+:= -- 1831
+add.period$ -- 119
+call.type$ -- 40
+change.case$ -- 161
+chr.to.int$ -- 30
+cite$ -- 115
+duplicate$ -- 616
+empty$ -- 1282
+format.name$ -- 174
+if$ -- 2577
 int.to.chr$ -- 11
 int.to.str$ -- 1
 missing$ -- 6
-newline$ -- 202
-num.names$ -- 156
-pop$ -- 530
+newline$ -- 207
+num.names$ -- 160
+pop$ -- 542
 preamble$ -- 1
-purify$ -- 121
+purify$ -- 124
 quote$ -- 0
-skip$ -- 452
+skip$ -- 465
 stack$ -- 0
-substring$ -- 78
-swap$ -- 55
+substring$ -- 80
+swap$ -- 56
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 414
+type$ -- 425
 warning$ -- 35
-while$ -- 117
+while$ -- 120
 width$ -- 0
-write$ -- 456
+write$ -- 468
 (There was 1 error message)

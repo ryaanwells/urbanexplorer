@@ -1,6 +1,6 @@
 \chapter{Design and Specification}\label{ch_method}
 
-\section{Aim/vision}
+\section{Design Aims}
 
 The idea of the game is to travel around the world without physically
 having to be there, inviting the user to realise the scale of the
@@ -9,16 +9,16 @@ may decide to run around areas in Scotland (the Scotland Mission) and
 this is achieved through routes such as Glasgow to Edinburgh. Each
 route is further broken up into manageable stages of a few kilometres
 and users are awarded badges based on stages/routes completed and
-overall distance and time. Therefore the user can gain short-term
-success while working towards the satisfaction of larger goals. 
+overall distance and time. This hierarchy of goals gives a natural
+progression of success.
 
-This approach is to examine whether or not this type of encouragement
-could potentially work with outdoor exercise. Metrics will be tracked
+We intend to examine whether or not this type of encouragement
+has potential to work with outdoor exercise. Metrics will be tracked
 for individual users to monitor their exercise duration and frequency
-and will be used to encourage that user to exercise. These metics will
+and will be used to encourage that user to exercise. These metrics will
 then be used to form the basis of our conclusion.
 
-The aims of the project are then as follows:
+The design aims of the project are then as follows:
 \begin{enumerate}
   \item To provide incentives that become intrinsically
     rewarding. Rewards are primarily linked to stage and route 
@@ -33,8 +33,7 @@ The aims of the project are then as follows:
     exercise session.
     \begin{enumerate}
       \item Stage completion - unlock a photograph of the stage or of
-        a key landmark near the stage. This is achieved by completing
-        a specific stage.
+        a key landmark near the stage. 
       \item Route Completion - a gold, silver or bronze medal is
         awarded for completing a route in a given time period. A route
         is completed when all the stages in a route are completed.
@@ -43,45 +42,46 @@ The aims of the project are then as follows:
 
 \section{Defining Gamification in this Application}
 
-\citet{gamification_book} define gamification as ``The process of
+Previously we noted the definition of gamification by
+\citet{gamification_book} as ``The process of
 game-thinking and game mechanics to engage users and solve
-problems.''. Therefore to fulfil this definition we must now define
-what we mean by:  
+problems.''. To fulfil this definition we must define what we mean
+by: \emph{game-thinking}, \emph{game mechanics}, \emph{users} and
+\emph{problems}. 
 
-\begin{description}[style=multiline, leftmargin=3cm]
-\item[\emph{game-thinking}] What the users thoughts should be when
-  they are interacting with this game and how the user should perceive
-  their interaction.
-\item[\emph{game mechanics}] How we provide this game-like
-  experience. What metrics do we use 
-\item[\emph{users}] What user group this gamification is aimed at.
-\item[\emph{problems}] What are we trying to fix or improve through
-  this application of gamification.
-\end{description}
-
-In our context the \emph{problem} is that the majority of the
-population are not achieving the exercise guidelines set by the Chief
-Medical Officer of England\cite{exercise}. 
+In our context the \emph{problem} is that the there is the perception
+that there is a ``lack of time to take exercise''\cite{exercise}, a
+problem which has been statistically reduced in later reports by
+redefining what an allowed exercise duration is\cite{exercise_2012}.
 
 \section{Specification}
 \label{sec:specification}
-The implementation specifics of this project are defined herein with
+The implementation specifics of this project are defined below with
 the overall development of the project shown in the following sections.
-
 An overarching goal for this implementation is to minimise the end cost
-for the user. This cost takes two forms: response time for data
-loading and network costs incurred through data loading.
+for the user. This cost takes two forms: 
+\begin{enumerate}
+\item Time - Time taken to load and process content from the server.
+\item Data - Network costs incurred through data transfer on mobile networks.
+\end{enumerate}
 
-Initial response time for loading data cannot be avoided without
-prepackaging content inside the app. We do not want the user to be
-forced to update the app every time we want to add another route to
-run down so prepackaging will not work. We can however cache the data
-we know does not change and reference that instead - which is much
-faster than a network response time.
+Content, like the routes that a user can travel along or the
+achievements they can be awarded, can either come packaged inside the
+application or can be loaded from the server each time the app
+launches. If the content is packaged inside the app then the overall
+loading time of the app will be small but we will require an update to
+the app every time we want to add or modify new content and the size
+of the app on the phone will be larger. By loading content from the
+server once the app has launched we can allow new content to be added
+easily, however we incur a longer loading time.
 
-Caching also reduces the overall network cost: by caching the data
-received we remove the need to make the request again. This inherently
-reduces the network cost by reducing the number of network requests.
+We can mitigate the loading times by storing the response from the
+server when we ask for content and then refer to this local store
+instead of contacting the server again, which is much faster than a
+network response time. This process is called \emph{caching} and will
+also help to reduce the data cost of this application: by caching the
+data received we remove the need to make that request again and so
+reduce the number of network transfers.
 
 These are discussed in more detail in Section \ref{sec:notable} and
 will be referenced in the following subsections.
@@ -112,28 +112,27 @@ were expanded upon to the following set as the project progressed.
 The mobile application is developed using PhoneGap \cite{phonegap}, 
 a tool which allows you to develop a mobile app as if it were
 a web app, and then package it as a mobile app. The decision to use
-PhoneGap instead of building a native app is primarily because I come
-from a web development background but also so we can deploy to
-multiple platforms easily without needing to change the code base. 
+PhoneGap instead of building a native app is because of its rapid
+development cycle, the option to deploy to multiple platforms easily
+without changing the code base and the familiarity that the author has
+with web technologies. Because of this, our application is written
+using HTML, JavaScript, and CSS3. The twitter Bootstrap CSS framework
+\cite{bootstrap} was used because of the excellent support for small
+screen devices and layout management. 
 
-Because of this, our application is written using HTML, JavaScript,
-and CSS3. The twitter Bootstrap CSS framework \cite{bootstrap} was
-used because of the excellent support for small screen devices and
-layout management. 
-
-Titanium, developed by appcelerator\cite{titanium}, is an alternative
+Titanium, developed by Appcelerator\cite{titanium}, is an alternative
 platform to PhoneGap that was also considered. This required a greater
-knowledge of android than PhoneGap does but the biggest drawback was
+knowledge of Android than PhoneGap does but the biggest drawback was
 the state of development when the project started. After discussion
 with members of the startup community who were using Titanium, it was
 apparent that Titanium was still a work in progress and probably a
 risk to go with. The platform is now flourishing and would probably
 have been the better choice to go with in retrospect, but at the
-begining of the project the safer choice was to develop for PhoneGap.
+beginning of the project the safer choice was to develop for PhoneGap.
 
 AngularJS\cite{angularjs} is the framework used for the
 application. This framework has a major benefit of explicit data linking
-between the DOM(Document-Object Model) and the javascript controlling
+between the DOM (Document-Object Model) and the JavaScript controlling
 that section of the DOM. In AngularJS, a controller is defined to
 manage the behaviour of a specific section of a page. By defining
 these controllers, we can utilise this explicit data linking to manage
@@ -145,7 +144,9 @@ The AngularJS framework also facilitates many other control
 mechanisms: DOM tree manipulations, CSS class manipulations, frontend
 routing (a process where a section of the DOM tree and an associated
 JavaScript controller are swapped out based on the current URL) and
-wrappers around the browsers native AJAX implementation. All of this
+wrappers around the browsers native AJAX implementation\footnote{Asynchronous
+JavaScript and XML - a process allowing asynchronous content to be
+loaded through JavaScript}. All of this
 functionality make AngularJS the ideal framework for the project. 
 
 The web application is written in Python and uses Django\cite{django}
@@ -175,14 +176,14 @@ The high level components of this system are reasonably simple (figure
 \ref{NTier}). The
 user requires a mobile phone with GPS enabled, an active internet
 connection and the mobile application installed. This communicates
-with a Django Webserver with a REST-style API (with a small number of
+with a Django web server with a REST-style API (with a small number of
 bespoke views since some behaviour does not fit well with the REST
 specification) which in turn uses Django's Object Relation Model (ORM)
 to persist these to a database.
 
-The mobile application communicates with the devices GPS location
-management system to obtain location information for the
-user. We request that the users devices provides us with the most
+The mobile application communicates with the GPS location
+management system on the phone to obtain location information for the
+user. We request that the device provides us with the most
 accurate GPS location it can provide, so it will try satellite
 positioning first and then try network provided information.
 \begin{figure}[H]
@@ -598,10 +599,10 @@ progressing seamlessly.
 
 \subsection{Location Management}
 \label{sec:location_mgmt}
-Phonegap exposes two main ways to obtain location information, either
+PhoneGap exposes two main ways to obtain location information, either
 by requesting where the device is at this exact moment in
 time\cite{phonegap_currentpos} or by requesting to be updated at a
-discreet time interval when the device position
+discrete time interval when the device position
 updates\cite{phonegap_watchpos}. 
 
 The original intention was to use the first method to manually control
@@ -623,7 +624,7 @@ retrying.
 As much as we may wish to immediately retry searching for coordinates
 with the intention of keeping accurate distance information for a
 user, this may have negative repercussions. Obtaining accurate
-location information is a costly operation requiring 50mA for each set
+location information is a costly operation requiring 50-200mA for each set
 of coordinates, more when there is no recent location
 information\cite{android_power}. It is the fourth most power intensive
 operation an app developer can invoke, as shown in figure
@@ -656,7 +657,7 @@ updates occur close to one another, resulting in a much smaller
 perceived distance. This effect arises when we reduce update
 frequency to increase power conservation and can be shown in figure 
 \ref{fig:cul-de-sac} where we assume all location updates (noted as
-``GPS Location'') occur consistently at a discreet time interval. 
+``GPS Location'') occur consistently at a discrete time interval. 
 
 \begin{figure}[h]
   \centering
@@ -694,8 +695,10 @@ have travelled when new coordinates are provided.
 
 Converting two pairs of longitude and latitude coordinates to a
 distance in kilometers is done through the Haversine
-Function\cite{haversine} with a python module of the same
-name\cite{python_haversine}.
+function\cite{haversine} with a Python module of the same
+name\cite{python_haversine}. The Haversine function converts these
+coordinates to a distance with respect to the curvature of the Earth,
+giving us greater accuracy in our distance calculations.
 
 We send the coordinates to the server and compute the distance there
 instead of on the mobile device in the interests of verifying that
