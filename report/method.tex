@@ -52,7 +52,57 @@ by: \emph{game-thinking}, \emph{game mechanics}, \emph{users} and
 In our context the \emph{problem} is that the there is the perception
 that there is a ``lack of time to take exercise''\cite{exercise}, a
 problem which has been statistically reduced in later reports by
-redefining what an allowed exercise duration is\cite{exercise_2012}.
+redefining what an allowed exercise duration
+is\cite{exercise_2012}. The later report indicated that exercise
+sessions of 10 minutes or more are valid, which our application
+accommodates. 
+
+The \emph{users} that we are targeting are those who have the
+potential to capitalise on their everyday travels to either extend
+these journeys or travel with more vigour. This is explored in Section
+\ref{sec:targeted_users}.  
+
+\emph{Game mechanics} are the elements we add to a process or
+interaction to change the context of the process to encourage
+and change behaviour. We do this through creating a \emph{story} that
+a user can \emph{``Run Around the World''} by completing
+routes. There is a progression model involved whereby completing one
+route unlocks the next. The progression model is a \emph{mechanic}
+which gives users direction through the game. By allowing each route
+to be unlocked by completing a previous one we create explicit goals
+that the user can aim for. A route is composed of several stages which
+you complete as you progress along the route, completing each of these
+stages unlocks a picture for that stage. This is a \emph{reward} that
+the user will achieve simply by playing the game. The user will also
+receive a medal (\emph{reward}) if they complete an entire route
+within a given time. Both of these \emph{reward} metrics will
+encourage the user in different ways: although both metrics are
+extrinsic in nature, the picture unlocks are solely indicators of
+success whereas the medals are indicators of the user excelling at the
+task. The picture unlocks are added motivation for the user to achieve
+a better medal for a specific route.
+
+Finally, \emph{game-thinking} is the definition of the users
+objectives to try to understand how they will find success. It can
+also be the process used to explore what the users perception of the
+interaction is. In a standard game context the user wishes to maximise
+the likelihood that they will win or succeed. The user knows they have
+won when they complete a route in a fast enough time to achieve
+the best medal. A user can also succeed by completing the stages that
+make up a given route, which unlocks the pictures for each
+stage. Therefore the only way to succeed in either case is to
+exercise, so our goals help us solve our initial \emph{problem}.
+
+The context of our application of gamification is exercise, but if we
+can coerce the users into focusing on the game instead of the exercise
+then our motivation becomes \emph{intrinsic} as the user wants to
+achieve the goals for personal satisfaction instead of using the goals
+to justify exercise. A larger analysis of this idea is required to
+determine if this can be achieved in this context. Existing games like
+\emph{Zombies, Run!}(Section \ref{sec:zombies}) where there is a large
+meta-game that surrounds the exercise activity do indicate that this
+coercion may be possible, however the benefits are not understood and
+a larger analysis will help to discover these benefits. 
 
 \section{Specification}
 \label{sec:specification}
@@ -83,8 +133,21 @@ also help to reduce the data cost of this application: by caching the
 data received we remove the need to make that request again and so
 reduce the number of network transfers.
 
-These are discussed in more detail in Section \ref{sec:notable} and
-will be referenced in the following subsections.
+We must be able to identify a user so we can correctly track the
+progress that a user makes. We can achieve this without requiring any
+information that could identify the user outside the system by using a
+unique device identifier provided by the phone. From a privacy 
+perspective this means we have a fully anonymous system where we
+cannot identify what person used each phone but we can still track
+each user in a reliable way. A side effect of this decision is that
+the device handles registration and log in as a background task which
+allows the user to begin using the application almost immediately
+without requiring any input or interaction from the user. Removing
+this registration and log in barrier streamlines the interaction flow
+of the application by removing the \emph{time} cost that a user would
+incur should explicit registration or log in be required. This in turn
+allows the user to begin exercising with the application immediately.
+
 
 \subsection{User Requirements}
 From discussions in project meetings and within the authors peer

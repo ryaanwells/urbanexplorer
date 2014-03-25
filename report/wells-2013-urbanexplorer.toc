@@ -16,24 +16,24 @@
 \contentsline {section}{\numberline {3.1}Design Aims}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Defining Gamification in this Application}{9}{section.3.2}
 \contentsline {section}{\numberline {3.3}Specification}{10}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}User Requirements}{10}{subsection.3.3.1}
-\contentsline {paragraph}{Must Have Requirements}{10}{section*.3}
+\contentsline {subsection}{\numberline {3.3.1}User Requirements}{11}{subsection.3.3.1}
+\contentsline {paragraph}{Must Have Requirements}{11}{section*.3}
 \contentsline {subsection}{\numberline {3.3.2}Platform and Frameworks}{11}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}N-Tier Diagram}{11}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Entity Relation Diagram}{12}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Walkthrough of Workflow}{13}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Notable design decisions}{16}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Explicit caching}{16}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Promise Based Module Interfaces}{16}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Exercise Session Management}{19}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.3.3}N-Tier Diagram}{12}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Entity Relation Diagram}{13}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Walkthrough of Workflow}{14}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Notable design decisions}{14}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Explicit caching}{14}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Promise Based Module Interfaces}{17}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Exercise Session Management}{20}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Location Management}{20}{subsection.3.4.4}
 \contentsline {subsection}{\numberline {3.4.5}Distance Verification}{22}{subsection.3.4.5}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{23}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Initial Design}{23}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Final Design}{23}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Evaluation of Platform}{23}{section.4.3}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{25}{section.5.1}
-\contentsline {chapter}{\numberline {A}Original Wireframes}{26}{appendix.A}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{24}{chapter.4}
+\contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{24}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Initial Design}{24}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Final Design}{24}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{24}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation of Platform}{24}{section.4.3}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{26}{chapter.5}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{26}{section.5.1}
+\contentsline {chapter}{\numberline {A}Original Wireframes}{27}{appendix.A}

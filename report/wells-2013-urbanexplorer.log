@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.15)  24 MAR 2014 20:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.3.25)  25 MAR 2014 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -558,7 +558,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 e identifier (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...through of Workflow}{13}{subsection.3.3.5}
+l.24 ...through of Workflow}{14}{subsection.3.3.5}
                                                    [1
 
 ])
@@ -593,42 +593,43 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 Chapter 3.
 [9
 
-]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 96.
+] [10]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 159.
+
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
- [10] [11]
-<images/N-tier.png, id=358, 523.9575pt x 257.96375pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 159.
+ [11]
+<images/N-tier.png, id=356, 523.9575pt x 257.96375pt>
 File: images/N-tier.png Graphic file (type png)
  <use images/N-tier.png>
-Package pdftex.def Info: images/N-tier.png used on input line 191.
+Package pdftex.def Info: images/N-tier.png used on input line 254.
 (pdftex.def)             Requested size: 490.52367pt x 241.50977pt.
 
-[12 <./images/N-tier.png>] <images/ER.jpg, id=370, 794.97pt x 679.53876pt>
+[12] [13 <./images/N-tier.png>]
+<images/ER.jpg, id=375, 794.97pt x 679.53876pt>
 File: images/ER.jpg Graphic file (type jpg)
-
-<use images/ER.jpg>
-Package pdftex.def Info: images/ER.jpg used on input line 273.
+ <use images/ER.jpg>
+Package pdftex.def Info: images/ER.jpg used on input line 336.
 (pdftex.def)             Requested size: 490.52367pt x 419.30849pt.
- <images/ER_prod.jpg, id=371, 708.6475pt x 839.135pt>
-File: images/ER_prod.jpg Graphic file (type jpg)
 
-<use images/ER_prod.jpg>
-Package pdftex.def Info: images/ER_prod.jpg used on input line 280.
+<images/ER_prod.jpg, id=376, 708.6475pt x 839.135pt>
+File: images/ER_prod.jpg Graphic file (type jpg)
+ <use images/ER_prod.jpg>
+Package pdftex.def Info: images/ER_prod.jpg used on input line 343.
 (pdftex.def)             Requested size: 490.52367pt x 580.86037pt.
 
-<images/screens/home.png, id=372, 1084.05pt x 1927.2pt>
+<images/screens/home.png, id=377, 1084.05pt x 1927.2pt>
 File: images/screens/home.png Graphic file (type png)
 
 <use images/screens/home.png>
-Package pdftex.def Info: images/screens/home.png used on input line 290.
+Package pdftex.def Info: images/screens/home.png used on input line 353.
 (pdftex.def)             Requested size: 142.24857pt x 252.86792pt.
- [13 <./images/screens/home.png (PNG copy)>]
-[14 <./images/ER.jpg>] [15 <./images/ER_prod.jpg>]
-Overfull \hbox (0.84587pt too wide) in paragraph at lines 357--361
+ [14 <./images/screens/home.png (PNG copy)>]
+[15 <./images/ER.jpg>] [16 <./images/ER_prod.jpg>]
+Overfull \hbox (0.84587pt too wide) in paragraph at lines 420--424
 []\OT1/ptm/m/n/10.95 These caching ser-vices are used as singleton-like fa-cil-
 i-ties in the ap-pli-ca-tion to en-sure con-sis-tent data through-
  []
@@ -636,54 +637,54 @@ i-ties in the ap-pli-ca-tion to en-sure con-sis-tent data through-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16] [17]
+[17] [18]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [18] [19] <images/power.png, id=438, 921.4425pt x 549.55313pt>
+ [19] [20] <images/power.png, id=444, 921.4425pt x 549.55313pt>
 File: images/power.png Graphic file (type png)
 
 <use images/power.png>
-Package pdftex.def Info: images/power.png used on input line 635.
+Package pdftex.def Info: images/power.png used on input line 698.
 (pdftex.def)             Requested size: 490.52367pt x 292.54475pt.
- [20 <./images/power.png>]
-<images/cul-de-sac.jpg, id=450, 537.00626pt x 570.13pt>
+ [21 <./images/power.png>]
+<images/cul-de-sac.jpg, id=456, 537.00626pt x 570.13pt>
 File: images/cul-de-sac.jpg Graphic file (type jpg)
 
 <use images/cul-de-sac.jpg>
-Package pdftex.def Info: images/cul-de-sac.jpg used on input line 664.
+Package pdftex.def Info: images/cul-de-sac.jpg used on input line 727.
 (pdftex.def)             Requested size: 343.36507pt x 364.54268pt.
- [21 <./images/cul-de-sac.jpg>]) (./results.tex
-[22]
+ [22 <./images/cul-de-sac.jpg>]) (./results.tex
+[23]
 Chapter 4.
-[23
+[24
 
-]) (./conclusion.tex [24]
+]) (./conclusion.tex [25]
 Chapter 5.
-) (./appendix.tex [25
+) (./appendix.tex [26
 
 ]
 Appendix A.
-<images/Wireframes.png, id=498, 1309.89375pt x 869.2475pt>
+<images/Wireframes.png, id=503, 1309.89375pt x 869.2475pt>
 File: images/Wireframes.png Graphic file (type png)
 
 <use images/Wireframes.png>
 Package pdftex.def Info: images/Wireframes.png used on input line 40.
 (pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
 
-<images/wireframe_sketch.jpg, id=499, 5267.68pt x 3950.76pt>
+<images/wireframe_sketch.jpg, id=504, 5267.68pt x 3950.76pt>
 File: images/wireframe_sketch.jpg Graphic file (type jpg)
 
 <use images/wireframe_sketch.jpg>
 Package pdftex.def Info: images/wireframe_sketch.jpg used on input line 46.
 (pdftex.def)             Requested size: 490.52367pt x 367.85094pt.
- [26
+ [27
 
-]) [27 <./images/Wireframes.png>]
-(./wells-2013-urbanexplorer.bbl [28 <./images/wireframe_sketch.jpg>]
+]) [28 <./images/Wireframes.png>]
+(./wells-2013-urbanexplorer.bbl [29 <./images/wireframe_sketch.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 14--18
 []\OT1/ptm/m/n/10.95 Cancer Re-search UK.  ``genes in space'' - gam-i-fi-ca-tio
 n of gene flaw iden-ti-
@@ -743,7 +744,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--113
 cation _ geolocation . md . html #
  []
 
-[29
+[30
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 132--135
@@ -793,9 +794,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--230
 orer _ app / www / js / core /
  []
 
-[30])
+[31])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
- [31]
+ [32]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
  (./wells-2013-urbanexplorer.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 97.
@@ -806,10 +807,10 @@ d.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 9236 strings out of 495059
- 139874 string characters out of 3182030
- 247051 words of memory out of 3000000
- 12079 multiletter control sequences out of 15000+200000
+ 9238 strings out of 495059
+ 139901 string characters out of 3182030
+ 247093 words of memory out of 3000000
+ 12080 multiletter control sequences out of 15000+200000
  34136 words of font info for 69 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,15n,41p,339b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -823,10 +824,10 @@ rier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (35 pages, 6559259 bytes).
+Output written on wells-2013-urbanexplorer.pdf (36 pages, 6563114 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
- 603 compressed objects within 7 object streams
- 148 named destinations out of 1000 (max. 500000)
+ 675 PDF objects out of 1000 (max. 8388607)
+ 607 compressed objects within 7 object streams
+ 149 named destinations out of 1000 (max. 500000)
  350 words of extra memory for PDF output out of 10000 (max. 10000000)
 
