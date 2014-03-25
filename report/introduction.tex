@@ -10,9 +10,7 @@ acceptance of technology in exercise and combine it with game like
 elements to evaluate the effects of games and
 exercise. Specifically, this project will look at outdoor
 cardiovascular exercise where the user is required to exercise with
-their phone with them.
-
-Studies have shown that physical exercise
+their phone with them.Studies have shown that physical exercise
 between 1 hour a day for children over five years of age and as
 little as 2.5 hours a week for adults has a huge positive impact on
 our physical and emotional wellbeing\cite{govsurvey, amsurvey} .
@@ -33,8 +31,9 @@ definition as to what the exercise guidelines were implied that more
 people than before were meeting the exercise guidelines
 \cite{exercise_2012}. These guidelines allow for exercise sessions of
 10 minutes or more where previously exercise only counted if it was
-more than 30 minutes in length so automatically this will include many
-more people than the previous survey. 
+more than 30 minutes in length. Automatically this will include
+more people than the previous survey as the criteria is less
+restrictive, however we can use this to our advantage..
 
 Since the guidelines now allow exercise sessions that can be as little
 as 10 minutes we can use this to deal with the ``lack of time to take
@@ -110,38 +109,19 @@ example.
 
 \section{Summary of Contributions}
 
-This project required producing a mobile app to provide the
-gamification and a webserver to manage data provision and result
-gathering. 
+This report presents the following contributions: 
 
-The mobile app takes the form of an Android App which is hosted on the
-Google Play Store \cite{app_store_link}. It is recommended for
-convenience to download the app directly from here, however you can
-install from source or the generated apk if desired. The version that
-is hosted on the app store will not change between the time of
-submission and results being published.
-
-The webserver was developed in a RESTful style using the django
-middleware framework\cite{django} and tastypie, a django module for
-generating a REST style API\cite{tastypie}. Some business logic does
-not fit with the REST methodology, such as registration and exercise
-session management, so specific views have been implemented to cater
-for this. These are constructed using solely the django framework.
-
-When in use, the mobile app requires an internet connection to obtain
-data from the webserver and to communicate location information to the
-webserver. Since this is an application intended for use when the user
-is not on a home network, care has been taken to minimise the network
-traffic required. Content is managed in the app by utilising explicit
-caching: this retains local copies of data objects that will not
-change during the runtime of the app. 
-
-Care was also taken when designing the interaction for managing an
-exercise session, with the overall goal of further reducing the
-network cost. Inspiration was taken from some of the REST principles,
-but this work flow does not adhere to all of these principles. 
-
-These are explained in full in Section \ref{sec:notable}.
+\begin{itemize}
+  \item A brief overview of gamification;
+  \item An analysis of the current state of the market for exercise
+    apps and devices;
+  \item An exploration of the requirements, design decisions and
+    implementation of ``Urban Explorer'' - the application built for
+    the analysis of this type of gamification;
+  \item The ``Urban Explorer'' application, which can also be found on
+    the Google Play Store \cite{app_store_link};
+  \item The results from user evaluation and testing.
+\end{itemize}
 
 \section{Outline of the Report}
 

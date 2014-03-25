@@ -1,4 +1,4 @@
-\begin{thebibliography}{41}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -155,6 +155,11 @@ Charity Miles.
 \newblock Charity miles terms and conditions.
 \newblock \url{http://www.charitymiles.org/terms.html}, {\natexlab{b}}.
 \newblock Section 1 "How it works".
+
+\bibitem[Moxfyre()]{ailising}
+Moxfyre.
+\newblock Ailising image.
+\newblock \url{http://commons.wikimedia.org/wiki/File%3AAliasingSines.svg}.
 
 \bibitem[of~Health(2011)]{govsurvey}
 UK~Department of~Health.

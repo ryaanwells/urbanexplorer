@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {2.2}Comparison of related applications}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Charity Miles}{6}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Zombies, Run!}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}WalkJogRun}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.3}WalkJogRun}{7}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Fitbit}{7}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}Consideration of competitors concepts in this project implementation}{8}{section.2.3}
 \contentsline {chapter}{\numberline {3}Design and Specification}{9}{chapter.3}
@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {3.5}Notable design decisions}{17}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Explicit caching}{17}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Promise Based Module Interfaces}{18}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Exercise Session Management}{21}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.3}Exercise Session Management}{20}{subsection.3.5.3}
 \contentsline {subsection}{\numberline {3.5.4}Location Management}{22}{subsection.3.5.4}
 \contentsline {subsection}{\numberline {3.5.5}Distance Verification}{23}{subsection.3.5.5}
 \contentsline {chapter}{\numberline {4}Results and Analysis}{26}{chapter.4}

@@ -54,12 +54,12 @@ that there is a ``lack of time to take exercise''\cite{exercise}, a
 problem which has been statistically reduced in later reports by
 redefining what an allowed exercise duration
 is\cite{exercise_2012}. The later report indicated that exercise
-sessions of 10 minutes or more are valid, which our application
-accommodates. 
+sessions of 10 minutes or more are valid,  which our application
+accommodates for. 
 
 The \emph{users} that we are targeting are those who have the
 potential to capitalise on their everyday travels to either extend
-these journeys or travel with more vigour. This is explored in Section
+these journeys or travel with more vigour. This was explored in Section
 \ref{sec:targeted_users}.  
 
 \emph{Game mechanics} are the elements we add to a process or
@@ -91,7 +91,8 @@ won when they complete a route in a fast enough time to achieve
 the best medal. A user can also succeed by completing the stages that
 make up a given route, which unlocks the pictures for each
 stage. Therefore the only way to succeed in either case is to
-exercise, so our goals help us solve our initial \emph{problem}.
+exercise, so our \emph{goals} help us solve our initial
+\emph{problem}. 
 
 The context of our application of gamification is exercise, but if we
 can coerce the users into focusing on the game instead of the exercise
@@ -184,18 +185,19 @@ achievements they can be awarded, can either come packaged inside the
 application or can be loaded from the server each time the app
 launches. If the content is packaged inside the app then the overall
 loading time of the app will be small but we will require an update to
-the app every time we want to add or modify new content and the size
-of the app on the phone will be larger. By loading content from the
-server once the app has launched we can allow new content to be added
-easily, however we incur a longer loading time.
+the app every time we want to add or modify new content. The overall
+size of the app on the phone will also be larger. By loading content
+from the server once the app has launched we can allow new content to
+be added easily. This approach does incur a longer loading time however.
 
-We can mitigate the loading times by storing the response from the
-server when we ask for content and then refer to this local store
-instead of contacting the server again, which is much faster than a
-network response time. This process is called \emph{caching} and will
-also help to reduce the data cost of this application: by caching the
-data received we remove the need to make that request again and so
-reduce the number of network transfers.
+We can mitigate further loading times by storing the response from the
+server when we ask for content and refer to this local store
+instead of contacting the server again. Referring to a local data
+store is orders of magnitude faster than a network response time. This
+process is called \emph{caching} and will also help to reduce the
+\emph{data cost} of this application: by caching the data received we
+remove the need to make that request again and so reduce the number of
+network transfers. 
 
 We must be able to identify a user so we can correctly track the
 progress that a user makes. We can achieve this without requiring any
@@ -208,7 +210,7 @@ the device handles registration and log in as a background task which
 allows the user to begin using the application almost immediately
 without requiring any input or interaction from the user. Removing
 this registration and log in barrier streamlines the interaction flow
-of the application by removing the \emph{time} cost that a user would
+of the application by removing the \emph{time cost} that a user would
 incur should explicit registration or log in be required. This in turn
 allows the user to begin exercising with the application immediately.
 
@@ -220,7 +222,7 @@ PhoneGap instead of building a native app is because of its rapid
 development cycle, the option to deploy to multiple platforms easily
 without changing the code base and the familiarity that the author has
 with web technologies. Because of this, our application is written
-using HTML, JavaScript, and CSS3. The twitter Bootstrap CSS framework
+using HTML, JavaScript, and CSS3. The Twitter Bootstrap CSS framework
 \cite{bootstrap} was used because of the excellent support for small
 screen devices and layout management. 
 
@@ -234,15 +236,15 @@ risk to go with. The platform is now flourishing and would probably
 have been the better choice to go with in retrospect, but at the
 beginning of the project the safer choice was to develop for PhoneGap.
 
-AngularJS\cite{angularjs} is the framework used for the
-application. This framework has a major benefit of explicit data linking
-between the DOM (Document-Object Model) and the JavaScript controlling
-that section of the DOM. In AngularJS, a controller is defined to
-manage the behaviour of a specific section of a page. By defining
-these controllers, we can utilise this explicit data linking to manage
-how information is displayed in the DOM - if a variable changes in a
-controller then it also updates in the DOM. This linking is
-bi-directional, so the reverse is also true. 
+AngularJS\cite{angularjs} is the web framework used for the
+JavaScript part of the application. This framework has a major benefit
+of explicit data linking between the DOM (Document-Object Model) and
+the JavaScript controlling that section of the DOM. In AngularJS, a
+controller is defined to manage the behaviour of a specific section of
+a page. By defining these controllers, we can utilise this explicit
+data linking to manage how information is displayed in the DOM - if a
+variable changes in a controller then it also updates in the DOM. This
+linking is bi-directional, so the reverse is also true. 
 
 The AngularJS framework also facilitates many other control
 mechanisms: DOM tree manipulations, CSS class manipulations, frontend
@@ -253,12 +255,11 @@ JavaScript and XML - a process allowing asynchronous content to be
 loaded through JavaScript}. All of this
 functionality make AngularJS the ideal framework for the project. 
 
-The web application is written in Python and uses Django\cite{django}
+The server application is written in Python and uses Django\cite{django}
 and Django-Tastypie\cite{tastypie}. Django is used as a middleware
 platform for interfacing with the database and creation of specific
 workflow interactions; while Django-Tastypie is used for managing and
 building a REST style API for well-defined database object access.
-
 Django exposes an Object-Relation Mapping (ORM) inside the framework
 for manipulating and creating database objects. This is utilised by
 Django-Tastpie for creation of the REST API. We use a REST style API
@@ -273,23 +274,28 @@ invaluable for consistency and reliability.
 
 No session-like state is required in this application as the database
 object relations are defined in such a way that they hold all
-information required. 
+information required. This should not be confused with an
+\emph{exercise session} which is referred to in the following
+sessions. The session we refer to here is a an arrangement between a
+client and a server where the client and server are able to trust each
+other whereas a session in terms of exercise is the time period that a
+user is using our app to exercise.
 
 \subsection{N-Tier Diagram}
 The high level components of this system are reasonably simple (figure
 \ref{NTier}). The
 user requires a mobile phone with GPS enabled, an active internet
 connection and the mobile application installed. This communicates
-with a Django web server with a REST-style API (with a small number of
-bespoke views since some behaviour does not fit well with the REST
-specification) which in turn uses Django's Object Relation Model (ORM)
-to persist these to a database.
+with a Django web server through a REST-style API and a small number of
+bespoke non REST-style access points (since some behaviour does not
+fit well with the REST specification) which in turn uses Django's
+Object Relation Model (ORM) to persist these to a database.
 
 The mobile application communicates with the GPS location
 management system on the phone to obtain location information for the
 user. We request that the device provides us with the most
-accurate GPS location it can provide, so it will try satellite
-positioning first and then try network provided information.
+accurate GPS location it can provide, so it will only try satellite
+positioning and not the less accurate cell network provided information.
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{images/N-tier.png}
@@ -594,12 +600,22 @@ use the ``\$timeout'' method if any asynchronicity occurs. Since we
 want to develop a consistent interface between all modules this is not
 appropriate: we need to know when we should and should not require a
 call to ``\$timeout'' when we write the callback function, and this
-can be different between modules.
+can be different between modules. 
 
-We can remove all these complexities by using promises. A promise
-allows us to manage deferred (asynchronous) callbacks and synchronous
-callbacks in the same way and the AngularJS framework has promises
-integrated in with the digest cycle management. 
+The \emph{\$timeout} method is also
+not elegant, read colloquially as a ``hack'', and it is not obvious to
+a new developer why this function should even be called. In some cases
+it is the only safe approach but for all others it would be bad
+software practice to use this approach when other better solutions
+exist. 
+
+We can remove all these complexities by using
+promises\footnote{Promises -
+  \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise}}
+. A promise allows us to manage deferred (asynchronous) callbacks and
+synchronous callbacks in the same way. Helpfully the AngularJS
+framework has promises integrated in with the digest cycle management
+so we do not need to be concerned with this issue any more. 
 
 Promises and callbacks are theoretically similar as both provide a
 function to be called once something has occurred however promises do
@@ -807,6 +823,22 @@ and so we cannot award them the distance they have actually
 travelled. Therefore the user is unnecessarily penalised through the
 unfortunate circumstances of timing and their route choice. 
 
+The ``Cul-de-sac'' effect is a domain-specific example of
+aliasing. Aliasing occurs when one samples a signal at a frequency
+that is far lower than the frequency of the original signal and
+produces an alternate signal that is an incorrect representation of
+the original one, but is indistinguishable to the original one with
+respect to the sampling points. This can be shown in Figure
+\ref{fig:ailising} where the red and blue signals are
+indistinguishable with respect to the black sampling points.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{images/aliasing.png}
+  \caption{Aliasing of two signals. \cite{ailising}}
+  \label{fig:ailising}
+\end{figure} 
+
 As is noted in Section \ref{sec:distance_ver}, the maximum speed we
 allow users to travel at is $\text{6}m/s$. In the worst case of this
 effect the users device will return location information that informs
@@ -854,37 +886,39 @@ the user could have travelled in this interval. This process is shown
 in Figure \ref{fig:distance_limit}.
 
 \begin{figure}[h]
-\begin{equation}
+\begin{equation*}
   distance = haversine(coordinates_{old}, coordinates_{new})
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
   time = timestamp_{new} - timestamp_{old}
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
   speed_{actual} = \frac{distance}{time}
-\end{equation}
-\begin{equation}
+\end{equation*}
+\begin{equation*}
   distance = \left\{
   \begin{array}{l l}
     distance & \text{if $speed_{actual} \leq speed_{max}$} \\
     speed_{max} \times time & \text{if $speed_{actual} > speed_{max} $}
   \end{array}
   \right\}
-\end{equation}
+\end{equation*}
 \caption{Limiting the distance a user can travel based on a maximum speed.}
 \label{fig:distance_limit}
 \end{figure}
 
 The maximum speed we allow users to travel at is $\text{6}m/s$ as this
-accommodates for sprinting and will facilitate cyclists, should they
-wish to use this app.
+accommodates for walking, running and sprinting.
 
 This action to limit the distance travelled based on the time period
 will help to defend against cheating but will not negatively impact
 users who cannot obtain location information for an arbitrary time
 period. A user could still upload bogus coordinates to the server but
 this limiting will help to reduce the effectiveness of their
-cheating.
+cheating. This would also require the user to know the URL schema of
+our server, which is not publicised. The gain they would receive is
+not proportional to the time they would spend on this cheating attempt
+and so it is unlikely that anyone should try this.
 
 
 
