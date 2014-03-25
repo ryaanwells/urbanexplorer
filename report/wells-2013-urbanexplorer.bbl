@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -20,6 +20,11 @@ appcelerator.
 {Center for Game Science at University of Washington}.
 \newblock Foldit, solve puzzles for science.
 \newblock \url{https://fold.it/portal/}.
+
+\bibitem[Consortium()]{moscow}
+DSDM Consortium.
+\newblock Moscow prioritisation.
+\newblock \url{http://dsdm.org/content/10-moscow-prioritisation}.
 
 \bibitem[Documentation({\natexlab{a}})]{android_tabs}
 Android Documentation.
@@ -180,9 +185,10 @@ Balthazar Rouberol.
 \newblock Pypi entry for the haversine module.
 \newblock \url{https://pypi.python.org/pypi/haversine}.
 
-\bibitem[Schell()]{artOfGameDesign}
+\bibitem[Schell(2008)]{artOfGameDesign}
 Jesse Schell.
 \newblock \emph{The art of Game Design. A Book of Lenses}.
+\newblock Morgan Kaufmann, 2008.
 
 \bibitem[Service(2006)]{exercise}
 National~Health Service.

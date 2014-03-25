@@ -104,6 +104,70 @@ meta-game that surrounds the exercise activity do indicate that this
 coercion may be possible, however the benefits are not understood and
 a larger analysis will help to discover these benefits. 
 
+\section{User Requirements}
+From discussions in project meetings and within the authors peer
+group, the following requirements were elicited. The initial
+requirements were a subset of the following requirements but these
+were expanded upon to the following set as the project progressed. The
+\emph{MoSCoW} prioritisation \cite{moscow} of \textbf{M}ust Have,
+\textbf{S}hould Have, \textbf{C}ould Have and \textbf{W}on't Have This
+Time was used to categorise these requirements and can be shown in
+Table \ref{table:moscow}. The status of each of these requirements is
+also shown in this table.
+
+\begin{table}[h]
+  \centering
+  \begin{threeparttable}[b]
+  \begin{tabular}{ | c | p{12cm} | c | } \hline 
+    Priority & Task & Completed \\\hline
+    M & Device registration with server & \checkmark \\\hline
+    M & Obtain location data from the device and transmit this data to
+    the server & \checkmark \\\hline
+    M & Determine the distance between to sets of location coordinates
+    & \checkmark \\\hline
+    M & Display all routes to the user and allow them to pick a route
+    to exercise along & \checkmark \\\hline
+    M & Display current progress along a route to a user & \checkmark
+    \\\hline
+    M & Display distance until next unlock (reward) & \checkmark
+    \\\hline
+    M & Show the user their current achievements and how to achieve
+    their next one & \checkmark \\\hline
+    M & Allow the user to start and end an exercise session &
+    \checkmark \\\hline
+    M & Update the session as a user progresses in an exercise session
+    & \checkmark \\\hline
+    M & Show the user the distance they have travelled and time they
+    have spent exercising when in a session & \checkmark \\\hline
+    S & Show the user the picture they will unlock by completing the
+    stage they are currently on when in an exercise session &
+    \checkmark \\\hline 
+    S & Provide help information to the user on request & \checkmark
+    \\\hline 
+    S & Provide a notification when the user unlocks a picture
+    (completing a stage or a route) or is awarded a medal & \\\hline 
+    S & Store the last route a user exercised on to give the user a
+    shortcut when the app launches to continuing their progress on
+    this route & \\\hline
+    C & Share results of exercise session to social media sites
+    (Facebook and Twitter) & \\\hline
+    C & Send push notifications\tnote{1} to the device for
+    notification of success and to inform the user of new content &
+    \\\hline
+    W & Integrate with pedometer devices such as the FitBit (Section
+    \ref{sec:fitbit}) for more accurate distance monitoring &
+    \\\hline
+    W & Use the motion sensors on the phone with machine learning
+    techniques to use the phone as a pedometer & \\\hline
+  \end{tabular}
+  \begin{tablenotes}
+    \item[1] Android Push Notifications - \url{http://developer.android.com/google/gcm/index.html}
+  \end{tablenotes}
+  \caption{MoSCoW Requirements Prioritisation}
+  \label{table:moscow}
+  \end{threeparttable}
+\end{table}
+
 \section{Specification}
 \label{sec:specification}
 The implementation specifics of this project are defined below with
@@ -147,29 +211,6 @@ this registration and log in barrier streamlines the interaction flow
 of the application by removing the \emph{time} cost that a user would
 incur should explicit registration or log in be required. This in turn
 allows the user to begin exercising with the application immediately.
-
-
-\subsection{User Requirements}
-From discussions in project meetings and within the authors peer
-group, the following requirements were elicited. The initial
-requirements were a subset of the following requirements but these
-were expanded upon to the following set as the project progressed.
-\paragraph{Must Have Requirements}
-\begin{itemize}
-\item Silent device registration on the first launch of the app.
-\item Obtain Geolocation data from the device and transmit this data
-  to the server.
-\item Reliably obtain the distance between two geolocation
-  coordinates. 
-\item Display all routes to the user and allow them to pick a route to
-  exercise along.
-\item Display progress along a route to a user both when they are
-  browsing Routes and when they are exercising along a given route.
-\item Display distance until next unlock (stage completion) when a
-  user is exercising along a route.
-\end{itemize} 
-\todo{FINISH THIS}
-
 
 \subsection{Platform and Frameworks}
 The mobile application is developed using PhoneGap \cite{phonegap}, 
@@ -345,15 +386,16 @@ travelled on a Route, but this was not explored in this project.
   \label{ER_2}
 \end{figure}
 
+\newpage
 
 \subsection{Walkthrough of Workflow}
 \begin{wrapfigure}{R}{0.29\textwidth}
-  \vspace{-20pt}
+  \vspace{-40pt}
   \centering
   \includegraphics[width=0.29\textwidth]{images/screens/home.png}
   \vspace{-20pt}
   \caption{Home Screen}
-  \vspace{-110pt}
+  \vspace{-25pt}
   \label{fig:home_screen}
 \end{wrapfigure}
 At the beginning of the design process a workflow and set of
@@ -375,16 +417,45 @@ to immediately show the user statistics relating to their previous
 exercise efforts.
 
 We intend to direct the user towards starting an exercise session so
-use a large button below the statistics as a call-to-action to begin
+use  a large button below the statistics as a call-to-action to begin
 this process. This button takes the user to the screen indicated by
-the second tab: the route selection screen, shown in figure
+the second tab: the route selection screen, shown as the first image
+in Figure \ref{fig:route-exercise}. From here the user can pick a
+route by tapping on it, taking the user to the center
+screen in Figure \ref{fig:route-exercise} (in this example the user
+has tapped on the ``Central Park Circuit'' route). 
 
-%% \begin{figure}[h]
-%%   \centering
-%%   \begin{subfigure}
+The user can then view their current progress if they have started
+this route, view what times they need to finish this route in to
+achieve a medal and begin exercising by tapping the ``GO!''
+button. If the user chooses to begin exercising then location
+information is sought and an animation is shown to indicate that the
+application is working. Once location information is obtained the user
+is automatically taken to the screen shown in the last image. Here the
+user is shown the picture they will achieve by completing the stage,
+their current exercise statistics, the best medal they could achieve
+with the time they have and their progress information. 
 
-%%   \end{subfigure}
-%% \end{figure}
+This path through the application quickly allows users to launch the
+application, select a route and start exercising which helps to reduce
+the \emph{time cost} involved in engaging with the gamification. 
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/screens/targets.png}
+  \end{subfigure}
+  \hspace{0.02\textwidth}
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/screens/route.png}
+  \end{subfigure}
+  \hspace{0.02\textwidth}
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{images/screens/run.png}
+  \end{subfigure}
+  \caption{Workflow screens for route selection through to exercising}
+  \label{fig:route-exercise}
+\end{figure}
 
 \section{Notable design decisions}\label{sec:notable}
 \subsection{Explicit caching}

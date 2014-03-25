@@ -3,13 +3,10 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: wells-2013-urbanexplorer.aux
 The style file: plainnat.bst
 Database file #1: wells-2013-urbanexplorer.bib
-I was expecting a `,' or a `}'---line 199 of file wells-2013-urbanexplorer.bib
- : title={The art of Game Design. A Book of Lenses}
- :                                                 <
-I'm skipping whatever remains of this entry
 Warning--empty year in titanium
 Warning--empty year in genesInSpace
 Warning--empty year in foldit
+Warning--empty year in moscow
 Warning--empty year in android_tabs
 Warning--empty year in android_power
 Warning--empty year in fitbit_store
@@ -33,54 +30,51 @@ Warning--empty year in charitymiles_terms
 Warning--empty year in callback_hell
 Warning--empty year in pluginFix
 Warning--empty year in python_haversine
-Warning--empty publisher in artOfGameDesign
-Warning--empty year in artOfGameDesign
-Warning--empty year in artOfGameDesign
 Warning--empty year in android_efficiencySlides
 Warning--empty year in zombiesrun_store
 Warning--empty year in bootstrap
 Warning--empty year in app_store_link
 Warning--empty year in wrappingPhonegap
 Warning--empty year in haversine
-You've used 40 entries,
+You've used 41 entries,
             2773 wiz_defined-function locations,
-            754 strings with 10126 characters,
-and the built_in function-call counts, 12079 in all, are:
-= -- 1025
-> -- 440
-< -- 39
-+ -- 182
-- -- 132
-* -- 615
-:= -- 1831
-add.period$ -- 119
-call.type$ -- 40
-change.case$ -- 161
-chr.to.int$ -- 30
+            760 strings with 10241 characters,
+and the built_in function-call counts, 12372 in all, are:
+= -- 1053
+> -- 450
+< -- 40
++ -- 186
+- -- 135
+* -- 622
+:= -- 1878
+add.period$ -- 123
+call.type$ -- 41
+change.case$ -- 165
+chr.to.int$ -- 31
 cite$ -- 115
-duplicate$ -- 616
-empty$ -- 1282
-format.name$ -- 174
-if$ -- 2577
+duplicate$ -- 631
+empty$ -- 1314
+format.name$ -- 178
+if$ -- 2643
 int.to.chr$ -- 11
 int.to.str$ -- 1
 missing$ -- 6
-newline$ -- 207
-num.names$ -- 160
-pop$ -- 542
+newline$ -- 213
+num.names$ -- 164
+pop$ -- 551
 preamble$ -- 1
-purify$ -- 124
+purify$ -- 127
 quote$ -- 0
-skip$ -- 465
+skip$ -- 480
 stack$ -- 0
-substring$ -- 80
-swap$ -- 56
+substring$ -- 82
+swap$ -- 57
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 425
-warning$ -- 35
-while$ -- 120
+type$ -- 436
+warning$ -- 33
+while$ -- 123
 width$ -- 0
-write$ -- 468
-(There was 1 error message)
+write$ -- 482
+(There were 33 warnings)
