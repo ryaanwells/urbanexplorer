@@ -1,6 +1,7 @@
 \chapter{Results and Analysis}\label{ch_results}
 
 \section{Evaluation of Interface and Workflow}
+\subsection{Comments from evaluation}
 Two major interface design iterations occurred in this project. The
 first iteration was concerned with solely displaying the functionality
 of the project and the second was a more refined version where care
@@ -11,9 +12,8 @@ functionality could be shown and valuable feedback received. This
 feedback was used to improve the design and workflow, and was used to
 create the final design of the project. 
 
-\subsection{Initial Design}
 \begin{wrapfigure}{R}{0.29\textwidth}
-  \vspace{-40pt}
+  \vspace{-35pt}
   \centering
   \includegraphics[width=0.29\textwidth]{images/init_design/run.png}
   \vspace{-20pt}
@@ -22,9 +22,9 @@ create the final design of the project.
   \label{fig:init_run}
 \end{wrapfigure}
 When the initial design was formalised we did not have a solid idea of
-what achievements would be in the context of this game. Therefore the
-concept of an achievement does not feature predominantly in this
-design iteration. 
+what \emph{achievements} would be in the context of this
+game. Therefore the concept of an \emph{achievement} does not feature
+predominantly in this design iteration. 
 
 Figure \ref{fig:init_run} shows the screen displayed when a user is
 exercising. This screen is the key part of the application and was
@@ -53,17 +53,16 @@ substituting the horse model for a little running person we could map
 our domain straight onto the fairground amusement. 
 
 This idea was semi-realised in the final design and will be discussed
-further in the final design section (Section
-\ref{sec:final_design}). It is important to note that a user was able
-to comprehend the abstract nature of our gamification goals and
-then interpret them in terms of a game they know and understand. A key
-part of determining the validity of any form of gamification is
-whether or not a user can understand what they need to do to
-succeed. We discuss \emph{Routes} and \emph{Stages} in an abstract
-sense as the user never physically travels along the path that the
-\emph{Route} or \emph{Stage} defines, so it is rewarding to discover
-that a user can make the connection between the abstract depiction and
-a real world example.
+further in the final design section. It is important to note that a
+user was able to comprehend the abstract nature of our gamification
+goals and then interpret them in terms of a game they know and
+understand. A key part of determining the validity of any form of
+gamification is whether or not a user can understand what they need to
+do to succeed. We discuss \emph{Routes} and \emph{Stages} in an
+abstract sense as the user never physically travels along the path
+that the \emph{Route} or \emph{Stage} defines, so it is rewarding to
+discover that a user can make the connection between the abstract
+depiction and a real world example.
 
 Most users also commented on the colour scheme chosen for the first
 design implementation. The garishness of the colours chosen was
@@ -81,16 +80,151 @@ literature and user feedback and change to a colour scheme that was
 predominantly blue.
 
 Users were asked what rewards they would want to receive as they
-progress in this application. It was unanimously suggested that there
-should be a reward for completing each \emph{Route} and most users
-suggested that this reward should be time based. Not all users
-requested that a reward should be given for completing a stages but
-this was formally added after further discussion with the project
-supervisor. 
+progress in this application to help influence our design
+decisions. It was unanimously suggested that there should be a reward
+for completing each \emph{Route} and most users suggested that this
+reward should be time based. Not all users requested that a reward
+should be given for completing a stages but this was formally added
+after further discussion with the project supervisor. 
 
-\subsection{Final Design}
-\label{sec:final_design}
-Photos added to run screen to enhance \emph{story}
+Attention was also drawn to a workflow subtlety which was causing
+problems for users who had not enabled GPS before launching the
+application. Normally this can be easily activated by opening the
+task bar at the top of the screen but the app was designed to cover
+this task bar so users had to find alternate ways to enable the GPS on
+their device. The workaround the user was doing involved closing the
+app entirely and then restarting it once GPS had been enabled. There
+was no design justification to keep the task bar covered so the
+app was changed to uncover it. Arguably the decision to uncover the
+task bar is beneficial to the user in other ways as they can see other
+notifications their device may give.
+
+\begin{wrapfigure}{R}{0.29\textwidth}
+  \vspace{-20pt}
+  \centering
+  \includegraphics[width=0.29\textwidth]{images/screens/run.png}
+  \vspace{-20pt}
+  \caption{Exercise Screen}
+  \vspace{-35pt}
+  \label{fig:final_run}
+\end{wrapfigure}
+
+With feedback from the first iteration of design, the final design was
+implemented. This was distributed to a larger group than the first
+design iteration and feedback was received largely through word of mouth
+and also through an online survey.
+
+The changes made to the screen shown when a user is exercising can be
+seen in Figure \ref{fig:final_run}. In this final design, the Twitter
+Bootstrap\cite{bootstrap} CSS framework was used as the main
+structural backbone of the app layout. This provided better support
+for small screen devices and convenient features such as a colour
+palette complementary to the colours we desire and a large set of
+ready-made navigation icons.
+
+The \emph{achievement} structure was formalised after the first design
+iteration so we endeavoured to include these in the most appropriate
+ways in the final design. The picture you unlock by completing the
+\emph{stage} you are currently on is now a featured part of this
+screen. Predominance was given to this element as it is very visually
+appealing and it also enhances the \emph{story} of the game (as
+discussed in Section \ref{sec:gamification}). We want the user to
+engage in the \emph{story} we are creating, so by explicitly showing
+the user a graphical representation of the abstract \emph{route} they
+are travelling along they are invited to believe that they are running
+near the area set by the abstract \emph{route} and not the area they
+are physically in. 
+
+There is little unused screen space in this design iteration and this
+was met with positive feedback from users. We should note that not all
+information was able to be presented to the user: the overall time
+that a user has spent on a \emph{route} is not shown here. This was
+due to a suitable layout not being discovered during the final design
+phase and future work should be dedicated to further revising this. 
+
+\begin{wrapfigure}{R}{0.29\textwidth}
+  \vspace{-20pt}
+  \centering
+  \includegraphics[width=0.29\textwidth]{images/screens/route.png}
+  \vspace{-20pt}
+  \caption{Route Info Screen}
+  \vspace{-65pt}
+  \label{fig:final_route}
+\end{wrapfigure}
+
+We have also included in Figure \ref{fig:final_run} an indicator as to
+the best medal a user could achieve given their current time on a
+\emph{route}. Combined with the screen depicted in Figure
+\ref{fig:final_route}(the screen that a user is shown after they have 
+picked a \emph{route} to travel on which shows the user how much time
+they have on a \emph{route} before they exercise) the problem is
+alleviated but the issue is not fixed completely. Figure
+\ref{fig:final_run} also shows the \emph{``Medal Winning Times''}
+for this \emph{route}.
+
+The way that progress is shown in final design iteration differs
+greatly from the initial design. Effort was made to include the
+metaphor of the \emph{Horse Racing Derby Game} progress visualisation
+in the final design. Although there is no explicit graphical
+representation of a person running, this progress visualisation can be
+seen through the two bars marked \emph{Route Completion} and
+\emph{Next Unlock}. These bars fill from left to right as the user
+progresses along a route towards completion. Feedback from users was
+positive about this change, noting that it was much easier to glance
+at the screen to see how close you were to achieving a goal when you
+were exercising and that it was satisfying to look back at your
+progress along routes when you are browsing which route you want to
+travel along. 
+
+\begin{wrapfigure}{R}{0.29\textwidth}
+  \vspace{15pt}
+  \centering
+  \includegraphics[width=0.29\textwidth]{images/screens/ach_2.png}
+  \vspace{-20pt}
+  \caption{Achievement Screen}
+  \vspace{-25pt}
+  \label{fig:final_ach}
+\end{wrapfigure}
+
+No explicit comments were given regarding the change in colour scheme
+although users did compliment that the style was ``pleasing'', a great
+improvement on the previous criticism. 
+
+The achievements screen displayed in Figure \ref{fig:final_ach} also
+received little explicit feedback. In this screen the unlocked
+pictures are displayed for a user to peruse at their leisure. At no
+point during the exercise workflow is the user directed towards this
+section so discovery of this page is only achieved through exploration
+of the app. This workflow design flaw may be the root cause of little
+feedback for this section and future work should make this section
+more predominant. The logical place to direct a user to this section
+would be after a user completes an exercise session as it is at this
+time that new pictures are likely to be unlocked. 
+
+A breaking problem that persisted from the first design iteration to
+the final design concerns the middle tab in the navigation bar: the
+exercise tab. This tab is only active when a user is exercising and at
+all other times will redirect the user to the route selection screen
+(selected by the second tab from the left) if the user should click
+it. This was created with the best intentions of correcting a users
+behaviour: an exercise session can only start if the user has selected
+a route to travel along and so seems logical to direct the user here
+to select one. However this caused confusion with users as they
+believed that, since they could not select the tab, it was broken
+entirely. A redesign of this top-level navigation is therefore
+required to remove this confusion.
+
+\subsection{Future Design Work}
+The final design of this project requires work to become a design
+worthy of a marketable product. Some features requested by users are
+as follows:
+
+\begin{itemize}
+  \item An indicator inside the app that lets the user know whether or
+    not their GPS is turned on or not. This indicator should also
+    allow the user to turn on GPS if it is not activated.
+\end{itemize}
+
 
 
 \section{Evaluation of Gamification}

@@ -29,10 +29,10 @@
 \contentsline {subsection}{\numberline {3.5.5}Distance Verification}{23}{subsection.3.5.5}
 \contentsline {chapter}{\numberline {4}Results and Analysis}{26}{chapter.4}
 \contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{26}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Initial Design}{26}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Final Design}{27}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Evaluation of Platform}{27}{section.4.3}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{29}{section.5.1}
-\contentsline {chapter}{\numberline {A}Original Wireframes}{30}{appendix.A}
+\contentsline {subsection}{\numberline {4.1.1}Comments from evaluation}{26}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Future Design Work}{29}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation of Platform}{29}{section.4.3}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{31}{section.5.1}
+\contentsline {chapter}{\numberline {A}Original Wireframes}{32}{appendix.A}
