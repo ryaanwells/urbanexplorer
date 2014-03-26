@@ -3,21 +3,12 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: wells-2013-urbanexplorer.aux
 The style file: plainnat.bst
 Database file #1: wells-2013-urbanexplorer.bib
-I was expecting a `,' or a `}'---line 258 of file wells-2013-urbanexplorer.bib
- : 
- : title={Color and Psychological Functioning: The Effect of Red on Performance Attainment},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--empty year in titanium
 Warning--empty year in genesInSpace
 Warning--empty year in foldit
 Warning--empty year in moscow
 Warning--empty year in android_tabs
 Warning--empty year in android_power
-Warning--empty title in colours_red
-Warning--empty journal in colours_red
-Warning--empty year in colours_red
-Warning--empty year in colours_red
 Warning--empty year in fitbit_store
 Warning--empty year in lifefitness
 Warning--empty year in django
@@ -48,43 +39,43 @@ Warning--empty year in wrappingPhonegap
 Warning--empty year in haversine
 You've used 43 entries,
             2773 wiz_defined-function locations,
-            766 strings with 10441 characters,
-and the built_in function-call counts, 13171 in all, are:
-= -- 1113
+            769 strings with 10559 characters,
+and the built_in function-call counts, 13178 in all, are:
+= -- 1118
 > -- 508
 < -- 41
 + -- 206
 - -- 153
-* -- 688
-:= -- 2002
-add.period$ -- 127
+* -- 681
+:= -- 2007
+add.period$ -- 129
 call.type$ -- 43
-change.case$ -- 176
+change.case$ -- 177
 chr.to.int$ -- 33
-cite$ -- 124
+cite$ -- 120
 duplicate$ -- 666
 empty$ -- 1377
 format.name$ -- 198
-if$ -- 2803
+if$ -- 2808
 int.to.chr$ -- 11
 int.to.str$ -- 1
 missing$ -- 7
-newline$ -- 221
+newline$ -- 223
 num.names$ -- 172
-pop$ -- 589
+pop$ -- 581
 preamble$ -- 1
 purify$ -- 137
 quote$ -- 0
-skip$ -- 505
+skip$ -- 509
 stack$ -- 0
 substring$ -- 86
-swap$ -- 58
+swap$ -- 59
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 458
-warning$ -- 38
+warning$ -- 34
 while$ -- 129
 width$ -- 0
-write$ -- 500
-(There was 1 error message)
+write$ -- 505
+(There were 34 warnings)

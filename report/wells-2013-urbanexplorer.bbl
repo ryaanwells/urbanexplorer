@@ -38,10 +38,13 @@ Android~Developers Documentation.
 \newblock \url{http://source.android.com/devices/tech/power.html},
   {\natexlab{b}}.
 
-\bibitem[Elliot et~al.()Elliot, Maier, Moller, Friedman, and
+\bibitem[Elliot et~al.(2007)Elliot, Maier, Moller, Friedman, and
   Meinhardt]{colours_red}
 Andrew~J. Elliot, Markus~A. Maier, Arlen~C. Moller, Ron Friedman, and J\"{o}rg
   Meinhardt.
+\newblock Color and psychological functioning: The effect of red on performance
+  attainment.
+\newblock \emph{Journal of Experimental Psychology}, 2007.
 
 \bibitem[Fitbit()]{fitbit_store}
 Fitbit.
