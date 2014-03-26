@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.3.25)  25 MAR 2014 21:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.3.25)  26 MAR 2014 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,13 +598,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 115.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 102.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
  [2])
 (./related_work.tex [3]
 Chapter 2.
@@ -630,59 +630,70 @@ Chapter 3.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11] [12] <images/N-tier.png, id=368, 523.9575pt x 257.96375pt>
+[10] [11] [12] <images/N-tier.png, id=366, 523.9575pt x 257.96375pt>
 File: images/N-tier.png Graphic file (type png)
 
 <use images/N-tier.png>
 Package pdftex.def Info: images/N-tier.png used on input line 301.
 (pdftex.def)             Requested size: 490.52367pt x 241.50977pt.
- [13 <./images/N-tier.png>]
-<images/ER.jpg, id=381, 794.97pt x 679.53876pt>
+
+<images/route_breakdown.jpg, id=371, 484.81125pt x 116.435pt>
+File: images/route_breakdown.jpg Graphic file (type jpg)
+
+<use images/route_breakdown.jpg>
+Package pdftex.def Info: images/route_breakdown.jpg used on input line 322.
+(pdftex.def)             Requested size: 392.42043pt x 94.25142pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./images/N-tier.png>] <images/ER.jpg, id=382, 794.97pt x 679.53876pt>
 File: images/ER.jpg Graphic file (type jpg)
- <use images/ER.jpg>
-Package pdftex.def Info: images/ER.jpg used on input line 383.
+
+<use images/ER.jpg>
+Package pdftex.def Info: images/ER.jpg used on input line 403.
 (pdftex.def)             Requested size: 490.52367pt x 419.30849pt.
-
-<images/ER_prod.jpg, id=382, 708.6475pt x 839.135pt>
+ <images/ER_prod.jpg, id=383, 708.6475pt x 839.135pt>
 File: images/ER_prod.jpg Graphic file (type jpg)
- <use images/ER_prod.jpg>
-Package pdftex.def Info: images/ER_prod.jpg used on input line 390.
-(pdftex.def)             Requested size: 490.52367pt x 580.86037pt.
 
-[14] [15 <./images/ER.jpg>] [16 <./images/ER_prod.jpg>]
-<images/screens/home.png, id=396, 1084.05pt x 1927.2pt>
+<use images/ER_prod.jpg>
+Package pdftex.def Info: images/ER_prod.jpg used on input line 410.
+(pdftex.def)             Requested size: 490.52367pt x 580.86037pt.
+ [14 <./images/route_breakdown.jpg>] [15 <./images/ER.jpg>] [16 <./images/ER_pr
+od.jpg>]
+<images/screens/home.png, id=397, 1084.05pt x 1927.2pt>
 File: images/screens/home.png Graphic file (type png)
 
 <use images/screens/home.png>
-Package pdftex.def Info: images/screens/home.png used on input line 401.
+Package pdftex.def Info: images/screens/home.png used on input line 421.
 (pdftex.def)             Requested size: 142.24857pt x 252.86792pt.
 
-<images/screens/targets.png, id=404, 1084.05pt x 1927.2pt>
+<images/screens/targets.png, id=405, 1084.05pt x 1927.2pt>
 File: images/screens/targets.png Graphic file (type png)
 
 <use images/screens/targets.png>
-Package pdftex.def Info: images/screens/targets.png used on input line 452.
+Package pdftex.def Info: images/screens/targets.png used on input line 472.
 (pdftex.def)             Requested size: 147.15858pt x 261.6017pt.
 
-<images/screens/route.png, id=405, 1084.05pt x 1927.2pt>
+<images/screens/route.png, id=406, 1084.05pt x 1927.2pt>
 File: images/screens/route.png Graphic file (type png)
 
 <use images/screens/route.png>
-Package pdftex.def Info: images/screens/route.png used on input line 456.
+Package pdftex.def Info: images/screens/route.png used on input line 476.
 (pdftex.def)             Requested size: 147.15858pt x 261.6017pt.
 
-<images/screens/run.png, id=406, 1084.05pt x 1927.2pt>
+<images/screens/run.png, id=407, 1084.05pt x 1927.2pt>
 File: images/screens/run.png Graphic file (type png)
 
 <use images/screens/run.png>
-Package pdftex.def Info: images/screens/run.png used on input line 460.
+Package pdftex.def Info: images/screens/run.png used on input line 480.
 (pdftex.def)             Requested size: 147.15858pt x 261.6017pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [17 <./images/screens/home.png (PNG copy)>]
-Overfull \hbox (0.84587pt too wide) in paragraph at lines 497--501
+Overfull \hbox (0.84587pt too wide) in paragraph at lines 517--521
 []\OT1/ptm/m/n/10.95 These caching ser-vices are used as singleton-like fa-cil-
 i-ties in the ap-pli-ca-tion to en-sure con-sis-tent data through-
  []
@@ -692,7 +703,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18 <./images/screens/targets.png (PNG copy)> <./images/screens/route.png (PNG 
 copy)> <./images/screens/run.png (PNG copy)>] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
+Underfull \hbox (badness 10000) in paragraph at lines 634--634
 [][][]\OT1/ptm/m/n/9 Promises - [][]$\OT1/pcr/m/n/9 https : / / developer . moz
 illa . org / en-[]US / docs / Web / JavaScript / Reference / Global _
  []
@@ -706,31 +717,31 @@ Missing character: There is no ™ in font ptmr7t!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21] <images/power.png, id=465, 921.4425pt x 549.55313pt>
+[20] [21] <images/power.png, id=466, 921.4425pt x 549.55313pt>
 File: images/power.png Graphic file (type png)
 
 <use images/power.png>
-Package pdftex.def Info: images/power.png used on input line 785.
+Package pdftex.def Info: images/power.png used on input line 805.
 (pdftex.def)             Requested size: 490.52367pt x 292.54475pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/cul-de-sac.jpg, id=469, 537.00626pt x 570.13pt>
+<images/cul-de-sac.jpg, id=470, 537.00626pt x 570.13pt>
 File: images/cul-de-sac.jpg Graphic file (type jpg)
 
 <use images/cul-de-sac.jpg>
-Package pdftex.def Info: images/cul-de-sac.jpg used on input line 814.
+Package pdftex.def Info: images/cul-de-sac.jpg used on input line 834.
 (pdftex.def)             Requested size: 343.36507pt x 364.54268pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] <images/aliasing.png, id=481, 677.53125pt x 225.84375pt>
+[22] <images/aliasing.png, id=482, 677.53125pt x 225.84375pt>
 File: images/aliasing.png Graphic file (type png)
 
 <use images/aliasing.png>
-Package pdftex.def Info: images/aliasing.png used on input line 837.
+Package pdftex.def Info: images/aliasing.png used on input line 857.
 (pdftex.def)             Requested size: 490.52367pt x 163.51369pt.
  [23 <./images/power.png>]
 
@@ -738,31 +749,37 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./results.tex [24 <./images/cul-de-sac.jpg>] [25 <./images/aliasing.png>]
 Chapter 4.
-[26
+<images/init_design/run.png, id=511, 1084.05pt x 1927.2pt>
+File: images/init_design/run.png Graphic file (type png)
 
-]) (./conclusion.tex [27]
+<use images/init_design/run.png>
+Package pdftex.def Info: images/init_design/run.png used on input line 18.
+(pdftex.def)             Requested size: 142.24857pt x 252.86792pt.
+ [26
+
+ <./images/init_design/run.png (PNG copy)>] [27]) (./conclusion.tex [28]
 Chapter 5.
-) (./appendix.tex [28
+) (./appendix.tex [29
 
 ]
 Appendix A.
-<images/Wireframes.png, id=532, 1309.89375pt x 869.2475pt>
+<images/Wireframes.png, id=547, 1309.89375pt x 869.2475pt>
 File: images/Wireframes.png Graphic file (type png)
 
 <use images/Wireframes.png>
 Package pdftex.def Info: images/Wireframes.png used on input line 40.
 (pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
 
-<images/wireframe_sketch.jpg, id=533, 5267.68pt x 3950.76pt>
+<images/wireframe_sketch.jpg, id=548, 5267.68pt x 3950.76pt>
 File: images/wireframe_sketch.jpg Graphic file (type jpg)
 
 <use images/wireframe_sketch.jpg>
 Package pdftex.def Info: images/wireframe_sketch.jpg used on input line 46.
 (pdftex.def)             Requested size: 490.52367pt x 367.85094pt.
- [29
+ [30
 
-]) [30 <./images/Wireframes.png>]
-(./wells-2013-urbanexplorer.bbl [31 <./images/wireframe_sketch.jpg>]
+]) [31 <./images/Wireframes.png>]
+(./wells-2013-urbanexplorer.bbl [32 <./images/wireframe_sketch.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 14--18
 []\OT1/ptm/m/n/10.95 Cancer Re-search UK.  ``genes in space'' - gam-i-fi-ca-tio
 n of gene flaw iden-ti-
@@ -793,111 +810,111 @@ s.  [][]$\OT1/pcr/m/n/10.95 http : / / developer . android . com /
  []
 
 
-Underfull \hbox (badness 2495) in paragraph at lines 99--104
+Underfull \hbox (badness 2495) in paragraph at lines 104--109
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for us-in
 g the com-mand line in-ter-face.  [][]$\OT1/pcr/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--104
+Underfull \hbox (badness 10000) in paragraph at lines 104--109
 \OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / guide _ cli _ i
 ndex . md . html # The % 20Command-[]line %
  []
 
 
-Underfull \hbox (badness 5217) in paragraph at lines 106--111
+Underfull \hbox (badness 5217) in paragraph at lines 111--116
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap ``getcur-rent-po-si-tion'' 
 def-i-ni-tion.  [][]$\OT1/pcr/m/n/10.95 http : / / docs . phonegap .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--111
+Underfull \hbox (badness 10000) in paragraph at lines 111--116
 \OT1/pcr/m/n/10.95 com / en / 3 . 0 . 0 / cordova _ geolocation _ geolocation .
  md . html # geolocation .
  []
 
-[32
+[33
 
 ]
-Underfull \hbox (badness 7888) in paragraph at lines 113--118
+Underfull \hbox (badness 7888) in paragraph at lines 118--123
 []\OT1/ptm/m/n/10.95 Adobe Sys-tems Inc.  Phone-gap doc-u-men-ta-tion for in-st
 alling ge-olo-ca-tion plu-gin.  [][]$\OT1/pcr/m/n/10.95 http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--118
+Underfull \hbox (badness 10000) in paragraph at lines 118--123
 \OT1/pcr/m/n/10.95 / / docs . phonegap . com / en / 3 . 0 . 0 / cordova _ geolo
 cation _ geolocation . md . html #
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--140
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
 []\OT1/ptm/m/n/10.95 Daniel Lind-s-ley.  django-tastypie li-brary.  [][]$\OT1/p
 cr/m/n/10.95 https : / / github . com / toastdriven /
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 147--152
+Underfull \hbox (badness 1072) in paragraph at lines 152--157
 []\OT1/ptm/m/n/10.95 Charity Miles.  Char-ity miles play store list-ing.  [][]$
 \OT1/pcr/m/n/10.95 https : / / play . google . com / store / apps /
  []
 
 
-Underfull \hbox (badness 2229) in paragraph at lines 172--177
+Underfull \hbox (badness 2229) in paragraph at lines 177--182
 []\OT1/ptm/m/n/10.95 US De-part-ment of Health.  Web-store for gps ex-er-cise d
 e-vices.  [][]$\OT1/pcr/m/n/10.95 http : / / www . health . gov /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--204
+Underfull \hbox (badness 10000) in paragraph at lines 204--209
 []\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  [
 ][]$\OT1/pcr/m/n/10.95 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--204
+Underfull \hbox (badness 10000) in paragraph at lines 204--209
 \OT1/pcr/m/n/10.95 catalogue . ic . nhs . uk / publications / public-[]health /
  surveys /
  []
 
 
-Overfull \hbox (87.25104pt too wide) in paragraph at lines 199--204
+Overfull \hbox (87.25104pt too wide) in paragraph at lines 204--209
 \OT1/pcr/m/n/10.95 heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006 / hea
 l-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006-[]rep-[]v3 .
  []
 
-[33]
-Underfull \hbox (badness 2073) in paragraph at lines 236--241
+[34]
+Underfull \hbox (badness 2073) in paragraph at lines 241--246
 []\OT1/ptm/m/n/10.95 Ryan Wells.  Wrap-ping phone-gap func-tions for the an-gu-
 larjs frame-work.  [][]$\OT1/pcr/m/n/10.95 https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--241
+Underfull \hbox (badness 10000) in paragraph at lines 241--246
 \OT1/pcr/m/n/10.95 com / ryaanwells / urbanexplorer / blob / master / urbanexpl
 orer _ app / www / js / core /
  []
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
- [34]
+ [35]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
  (./wells-2013-urbanexplorer.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 100.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
 Package rerunfilecheck Info: File `wells-2013-urbanexplorer.out' has not change
 d.
-(rerunfilecheck)             Checksum: FDEFADA6688CC37CC4C604D2285FAD4F;2626.
+(rerunfilecheck)             Checksum: CD470088C1325D8772A64536FC2587FF;2625.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 9620 strings out of 495059
- 144725 string characters out of 3182030
- 248710 words of memory out of 3000000
- 12430 multiletter control sequences out of 15000+200000
+ 9640 strings out of 495059
+ 145185 string characters out of 3182030
+ 249971 words of memory out of 3000000
+ 12445 multiletter control sequences out of 15000+200000
  38247 words of font info for 83 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,18n,41p,339b,501s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,18n,41p,339b,500s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -910,10 +927,10 @@ ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (38 pages, 7566555 bytes).
+Output written on wells-2013-urbanexplorer.pdf (39 pages, 7683169 bytes).
 PDF statistics:
- 717 PDF objects out of 1000 (max. 8388607)
- 639 compressed objects within 7 object streams
- 153 named destinations out of 1000 (max. 500000)
- 370 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 651 compressed objects within 7 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 380 words of extra memory for PDF output out of 10000 (max. 10000000)
 

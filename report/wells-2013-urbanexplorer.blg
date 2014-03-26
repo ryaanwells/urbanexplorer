@@ -3,12 +3,21 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: wells-2013-urbanexplorer.aux
 The style file: plainnat.bst
 Database file #1: wells-2013-urbanexplorer.bib
+I was expecting a `,' or a `}'---line 258 of file wells-2013-urbanexplorer.bib
+ : 
+ : title={Color and Psychological Functioning: The Effect of Red on Performance Attainment},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty year in titanium
 Warning--empty year in genesInSpace
 Warning--empty year in foldit
 Warning--empty year in moscow
 Warning--empty year in android_tabs
 Warning--empty year in android_power
+Warning--empty title in colours_red
+Warning--empty journal in colours_red
+Warning--empty year in colours_red
+Warning--empty year in colours_red
 Warning--empty year in fitbit_store
 Warning--empty year in lifefitness
 Warning--empty year in django
@@ -37,45 +46,45 @@ Warning--empty year in bootstrap
 Warning--empty year in app_store_link
 Warning--empty year in wrappingPhonegap
 Warning--empty year in haversine
-You've used 42 entries,
+You've used 43 entries,
             2773 wiz_defined-function locations,
-            764 strings with 10334 characters,
-and the built_in function-call counts, 12665 in all, are:
-= -- 1078
-> -- 460
+            766 strings with 10441 characters,
+and the built_in function-call counts, 13171 in all, are:
+= -- 1113
+> -- 508
 < -- 41
-+ -- 190
-- -- 138
-* -- 635
-:= -- 1922
-add.period$ -- 126
-call.type$ -- 42
-change.case$ -- 169
-chr.to.int$ -- 32
-cite$ -- 118
-duplicate$ -- 646
-empty$ -- 1346
-format.name$ -- 182
-if$ -- 2706
++ -- 206
+- -- 153
+* -- 688
+:= -- 2002
+add.period$ -- 127
+call.type$ -- 43
+change.case$ -- 176
+chr.to.int$ -- 33
+cite$ -- 124
+duplicate$ -- 666
+empty$ -- 1377
+format.name$ -- 198
+if$ -- 2803
 int.to.chr$ -- 11
 int.to.str$ -- 1
-missing$ -- 6
-newline$ -- 218
-num.names$ -- 168
-pop$ -- 565
+missing$ -- 7
+newline$ -- 221
+num.names$ -- 172
+pop$ -- 589
 preamble$ -- 1
-purify$ -- 130
+purify$ -- 137
 quote$ -- 0
-skip$ -- 492
+skip$ -- 505
 stack$ -- 0
-substring$ -- 84
+substring$ -- 86
 swap$ -- 58
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 447
-warning$ -- 34
-while$ -- 126
+type$ -- 458
+warning$ -- 38
+while$ -- 129
 width$ -- 0
-write$ -- 493
-(There were 34 warnings)
+write$ -- 500
+(There was 1 error message)

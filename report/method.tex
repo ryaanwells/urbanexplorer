@@ -312,71 +312,91 @@ with modifications and extra linking for data transfer optimisation
 and changing requirements (figure \ref{ER_2}).
 
 The first ER model collects the real-world objects in a hierarchical
-structure: each Mission has a number of Routes that start and end at a
-given Place and each Route is constructed through a number of
-Stages. It was originally intended that a user would start at a
-specific Place, Glasgow for example, and then travel along a Route to
-another Place, Falkirk or Stirling, which would unlock Routes to other
-Places, such as Edinburgh. Representing this game progression of
-unlocking new Routes as you arrive at new Places would be hard without
+structure: each \emph{Mission} has a number of \emph{Routes} that
+start and end at a given \emph{Place} and each \emph{Route} is
+constructed through a number of \emph{Stages}. This representation
+is shown in Figure \ref{fig:route_breakdown}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/route_breakdown.jpg}
+  \caption{Breaking down a \textbf{Route} into manageable
+    \textbf{Stages}}
+  \label{fig:route_breakdown}
+\end{figure}
+
+It was originally intended that a user would start at a
+specific \emph{Place}, Glasgow for example, and then travel along a
+\emph{Route} to another \emph{Place}, Falkirk or Stirling, which
+would unlock \emph{Routes} to other \emph{Places}, such as
+Edinburgh. Representing this game progression of unlocking new
+\emph{Routes} as you arrive at new \emph{Places} would be hard
+without 
 using some form of map to signify where the user can currently reach
-based on the Places they have visited. We were unable to obtain an
+based on the \emph{Places} they have visited. We were unable to obtain an
 interactive map or discover a suitable representation that was not
 ambiguous with respect to what the user was required to do to unlock a
-Route, and so the concept of travelling to Places to unlock Routes was
-not included in this project. However this representation would
-certainly be recommended in future work as it will provide a platform
-of exploration inside the game which could encourage users.
+\emph{Route}, and so the concept of travelling to \emph{Place}s to
+unlock \emph{Routes} was not included in this project. However this
+representation would certainly be recommended in future work as it
+will provide a platform of exploration inside the game which could
+encourage users. 
 
-The ``Routes Completed'' and ``Progress'' objects in the first ER
-model represent a Many to Many linking between users and the Routes
-and Stages they have completed, respectively. We note useful
-information here about the time taken and completion dates which we
-can use to display to the user. Similarly, the ``User Achievements''
-table is a Many to Many linking between the User and the Achievements
-table where we store useful information relevant to when a user was
-awarded an Achievement.  
+The \textbf{Routes Completed} and \textbf{Progress} objects in the
+first ER model represent a Many to Many linking between \emph{Users}
+and the \emph{Routes} and \emph{Stages} they have completed,
+respectively. We note useful information here about the time taken and
+completion dates which we can use to display to the user. Similarly,
+the \textbf{User Achievements} table is a Many to Many linking
+between the \textbf{User} and the \textbf{Achievements} table where we
+store useful information relevant to when a \emph{User} was awarded an
+\emph{Achievement}.
 
-With the first theoretical ER model, managing routes and their
-associated progress along a stage became unwieldy from the session
-point of view. There was no explicit linking between these objects in
-a meaningful way, or indeed an efficient way to access the relevant
-objects for a given session - each update to a session required a lot
-of data transferred between the device and the server just to know
-which Stage we should update the Progress object of for a given user.
+With the first theoretical ER model, managing \emph{Routes} and their 
+associated \emph{Progress} along a \emph{Stage} became unwieldy from
+a \emph{Session} point of view. There was no explicit linking between
+these objects in a meaningful way, or indeed an efficient way to
+access the relevant objects for a given session - each update to a
+\emph{Session} required a lot of data transferred between the device
+and the server just to know which \emph{Stage} we should update the
+\emph{Progress} object of for a given \emph{User}.
 
 Restructuring action was undertaken to introduce a manager-like object
-for holding knowledge about all progress a user has achieved along a
-given route and also to add a direct link between the Session object
-and the current progress information of the current Route that the
-user is travelling along. This restructuring is show in figure
-\ref{ER_2}. The manager-like object is now the ``Routes Completed''
-object in the production ER diagram where we can immediately access
-the current progress down a Route (the ``Current Journey'' link to the
-``Route Progress'' table) and from there we can access the progress
-along the current Stage. 
+for holding knowledge about all \emph{Progress} a user has achieved
+along a given \emph{Route} and also to add a direct link between the
+\emph{Session} object and the current \emph{Progress} information of
+the current \emph{Route} that the \emph{User} is travelling
+along. This restructuring is shown in figure \ref{ER_2}. The
+manager-like object is now the \textbf{Routes Completed} object in the
+production ER diagram, where we can immediately access the current
+\emph{Progress} down a \emph{Route} (the \textbf{Current Journey} link
+to the \textbf{Route Progress} table) and from there we can access the
+\emph{Progress} along the current \emph{Stage}. 
 
 With careful management we can also update these when we complete
-either a Stage or a Route to allow the user to seamlessly move onto
-the next Stage or Route without losing any information or incurring a
-large number of database accesses by simply updating the ``Current
-Journey'' and ``Current Progress'' links to the appropriate next
-objects. 
+either a \emph{Stage} or a \emph{Route} to allow the \emph{User} to
+seamlessly move onto the next \emph{Stage} or \emph{Route} without
+losing any information or incurring a large number of database
+accesses by simply updating the \textbf{Current Journey} and
+\textbf{Current Progress} links to the appropriate next objects. 
 
 At the time of creating the first ER diagram, we did not know exactly
-how we wanted achievements to work or what they would be awarded
-for. After discussion it was decided that an achievement should be
-awarded for completing a route in a given time. Therefore we could
-create a link between an Achievement and the Route that it is related
-to so we can access Route information (specifically the length of the
-route) in an efficient manner. 
+how we wanted \emph{Achievements} to work or what they would be
+awarded for. After discussion it was decided that an
+\emph{Achievement} should be awarded for completing a \emph{Route} in
+a given time. Therefore we could create a link between an
+\textbf{Achievement} and the \textbf{Route} that it is related to so
+we can access \textbf{Route} information (specifically the length of the 
+\emph{Route}) in an efficient manner. 
 
-The criteria field of an Achievement signifies the time that the route
-should be created in order to be awarded this achievement. This field
-was not renamed to be a specific ``Completion Time'' field so we could
-keep open the scope of what criteria an achievement
-required. Achievements could then be added for overall distance/time
-travelled on a Route, but this was not explored in this project.
+The criteria field of an \emph{Achievement} signifies the time that
+the route should be created in order to be awarded this
+\emph{achievement}. This field was not renamed to be a specific
+\textbf{\textit{Completion Time}} field so we could keep open the
+scope of what criteria an \emph{Achievement}
+required. \emph{Achievements} could then be added for overall
+distance/time travelled on a \emph{Route}, but this was not explored
+in this project.  
 
 \begin{figure}[p]
   \centering

@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation / Context}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Research Questions}{1}{section.1.2}
+\contentsline {section}{\numberline {1.2}Problem Statement}{1}{section.1.2}
 \contentsline {section}{\numberline {1.3}Targeted users}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}Summary of Contributions}{2}{section.1.4}
 \contentsline {section}{\numberline {1.5}Outline of the Report}{3}{section.1.5}
@@ -30,9 +30,9 @@
 \contentsline {chapter}{\numberline {4}Results and Analysis}{26}{chapter.4}
 \contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{26}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Initial Design}{26}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Final Design}{26}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{26}{section.4.2}
-\contentsline {section}{\numberline {4.3}Evaluation of Platform}{26}{section.4.3}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{28}{chapter.5}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{28}{section.5.1}
-\contentsline {chapter}{\numberline {A}Original Wireframes}{29}{appendix.A}
+\contentsline {subsection}{\numberline {4.1.2}Final Design}{27}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{27}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation of Platform}{27}{section.4.3}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{29}{section.5.1}
+\contentsline {chapter}{\numberline {A}Original Wireframes}{30}{appendix.A}
