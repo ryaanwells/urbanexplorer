@@ -6,33 +6,33 @@
 \contentsline {section}{\numberline {1.5}Outline of the Report}{3}{section.1.5}
 \contentsline {chapter}{\numberline {2}Related Work and Background}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}Gamification}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}Comparison of related applications}{5}{section.2.2}
+\contentsline {section}{\numberline {2.2}Comparison of Related Applications}{5}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Charity Miles}{6}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Zombies, Run!}{6}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}WalkJogRun}{7}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Fitbit}{7}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Consideration of competitors concepts in this project implementation}{8}{section.2.3}
+\contentsline {section}{\numberline {2.3}Consideration of Competitors Concepts in this Project Implementation}{8}{section.2.3}
 \contentsline {chapter}{\numberline {3}Design and Specification}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}Design Aims}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Defining Gamification in this Application}{9}{section.3.2}
+\contentsline {section}{\numberline {3.2}Defining Gamification in this Application}{10}{section.3.2}
 \contentsline {section}{\numberline {3.3}User Requirements}{10}{section.3.3}
-\contentsline {section}{\numberline {3.4}Specification}{10}{section.3.4}
+\contentsline {section}{\numberline {3.4}Specification}{11}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Platform and Frameworks}{12}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}N-Tier Diagram}{13}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Entity Relation Diagram}{13}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Walkthrough of Workflow}{17}{subsection.3.4.4}
-\contentsline {section}{\numberline {3.5}Notable design decisions}{17}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Explicit caching}{17}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Promise Based Module Interfaces}{18}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Exercise Session Management}{20}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Location Management}{22}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}Distance Verification}{23}{subsection.3.5.5}
-\contentsline {chapter}{\numberline {4}Results and Analysis}{26}{chapter.4}
-\contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{26}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Comments from evaluation}{26}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Future Design Work}{29}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{29}{section.4.2}
-\contentsline {section}{\numberline {4.3}Evaluation of Platform}{29}{section.4.3}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{31}{chapter.5}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{31}{section.5.1}
-\contentsline {chapter}{\numberline {A}Original Wireframes}{32}{appendix.A}
+\contentsline {subsection}{\numberline {3.4.4}Walkthrough of Workflow}{18}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Notable design decisions}{18}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Explicit caching}{18}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Promise Based Module Interfaces}{19}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Exercise Session Management}{21}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Location Management}{23}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Distance Verification}{24}{subsection.3.5.5}
+\contentsline {chapter}{\numberline {4}Results and Analysis}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Evaluation of Interface and Workflow}{27}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Comments From Evaluation}{27}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Future Design Work}{30}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Evaluation of Gamification}{30}{section.4.2}
+\contentsline {section}{\numberline {4.3}Evaluation of Platform}{32}{section.4.3}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{34}{chapter.5}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{34}{section.5.1}
+\contentsline {chapter}{\numberline {A}Original Wireframes}{35}{appendix.A}

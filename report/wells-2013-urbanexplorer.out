@@ -6,12 +6,12 @@
 \BOOKMARK [1][-]{section.1.5}{Outline of the Report}{chapter.1}% 6
 \BOOKMARK [0][-]{chapter.2}{Related Work and Background}{}% 7
 \BOOKMARK [1][-]{section.2.1}{Gamification}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Comparison of related applications}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Comparison of Related Applications}{chapter.2}% 9
 \BOOKMARK [2][-]{subsection.2.2.1}{Charity Miles}{section.2.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.2}{Zombies, Run!}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.3}{WalkJogRun}{section.2.2}% 12
 \BOOKMARK [2][-]{subsection.2.2.4}{Fitbit}{section.2.2}% 13
-\BOOKMARK [1][-]{section.2.3}{Consideration of competitors concepts in this project implementation}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Consideration of Competitors Concepts in this Project Implementation}{chapter.2}% 14
 \BOOKMARK [0][-]{chapter.3}{Design and Specification}{}% 15
 \BOOKMARK [1][-]{section.3.1}{Design Aims}{chapter.3}% 16
 \BOOKMARK [1][-]{section.3.2}{Defining Gamification in this Application}{chapter.3}% 17
@@ -29,7 +29,7 @@
 \BOOKMARK [2][-]{subsection.3.5.5}{Distance Verification}{section.3.5}% 29
 \BOOKMARK [0][-]{chapter.4}{Results and Analysis}{}% 30
 \BOOKMARK [1][-]{section.4.1}{Evaluation of Interface and Workflow}{chapter.4}% 31
-\BOOKMARK [2][-]{subsection.4.1.1}{Comments from evaluation}{section.4.1}% 32
+\BOOKMARK [2][-]{subsection.4.1.1}{Comments From Evaluation}{section.4.1}% 32
 \BOOKMARK [2][-]{subsection.4.1.2}{Future Design Work}{section.4.1}% 33
 \BOOKMARK [1][-]{section.4.2}{Evaluation of Gamification}{chapter.4}% 34
 \BOOKMARK [1][-]{section.4.3}{Evaluation of Platform}{chapter.4}% 35

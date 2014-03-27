@@ -1,7 +1,7 @@
 \chapter{Results and Analysis}\label{ch_results}
 
 \section{Evaluation of Interface and Workflow}
-\subsection{Comments from evaluation}
+\subsection{Comments From Evaluation}
 Two major interface design iterations occurred in this project. The
 first iteration was concerned with solely displaying the functionality
 of the project and the second was a more refined version where care
@@ -256,11 +256,146 @@ the experiment. Since we are unable to observe the long-term progress
 of a user engaging with this platform, we are unable to identify
 trends in behaviour that could indicate behavioural change. However we
 can speculate how the platform may progress based on feedback from
-users and propose what additions to the gamification may be necessary
-to improve the chance of success.
+users and propose what additions to the gamification experience may be
+necessary to improve the chance of success.
+
+By the end of the evaluation the app had been downloaded 39  times and
+9 users had engaged in the gamified experience. Of these users who
+had engaged with the gamified experience, three had unlocked pictures
+by completing stages and two received a medal (a \emph{gold} and a
+\emph{silver}). Engagement was tracked through time spent exercising
+and we state that a user has engaged if we have any logged time of
+that user exercising. The results of those users who engaged with
+the app are shown in Table \ref{table:usage}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c | c | c | c | c | c |} \hline
+    % Headings
+    ID & 
+    \multicolumn{1}{p{1.7cm}|}{\centering Total Time \\ (hh:mm:ss)} & 
+    \multicolumn{1}{p{2.1cm}|}{\centering Distance \\ Travelled (m)} &
+    \multicolumn{1}{p{1.7cm}|}{\centering Stages \\ Completed} & 
+    \multicolumn{1}{p{1.7cm}|}{\centering Routes \\ Completed} &
+    \multicolumn{1}{p{1.5cm}|}{\centering Exercise \\ Sessions} &
+    Medals Won \\\hline
+    %% Content
+    e4ade9027f33ceee & 09:40:46 & 20027 & 11 & 4 & 1 & - \\\hline
+    9484f35fe45a0870 & 03:17:51 & 11805 & 5 & 1 & 2 & 1 $\times$ Silver \\\hline
+    5e029a949fdfad8f & 02:16:10 & 4038 & 0 & 0 & 1 & - \\\hline
+    2a46006a774cd542 & 01:54:42 & 15141 & 39 & 2 & 3 & 1 $\times$ Gold \\\hline
+    56a8db4c54d600b4 & 00:02:02 & 2 & 0 & 0 & 2 & - \\\hline
+    7ee212a0e8319b69 & 00:01:21 & 74 & 0 & 0 & 2 & - \\\hline
+    d3ff351879e910ba & 00:01:10 & 103 & 0 & 0 & 1 & - \\\hline
+    367542602d7d9cda & 00:00:20 & 23 & 0 & 0 & 2 & - \\\hline
+    465ca59228c4f805 & 00:00:01 & 0 & 0 & 0 & 1 & - \\\hline
+  \end{tabular}
+  \caption{Active users of ``Urban Explorer'' ranked by time invested.}
+  \label{table:usage}
+\end{table}
 
 A survey was given to users where they were asked to indicate how
-encouraging they perceived each part of the application to be.
+encouraging they perceived each part of the application to be. The
+survey received eight responses which generally align with the
+empirical data we gathered. A summary of the responses are as follows:
+
+\begin{itemize}
+  \item Seven out of eight responses state that, on average, they
+    exercise less than three hours a week and four responses state
+    that it is less than one hour a week; but only four responses overall
+    state that this exercise occurs outdoors. Two responses state that
+    this exercise occurs in a gym and five users state that they
+    exercise in their own home (note that users could pick multiple
+    locations where they exercise). 
+  \item There was an equal split in responses with those who have used
+    technology before in exercise and those who had not; but only two
+    responses state they have formally tracked their exercise
+    previously. 
+  \item The majority of responses stated that they used the app
+    between one and three times, which aligns with the empirical data
+    in Table \ref{table:usage}.
+  \item Responses indicate a positive experience with the app. From a
+    five-point rating scale, responses gave navigation a 3.88 score and
+    route selection a 4.5 score. Goal awareness for what was required
+    to receive a medal was given a 4.13 score and unlocking a picture
+    was given a 3.38 score.
+  \item On a five-point rating scale, completing routes to obtain
+    medals was scored highest in terms of encouragement, scoring 4.14,
+    and unlocking pictures scored lowest, scoring 3.43. Viewing
+    pictures of the route you are on as you are exercising was met
+    with a better response (scoring 3.57) and showing absolute statistics
+    about your exercise was also liked (scoring 3.71).
+  \item From a five-point rating scale, responses indicated a
+    dissatisfaction with how often the app updated the distance
+    (scoring 2.83 from 6 responses). Responses were divided over
+    whether or not the app reported distance accurately (scoring 3
+    exactly). 
+  \item The goals in the app were very clear to those who
+    responded. On a five-point rating scale the clarity of the goals
+    scored 4.33 and the encouragement of the goals scored 3.5.
+\end{itemize}
+
+Responses indicated a generally positive experience with the app and
+the game concepts implemented. Since the majority of responses
+indicate that they do not meet the current exercise guidelines of
+between 75 and 150 minutes of exercise, as defined in the Health Survey
+for England \cite{exercise_2012}, we have received responses from our
+targeted user group. 
+
+The long-term goal reward of being awarded a \emph{medal} for
+completing a \emph{route} was met with good feedback, but it is
+unfortunate to note that the rewards for short-term goals were not as
+well received (being ranked lower in terms of effectiveness than
+statistics alone). This could be in part to an overall lack of
+exposure to the short-term rewards in the exercise work
+flow. Short-term goals are essential to keeping a user motivated so
+that they can achieve the more rewarding long-term goals. A different
+kind of reward entirely may be more appropriate but work should
+certainly be undertaken to determine why this encouragement is not as
+effective. 
+
+An improvement is also required to make the user trust the distance
+reported by the app. The way that the user plays the game is by
+travelling outside and if the user cannot engage with the progress
+feedback that is provided because it is either not frequent enough or
+is not accurate then this creates a pertinent cause for concern. A
+user has no reason to engage in a game if they do not believe that the
+actions they make influence their success in the game. By dealing with
+the \emph{Cul-de-sac} effect (Section \ref{sec:location_mgmt}) we can
+improve confidence in the user that the distance the app thinks the
+user has travelled is correct. 
+
+From the nine users who engaged with the gamified experience (Table
+\ref{table:usage}) only four of these users actively used the
+application, based on the total time and distance travelled of these
+nine users. These users invested a significant amount of time in the
+application which indicates they enjoyed their experience with
+``Urban Explorer''. The top row in the table states that one user
+exercised for almost ten hours, continuously, in one exercise session
+and travelled over 20km. It is very unlikely that the user was
+explicitly exercising for this time duration and more likely left the
+app running in the background while going about their daily routine,
+possibly travelling by car or bus, having forgotten to turn it
+off. The validity of the data in this entry is questionable and could
+be discarded, leaving us with three genuine interactions. 
+
+Since overall interactions were low in comparison to overall downloads,
+of which there were 39 downloads compared with three or four full
+engagements, a better \emph{onboarding} strategy should be implemented
+to familiarise users with the game aspects of the
+app. \emph{Onboarding} is the process of introducing users to a
+particular process where the user can both interact with the process
+and control the outcome with positive benefits to the user. Currently
+the \emph{onboarding} process in ``Urban Explorer'' is very minimal
+with an explanation of the goals and exercise process only found in
+the help section. We rely on the user exploring the application to
+discover how to start an exercise session and so better direction 
+could be given to encourage users to start engaging with the app
+fully. 
+
+Overall, feedback from users about the game experience was generally
+positive with users engaging with the concepts for achieving a
+long-term goal.  
 
 \section{Evaluation of Platform}
 PhoneGap has its merits as a mobile platform: you can achieve rapid

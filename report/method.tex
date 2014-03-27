@@ -1,5 +1,11 @@
 \chapter{Design and Specification}\label{ch_method}
 
+This chapter details the design decisions for ``Urban Explorer'' (the
+app produced as part of this project) and how we use gamification in
+``Urban Explorer'' to achieve the goals of the project. Core elements
+of the project are formally defined and important implementation
+details are also discussed.
+
 \section{Design Aims}
 
 The idea of the game is to travel around the world without physically
@@ -222,9 +228,17 @@ PhoneGap instead of building a native app is because of its rapid
 development cycle, the option to deploy to multiple platforms easily
 without changing the code base and the familiarity that the author has
 with web technologies. Because of this, our application is written
-using HTML, JavaScript, and CSS3. The Twitter Bootstrap CSS framework
-\cite{bootstrap} was used because of the excellent support for small
-screen devices and layout management. 
+using HTML, JavaScript, and CSS3. 
+
+The Twitter Bootstrap CSS framework\cite{bootstrap} was used due to
+the excellent support for small screen devices and layout management
+that it provides. Twitter Bootstrap is built with \emph{responsive
+  CSS} which allows the layout to be created without the designer
+worrying about varying screen sizes. The layout should be the same
+regardless of the screen size, which is ideal for this project: at the
+time of writing, the app has only been released on Android devices 
+which have very varying screen sizes and so a framework that
+accommodates for this is beneficial.
 
 Titanium, developed by Appcelerator\cite{titanium}, is an alternative
 platform to PhoneGap that was also considered. This required a greater
@@ -298,7 +312,7 @@ accurate GPS location it can provide, so it will only try satellite
 positioning and not the less accurate cell network provided information.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{images/N-tier.png}
+  \includegraphics[width=0.7\textwidth]{images/n-tier.jpg}
   \caption{N-Tier diagram}
   \label{NTier}
 \end{figure}
