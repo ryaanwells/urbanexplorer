@@ -22,7 +22,8 @@ class UserProfileResource(ModelResource):
         fields = ['deviceID', 'resourceURI', 'totalTime', 'totalDistance', 'stagesCompleted']
         allowed_methods = ['get']
         filtering = {
-            'deviceID': ALL
+            'deviceID': ALL,
+            'totalTime': ALL
         }
 
 class StageResource(ModelResource):    
