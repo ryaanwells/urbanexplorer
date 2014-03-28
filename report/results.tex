@@ -377,8 +377,18 @@ and travelled over 20km. It is very unlikely that the user was
 explicitly exercising for this time duration and more likely left the
 app running in the background while going about their daily routine,
 possibly travelling by car or bus, having forgotten to turn it
-off. The validity of the data in this entry is questionable and could
-be discarded, leaving us with three genuine interactions. 
+off. 
+
+A previously unconsidered use case of this app would be to do
+exactly as we propose this user has done, leaving the app open in
+the background as they went about their daily routine. Since our
+rewards are temporally based, users are disadvantaged by having the
+app running in an exercise session and not actually moving. We could
+detect when a user is not moving and stop accumulating time and
+distance and then reactivate this tracking when they do start moving
+again. This would be interesting future work as users may wish to
+interact with the app in a less direct way, similar to the interaction
+with the Fitbit devices (Section \ref{sec:fitbit}).
 
 Since overall interactions were low in comparison to overall downloads,
 of which there were 39 downloads compared with three or four full

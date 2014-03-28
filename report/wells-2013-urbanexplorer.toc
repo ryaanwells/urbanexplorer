@@ -1,8 +1,8 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation / Context}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Problem Statement}{1}{section.1.2}
+\contentsline {section}{\numberline {1.2}Problem Statement}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Targeted users}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}Summary of Contributions}{2}{section.1.4}
+\contentsline {section}{\numberline {1.4}Summary of Contributions}{3}{section.1.4}
 \contentsline {section}{\numberline {1.5}Outline of the Report}{3}{section.1.5}
 \contentsline {chapter}{\numberline {2}Related Work and Background}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}Gamification}{4}{section.2.1}
@@ -34,7 +34,6 @@
 \contentsline {section}{\numberline {4.2}Evaluation of Gamification}{30}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Comments From Evaluation}{30}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Future Gamification Work}{32}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Evaluation of Platform}{33}{section.4.3}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{35}{section.5.1}
-\contentsline {chapter}{\numberline {A}Original Wireframes}{36}{appendix.A}
+\contentsline {section}{\numberline {4.3}Evaluation of Platform}{34}{section.4.3}
+\contentsline {chapter}{\numberline {5}Conclusion}{35}{chapter.5}
+\contentsline {chapter}{\numberline {A}Original Wireframes}{37}{appendix.A}

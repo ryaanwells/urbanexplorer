@@ -161,7 +161,7 @@ also shown in this table.
     C & Send push notifications\tnote{1} to the device for
     notification of success and to inform the user of new content &
     \\\hline
-    W & Integrate with pedometer devices such as the FitBit (Section
+    W & Integrate with pedometer devices such as the Fitbit (Section
     \ref{sec:fitbit}) for more accurate distance monitoring &
     \\\hline
     W & Use the motion sensors on the phone with machine learning
@@ -655,7 +655,7 @@ Promises and callbacks are theoretically similar as both provide a
 function to be called once something has occurred however promises do
 not suffer from the ``callback hell'' anti-pattern that callbacks
 alone do due to a flow control change.
-Kris Kowal, the creater of the promise library ``Q'' that
+Kris Kowal, the creator of the promise library ``Q'' that
 AngularJS bases its promise library ``\$q'' on, defines the flow
 control change as follows:
 \begin{quote}
@@ -740,7 +740,7 @@ updated if you know the unique ID for that session.
 This ID is saved on the users device for the duration that the user
 wants the session to be active and is deleted when the user either
 closes the app or explicitly ends the session. We can then update the
-session sucessfully when we have a GPS location and are ready to
+session successfully when we have a GPS location and are ready to
 update, while indirectly ``ending'' the session when we delete the
 unique ID.
 
@@ -750,7 +750,7 @@ obtain location information. This is explored further in section
 \ref{sec:location_mgmt}.
 
 This does guarantee that the user will gain all distance they should
-be awared. If the user starts an exercise session but cannot then
+be awarded. If the user starts an exercise session but cannot then
 obtain location information and either exits the app or ends the
 exercise session then the user will not be credited for the distance
 they travel. This is a situation we cannot control and so we can
@@ -873,15 +873,15 @@ indistinguishable with respect to the black sampling points.
   \label{fig:ailising}
 \end{figure} 
 
-As is noted in Section \ref{sec:distance_ver}, the maximum speed we
-allow users to travel at is $\text{6}m/s$. In the worst case of this
+In Section \ref{sec:distance_ver}, we will define the maximum speed we
+allow users to travel at to be $\text{6}m/s$. In the worst case of this
 effect the users device will return location information that informs
 us the user has moved no distance (the coordinates are exactly the
 same). If we assume that we receive the location updates exactly once
 a minute then the worst case distance that the user could lose due to
 this effect is $\text{360}m$ . This is a considerable distance and the
 unacknowledged effort could have a large negative effect on the
-user. Futher work is required to analyse this effect to find the best
+user. Further work is required to analyse this effect to find the best
 update frequency interval with respect to this effect and power
 consumption. 
 
