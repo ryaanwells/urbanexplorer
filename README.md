@@ -36,6 +36,6 @@ and then navigate to the following urls to get data:
 127.0.0.1:8000/api/v1/?format=json (to see all available REST end points) 
 
 
-The REST endpoints can be browsed in any browser.
+The REST endpoints can be browsed in any browser. The data from the production server is loaded into the database for your perusal.
 
 Please notify me of any issues at 1002253w@student.gla.ac.uk and I will gladly help.
