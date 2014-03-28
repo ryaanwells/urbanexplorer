@@ -6,7 +6,7 @@ urbanexplorer_server is the directory containing the server.
 
 Installation instructions
 -------------------------
-The app requires a local installation of PhoneGap (http://phonegap.com/install/)
+The app requires a local installation of PhoneGap (http://phonegap.com/install/) and the latest Android SDK. 
 Once this has been done, the app can be installed by executing
 
     phonegap install android 
