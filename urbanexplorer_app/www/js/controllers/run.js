@@ -17,9 +17,10 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
   $scope.route = routePick.get();
 
   $scope.endConfirm = false;
-
+  $scope.finishing = false;
+  
   $scope.session = session.getSession();
-
+  processSessionData($scope.session);
   $scope.rc = routesCompleted.getRC($scope.route.resource_uri);
 
   $scope.percentRoute = 0;
@@ -31,6 +32,8 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
 
   $scope.nextMedal = null;
   $scope.nextMedalTime = 0;
+
+  var clockID = null;
 
   var ach = {};
   achievements.get().then(function(achieve){
@@ -44,51 +47,62 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
   });
   
 
+  function processSessionData(data){
+    console.log(data.stageLength);
+    console.log(data.routeLength);
+    $scope.distanceSoFar = data.distance;
+    $scope.routeRemain = data.routeDistanceRemain;
+    $scope.nextAchievement = data.distanceRemain;
+    
+    $scope.distanceRemain = data.distanceRemain;
+    $scope.stageLength = data.stageLength;
+    $scope.routeDistanceRemain = data.routeDistanceRemain;
+    $scope.routeLength = data.routeLength;
+    $scope.percentRoute = Math.floor((($scope.routeLength - $scope.routeDistanceRemain) / $scope.routeLength) * 100);
+    $scope.percentStage = Math.floor((($scope.stageLength - $scope.distanceRemain) / $scope.stageLength) * 100);
+    
+    $timeout(function(){
+      $scope.stageLength = $scope.stageLength;
+      $scope.routeLength = $scope.routeLength;
+    });
+    console.log($scope.stageLength);
+    console.log($scope.routeLength);
+
+    $scope.totalTime = data.totalTime;
+    
+    angular.forEach(ach, function(achieve){
+      if (achieve.route == $scope.route.resource_uri){
+	if ($scope.totalTime < ach.G.metric){
+	  console.log("GOLD");
+	  $scope.nextMedal = ach.G;
+	  $scope.nextMedalTime = ach.G.metric - $scope.totalTime;
+	}
+	else if ($scope.totalTime < ach.S.metric){
+	  console.log("SILVER");
+	  $scope.nextMedal = ach.S;
+	  $scope.nextMedalTime = ach.S.metric - $scope.totalTime;
+	}
+	else if ($scope.totalTime < ach.B.metric){
+	  console.log("BRONZE");
+	  $scope.nextMedal = ach.B;
+	  $scope.nextMedalTime = ach.B.metric - $scope.totalTime;
+	}
+	else {
+	  $scope.nextMedal = null;
+	  $scope.nextMedalTime = 0;
+	}
+      }
+    });
+  }
+
+
   geolocation.watchPosition(function(location){
     console.log(location.coords.latitude, location.coords.longitude, location.timestamp);
     // $scope.coords.push(location);
     session.updateSession(location)
       .then(function(data){
 	$scope.coords.push(data);
-	console.log(data.data.distance);
-	console.log(data.data.distanceRemain);
-	$scope.distanceSoFar = data.data.distance;
-	$scope.routeRemain = data.data.routeDistanceRemain;
-	$scope.nextAchievement = data.data.distanceRemain;
-
-	$scope.distanceRemain = data.data.distanceRemain;
-	$scope.stageLength = data.data.stageLength;
-	$scope.routeDistanceRemain = data.data.routeDistanceRemain;
-	$scope.routeLength = data.data.routeLength;
-	$scope.percentRoute = Math.floor((($scope.routeLength - $scope.routeDistanceRemain) / $scope.routeLength) * 100);
-	$scope.percentStage = Math.floor((($scope.stageLength - $scope.distanceRemain) / $scope.stageLength) * 100);
-	
-	$scope.totalTime = data.data.totalTime;
-
-	angular.forEach(ach, function(achieve){
-	  if (achieve.route == $scope.route.resource_uri){
-	    if ($scope.totalTime < ach.G.metric){
-	      console.log("GOLD");
-	      $scope.nextMedal = ach.G;
-	      $scope.nextMedalTime = ach.G.metric - $scope.totalTime;
-	    }
-	    else if ($scope.totalTime < ach.S.metric){
-	      console.log("SILVER");
-	      $scope.nextMedal = ach.S;
-	      $scope.nextMedalTime = ach.S.metric - $scope.totalTime;
-	    }
-	    else if ($scope.totalTime < ach.B.metric){
-	      console.log("BRONZE");
-	      $scope.nextMedal = ach.B;
-	      $scope.nextMedalTime = ach.B.metric - $scope.totalTime;
-	    }
-	    else {
-	      $scope.nextMedal = null;
-	      $scope.nextMedalTime = 0;
-	    }
-	  }
-	});
-
+	processSessionData(data.data);
 	$scope.session = session.getSession();
       }, function(failure){
 	console.log(failure);
@@ -118,8 +132,14 @@ UrbanExplorer.controller("RunCtrl", function($scope, geolocation, session, $rout
   startTimer();
   
   function end(){
+    clearInterval(clockID);
+    $scope.finishing = true;
     geolocation.cancelPolling();
-    $location.path("/postRun/");
+    session.finalize().then(function(success){
+      $location.path("/postRun/");
+    }, function(failure){
+      $location.path("/postRun/");
+    });
   }
 
   $scope.endSession = function(){

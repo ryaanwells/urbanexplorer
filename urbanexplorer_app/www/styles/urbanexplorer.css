@@ -148,9 +148,8 @@
     height: 100px;
 }
 
-.row .middle{
-    height: 80px;
-    padding-top: 10px;
+.start-button{
+    height: 50px;
     width: 80%;
     display: block;
     margin-top: 20px;
@@ -160,6 +159,10 @@
     box-shadow: 0 5px 0 #20b3b3;
     background-color: #177F7F;
     color: white;
+}
+
+.start-button h1{
+    padding-top: 6px;
 }
 
 .no-shadow{
@@ -315,4 +318,12 @@
     display: block;
     width: 100%;
     color: black;
+}
+
+.pad-left {
+    margin-left: 15px;
+}
+
+.pad-bottom {
+    margin-bottom: 5px;
 }

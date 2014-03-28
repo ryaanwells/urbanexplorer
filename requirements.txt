@@ -1,6 +1,6 @@
 Django==1.5.1
 django-oauth-plus==2.1.2
-django-tastypie==0.11.0
+django-tastypie==0.9.16
 oauth==1.0.1
 oauth2==1.5.211
 python-mimeparse==0.1.4

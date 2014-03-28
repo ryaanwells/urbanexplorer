@@ -1,6 +1,7 @@
 <div>
   <div style="position: fixed;
 	      top: 123px;
+	      left: 0px;
 	      z-index: 10001;
 	      width: 100%"
        class="bg-primary">
@@ -16,11 +17,21 @@
 	<h2>{{session.distance | round}}m</h2>
       </div>
       <div class="col-xs-6 bg-info">
-	<h3 style="margin-bottom: 0;">Total Time:</h3>
-	<h2>{{session.hours|twoDigit}}:{{session.minutes|twoDigit}}:{{session.seconds|twoDigit}}</h2>
+	<h3 style="margin-bottom: 0;">Session Time:</h3>
+	<h2>{{session.sessionTime | time}}</h2>
       </div>
     </div>
-
+    <div class="row center">
+      <div class="col-xs-6 bg-success">
+	<h3 style="margin-bottom: 0;">Completed</h3>
+	<h2>{{session.stagesCompleted}} Stages</h2>
+      </div>
+      <div class="col-xs-6 bg-info">
+	<h3 style="margin-bottom: 0;">Route Time:</h3>
+	<h2>{{session.totalTime | time}}</h2>
+      </div>
+    </div>
+    
     <div class="center"
 	 style="margin-top: 40px;">
       <a href="#/" type="button"

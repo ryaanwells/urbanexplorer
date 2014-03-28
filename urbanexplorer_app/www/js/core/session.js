@@ -80,6 +80,33 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
     return session;
   }
 
+  function finalize(){
+    var deferred = $q.defer();
+    geolocation.getCurrentPosition().then(function(location){
+      var config = {
+	url: "http://ryaanwellsuni.pythonanywhere.com/updateSession/",
+	method: "PATCH",
+	data: {
+	  sessionID: session.id,
+	  lon: location.coords.longitude,
+	  lat: location.coords.latitude,
+	  timestamp: new Date(location.timestamp).getTime()
+	}
+      };
+      $http(config).then(
+	function(success){
+	  deferred.resolve(success);
+	  session = success.data;
+	},
+	function(failure){
+	  console.log(failure);
+	});
+    }, function(failure){
+      deferred.reject(failure);
+    });
+    return deferred.promise;
+  }
+  
   function endSession(){
     session = null;
   }
@@ -88,6 +115,7 @@ UrbanExplorer.factory("session", function($q, $http, geolocation, routePick){
     startSession: startSession,
     updateSession: updateSession,
     getSession: getSession,
+    finalize: finalize,
     endSession: endSession
   }
   

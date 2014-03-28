@@ -5,9 +5,6 @@ UrbanExplorer.factory("achievements", function($q, $http, self){
   var getting = false;
   var pendingRequests = [];
 
-  function getAchievements(){
-    var deferred = $q.defer();
-  };
 
   function get(){
     var deferred = $q.defer();

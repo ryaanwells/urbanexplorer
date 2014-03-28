@@ -8,7 +8,6 @@ UrbanExplorer.directive("achievementView", function(routes, stages, progress){
       mission: '='
     },
     link: function($scope, $elem, $attrs){
-      $scope.open = false;
       $scope.routes = routes.getRoutesForMission($scope.mission.resource_uri);
       angular.forEach($scope.routes, function(route){
 	angular.forEach(route.stages, function(stage){
@@ -24,8 +23,8 @@ UrbanExplorer.directive("achievementView", function(routes, stages, progress){
 	    });
 	});
       });
-      $scope.toggle = function(){
-	$scope.open = !$scope.open;
+      $scope.toggle = function(route){
+	route.open =! route.open;
       }
     }
   };
