@@ -37,3 +37,4 @@
 \contentsline {section}{\numberline {4.3}Evaluation of Platform}{34}{section.4.3}
 \contentsline {chapter}{\numberline {5}Conclusion}{35}{chapter.5}
 \contentsline {chapter}{\numberline {A}Original Wireframes}{37}{appendix.A}
+\contentsline {chapter}{\numberline {B}Installation Instructions}{40}{appendix.B}
