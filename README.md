@@ -37,3 +37,5 @@ and then navigate to the following urls to get data:
 
 
 The REST endpoints can be browsed in any browser.
+
+Please notify me of any issues at 1002253w@student.gla.ac.uk and I will gladly help.
