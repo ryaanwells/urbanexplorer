@@ -250,6 +250,7 @@ and some features requested by users are as follows:
 \end{itemize}
 
 \section{Evaluation of Gamification}
+\subsection{Comments From Evaluation}
 A quantifiable measure of the effectiveness of gamification in this
 project would likely be unsubstantiated due to the short duration of 
 the experiment. Since we are unable to observe the long-term progress
@@ -394,8 +395,107 @@ could be given to encourage users to start engaging with the app
 fully. 
 
 Overall, feedback from users about the game experience was generally
-positive with users engaging with the concepts for achieving a
-long-term goal.  
+positive with users engaging with the concepts required for achieving
+long-term goals. 
+
+\subsection{Future Gamification Work}
+The core game ideas included in this project indicate that users could
+be encouraged to exercise in the way we propose. The concepts explored
+in this project are a small part of what could be used to encourage
+users. 
+
+One user commented:
+\begin{quote}
+  I don't feel as motivated as I might have done; notifications
+  reminding me to walk would have been of great benefit. I wish it
+  synced with my Google Calender so I could see how far I had walked
+  and when. 
+\end{quote}
+Both of these comments are perfectly reasonable suggestions and would
+be recommended as potential avenues for expansion. The first
+suggestion is not specifically gamification but is a reminder to the
+user to play the game. After a user has used the app for a reasonable
+time period we could identify when a user is likely to exercise next
+and send an encouraging notification to the user to reinforce their
+exercise schedule. This encouragement could be based on their current
+exercise status (``You're really close to finishing the Central Park
+Circuit! If you run like you did on Tuesday you'll easily get it!'')
+or purely based on user statistics (``You almost ran further yesterday
+than you ever did before, think you can beat it today?''). 
+
+Syncing with a calender, or simply allowing a user to track their
+exercise history is more gamified and would be a valuable addition to
+the system. We can praise the user for their progress but self
+discovery of their trends will be rewarding for the user, helping them
+better understand their exercise development. We could present this to
+the user on a leaderboard where their exercise sessions are ranked
+based on their personal performance. A social element could be
+integrated here where they can compare their performance with other
+users. Competition between users is a good way to encourage better
+performance per user, but we should be careful that it does not become
+discouraging to slower users or those users who are performing well
+but are incomparable to the best users. Exactly how to manage this
+situation is not clear, but splitting the leaderboards in a
+hierarchical way based on region may be a good place to start. In this
+situation your performance is only compared with your local peers
+until you reach the top of the leaderboard in your area when your
+performance would then be compared with peers at the top of other
+leaderboards in other areas. 
+
+Collaboration between users would also be an effective encouragement
+tool. Socially you could create a team of peers in your local area
+where your accumulated distance between all peers contributed towards
+the progress of much longer routes, John O'Groats  to Land's End for
+example. Alternatively the real-world social element could be removed
+altogether and exponentially larger routes could be completed with all
+users in the game, where collectively the users could contribute to a
+``Run Around The World''. It would be important in either of these
+cases to ensure that users did not ride on other users successes, that
+is to say that all peers in a team would need to contribute a
+certain distance each for the award to be valid. This is an issue that
+could be explored more fully in the future, however.
+
+The canonical sharing exercise session results and awards to social
+networking sites or amongst peers could encourage users but this may
+not be enough to actually motivate users to exercise and solve our
+original \emph{problem}. It could help to breach the initial topic of
+social exercise amongst a users peer group in a similar way to how
+\emph{Chick Clique} (Section \ref{sec:gamification}) helped the girls
+approach the discussion of healthy eating, but it would most likely
+not be enough to be a proper encouragement technique. 
+
+A change to the way the game is formed could also increase motivation
+by adding a discovery aspect to the game. When discussing the Entity
+Relation diagram in Section \ref{sec:ER}, the idea of representing
+\emph{routes} on a map was introduced. In this approach a user would
+start at one \emph{place} such as Glasgow and travel along a
+\emph{route} to Edinburgh which would in turn unlock \emph{routes} to
+other \emph{places} that can only be reached from Edinburgh. This
+introduces a \emph{discovery} element to the game where a user must
+travel between \emph{places} to discover new content. Consistency
+would not necessarily be enforced here: we could allow a user to
+travel from Glasgow to Edinburgh, which logically would put the user
+in Edinburgh in the game, but we could immediately allow the user to
+travel another \emph{route} leaving Glasgow to accommodate for faster
+game progression.
+
+With this new concept we could also introduce an in-game passport
+where the user receives a stamp in the passport for every location
+they have travelled to. We can then create even longer-term goals
+where a user would receive a big reward for reaching every
+\emph{place} in a geographical area, the major cities in Scotland for
+example. For users who have invested considerable time in the story of
+the app, this may prove to be very encouraging as it gives them harder
+to achieve goals that can be achieved without changing their current
+behaviour. 
+
+The proposed future work here is mainly speculative based on feedback
+from users and the thoughts of the author. A longer experiment would
+yield more conclusive results about how effective the current
+gamification methods are, which in turn may create a better founding
+for the proposed future work, but there is certainly room for
+expanding the gamified experience in ``Urban Explorer''.
+
 
 \section{Evaluation of Platform}
 PhoneGap has its merits as a mobile platform: you can achieve rapid
@@ -413,49 +513,50 @@ location watch service could not obtain location information for any
 reason then the request would fail silently. Geolocation information
 cannot always be obtained due to factors outwith our control and so
 failing silently does not allow the developer to enforce any form of
-persistence when searching for location information. In the case that
-we could not obtain location information it may be desirable to
-immediately restart searching for location information to provide the
-user with better quality of service, however other factors such as
-power consumption then come in to effect which may be more detrimental
-than a few missed waypoints. This would need to be further analysed in
-future work to properly justify what the correct course of behaviour
-is in this situation.
+control when searching for location information. We have discussed in
+Section \ref{sec:location_mgmt} how we can manage the location
+information, but if we make a request to the framework to provide us
+with location information then it is pertinent that either we receive
+this information or we are notified that this information cannot be
+obtained. By failing silently the programmer has no way of handling
+the situation and so users were left in a state of confusion as to
+what the app was doing. This is a major issue in the scope of this
+project due to the heavy reliance on location information and until it
+is fixed it could not be reliably used in a production environment. 
 
-The biggest challenge with the PhoneGap platform was the inconsistency
-within the documentation of the platform and also the instability of
-the upgrade process. 
+Other small issues that prevent a recommendation that PhoneGap is a 
+production quality framework include: a provided build script to build
+a ``release'' version of the app for the Android Play Store builds a
+``debug'' version instead, each time you build the app the version
+number and release number are reset to their default values, a
+configuration file for the app is ignored when searching for the main
+``index.html'' file (root of the application), and the official
+documentation does not agree internally\cite{phonegap_install,
+  phonegap_cli, phonegap_geolocationAccessingFeature}.
 
-The PhoneGap platform is built of two main modules: the PhoneGap
-module which is concerned with the developers interface to the phone,
-and the Cordova module which is concerned with the device management.
-There is disparity between platform installation documentation and the
-plugin documentation (for the geolocation module
-etc)\cite{phonegap_install, phonegap_cli,
-  phonegap_geolocationAccessingFeature}. This inconsistency does not
-fill the developer with confidence when the official recommendations
-cannot agree on correct procedures. 
+However, as a platform that allows you to prototype ideas and designs,
+it is ideal as you can rapidly prototype for multiple devices without
+needing explicit knowledge of the actual domain (you do not need to
+know specifics about programming for Android or iOS). It is unlikely
+that the two design revisions would have been achieved as completely
+as they were in this project if PhoneGap was not used. It is worth
+noting that no user noticed that the app was not created as a native
+Android app.
 
-Considerable time was also lost during the first round of user
-evaluation due to an undocumented step required during platform
-updating. When an Android project is created a JAR is installed that
-is responsible for interfacing with the device but updating the
-PhoneGap project did not update this JAR. Since the JAR was not
-updated it did not have new functionality that the project was
-attempting to access and so was crashing the app. A solution was
-eventually discovered on an unrelated thread\cite{pluginFix} and user
-evaluation was able to continue. Time was unnecessarily lost over bad
-documentation and wrong assumptions by the platform developers.
+The author would recommend that for this product to be marketable, it
+should be implemented as a native Android application. By doing this
+greater control is obtained over the location information,
+specifically through the Google Play Location
+Services\footnote{\url{https://developer.android.com/google/play-services/location.html}}
+which have better management of power and accuracy than other
+techniques. Rapid prototyping of ideas could still be undertaken using
+PhoneGap but a more refined app would be produced by a native Android
+implementation. There is the downside that explicit platform knowledge
+is now required to produce the app, especially for multi-platform
+development (Android and iOS) but access to better control over the
+location services outweighs this issue. 
 
-Other small issues like a provided build script to build a ``release''
-version of the app for the Android Play Store builds a ``debug''
-version instead, each time you build the app the version number and
-release number are reset to their default values, an XML configuration
-file for the app is ignored when searching for the main ``index.html''
-file (root of the application), amongst others.
-
-It is for these reasons that I could not recommend PhoneGap as a
-platform that is viable for a production quality app. Until the
-documentation and platform become more reliable and consistent the
-benefits of cross platform development do not outweight the loss of
-fidelity incurred by non native implementation.
+From the server perspective, the author sees no reason to move from
+the Django middleware service and the Django-Tastypie based API. No
+issues have arisen from the use of either part of the system, both
+fulfilling the requirements of the entire system very well. 

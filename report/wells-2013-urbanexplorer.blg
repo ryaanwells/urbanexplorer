@@ -29,7 +29,6 @@ Warning--empty year in charitymiles_store
 Warning--empty year in charitymiles_terms
 Warning--empty year in ailising
 Warning--empty year in callback_hell
-Warning--empty year in pluginFix
 Warning--empty year in python_haversine
 Warning--empty year in android_efficiencySlides
 Warning--empty year in zombiesrun_store
@@ -37,45 +36,45 @@ Warning--empty year in bootstrap
 Warning--empty year in app_store_link
 Warning--empty year in wrappingPhonegap
 Warning--empty year in haversine
-You've used 43 entries,
+You've used 42 entries,
             2773 wiz_defined-function locations,
-            769 strings with 10559 characters,
-and the built_in function-call counts, 13178 in all, are:
-= -- 1118
-> -- 508
-< -- 41
-+ -- 206
-- -- 153
-* -- 681
-:= -- 2007
-add.period$ -- 129
-call.type$ -- 43
-change.case$ -- 177
-chr.to.int$ -- 33
-cite$ -- 120
-duplicate$ -- 666
-empty$ -- 1377
-format.name$ -- 198
-if$ -- 2808
+            764 strings with 10417 characters,
+and the built_in function-call counts, 12885 in all, are:
+= -- 1093
+> -- 498
+< -- 40
++ -- 202
+- -- 150
+* -- 668
+:= -- 1963
+add.period$ -- 126
+call.type$ -- 42
+change.case$ -- 173
+chr.to.int$ -- 32
+cite$ -- 117
+duplicate$ -- 651
+empty$ -- 1345
+format.name$ -- 194
+if$ -- 2745
 int.to.chr$ -- 11
 int.to.str$ -- 1
 missing$ -- 7
-newline$ -- 223
-num.names$ -- 172
-pop$ -- 581
+newline$ -- 218
+num.names$ -- 168
+pop$ -- 567
 preamble$ -- 1
-purify$ -- 137
+purify$ -- 134
 quote$ -- 0
-skip$ -- 509
+skip$ -- 497
 stack$ -- 0
-substring$ -- 86
-swap$ -- 59
+substring$ -- 84
+swap$ -- 58
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 458
-warning$ -- 34
-while$ -- 129
+type$ -- 447
+warning$ -- 33
+while$ -- 126
 width$ -- 0
-write$ -- 505
-(There were 34 warnings)
+write$ -- 494
+(There were 33 warnings)

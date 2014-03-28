@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.3.25)  27 MAR 2014 16:40
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.3.25)  28 MAR 2014 00:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -549,7 +549,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-<images/CompSci_colour.pdf, id=156, 413.545pt x 93.34875pt>
+<images/CompSci_colour.pdf, id=164, 413.545pt x 93.34875pt>
 File: images/CompSci_colour.pdf Graphic file (type pdf)
 
 <use images/CompSci_colour.pdf>
@@ -632,14 +632,14 @@ Chapter 3.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11] [12] <images/n-tier.jpg, id=371, 514.92375pt x 186.6975pt>
+[10] [11] [12] <images/n-tier.jpg, id=381, 514.92375pt x 186.6975pt>
 File: images/n-tier.jpg Graphic file (type jpg)
 
 <use images/n-tier.jpg>
 Package pdftex.def Info: images/n-tier.jpg used on input line 315.
 (pdftex.def)             Requested size: 343.36507pt x 124.49696pt.
 
-<images/route_breakdown.jpg, id=375, 484.81125pt x 116.435pt>
+<images/route_breakdown.jpg, id=385, 484.81125pt x 116.435pt>
 File: images/route_breakdown.jpg Graphic file (type jpg)
 
 <use images/route_breakdown.jpg>
@@ -649,42 +649,42 @@ Package pdftex.def Info: images/route_breakdown.jpg used on input line 336.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13 <./images/n-tier.jpg>] <images/ER.jpg, id=385, 794.97pt x 679.53876pt>
+[13 <./images/n-tier.jpg>] <images/ER.jpg, id=395, 794.97pt x 679.53876pt>
 File: images/ER.jpg Graphic file (type jpg)
 
 <use images/ER.jpg>
 Package pdftex.def Info: images/ER.jpg used on input line 417.
 (pdftex.def)             Requested size: 490.52367pt x 419.30849pt.
  [14 <./images/route_breakdown.jpg>]
-<images/ER_prod.jpg, id=391, 708.6475pt x 839.135pt>
+<images/ER_prod.jpg, id=401, 708.6475pt x 839.135pt>
 File: images/ER_prod.jpg Graphic file (type jpg)
  <use images/ER_prod.jpg>
 Package pdftex.def Info: images/ER_prod.jpg used on input line 424.
 (pdftex.def)             Requested size: 490.52367pt x 580.86037pt.
 
 [15] [16 <./images/ER.jpg>] [17 <./images/ER_prod.jpg>]
-<images/screens/home.png, id=404, 1084.05pt x 1927.2pt>
+<images/screens/home.png, id=414, 1084.05pt x 1927.2pt>
 File: images/screens/home.png Graphic file (type png)
 
 <use images/screens/home.png>
 Package pdftex.def Info: images/screens/home.png used on input line 435.
 (pdftex.def)             Requested size: 142.24857pt x 252.86792pt.
 
-<images/screens/targets.png, id=412, 1084.05pt x 1927.2pt>
+<images/screens/targets.png, id=422, 1084.05pt x 1927.2pt>
 File: images/screens/targets.png Graphic file (type png)
 
 <use images/screens/targets.png>
 Package pdftex.def Info: images/screens/targets.png used on input line 486.
 (pdftex.def)             Requested size: 147.15858pt x 261.6017pt.
 
-<images/screens/route.png, id=413, 1084.05pt x 1927.2pt>
+<images/screens/route.png, id=423, 1084.05pt x 1927.2pt>
 File: images/screens/route.png Graphic file (type png)
 
 <use images/screens/route.png>
 Package pdftex.def Info: images/screens/route.png used on input line 490.
 (pdftex.def)             Requested size: 147.15858pt x 261.6017pt.
 
-<images/screens/run.png, id=414, 1084.05pt x 1927.2pt>
+<images/screens/run.png, id=424, 1084.05pt x 1927.2pt>
 File: images/screens/run.png Graphic file (type png)
 
 <use images/screens/run.png>
@@ -719,7 +719,7 @@ Missing character: There is no ™ in font ptmr7t!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21] [22] <images/power.png, id=473, 921.4425pt x 549.55313pt>
+[21] [22] <images/power.png, id=483, 921.4425pt x 549.55313pt>
 File: images/power.png Graphic file (type png)
 
 <use images/power.png>
@@ -729,7 +729,7 @@ Package pdftex.def Info: images/power.png used on input line 819.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/cul-de-sac.jpg, id=477, 537.00626pt x 570.13pt>
+<images/cul-de-sac.jpg, id=487, 537.00626pt x 570.13pt>
 File: images/cul-de-sac.jpg Graphic file (type jpg)
 
 <use images/cul-de-sac.jpg>
@@ -739,7 +739,7 @@ Package pdftex.def Info: images/cul-de-sac.jpg used on input line 848.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] <images/aliasing.png, id=489, 677.53125pt x 225.84375pt>
+[23] <images/aliasing.png, id=499, 677.53125pt x 225.84375pt>
 File: images/aliasing.png Graphic file (type png)
 
 <use images/aliasing.png>
@@ -751,7 +751,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (./results.tex [25 <./images/cul-de-sac.jpg>] [26 <./images/aliasing.png>]
 Chapter 4.
-<images/init_design/run.png, id=520, 1084.05pt x 1927.2pt>
+<images/init_design/run.png, id=530, 1084.05pt x 1927.2pt>
 File: images/init_design/run.png Graphic file (type png)
 
 <use images/init_design/run.png>
@@ -770,43 +770,43 @@ File: images/screens/route.png Graphic file (type png)
 Package pdftex.def Info: images/screens/route.png used on input line 148.
 (pdftex.def)             Requested size: 142.24857pt x 252.86792pt.
 
-<images/screens/ach_2.png, id=544, 1084.05pt x 1927.2pt>
+<images/screens/ach_2.png, id=554, 1084.05pt x 1927.2pt>
 File: images/screens/ach_2.png Graphic file (type png)
 
 <use images/screens/ach_2.png>
 Package pdftex.def Info: images/screens/ach_2.png used on input line 182.
 (pdftex.def)             Requested size: 142.24857pt x 252.86792pt.
  [29 <./images/screens/ach_2.png (PNG copy)>]
-Overfull \hbox (1.5178pt too wide) in paragraph at lines 276--276
+Overfull \hbox (1.5178pt too wide) in paragraph at lines 277--277
  []\OT1/ptm/m/n/10.95 (hh:mm:ss)| 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[30] [31] [32]) (./conclusion.tex [33]
+[30] [31] [32] [33]) (./conclusion.tex [34]
 Chapter 5.
-) (./appendix.tex [34
+) (./appendix.tex [35
 
 ]
 Appendix A.
-<images/Wireframes.png, id=594, 1309.89375pt x 869.2475pt>
+<images/Wireframes.png, id=612, 1309.89375pt x 869.2475pt>
 File: images/Wireframes.png Graphic file (type png)
 
 <use images/Wireframes.png>
 Package pdftex.def Info: images/Wireframes.png used on input line 40.
 (pdftex.def)             Requested size: 490.52367pt x 325.51605pt.
 
-<images/wireframe_sketch.jpg, id=595, 5267.68pt x 3950.76pt>
+<images/wireframe_sketch.jpg, id=613, 5267.68pt x 3950.76pt>
 File: images/wireframe_sketch.jpg Graphic file (type jpg)
 
 <use images/wireframe_sketch.jpg>
 Package pdftex.def Info: images/wireframe_sketch.jpg used on input line 46.
 (pdftex.def)             Requested size: 490.52367pt x 367.85094pt.
- [35
+ [36
 
-]) [36 <./images/Wireframes.png>]
-(./wells-2013-urbanexplorer.bbl [37 <./images/wireframe_sketch.jpg>]
+]) [37 <./images/Wireframes.png>]
+(./wells-2013-urbanexplorer.bbl [38 <./images/wireframe_sketch.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 14--18
 []\OT1/ptm/m/n/10.95 Cancer Re-search UK.  ``genes in space'' - gam-i-fi-ca-tio
 n of gene flaw iden-ti-
@@ -848,7 +848,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--112
 ndex . md . html # The % 20Command-[]line %
  []
 
-[38
+[39
 
 ]
 Underfull \hbox (badness 5217) in paragraph at lines 114--119
@@ -893,55 +893,55 @@ e-vices.  [][]$\OT1/pcr/m/n/10.95 http : / / www . health . gov /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--212
+Underfull \hbox (badness 10000) in paragraph at lines 202--207
 []\OT1/ptm/m/n/10.95 National Health Ser-vice.  Health sur-vey for eng-land.  [
 ][]$\OT1/pcr/m/n/10.95 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--212
+Underfull \hbox (badness 10000) in paragraph at lines 202--207
 \OT1/pcr/m/n/10.95 catalogue . ic . nhs . uk / publications / public-[]health /
  surveys /
  []
 
 
-Overfull \hbox (87.25104pt too wide) in paragraph at lines 207--212
+Overfull \hbox (87.25104pt too wide) in paragraph at lines 202--207
 \OT1/pcr/m/n/10.95 heal-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006 / hea
 l-[]surv-[]cvd-[]risk-[]obes-[]ad-[]ch-[]eng-[]2006-[]rep-[]v3 .
  []
 
-[39]
-Underfull \hbox (badness 2073) in paragraph at lines 244--249
+[40]
+Underfull \hbox (badness 2073) in paragraph at lines 239--244
 []\OT1/ptm/m/n/10.95 Ryan Wells.  Wrap-ping phone-gap func-tions for the an-gu-
 larjs frame-work.  [][]$\OT1/pcr/m/n/10.95 https : / / github .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--249
+Underfull \hbox (badness 10000) in paragraph at lines 239--244
 \OT1/pcr/m/n/10.95 com / ryaanwells / urbanexplorer / blob / master / urbanexpl
 orer _ app / www / js / core /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
- [40]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
+ [41]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
  (./wells-2013-urbanexplorer.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 102.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 Package rerunfilecheck Info: File `wells-2013-urbanexplorer.out' has not change
 d.
-(rerunfilecheck)             Checksum: 9EAE4648D93CD4B089BF9DEB501FE98E;2641.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+(rerunfilecheck)             Checksum: 98A2C26E78FAFE64D07C61424C68A013;2797.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 102.
  ) 
 Here is how much of TeX's memory you used:
- 9661 strings out of 495059
- 145501 string characters out of 3182030
- 250220 words of memory out of 3000000
- 12453 multiletter control sequences out of 15000+200000
+ 9663 strings out of 495059
+ 145522 string characters out of 3182030
+ 250194 words of memory out of 3000000
+ 12452 multiletter control sequences out of 15000+200000
  38247 words of font info for 83 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,18n,41p,339b,500s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,18n,41p,339b,502s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -954,10 +954,10 @@ ier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
 xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on wells-2013-urbanexplorer.pdf (45 pages, 9165533 bytes).
+Output written on wells-2013-urbanexplorer.pdf (46 pages, 9171464 bytes).
 PDF statistics:
- 780 PDF objects out of 1000 (max. 8388607)
- 693 compressed objects within 7 object streams
- 168 named destinations out of 1000 (max. 500000)
- 385 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 798 PDF objects out of 1000 (max. 8388607)
+ 709 compressed objects within 8 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 

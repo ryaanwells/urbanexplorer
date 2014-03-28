@@ -32,7 +32,9 @@
 \contentsline {subsection}{\numberline {4.1.1}Comments From Evaluation}{27}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Future Design Work}{30}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Evaluation of Gamification}{30}{section.4.2}
-\contentsline {section}{\numberline {4.3}Evaluation of Platform}{32}{section.4.3}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{34}{chapter.5}
-\contentsline {section}{\numberline {5.1}Acknowledgements}{34}{section.5.1}
-\contentsline {chapter}{\numberline {A}Original Wireframes}{35}{appendix.A}
+\contentsline {subsection}{\numberline {4.2.1}Comments From Evaluation}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Future Gamification Work}{32}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Evaluation of Platform}{33}{section.4.3}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Acknowledgements}{35}{section.5.1}
+\contentsline {chapter}{\numberline {A}Original Wireframes}{36}{appendix.A}

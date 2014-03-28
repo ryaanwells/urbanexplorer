@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{42}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -187,11 +187,6 @@ US~Department of~Health.
 Max Ogden.
 \newblock Callback hell.
 \newblock \url{http://callbackhell.com/}.
-
-\bibitem[Rabinowitz()]{pluginFix}
-David Rabinowitz.
-\newblock Plugin fix for upgrade between phonegap versions.
-\newblock \url{https://github.com/phonegap-build/PushPlugin/issues/92}.
 
 \bibitem[Rouberol()]{python_haversine}
 Balthazar Rouberol.
